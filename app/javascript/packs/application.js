@@ -4,19 +4,11 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
-
-class Hello extends React.Component {
-  render() {
-    return(
-      <div>Bonanza!</div>
-    );
-  }
-}
+import App from './components/App';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello />,
+    <App currentTab='video'/>,
     document.body.appendChild(document.createElement('div')),
   )
 })

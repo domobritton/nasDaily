@@ -1,0 +1,22 @@
+.nd-search {
+  background-color: $gray-color;
+  display: flex;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    height: 70px;
+    line-height: 70px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $yellow-color;
+    font-size: 60px;
+    width: 500px;
+
+    &::placeholder {
+      color: $font-color-dark;
+    }
+  }
+}

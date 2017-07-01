@@ -1,0 +1,38 @@
+.nd-footer {
+  display: flex;
+  background-color: $dark-gray-color;
+  height: 300px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  color: $font-color-light;
+
+  .logo {
+    margin: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .navigation {
+    padding: 30px;
+    display: flex;
+
+    li {
+      text-transform: uppercase;
+      font-size: 35px;
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+  }
+
+  .subfooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    border-top: 2px solid $gray-color;
+  }
+}
