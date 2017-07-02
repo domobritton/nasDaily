@@ -42,4 +42,8 @@
     padding: 10px;
     border-top: 2px solid $gray-color;
   }
+
+  @media #{$small-only} {
+    display: none;
+  }
 }

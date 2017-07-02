@@ -19,4 +19,13 @@
       color: $font-color-dark;
     }
   }
+
+  @media #{$small-only} {
+    input {
+      height: 50px;
+      line-height: 50px;
+      width: 330px;
+      font-size: 40px;
+    }
+  }
 }

@@ -12,4 +12,8 @@
   .logo {
     height: 25px;
   }
+
+  @media #{$small-only} {
+    height: 50px;
+  }
 }
