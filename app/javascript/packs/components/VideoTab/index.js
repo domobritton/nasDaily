@@ -57,7 +57,7 @@ export default class VideoTab extends React.Component {
 
       const fuse = new Fuse(this.props.videos, sortOptions);
 
-      this.refs.slider.slickGoTo(0);
+      this.refs.slider && this.refs.slider.slickGoTo(0);
       this.setState({
         videos: fuse.search(value)
       });
