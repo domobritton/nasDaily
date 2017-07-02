@@ -1,7 +1,6 @@
 .nd-footer {
   display: flex;
   background-color: $dark-gray-color;
-  height: 300px;
   justify-content: center;
   margin-top: 20px;
   flex-direction: column;
@@ -22,6 +21,15 @@
       font-size: 35px;
       padding-right: 50px;
       padding-left: 50px;
+    }
+  }
+
+  .social-list {
+    display: flex;
+    align-items: center;
+
+    li {
+      padding: 30px;
     }
   }
 
