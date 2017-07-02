@@ -78,11 +78,11 @@ export default class App extends React.Component {
 
     return (
       <CloudinaryContext cloudName="nasdaily">
-        <div>
+        <div className='main'>
           { this.header }
           { currentTab === 'video' ? <VideoTab videos={videos}/> : 'not implemented tab' }
-          { this.footer }
         </div>
+        { this.footer }
       </CloudinaryContext>
     );
   }

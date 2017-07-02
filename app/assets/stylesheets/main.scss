@@ -7,3 +7,16 @@ a {
   color: inherit;
   cursor: pointer;
 }
+
+.main {
+  background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
+  background-color: $gray-color;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 1000px;
+  padding-bottom: 30px;
+
+  @media #{$small-only} {
+    background-size: 300px;
+  }
+}
