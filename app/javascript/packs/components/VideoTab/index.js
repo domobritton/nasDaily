@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import SliderArrow from './SliderArrow';
 import Fuse from 'fuse.js';
 import { debounce } from 'lodash';
+import { isMobile } from '../../util/viewportSize';
 
 export default class VideoTab extends React.Component {
   constructor(props) {
@@ -117,6 +118,7 @@ export default class VideoTab extends React.Component {
       nextArrow: <SliderArrow direction='next' />,
       prevArrow: <SliderArrow direction='prev' />,
       lazyLoad: true,
+      vertical: isMobile
     };
 
     return (

@@ -21,7 +21,7 @@
   }
 
   .slider-header {
-    margin-left: 45px;
+    margin-left: 20px;
     color: lighten($font-color-light, 20%);
   }
 
@@ -47,5 +47,6 @@
 
   img {
     border: 3px solid white;
+    height: 160px;
   }
 }
