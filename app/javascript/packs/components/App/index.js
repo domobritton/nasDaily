@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoTab from '../VideoTab';
 import $ from 'jquery';
+import { Image, CloudinaryContext } from 'cloudinary-react';
 
 export default class App extends React.Component {
   constructor() {
@@ -24,7 +25,7 @@ export default class App extends React.Component {
     return (
       <div className='nd-header'>
         <a>
-          <img className='logo' src='assets/nasdaily_logo.png'/>
+          <Image publicId="NASDAILY._g21um6.png" className='logo'/>
         </a>
       </div>
     );
@@ -33,7 +34,7 @@ export default class App extends React.Component {
   get footer() {
     return (
       <div className='nd-footer'>
-        <img src='assets/nasdaily_logo.png' className='logo' />
+        <Image publicId="NASDAILY._g21um6.png" className='logo'/>
         <ul className='navigation'>
           <li>
             <a>The App</a>
@@ -57,11 +58,13 @@ export default class App extends React.Component {
     const { videos } = this.state;
 
     return (
-      <div>
-        { this.header }
-        { currentTab === 'video' ? <VideoTab videos={videos}/> : 'not implemented tab' }
-        { this.footer }
-      </div>
+      <CloudinaryContext cloudName="nasdaily">
+        <div>
+          { this.header }
+          { currentTab === 'video' ? <VideoTab videos={videos}/> : 'not implemented tab' }
+          { this.footer }
+        </div>
+      </CloudinaryContext>
     );
   }
 }
