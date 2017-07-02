@@ -21,7 +21,7 @@
   }
 
   .slider-header {
-    margin-left: 10px;
+    margin-left: 45px;
     color: lighten($font-color-light, 20%);
   }
 
@@ -37,6 +37,15 @@
   }
 
   .nd-slider-item {
-    margin: 10px;
+    display: inline-block;
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  img {
+    border: 3px solid white;
   }
 }

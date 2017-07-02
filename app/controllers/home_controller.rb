@@ -1,7 +1,13 @@
 require 'koala'
 
 class HomeController < ApplicationController
+  helper_method :cached_videos
+
   def index
+  end
+
+  def cached_videos
+    render json: Rails.cache.read('all_videos')
   end
 
   def videos
@@ -12,6 +18,8 @@ class HomeController < ApplicationController
     videos = graph.get_object(
       'nasdaily/videos?fields=content_tags,title,embed_html,picture&limit=2000'
     )
+
+    Rails.cache.write('all_videos', videos)
 
     render json: videos
   end

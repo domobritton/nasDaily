@@ -21,12 +21,15 @@ export default class VideoTab extends React.Component {
     this.setState({
       videos: nextProps.videos
     });
+
+    this.searchInput.focus();
   }
 
   get search() {
     return (
       <div className='nd-search'>
         <input
+          ref={ (input) => { this.searchInput = input }}
           onChange={(e) => { e.persist(); this.onInputChange(e); }}
           placeholder='Search videos by...'
         />
@@ -53,6 +56,7 @@ export default class VideoTab extends React.Component {
 
       const fuse = new Fuse(this.props.videos, sortOptions);
 
+      this.refs.slider.slickGoTo(0);
       this.setState({
         videos: fuse.search(value)
       });
@@ -104,6 +108,7 @@ export default class VideoTab extends React.Component {
     );
 
     const sliderSettings = {
+      ref: 'slider',
       dots: false,
       infinite: false,
       speed: 500,
@@ -111,6 +116,7 @@ export default class VideoTab extends React.Component {
       slidesToScroll: 4,
       nextArrow: <SliderArrow direction='next' />,
       prevArrow: <SliderArrow direction='prev' />,
+      lazyLoad: true,
     };
 
     return (
