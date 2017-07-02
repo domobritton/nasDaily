@@ -8,7 +8,7 @@ export default class App extends React.Component {
     super();
 
     this.state = {
-      videos: []
+      videos: null
     }
   }
 

@@ -12,7 +12,7 @@ export default class VideoTab extends React.Component {
 
     this.state = {
       videoIframe: null,
-      videos: props.videos
+      videos: props.videos,
     };
 
     this.onInputChange = debounce(this.onInputChange, 200);
@@ -93,12 +93,14 @@ export default class VideoTab extends React.Component {
     );
   }
 
-  get slider() {
+  get videoLinks() {
     const { videos } = this.state;
 
-    if (videos.length === 0) { return null }
+    if (videos.length === 0) {
+      return <div />
+    }
 
-    const videoLinks = videos.map(
+    return videos.map(
       (v, idx) => (
         <span key={idx} className='nd-slider-item'>
           <a onClick={() => this.showVideo(v.embed_html)}>
@@ -107,6 +109,12 @@ export default class VideoTab extends React.Component {
         </span>
       )
     );
+  }
+
+  get slider() {
+    const { videos } = this.state;
+
+    if (videos === null) { return null }
 
     const sliderSettings = {
       ref: 'slider',
@@ -118,13 +126,14 @@ export default class VideoTab extends React.Component {
       nextArrow: <SliderArrow direction='next' />,
       prevArrow: <SliderArrow direction='prev' />,
       lazyLoad: true,
+      initialSlide: 0,
       vertical: isMobile
     };
 
     return (
       <div className='nd-slider'>
         <Slider {...sliderSettings}>
-          { videoLinks }
+          { this.videoLinks }
         </Slider>
       </div>
     );
@@ -135,7 +144,7 @@ export default class VideoTab extends React.Component {
 
     return (
       <div className='nd-videos'>
-        <span className='slider-header'>{ `Videos (${videos.length})` }</span>
+        <span className='slider-header'>{ `Videos (${videos ? videos.length : '0'})` }</span>
         { this.slider }
         { this.modal }
       </div>
