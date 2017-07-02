@@ -1,7 +1,25 @@
 import React from 'react';
 import VideoTab from '../VideoTab';
+import $ from 'jquery';
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      videos: []
+    }
+  }
+
+  componentWillMount() {
+    $.ajax({
+      url: '/api/videos',
+      success: (data) => {
+        this.setState({ videos: data });
+      }
+    });
+  }
+
   get header() {
     return (
       <div className='nd-header'>
@@ -36,11 +54,12 @@ export default class App extends React.Component {
 
   render() {
     const { currentTab } = this.props;
+    const { videos } = this.state;
 
     return (
       <div>
         { this.header }
-        { currentTab === 'video' ? <VideoTab/> : 'not implemented tab' }
+        { currentTab === 'video' ? <VideoTab videos={videos}/> : 'not implemented tab' }
         { this.footer }
       </div>
     );
