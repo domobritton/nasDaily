@@ -2,22 +2,61 @@ import React from 'react';
 import Slider from 'react-slick';
 import Modal from 'react-modal';
 import SliderArrow from './SliderArrow';
+import Fuse from 'fuse.js';
+import { debounce } from 'lodash';
 
 export default class VideoTab extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      videoIframe: null
+      videoIframe: null,
+      videos: props.videos
     };
+
+    this.onInputChange = debounce(this.onInputChange, 200);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      videos: nextProps.videos
+    });
   }
 
   get search() {
     return (
       <div className='nd-search'>
-        <input placeholder='Search videos by...'/>
+        <input
+          onChange={(e) => { e.persist(); this.onInputChange(e); }}
+          placeholder='Search videos by...'
+        />
       </div>
     )
+  }
+
+  onInputChange = (e) => {
+    const { value } = e.target;
+
+    if (value === '') {
+      this.setState({
+        videos: this.props.videos
+      });
+    } else {
+      const sortOptions = {
+        threshold: 0.3,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: ['title']
+      }
+
+      const fuse = new Fuse(this.props.videos, sortOptions);
+
+      this.setState({
+        videos: fuse.search(value)
+      });
+    }
   }
 
   showVideo(iframe) {
@@ -49,12 +88,10 @@ export default class VideoTab extends React.Component {
     );
   }
 
-  get videos() {
-    const { videos } = this.props;
+  get slider() {
+    const { videos } = this.state;
 
-    if (videos.length === 0) {
-      return null;
-    }
+    if (videos.length === 0) { return null }
 
     const videoLinks = videos.map(
       (v, idx) => (
@@ -77,13 +114,21 @@ export default class VideoTab extends React.Component {
     };
 
     return (
+      <div className='nd-slider'>
+        <Slider {...sliderSettings}>
+          { videoLinks }
+        </Slider>
+      </div>
+    );
+  }
+
+  get videos() {
+    const { videos } = this.state;
+
+    return (
       <div className='nd-videos'>
         <span className='slider-header'>{ `Videos (${videos.length})` }</span>
-        <div className='nd-slider'>
-          <Slider {...sliderSettings}>
-            { videoLinks }
-          </Slider>
-        </div>
+        { this.slider }
         { this.modal }
       </div>
     )
