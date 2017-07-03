@@ -11,7 +11,7 @@ export default class VideoTab extends React.Component {
     super(props);
 
     this.state = {
-      videoIframe: null,
+      videoId: null,
       videos: props.videos,
     };
 
@@ -64,31 +64,66 @@ export default class VideoTab extends React.Component {
     }
   }
 
-  showVideo(iframe) {
+  showVideo(src) {
     this.setState({
-      videoIframe: iframe
+      videoId: src
     });
+
+    setTimeout(() => FB.XFBML.parse());
   }
 
   closeModal = () => {
     this.setState({
-      videoIframe: null
+      videoId: null
     });
   }
 
   get modal() {
-    const { videoIframe } = this.state;
+    const { videoId } = this.state;
 
-    if (!videoIframe) { return null }
+    if (!videoId) { return null }
+
+    const modalStyles = {
+      overlay: {
+        zIndex: 3,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      content: {
+        padding: 0,
+        maxWidth: '100%',
+        maxHeight: '100%',
+        margin: 'auto',
+        borderRadius: '10px',
+        overflow: 'hidden',
+        top: 'auto',
+        bottom: 'auto',
+        left: 'auto',
+        right: 'auto',
+      }
+    }
 
     return (
       <Modal
         isOpen={true}
         contentLabel="Modal"
         onRequestClose={this.closeModal}
-        style={{ overlay: { zIndex: 3 } }}
+        style={modalStyles}
       >
-        <div dangerouslySetInnerHTML={{ __html: videoIframe }} />
+        <div
+          className="fb-video"
+          data-href={ `https://www.facebook.com/facebook/videos/${videoId}/` }
+          data-width={1280}
+          data-show-text={false}
+          data-autoplay={true}
+          style={{ marginLeft: '-2px', maxWidth: 'calc(100% + 4px)' }}
+        >
+          <div className="fb-xfbml-parse-ignore">
+            <blockquote cite={`https://www.facebook.com/facebook/videos/${videoId}/`}>
+            </blockquote>
+          </div>
+        </div>
       </Modal>
     );
   }
@@ -103,7 +138,7 @@ export default class VideoTab extends React.Component {
     return videos.map(
       (v, idx) => (
         <span key={idx} className='nd-slider-item'>
-          <a onClick={() => this.showVideo(v.embed_html)}>
+          <a onClick={() => this.showVideo(v.id)}>
             <img src={v.picture}/>
           </a>
         </span>
