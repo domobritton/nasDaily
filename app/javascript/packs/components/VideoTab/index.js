@@ -116,7 +116,7 @@ export default class VideoTab extends React.Component {
           data-href={ `https://www.facebook.com/facebook/videos/${videoId}/` }
           data-width={1280}
           data-show-text={false}
-          data-autoplay={true}
+          data-autoplay={false}
           style={{ marginLeft: '-2px', maxWidth: 'calc(100% + 4px)' }}
         >
           <div className="fb-xfbml-parse-ignore">
