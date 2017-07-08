@@ -162,7 +162,33 @@ export default class VideoTab extends React.Component {
       prevArrow: <SliderArrow direction='prev' />,
       lazyLoad: true,
       initialSlide: 0,
-      vertical: isMobile
+      vertical: false,
+      verticalSwiping: false,
+      responsive: [
+        {
+          breakpoint: 670,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            vertical: true,
+            verticalSwiping: true
+          }
+        },
+        {
+          breakpoint: 950,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 1228,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        }
+      ]
     };
 
     return (
