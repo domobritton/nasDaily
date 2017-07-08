@@ -21,11 +21,13 @@
   }
 
   @media #{$small-only} {
+    height: 150px;
+
     input {
       height: 50px;
       line-height: 50px;
-      width: 330px;
-      font-size: 40px;
+      width: 280px;
+      font-size: 35px;
     }
   }
 }
