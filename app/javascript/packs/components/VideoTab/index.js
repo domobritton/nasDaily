@@ -84,6 +84,7 @@ export default class VideoTab extends React.Component {
       <div className='nd-videos'>
         <span className='slider-header'>{ `Videos (${videos ? videos.length : '0'})` }</span>
         <Slider
+          ref='slider'
           videos={videos}
           onClick={this.showVideo}
         />

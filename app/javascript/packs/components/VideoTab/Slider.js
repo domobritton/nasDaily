@@ -21,6 +21,10 @@ export default class Slider extends React.Component {
     );
   }
 
+  slickGoTo = (val) => {
+    this.refs.slider.slickGoTo(val);
+  }
+
   render() {
     const { videos } = this.props;
 
