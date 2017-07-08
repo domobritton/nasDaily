@@ -1,6 +1,6 @@
 .nd-header {
   display: flex;
-  height: 150px;
+  height: 50px;
 
   a {
     margin: 20px;
@@ -13,7 +13,7 @@
     margin: 10px;
   }
 
-  @media #{$small-only} {
-    height: 50px;
+  @media #{$x-large-up} {
+    height: 150px;
   }
 }
