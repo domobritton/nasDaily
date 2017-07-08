@@ -15,7 +15,7 @@ export const modalStyles = {
     overflow: 'hidden',
     top: 'auto',
     bottom: 'auto',
-    left: 'auto',
-    right: 'auto',
+    left: 0,
+    right: 0,
   }
 }
