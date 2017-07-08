@@ -50,7 +50,6 @@ export default class Slider extends React.Component {
             verticalSwiping: true,
             draggable: true,
             touchThreshold: 100,
-            swipeToSlide: true
           }
         },
         {
