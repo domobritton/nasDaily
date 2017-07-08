@@ -164,6 +164,7 @@ export default class VideoTab extends React.Component {
       initialSlide: 0,
       vertical: false,
       verticalSwiping: false,
+      draggable: false,
       responsive: [
         {
           breakpoint: 670,
@@ -171,7 +172,9 @@ export default class VideoTab extends React.Component {
             slidesToShow: 3,
             slidesToScroll: 3,
             vertical: true,
-            verticalSwiping: true
+            verticalSwiping: true,
+            draggable: true,
+            touchThreshold: 100
           }
         },
         {
