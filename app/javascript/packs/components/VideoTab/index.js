@@ -174,7 +174,8 @@ export default class VideoTab extends React.Component {
             vertical: true,
             verticalSwiping: true,
             draggable: true,
-            touchThreshold: 100
+            touchThreshold: 100,
+            swipeToSlide: true
           }
         },
         {
