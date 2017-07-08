@@ -35,12 +35,12 @@ export default class Slider extends React.Component {
       slidesToScroll: 4,
       nextArrow: <SliderArrow direction='next' />,
       prevArrow: <SliderArrow direction='prev' />,
-      lazyLoad: true,
+      lazyLoad: 'ondemand',
       initialSlide: 0,
       vertical: false,
       verticalSwiping: false,
       draggable: false,
-      touchThreshold: 100,
+      touchThreshold: 200,
       responsive: [
         {
           breakpoint: 670,
