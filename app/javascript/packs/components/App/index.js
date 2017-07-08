@@ -78,7 +78,7 @@ export default class App extends React.Component {
 
     return (
       <CloudinaryContext cloudName="nasdaily">
-        <div className='main'>
+        <div className='content'>
           { this.header }
           { currentTab === 'video' ? <VideoTab videos={videos}/> : 'not implemented tab' }
         </div>

@@ -18,3 +18,6 @@ $small-only: "#{$screen} and (max-width: #{$small})";
 $medium-up: "#{$screen} and (min-width:#{$medium})";
 $medium-only: "#{$screen} and (min-width:#{$medium}) and (max-width:#{$large})";
 $large-up: "#{$screen} and (min-width:#{$large})";
+
+/* misc */
+$footer-height: 400px;

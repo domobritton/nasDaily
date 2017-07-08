@@ -1,5 +1,15 @@
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
   background-color: $gray-color;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 60%;
 }
 
 a {
@@ -8,15 +18,6 @@ a {
   cursor: pointer;
 }
 
-.main {
-  background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
-  background-color: $gray-color;
-  background-repeat: repeat;
-  background-position: center;
-  background-size: 1000px;
-  padding-bottom: 30px;
-
-  @media #{$small-only} {
-    background-size: 300px;
-  }
+.content {
+  min-height: calc(100vh - #{$footer-height});
 }

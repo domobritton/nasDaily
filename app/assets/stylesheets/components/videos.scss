@@ -1,6 +1,7 @@
 .nd-videos {
   margin: auto;
   width: 90%;
+  padding-bottom: 48px;
 
   .nd-slider {
     overflow: hidden;
@@ -56,5 +57,18 @@
     border: 3px solid white;
     border-radius: 5px;
     height: 160px;
+  }
+
+  @media #{$small-only} {
+    padding-bottom: 0;
+
+    .nd-slider-item {
+      padding-top: 12px;
+    }
+
+    .slider-header {
+      text-align: center;
+      display: block;
+    }
   }
 }

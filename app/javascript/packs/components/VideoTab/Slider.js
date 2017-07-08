@@ -31,8 +31,8 @@ export default class Slider extends React.Component {
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 5,
+      slidesToScroll: 5,
       nextArrow: <SliderArrow direction='next' />,
       prevArrow: <SliderArrow direction='prev' />,
       lazyLoad: 'ondemand',
@@ -63,6 +63,13 @@ export default class Slider extends React.Component {
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
+          }
+        },
+        {
+          breakpoint: 1550,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
           }
         }
       ]
