@@ -9,6 +9,7 @@ export const modalStyles = {
     padding: 0,
     maxWidth: '100%',
     maxHeight: '100%',
+    width: '100%',
     margin: 'auto',
     borderRadius: '10px',
     overflow: 'hidden',
