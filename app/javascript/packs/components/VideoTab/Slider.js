@@ -40,6 +40,7 @@ export default class Slider extends React.Component {
       vertical: false,
       verticalSwiping: false,
       draggable: false,
+      touchThreshold: 100,
       responsive: [
         {
           breakpoint: 670,
@@ -48,8 +49,6 @@ export default class Slider extends React.Component {
             slidesToScroll: 3,
             vertical: true,
             verticalSwiping: true,
-            draggable: true,
-            touchThreshold: 100,
           }
         },
         {
