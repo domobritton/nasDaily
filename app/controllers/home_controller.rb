@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     graph = Koala::Facebook::API.new(access_token)
 
     videos = graph.get_object(
-      'nasdaily/videos?fields=content_tags,title,embed_html,picture&limit=2000'
+      'nasdaily/videos?fields=content_tags,title,picture&limit=2000'
     )
 
     Rails.cache.write('all_videos', videos)
