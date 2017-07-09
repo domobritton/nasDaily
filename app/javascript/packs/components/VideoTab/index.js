@@ -50,7 +50,7 @@ export default class VideoTab extends React.Component {
         distance: 100,
         maxPatternLength: 32,
         minMatchCharLength: 1,
-        keys: ['title']
+        keys: ['title', 'content_tags']
       }
 
       const fuse = new Fuse(this.props.videos, sortOptions);
