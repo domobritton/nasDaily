@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170709020245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "videos", force: :cascade do |t|
+    t.string "facebook_id", null: false
+    t.string "title", null: false
+    t.string "description"
+    t.string "picture", null: false
+    t.string "full_picture", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facebook_id"], name: "index_videos_on_facebook_id"
+  end
 
 end
