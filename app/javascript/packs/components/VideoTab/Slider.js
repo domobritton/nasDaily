@@ -47,7 +47,7 @@ export default class Slider extends React.Component {
       touchThreshold: 200,
       responsive: [
         {
-          breakpoint: 670,
+          breakpoint: 768,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
@@ -56,21 +56,21 @@ export default class Slider extends React.Component {
           }
         },
         {
-          breakpoint: 950,
+          breakpoint: 1028,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
           }
         },
         {
-          breakpoint: 1228,
+          breakpoint: 1325,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
           }
         },
         {
-          breakpoint: 1550,
+          breakpoint: 1650,
           settings: {
             slidesToShow: 4,
             slidesToScroll: 4,
