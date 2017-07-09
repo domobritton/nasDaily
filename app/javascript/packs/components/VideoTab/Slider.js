@@ -13,8 +13,8 @@ export default class Slider extends React.Component {
     return videos.map(
       (v, idx) => (
         <span key={idx} className='nd-slider-item'>
-          <a onClick={() => onClick(v.id)}>
-            <img src={v.picture}/>
+          <a onClick={() => onClick(v.facebook_id)}>
+            <img src={v.full_picture}/>
           </a>
         </span>
       )

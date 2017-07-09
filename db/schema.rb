@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709020245) do
+ActiveRecord::Schema.define(version: 20170709035127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "content_tags", force: :cascade do |t|
+    t.string "facebook_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facebook_id"], name: "index_content_tags_on_facebook_id"
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string "facebook_id", null: false
-    t.string "title", null: false
+    t.string "title"
     t.string "description"
     t.string "picture", null: false
     t.string "full_picture", null: false
@@ -26,4 +34,15 @@ ActiveRecord::Schema.define(version: 20170709020245) do
     t.index ["facebook_id"], name: "index_videos_on_facebook_id"
   end
 
+  create_table "videos_content_tags", force: :cascade do |t|
+    t.bigint "video_id"
+    t.bigint "content_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_tag_id"], name: "index_videos_content_tags_on_content_tag_id"
+    t.index ["video_id"], name: "index_videos_content_tags_on_video_id"
+  end
+
+  add_foreign_key "videos_content_tags", "content_tags"
+  add_foreign_key "videos_content_tags", "videos"
 end
