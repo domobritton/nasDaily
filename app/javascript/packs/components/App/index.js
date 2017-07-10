@@ -4,22 +4,16 @@ import $ from 'jquery';
 import { Image, CloudinaryContext } from 'cloudinary-react';
 
 export default class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      videos: null
+      videos: props.videos
     }
   }
 
   componentWillMount() {
-    $.ajax({
-      url: '/api/cached_videos',
-      success: (data) => {
-        this.setState({ videos: data });
-      }
-    });
-
+    // refresh videos asynchronously
     $.ajax({
       url: '/api/videos',
       success: (data) => {

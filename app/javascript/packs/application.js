@@ -7,8 +7,11 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const node = document.getElementById('initial-videos-data');
+  const videos = JSON.parse(node.getAttribute('data'));
+
   ReactDOM.render(
-    <App currentTab='video' />,
+    <App currentTab='video' videos={videos} />,
     document.body.appendChild(document.createElement('div')),
   )
 })
