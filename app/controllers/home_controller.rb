@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @videos = Rails.cache.read('all_videos') || []
+    @videos = Rails.cache.read('all_videos') || [].to_json
   end
 
   def videos
