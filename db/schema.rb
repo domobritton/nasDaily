@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709035127) do
+ActiveRecord::Schema.define(version: 20170715185317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cached_video_collections", force: :cascade do |t|
+    t.json "videos_json", default: "[]"
+    t.integer "singleton_guard", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["singleton_guard"], name: "index_cached_video_collections_on_singleton_guard", unique: true
+  end
 
   create_table "content_tags", force: :cascade do |t|
     t.string "facebook_id", null: false

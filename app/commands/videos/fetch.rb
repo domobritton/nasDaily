@@ -5,19 +5,10 @@ class Videos::Fetch
     new.call
   end
 
-  def graph
-    return @graph if @graph
-
-    oauth = Koala::Facebook::OAuth.new(ENV.fetch('FB_APP_ID'), ENV.fetch('FB_APP_SECRET'))
-    access_token = oauth.get_app_access_token
-
-    @graph = Koala::Facebook::API.new(access_token)
-  end
-
   def call
     raw_videos = graph.get_object(
       'nasdaily/videos?fields=content_tags,description,title,picture&limit=2000'
-    )
+    ).reverse
 
     # preload all videos and content_tags
     Video.includes(:content_tags).all.to_a
@@ -44,10 +35,19 @@ class Videos::Fetch
       end
     end
 
-    Video.includes(:content_tags).all.order(:created_at)
+    Video.includes(:content_tags).order(created_at: :desc).all
   end
 
   private
+
+  def graph
+    return @graph if @graph
+
+    oauth = Koala::Facebook::OAuth.new(ENV.fetch('FB_APP_ID'), ENV.fetch('FB_APP_SECRET'))
+    access_token = oauth.get_app_access_token
+
+    @graph = Koala::Facebook::API.new(access_token)
+  end
 
   def create_video_if_horizontal!(raw_video)
     format = graph.get_object("#{raw_video['id']}?fields=format")['format']
