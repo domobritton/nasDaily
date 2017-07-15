@@ -1,8 +1,7 @@
 import React from 'react';
 import Fuse from 'fuse.js';
 import { debounce } from 'lodash';
-import Slider from './Slider';
-import Modal from './Modal';
+import Videos from './Videos';
 
 export default class VideoTab extends React.Component {
   constructor(props) {
@@ -16,11 +15,17 @@ export default class VideoTab extends React.Component {
     this.onInputChange = debounce(this.onInputChange, 200);
   }
 
+  componentDidMount() {
+    this.focusInput();
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       videos: nextProps.videos
     });
+  }
 
+  focusInput() {
     this.searchInput.focus();
   }
 
@@ -31,6 +36,7 @@ export default class VideoTab extends React.Component {
           ref={ (input) => { this.searchInput = input }}
           onChange={(e) => { e.persist(); this.onInputChange(e); }}
           placeholder='Search videos by...'
+          tabIndex='1'
         />
       </div>
     )
@@ -62,36 +68,13 @@ export default class VideoTab extends React.Component {
     }
   }
 
-  showVideo = (src) => {
-    this.setState({
-      videoId: src
-    });
-
-    setTimeout(() => FB.XFBML.parse());
-  }
-
-  closeModal = () => {
-    this.setState({
-      videoId: null
-    });
-  }
-
-
   get videos() {
     const { videos, videoId } = this.state;
 
     return (
       <div className='nd-videos'>
-        <span className='slider-header'>{ `Videos (${videos ? videos.length : '0'})` }</span>
-        <Slider
-          ref='slider'
-          videos={videos}
-          onClick={this.showVideo}
-        />
-        <Modal
-          onClose={this.closeModal}
-          videoId={videoId}
-        />
+        <div className='videos-header'>{ `Videos (${videos ? videos.length : '0'})` }</div>
+        <Videos videos={videos} />
       </div>
     )
   }

@@ -49,11 +49,6 @@ export default class App extends React.Component {
         </ul>
         <ul className='social-list'>
           <li>
-            <a target='_blank' href='https://www.instagram.com/nasdaily/'>
-              <Image publicId="instagram_icon_tymvgw.svg"/>
-            </a>
-          </li>
-          <li>
             <a target='_blank' href='https://www.facebook.com/nasdaily/'>
               <Image publicId="facebook_icon_rvai9d.svg"/>
             </a>
