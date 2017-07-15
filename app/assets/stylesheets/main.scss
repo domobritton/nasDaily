@@ -12,14 +12,11 @@ body {
   background-size: 60%;
 }
 
-a {
+button, a {
+  outline-color: $yellow-color;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-button, a {
-  outline-color: $yellow-color;
 }
 
 .content {

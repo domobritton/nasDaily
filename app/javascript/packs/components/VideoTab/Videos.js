@@ -43,7 +43,6 @@ export default class Videos extends React.Component {
     const { videos } = this.props;
     const { maxVideos } = this.state;
 
-    // console.log(videos.length, maxVideos, take(videos, maxVideos).length);
     return (
       take(videos, maxVideos).map((v, idx) => (
         <a
@@ -61,6 +60,9 @@ export default class Videos extends React.Component {
 
   get loadMoreButton() {
     const { maxVideos } = this.state;
+    const { videos } = this.props;
+
+    if (videos.length <= maxVideos) { return null }
 
     return (
       <button
