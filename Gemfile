@@ -15,6 +15,7 @@ gem 'webpacker'
 gem 'nokogiri'
 gem "autoprefixer-rails"
 gem 'pg', '~> 0.18'
+gem 'newrelic_rpm'
 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
