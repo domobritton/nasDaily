@@ -3,6 +3,7 @@
   height: 200px;
   align-items: center;
   justify-content: center;
+  margin-top: $header-height;
 
   input {
     height: 70px;
@@ -30,5 +31,9 @@
       width: 290px;
       font-size: 35px;
     }
+  }
+
+  @media #{$large-up} {
+    margin-top: 0;
   }
 }

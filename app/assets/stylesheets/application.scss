@@ -20,4 +20,9 @@
 @import 'components/header.scss';
 @import 'components/search.scss';
 @import 'components/videos.scss';
+@import 'components/app-tab.scss';
+@import 'components/shop.scss';
 @import 'main.scss';
+
+$hamburger-layer-color: #787878;
+@import "hamburgers";
