@@ -30,7 +30,7 @@ export default class Videos extends React.Component {
       videoId: src
     });
 
-    setTimeout(() => FB.XFBML.parse());
+    setTimeout(() => FB.XFBML.parse(document.querySelector('.react-modal')));
   }
 
   closeModal = () => {
@@ -48,6 +48,7 @@ export default class Videos extends React.Component {
         <a
           className='video-item'
           key={idx}
+          data-id={v.facebook_id}
           onClick={() => this.showVideo(v.facebook_id)}
           onKeyPress={(e) => { e.key === 'Enter' && this.showVideo(v.facebook_id) }}
           tabIndex={idx + 2}

@@ -14,14 +14,13 @@ export default class Modal extends React.Component {
         contentLabel="Modal"
         onRequestClose={onClose}
         style={modalStyles}
+        className='react-modal'
       >
         <div
           className="fb-video"
           data-href={ `https://www.facebook.com/facebook/videos/${videoId}/` }
-          data-width={1280}
           data-show-text={false}
           data-autoplay={false}
-          style={{ marginLeft: '-2px', maxWidth: 'calc(100% + 4px)' }}
         >
           <div className="fb-xfbml-parse-ignore">
             <blockquote cite={`https://www.facebook.com/facebook/videos/${videoId}/`}>

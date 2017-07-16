@@ -7,7 +7,7 @@ export const modalStyles = {
   },
   content: {
     padding: 0,
-    maxWidth: '1280px',
+    maxWidth: '1000px',
     maxHeight: '100%',
     width: '100%',
     margin: 'auto',
