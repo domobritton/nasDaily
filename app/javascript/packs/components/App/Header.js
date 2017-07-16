@@ -5,7 +5,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className='nd-header'>
-        <a>
+        <a href='/'>
           <Image publicId="NASDAILY._g21um6.png" className='logo'/>
         </a>
       </div>
