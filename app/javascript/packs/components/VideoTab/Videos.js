@@ -19,7 +19,11 @@ export default class Videos extends React.Component {
     });
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    const { resetMaxVideos } = nextProps;
+
+    if (!resetMaxVideos) { return null }
+
     this.setState({
       maxVideos: numVideosInRow() * 2
     });

@@ -10,6 +10,7 @@ export default class VideoTab extends React.Component {
     this.state = {
       videoId: null,
       videos: props.videos,
+      resetMaxVideos: true
     };
 
     this.onInputChange = debounce(this.onInputChange, 200);
@@ -21,7 +22,8 @@ export default class VideoTab extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      videos: nextProps.videos
+      videos: nextProps.videos,
+      resetMaxVideos: false
     });
   }
 
@@ -47,7 +49,8 @@ export default class VideoTab extends React.Component {
 
     if (value === '') {
       this.setState({
-        videos: this.props.videos
+        videos: this.props.videos,
+        resetMaxVideos: true
       });
     } else {
       const sortOptions = {
@@ -63,18 +66,23 @@ export default class VideoTab extends React.Component {
 
       this.refs.slider && this.refs.slider.slickGoTo(0);
       this.setState({
-        videos: fuse.search(value)
+        videos: fuse.search(value),
+        resetMaxVideos: true
       });
     }
   }
 
   get videos() {
-    const { videos, videoId } = this.state;
+    const {
+      videos,
+      videoId,
+      resetMaxVideos
+    } = this.state;
 
     return (
       <div className='nd-videos'>
         <div className='videos-header'>{ `Videos (${videos ? videos.length : '0'})` }</div>
-        <Videos videos={videos} />
+        <Videos videos={videos} resetMaxVideos={resetMaxVideos}/>
       </div>
     )
   }
