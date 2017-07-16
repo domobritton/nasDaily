@@ -1,17 +1,21 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
-// of the page.
-
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { CloudinaryContext } from 'cloudinary-react';
+import App from './components/App';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const node = document.getElementById('initial-videos-data');
-  const videos = JSON.parse(node.getAttribute('data'));
+  const WrappedApp = () => (
+    <BrowserRouter>
+      <CloudinaryContext cloudName="nasdaily">
+        <Route path="/" component={App} />
+      </CloudinaryContext>
+    </BrowserRouter>
+  );
 
   ReactDOM.render(
-    <App currentTab='video' videos={videos} />,
+    <WrappedApp />,
     document.body.appendChild(document.createElement('div')),
   )
-})
+});
+

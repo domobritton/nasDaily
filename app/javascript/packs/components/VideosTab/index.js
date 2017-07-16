@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 import { debounce } from 'lodash';
 import Videos from './Videos';
 
-export default class VideoTab extends React.Component {
+export default class VideosTab extends React.Component {
   constructor(props) {
     super(props);
 

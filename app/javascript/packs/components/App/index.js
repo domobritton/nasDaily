@@ -1,14 +1,20 @@
 import React from 'react';
-import VideoTab from '../VideoTab';
 import $ from 'jquery';
-import { Image, CloudinaryContext } from 'cloudinary-react';
+import { Image } from 'cloudinary-react';
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import VideosTab from '../VideosTab';
+import AppTab from '../AppTab';
+import ShopTab from '../ShopTab';
+import initialVideos from './initialVideos';
+import Footer from './Footer';
+import Header from './Header';
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      videos: props.videos
+      videos: initialVideos()
     }
   }
 
@@ -22,57 +28,22 @@ export default class App extends React.Component {
     });
   }
 
-  get header() {
-    return (
-      <div className='nd-header'>
-        <a>
-          <Image publicId="NASDAILY._g21um6.png" className='logo'/>
-        </a>
-      </div>
-    );
-  }
-
-  get footer() {
-    return (
-      <div className='nd-footer'>
-        <Image publicId="NASDAILY._g21um6.png" className='logo'/>
-        <ul className='navigation'>
-          <li>
-            <a>The App</a>
-          </li>
-          <li>
-            <a>Videos</a>
-          </li>
-          <li>
-            <a>Shop</a>
-          </li>
-        </ul>
-        <ul className='social-list'>
-          <li>
-            <a target='_blank' href='https://www.facebook.com/nasdaily/'>
-              <Image publicId="facebook_icon_rvai9d.svg"/>
-            </a>
-          </li>
-        </ul>
-        <div className='subfooter'>
-          Made in the WORLD. All content copyright @ 2017 NasDaily, Inc
-        </div>
-      </div>
-    );
-  }
-
   render() {
-    const { currentTab } = this.props;
-    const { videos } = this.state;
+    const { children, videos } = this.state;
 
     return (
-      <CloudinaryContext cloudName="nasdaily">
+      <div>
         <div className='content'>
-          { this.header }
-          { currentTab === 'video' ? <VideoTab videos={videos}/> : 'not implemented tab' }
+          <Header />
+          <Switch>
+            <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
+            <Route path="/app" component={AppTab}/>
+            <Route path="/shop" component={ShopTab}/>
+            <Redirect to={{pathname: '/videos'}}/>
+          </Switch>
         </div>
-        { this.footer }
-      </CloudinaryContext>
+        <Footer />
+      </div>
     );
   }
 }
