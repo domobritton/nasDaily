@@ -51,6 +51,10 @@
       text-align: center;
       display: block;
     }
+
+    .load-more-button {
+      margin-bottom: 24px;
+    }
   }
 
   @media #{$large-up} {
