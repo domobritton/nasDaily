@@ -46,14 +46,11 @@
 
   @media #{$small-only} {
     padding: 0;
+    margin-bottom: 24px;
 
     .videos-header {
       text-align: center;
       display: block;
-    }
-
-    .load-more-button {
-      margin-bottom: 24px;
     }
   }
 
