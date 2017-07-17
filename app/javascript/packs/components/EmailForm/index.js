@@ -14,12 +14,13 @@ export default class EmailForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
+    const { submitOptions } = this.props;
     const { inputValue } = this.state;
 
     $.ajax({
       method: 'POST',
       url: '/api/users',
-      data: { email: inputValue, early_interest_in_app: true },
+      data: Object.assign({ email: inputValue}, submitOptions),
     })
     .done(() => {
       this.setState({
@@ -64,7 +65,7 @@ export default class EmailForm extends React.Component {
     const { submittedForm } = this.state;
 
     return (
-      <div>
+      <div className='email-form'>
         { submittedForm ? null : <p>Submit email below</p> }
         <br />
         { submittedForm ? this.successMessage : this.form }

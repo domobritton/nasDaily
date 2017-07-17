@@ -5,7 +5,8 @@ export default class AppTab extends React.Component {
   render() {
     return (
       <div className='nd-app'>
-        <EmailForm />
+        <p>Nas Daily App!</p>
+        <EmailForm submitOptions={{ early_interest_in_app: true }}/>
       </div>
     );
   }
