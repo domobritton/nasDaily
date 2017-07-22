@@ -5,31 +5,63 @@
   justify-content: center;
   margin-top: $header-height;
 
+  .input-wrapper {
+    position: relative;
+    width: 500px;
+  }
+
+  .input-highlight {
+    font-size: $search-input-font-size;
+    user-select: none;
+    line-height: 70px;
+    border-top: 2px solid white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    height: 0;
+    color: transparent;
+  }
+
   input {
-    height: 70px;
+    font-family: $main-font;
+    height: 85px;
     line-height: 70px;
     background-color: transparent;
     border: none;
     outline: none;
-    color: $yellow-color;
-    font-size: 60px;
-    width: 500px;
+    color: white;
+    font-size: $search-input-font-size;
     caret-color: $yellow-color;
-    box-sizing: content-box;
+    width: 100%;
+    border-bottom: 2px solid gray;
 
     &::placeholder {
       color: $font-color-dark;
+    }
+
+    &:focus {
+      + .input-highlight {
+        border-top: 2px solid yellow;
+      }
     }
   }
 
   @media #{$small-only} {
     height: 150px;
 
+    .input-wrapper {
+      width: 290px;
+    }
+
     input {
       height: 50px;
       line-height: 50px;
-      width: 290px;
-      font-size: 35px;
+      font-size: $search-input-font-size-mobile;
+    }
+
+    .input-highlight {
+      font-size: $search-input-font-size-mobile;
     }
   }
 

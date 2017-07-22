@@ -6,7 +6,7 @@ $font-color-light: #787878;
 $font-color-dark: #4E4E4E;
 
 /* fonts: */
-$main-font: Arial, sans-serif;
+$main-font: "Helvetica Neue", Arial, sans-serif;
 
 /* viewport sizes */
 $small: 768px;
@@ -23,3 +23,8 @@ $x-large-up: "#{$screen} and (min-width:#{$large})";
 /* misc */
 $footer-height: 400px;
 $header-height: 70px;
+
+/* search */
+$search-input-font-size: 59px;
+$search-input-font-size-mobile: 35px;
+

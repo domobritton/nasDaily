@@ -10,14 +10,15 @@ export default class VideosTab extends React.Component {
     this.state = {
       videoId: null,
       videos: props.videos,
-      resetMaxVideos: true
+      resetMaxVideos: true,
+      inputValue: ''
     };
 
-    this.onInputChange = debounce(this.onInputChange, 200);
+    this.asyncOnChange = debounce(this.asyncOnChange, 200);
   }
 
   componentDidMount() {
-    this.focusInput();
+    this.searchInput.focus();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,26 +28,29 @@ export default class VideosTab extends React.Component {
     });
   }
 
-  focusInput() {
-    this.searchInput.focus();
-  }
-
   get search() {
+    const { inputValue } = this.state;
+
     return (
       <div className='nd-search'>
-        <input
-          ref={ (input) => { this.searchInput = input }}
-          onChange={(e) => { e.persist(); this.onInputChange(e); }}
-          placeholder='Search videos by...'
-          tabIndex='1'
-        />
+        <div className='input-wrapper'>
+          <input
+            ref={ (input) => { this.searchInput = input }}
+            onChange={(e) => { e.persist(); this.onInputChange(e); }}
+            placeholder='Search videos by...'
+            tabIndex='1'
+            value={inputValue}
+            spellCheck={false}
+          />
+          <span className='input-highlight'>
+            { inputValue.replace(/ /g, "\u00a0") }
+          </span>
+        </div>
       </div>
     )
   }
 
-  onInputChange = (e) => {
-    const { value } = e.target;
-
+  asyncOnChange(value) {
     if (value === '') {
       this.setState({
         videos: this.props.videos,
@@ -64,12 +68,21 @@ export default class VideosTab extends React.Component {
 
       const fuse = new Fuse(this.props.videos, sortOptions);
 
-      this.refs.slider && this.refs.slider.slickGoTo(0);
       this.setState({
         videos: fuse.search(value),
         resetMaxVideos: true
       });
     }
+  }
+
+  onInputChange = (e) => {
+    const { value } = e.target;
+
+    this.setState({
+      inputValue: value
+    });
+
+    this.asyncOnChange(value);
   }
 
   get videos() {

@@ -4,7 +4,7 @@ html {
 
 body {
   min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: $main-font;
   background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
   background-color: $gray-color;
   background-repeat: repeat;
