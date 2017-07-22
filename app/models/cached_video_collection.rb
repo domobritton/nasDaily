@@ -3,4 +3,6 @@ class CachedVideoCollection < ApplicationRecord
   # This ensures that only one CachedVideoCollection row is created
   validates_inclusion_of :singleton_guard, :in => [0]
   validates_uniqueness_of :singleton_guard
+
+  validates :videos_json, presence: true
 end

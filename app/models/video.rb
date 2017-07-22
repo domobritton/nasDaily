@@ -5,5 +5,8 @@ class Video < ApplicationRecord
             dependent: :destroy
 
   validates_uniqueness_of :facebook_id
-  validates :facebook_id, :full_picture, presence: true
+  validates :facebook_id,
+            :picture,
+            :full_picture,
+            presence: true
 end
