@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import { EMAIL_REGEX } from './constants';
 
 export default class EmailForm extends React.Component {
   constructor() {
@@ -11,11 +12,19 @@ export default class EmailForm extends React.Component {
     }
   }
 
+  validate() {
+    const { inputValue } = this.state;
+
+    return !!inputValue.match(EMAIL_REGEX);
+  }
+
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { submitOptions } = this.props;
     const { inputValue } = this.state;
+    if (!this.validate()) { return }
+
+    const { submitOptions } = this.props;
 
     $.ajax({
       method: 'POST',
@@ -50,9 +59,10 @@ export default class EmailForm extends React.Component {
       <form onSubmit={this.onSubmit}>
         <input
           value={inputValue}
-          type='email'
+          type='text'
           required
           onChange={this.onChange}
+          spellCheck={false}
         />
         <button type='submit' disabled={!inputValue}>
           Submit
