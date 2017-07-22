@@ -24,17 +24,18 @@
   }
 
   input {
-    font-family: $main-font;
     height: 85px;
+    width: 100%;
+    min-width: 100%;
     line-height: 70px;
     background-color: transparent;
-    border: none;
     outline: none;
     color: white;
     font-size: $search-input-font-size;
     caret-color: $yellow-color;
-    width: 100%;
+    border: none;
     border-bottom: 2px solid gray;
+    font-family: $main-font;
 
     &::placeholder {
       color: $font-color-dark;
