@@ -8,6 +8,7 @@ import ShopTab from '../ShopTab';
 import initialVideos from './initialVideos';
 import Footer from './Footer';
 import Header from './Header';
+import classnames from 'classnames';
 
 export default class App extends React.Component {
   constructor() {
@@ -30,10 +31,11 @@ export default class App extends React.Component {
 
   render() {
     const { children, videos } = this.state;
+    const { pathname } = window.location;
 
     return (
       <div>
-        <div className='content'>
+        <div className={ classnames('content', { 'app-tab': pathname === '/app' })}>
           <Header />
           <Switch>
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>

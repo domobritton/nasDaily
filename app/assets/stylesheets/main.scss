@@ -5,11 +5,7 @@ html {
 body {
   min-height: 100%;
   font-family: $main-font;
-  background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
   background-color: $gray-color;
-  background-repeat: repeat;
-  background-position: center;
-  background-size: 60%;
 }
 
 button, a {
@@ -21,4 +17,27 @@ button, a {
 
 .content {
   min-height: calc(100vh - #{$footer-height});
+  background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 60%;
+
+  &.app-tab {
+    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1500761670/Nas_shirt_bg_v13rv6.png);
+    background-repeat: no-repeat;
+    background-position: center 70;
+    background-size: cover;
+  }
+}
+
+@media #{$large-up} {
+  .content.app-tab {
+    background-position: 0 0;
+  }
+}
+
+@media #{$small-only} {
+  .content {
+    height: 100%;
+  }
 }
