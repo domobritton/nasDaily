@@ -45,7 +45,7 @@
 
     &:focus {
       + .input-highlight {
-        border-top: 2px solid yellow;
+        border-top: 2px solid $yellow-color;
       }
     }
   }

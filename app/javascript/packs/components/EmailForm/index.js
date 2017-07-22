@@ -63,9 +63,10 @@ export default class EmailForm extends React.Component {
           required
           onChange={this.onChange}
           spellCheck={false}
+          placeholder='Your email'
         />
         <button type='submit' disabled={!inputValue}>
-          Submit
+          Go
         </button>
       </form>
     )
@@ -76,8 +77,6 @@ export default class EmailForm extends React.Component {
 
     return (
       <div className='email-form'>
-        { submittedForm ? null : <p>Submit email below</p> }
-        <br />
         { submittedForm ? this.successMessage : this.form }
       </div>
     )
