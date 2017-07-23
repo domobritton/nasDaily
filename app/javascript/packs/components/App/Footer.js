@@ -26,8 +26,15 @@ export default class Footer extends React.Component {
         </ul>
         <ul className='social-list'>
           <li>
-            <a target='_blank' href='https://www.facebook.com/nasdaily/'>
-              <Image publicId="facebook_icon_rvai9d.svg"/>
+            <a
+              target='_blank'
+              href='https://www.facebook.com/nasdaily/'
+              className='social-icon-wrapper'
+            >
+              <Image
+                publicId="facebook_icon_v02_wk1t1d.svg"
+                className='social-icon'
+              />
             </a>
           </li>
         </ul>

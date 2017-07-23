@@ -27,10 +27,31 @@
   .social-list {
     display: flex;
     align-items: center;
+    margin-bottom: 24px;
+    margin-top: 24px;
 
     li {
-      padding: 30px;
+      background-color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: block;
+
+      &:hover {
+        background-color: $yellow-color;
+      }
     }
+  }
+
+  .social-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .social-icon {
+    height: 66%;
   }
 
   .subfooter {
