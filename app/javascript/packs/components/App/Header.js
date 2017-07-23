@@ -29,21 +29,21 @@ export default class Header extends React.Component {
       <div className='nd-menu'>
         <Link
           to='/app'
-          onClick={this.toggleMenu}
+          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
           className='nd-menu-item'
         >
           The App.
         </Link>
         <Link
           to='/videos'
-          onClick={this.toggleMenu}
+          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
           className='nd-menu-item'
         >
           Videos.
         </Link>
         <Link
           to='/shop'
-          onClick={this.toggleMenu}
+          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
           className='nd-menu-item'
         >
           Shop.

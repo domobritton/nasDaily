@@ -5,7 +5,12 @@ import classnames from 'classnames';
 
 export default class Footer extends React.Component {
   render() {
-    const { pathname } = window.location;
+    const {
+      location: {
+        pathname
+      },
+      scrollTo
+    } = window;
 
     return (
       <div className='nd-footer'>
@@ -15,6 +20,7 @@ export default class Footer extends React.Component {
             <Link
               to='/app'
               className={ classnames('navigation-link', {active: pathname === '/app'}) }
+              onClick={() => scrollTo(0,0)}
             >
               The App
             </Link>
@@ -23,6 +29,7 @@ export default class Footer extends React.Component {
             <Link
               to='/videos'
               className={ classnames('navigation-link', {active: pathname === '/videos'}) }
+              onClick={() => scrollTo(0,0)}
             >
               Videos
             </Link>
@@ -31,6 +38,7 @@ export default class Footer extends React.Component {
             <Link
               to='/shop'
               className={ classnames('navigation-link', {active: pathname === '/shop'}) }
+              onClick={() => scrollTo(0,0)}
             >
               Shop
             </Link>
