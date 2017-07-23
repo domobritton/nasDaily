@@ -24,6 +24,17 @@
     }
   }
 
+  .navigation-link {
+    &:hover, &:active, &:focus {
+      color: $yellow-color;
+    }
+
+    &.active {
+      color: $yellow-color;
+      cursor: default;
+    }
+  }
+
   .social-list {
     display: flex;
     align-items: center;

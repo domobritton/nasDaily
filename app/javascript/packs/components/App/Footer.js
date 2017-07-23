@@ -1,25 +1,37 @@
 import React from 'react';
 import { Image } from 'cloudinary-react';
 import { Link } from 'react-router-dom';
+import classnames from 'classnames';
 
 export default class Footer extends React.Component {
   render() {
+    const { pathname } = window.location;
+
     return (
       <div className='nd-footer'>
         <Image publicId="NASDAILY._g21um6.png" className='logo'/>
         <ul className='navigation'>
           <li>
-            <Link to='/app'>
+            <Link
+              to='/app'
+              className={ classnames('navigation-link', {active: pathname === '/app'}) }
+            >
               The App
             </Link>
           </li>
           <li>
-            <Link to='/videos'>
+            <Link
+              to='/videos'
+              className={ classnames('navigation-link', {active: pathname === '/videos'}) }
+            >
               Videos
             </Link>
           </li>
           <li>
-            <Link to='/shop'>
+            <Link
+              to='/shop'
+              className={ classnames('navigation-link', {active: pathname === '/shop'}) }
+            >
               Shop
             </Link>
           </li>
