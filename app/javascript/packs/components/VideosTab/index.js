@@ -17,10 +17,6 @@ export default class VideosTab extends React.Component {
     this.asyncOnChange = debounce(this.asyncOnChange, 200);
   }
 
-  componentDidMount() {
-    this.searchInput.focus();
-  }
-
   componentWillReceiveProps(nextProps) {
     this.setState({
       videos: nextProps.videos,
@@ -35,9 +31,8 @@ export default class VideosTab extends React.Component {
       <div className='nd-search'>
         <div className='input-wrapper'>
           <input
-            ref={ (input) => { this.searchInput = input }}
             onChange={(e) => { e.persist(); this.onInputChange(e); }}
-            placeholder='Search videos by...'
+            placeholder='Search videos...'
             tabIndex='1'
             value={inputValue}
             spellCheck={false}
