@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   margin-top: 48px;
+  min-height: 80px;
 
   form {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   input {
@@ -28,5 +31,16 @@
     background-color: $yellow-color;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .error-message {
+    padding-top: 12px;
+    color: $yellow-color;
+  }
+
+  @media #{$small-only} {
+    input {
+      width: 220px;
+    }
   }
 }

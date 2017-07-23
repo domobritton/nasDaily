@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { EMAIL_REGEX } from './constants';
+import {Collapse} from 'react-collapse';
 
 export default class EmailForm extends React.Component {
   constructor() {
@@ -8,23 +9,42 @@ export default class EmailForm extends React.Component {
 
     this.state = {
       inputValue: '',
-      submittedForm: false
+      submittedForm: false,
+      errorMessage: '',
+      showErrorMessage: false
     }
   }
 
-  validate() {
-    const { inputValue } = this.state;
+  validate(value) {
+    if (!value) {
+      return 'This field is required';
+    } else if (!value.match(EMAIL_REGEX)) {
+      return "This doesn't look like a valid email";
+    }
 
-    return !!inputValue.match(EMAIL_REGEX);
+    return null;
   }
 
   onSubmit = (e) => {
     e.preventDefault();
-
     const { inputValue } = this.state;
-    if (!this.validate()) { return }
+    const errorMessage = this.validate(inputValue);
 
+    if (errorMessage) {
+      this.setState({
+        errorMessage,
+        showErrorMessage: true
+      });
+
+      return;
+    }
+
+    this.submitForm();
+  }
+
+  submitForm() {
     const { submitOptions } = this.props;
+    const { inputValue } = this.state;
 
     $.ajax({
       method: 'POST',
@@ -36,11 +56,19 @@ export default class EmailForm extends React.Component {
         submittedForm: true
       });
     })
+    .fail(() => {
+      this.setState({
+        errorMessage: 'Oops, mind trying again?'
+      });
+    });
   }
 
   onChange = (e) => {
+    const { value } = e.target;
+
     this.setState({
-      inputValue: e.target.value
+      inputValue: value,
+      showErrorMessage: false
     });
   }
 
@@ -53,21 +81,35 @@ export default class EmailForm extends React.Component {
   }
 
   get form() {
-    const { inputValue } = this.state;
+    const {
+      inputValue,
+      errorMessage,
+      showErrorMessage
+    } = this.state;
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={inputValue}
-          type='text'
-          required
-          onChange={this.onChange}
-          spellCheck={false}
-          placeholder='Your email'
-        />
-        <button type='submit' disabled={!inputValue}>
-          Go
-        </button>
+        <div>
+          <input
+            value={inputValue}
+            type='text'
+            onChange={this.onChange}
+            spellCheck={false}
+            placeholder='Your email'
+            tabIndex={1}
+          />
+          <button
+            type='submit'
+            tabIndex={2}
+          >
+            Go
+          </button>
+        </div>
+        <Collapse isOpened={showErrorMessage}>
+          <div className='error-message'>
+            { errorMessage }
+          </div>
+        </Collapse>
       </form>
     )
   }

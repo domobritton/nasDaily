@@ -1,7 +1,7 @@
 .nd-shop {
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+  min-height: 580px;
   display: flex;
   color: white;
   flex-direction: column;
@@ -15,5 +15,9 @@
     font-size: 40px;
     line-height: 1;
     margin-bottom: 24px;
+  }
+
+  p {
+    line-height: 1.4;
   }
 }

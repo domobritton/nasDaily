@@ -15,6 +15,10 @@ button, a {
   cursor: pointer;
 }
 
+input {
+  outline-color: $yellow-color;
+}
+
 .content {
   min-height: calc(100vh - #{$footer-height});
   background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
