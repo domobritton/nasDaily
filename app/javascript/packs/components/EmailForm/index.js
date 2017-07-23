@@ -89,7 +89,7 @@ export default class EmailForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <div>
+        <div className='form-wrapper'>
           <input
             value={inputValue}
             type='text'

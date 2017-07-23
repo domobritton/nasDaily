@@ -38,6 +38,10 @@
     color: $yellow-color;
   }
 
+  .form-wrapper {
+    display: flex;
+  }
+
   @media #{$small-only} {
     input {
       width: 220px;
