@@ -14,7 +14,7 @@
     font-size: $search-input-font-size;
     user-select: none;
     line-height: 70px;
-    border-top: 2px solid white;
+    border-top: 3px solid white;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -36,7 +36,7 @@
     font-size: $search-input-font-size;
     caret-color: $yellow-color;
     border: none;
-    border-bottom: 2px solid gray;
+    border-bottom: 3px solid gray;
     font-family: $main-font;
 
     &::placeholder {
@@ -45,7 +45,7 @@
 
     &:focus {
       + .input-highlight {
-        border-top: 2px solid $yellow-color;
+        border-top: 3px solid $yellow-color;
       }
     }
   }

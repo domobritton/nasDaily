@@ -24,7 +24,7 @@ input {
   min-height: calc(100vh - #{$footer-height});
   background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1499019749/bg_pattern_pdqcu0.svg);
   background-repeat: repeat;
-  background-position: center;
+  background-position: top;
   background-size: 60%;
 
   &.shop-tab {
