@@ -29,25 +29,14 @@ export default class App extends React.Component {
     });
   }
 
-  get contentClassNames() {
-    const { pathname } = window.location;
-
-    return (
-      classnames(
-        'content',
-        { 'app-tab': pathname === '/app' },
-        { 'shop-tab': pathname === '/shop' },
-        { 'videos-tab': pathname === '/videos' },
-      )
-    );
-  }
-
   render() {
     const { children, videos } = this.state;
+    const { pathname } = window.location;
+    $('body').removeClass().addClass(pathname.replace('/', ''));
 
     return (
       <div>
-        <div className={ this.contentClassNames }>
+        <div className='content'>
           <Header />
           <Switch>
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
