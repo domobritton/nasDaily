@@ -69,7 +69,7 @@ export default class Videos extends React.Component {
   loadMore() {
     const { maxVideos } = this.state;
 
-    $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 750, 'swing');
+    $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 1000, 'swing');
 
     this.setState({
       maxVideos: maxVideos + numVideosInRow() * 2
