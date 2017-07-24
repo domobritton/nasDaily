@@ -2,6 +2,7 @@ import React from 'react';
 import { take } from 'lodash';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
+import $ from 'jquery';
 
 export default class Videos extends React.Component {
   constructor() {
@@ -11,6 +12,8 @@ export default class Videos extends React.Component {
       maxVideos: 8,
       videoId: null
     }
+
+    this.loadMore = this.loadMore.bind(this);
   }
 
   componentDidMount() {
@@ -63,6 +66,16 @@ export default class Videos extends React.Component {
     );
   }
 
+  loadMore() {
+    const { maxVideos } = this.state;
+
+    $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 750, 'swing');
+
+    this.setState({
+      maxVideos: maxVideos + numVideosInRow() * 2
+    });
+  }
+
   get loadMoreButton() {
     const { maxVideos } = this.state;
     const { videos } = this.props;
@@ -72,7 +85,8 @@ export default class Videos extends React.Component {
     return (
       <button
         className='load-more-button'
-        onClick={ () => this.setState({ maxVideos: maxVideos + numVideosInRow() }) }
+        id='load-more-button'
+        onClick={ this.loadMore }
       >
         Load more
       </button>
