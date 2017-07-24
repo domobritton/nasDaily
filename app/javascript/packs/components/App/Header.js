@@ -2,6 +2,7 @@ import React from 'react';
 import { Image } from 'cloudinary-react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 export default class Header extends React.Component {
   constructor() {
@@ -15,8 +16,16 @@ export default class Header extends React.Component {
   }
 
   toggleMenu() {
+    const { menuOpen } = this.state;
+
+    if (menuOpen) {
+      $('body').removeClass('with-overlay');
+    } else {
+      $('body').addClass('with-overlay');
+    }
+
     this.setState({
-      menuOpen: !this.state.menuOpen
+      menuOpen: !menuOpen
     });
   }
 

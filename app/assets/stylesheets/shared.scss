@@ -18,6 +18,10 @@ body {
     background-position: center 70;
     background-size: cover;
   }
+
+  &.with-overlay, &.ReactModal__Body--open {
+    overflow: hidden;
+  }
 }
 
 button, a {
@@ -43,6 +47,10 @@ input {
 }
 
 @media #{$small-only} {
+  body {
+    background-size: 75%;
+  }
+
   .content {
     height: 100%;
   }
