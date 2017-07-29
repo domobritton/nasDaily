@@ -3,6 +3,7 @@ import { Image } from 'cloudinary-react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
+import classnames from 'classnames';
 
 export default class Header extends React.Component {
   constructor() {
@@ -29,7 +30,36 @@ export default class Header extends React.Component {
     });
   }
 
-  get menu() {
+  get navigationMenu() {
+    const {
+      location: { pathname },
+    } = window;
+
+    return (
+      <div className='nd-navigation'>
+        <Link
+          to='/app'
+          className={ classnames('nd-navigation-item', {active: pathname === '/app'}) }
+        >
+          The App
+        </Link>
+        <Link
+          to='/videos'
+          className={ classnames('nd-navigation-item', {active: pathname === '/videos'}) }
+        >
+          Videos
+        </Link>
+        <Link
+          to='/shop'
+          className={ classnames('nd-navigation-item', {active: pathname === '/shop'}) }
+        >
+          Shop
+        </Link>
+      </div>
+    );
+  }
+
+  get hamburgerMenu() {
     const { menuOpen } = this.state;
 
     if (!menuOpen) { return null }
@@ -67,8 +97,15 @@ export default class Header extends React.Component {
     return (
       <div>
         <div className={ classNames('nd-header', {'open-menu': menuOpen})}>
-          <a href='/' tabIndex={1}>
-            <Image publicId="NASDAILY._g21um6.png" className='logo'/>
+          <a
+            href='/'
+            tabIndex={1}
+            className='logo-link'
+          >
+            <Image
+              publicId="NASDAILY._g21um6.png"
+              className='logo-image'
+            />
           </a>
           <button
             className={ classNames('hamburger, hamburger--3dxy', {'is-active': menuOpen}) }
@@ -79,7 +116,8 @@ export default class Header extends React.Component {
               <span className='hamburger-inner'/>
             </span>
           </button>
-          { this.menu }
+          { this.navigationMenu }
+          { this.hamburgerMenu }
         </div>
       </div>
     );
