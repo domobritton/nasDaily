@@ -10,6 +10,10 @@ body {
   max-height: 100%;
 }
 
+html {
+  overflow: auto;
+}
+
 body {
   font-family: $main-font;
   background-color: $gray-color;
