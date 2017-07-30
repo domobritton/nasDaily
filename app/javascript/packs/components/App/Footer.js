@@ -60,7 +60,7 @@ export default class Footer extends React.Component {
           </li>
         </ul>
         <div className='subfooter'>
-          Made in the WORLD. All content copyright @ 2017 NasDaily, Inc
+          Made around the world. All content copyright @ 2017 NasDaily, Inc
         </div>
       </div>
     );
