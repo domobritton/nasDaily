@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
 
     return (
       <div className='nd-footer'>
-        <Image publicId="NASDAILY._g21um6.png" className='logo'/>
+        <Image publicId="NASDAILY._white_w6czgq.svg" className='logo'/>
         <ul className='navigation'>
           <li>
             <Link
@@ -44,6 +44,7 @@ export default class Footer extends React.Component {
             </Link>
           </li>
         </ul>
+        <div className='social-list-header'>Only on:</div>
         <ul className='social-list'>
           <li>
             <a
