@@ -15,9 +15,11 @@
     width: 260px;
     border-radius: 5px 0 0 5px;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     padding-left: 8px;
     padding-right: 8px;
+    font-family: $main-font;
+    padding-top: 8px;
   }
 
   button {
@@ -26,10 +28,15 @@
     border: none;
     color: black;
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
     background-color: $yellow-color;
     padding-left: 24px;
     padding-right: 24px;
+    padding-top: 8px;
+  }
+
+  .success-message {
+    font-size: 30px;
   }
 
   .error-message {

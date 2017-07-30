@@ -74,8 +74,8 @@ export default class EmailForm extends React.Component {
 
   get successMessage() {
     return (
-      <div>
-        Thanks! You are awesome!
+      <div className='success-message'>
+        Thanks!
       </div>
     );
   }
