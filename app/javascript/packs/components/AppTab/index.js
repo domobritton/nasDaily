@@ -8,7 +8,7 @@ export default class AppTab extends React.Component {
         <h1>NASDAILY APP.</h1>
         <p>The best way to create and discover videos. Coming soon.</p>
         <EmailForm submitOptions={{ early_interest_in_app: true }}/>
-        <p>That's one minute, see you tomorrow!</p>
+        <p>That's 1 minute, see you tomorrow.</p>
       </div>
     );
   }
