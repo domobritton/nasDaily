@@ -2,6 +2,7 @@ import React from 'react';
 import { take } from 'lodash';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
+import initialNumRows from './initialNumRows';
 import $ from 'jquery';
 
 export default class Videos extends React.Component {
@@ -9,17 +10,11 @@ export default class Videos extends React.Component {
     super();
 
     this.state = {
-      maxVideos: 8,
+      maxNumRows: initialNumRows(),
       videoId: null
     }
 
     this.loadMore = this.loadMore.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      maxVideos: numVideosInRow() * 2
-    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,7 +23,7 @@ export default class Videos extends React.Component {
     if (!resetMaxVideos) { return null }
 
     this.setState({
-      maxVideos: numVideosInRow() * 2
+      maxNumRows: initialNumRows()
     });
   }
 
@@ -48,39 +43,68 @@ export default class Videos extends React.Component {
 
   get videos() {
     const { videos } = this.props;
-    const { maxVideos } = this.state;
+    const { maxNumRows } = this.state;
+    const videosPerRow = numVideosInRow();
+    const maxNumVideos = maxNumRows * videosPerRow;
+    const numVideos = videos.length < maxNumVideos ? videos.length : maxNumVideos;
+    const videosToShow = videos.slice(0, numVideos);
+
+    let chunks = [];
+    for (let i = 0; i < numVideos; i += videosPerRow) {
+      chunks.push(videosToShow.slice(i, i + videosPerRow));
+    }
 
     return (
-      take(videos, maxVideos).map((v, idx) => (
-        <a
-          className='video-item'
-          key={idx}
-          data-id={v.facebook_id}
-          onClick={() => this.showVideo(v.facebook_id)}
-          onKeyPress={(e) => { e.key === 'Enter' && this.showVideo(v.facebook_id) }}
-          tabIndex={idx + 2}
-        >
-          <img src={v.full_picture} />
-        </a>)
-      )
+      <div>
+        { chunks.map((row, rowIdx) => (
+          <div className="row" key={rowIdx}>
+            <div className="row__inner">
+              { row.map((v, itemIdx) => (
+                <div
+                  className="tile"
+                  key={itemIdx}
+                  onClick={() => this.showVideo(v.facebook_id)}
+                  onKeyPress={(e) => { e.key === 'Enter' && this.showVideo(v.facebook_id) }}
+                >
+                  <div className="tile__media">
+                    <img
+                      className="tile__img"
+                      data-id={v.facebook_id}
+                      src={v.full_picture}
+                      alt={v.title}
+                    />
+                  </div>
+                  <div
+                    className="tile__details"
+                    tabIndex='0'
+                  >
+                    <div className="tile__title" />
+                  </div>
+                </div>))
+              }
+            </div>
+          </div>
+          ))
+        }
+      </div>
     );
   }
 
   loadMore() {
-    const { maxVideos } = this.state;
+    const { maxNumRows } = this.state;
 
     $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 1000, 'swing');
 
     this.setState({
-      maxVideos: maxVideos + numVideosInRow() * 2
+      maxNumRows: maxNumRows + initialNumRows()
     });
   }
 
   get loadMoreButton() {
-    const { maxVideos } = this.state;
+    const { maxNumRows } = this.state;
     const { videos } = this.props;
 
-    if (videos.length <= maxVideos) { return null }
+    if (videos.length <= (maxNumRows * numVideosInRow())) { return null }
 
     return (
       <button
