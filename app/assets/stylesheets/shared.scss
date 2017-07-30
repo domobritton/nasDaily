@@ -31,7 +31,7 @@ body {
     background-size: cover;
   }
 
-  &.with-overlay, &.ReactModal__Body--open {
+  &.with-overlay {
     overflow: hidden;
   }
 }
