@@ -18,18 +18,6 @@
     margin-bottom: 12px;
   }
 
-  .video-item {
-    margin: 18px 6px;
-    min-height: 181px;
-    min-width: 317px;
-  }
-
-  img {
-    border-radius: 5px;
-    height: 175px;
-    width: 311.1;
-  }
-
   .load-more-button {
     display: flex;
     margin: auto;
@@ -51,23 +39,6 @@
     .videos-header {
       text-align: center;
       display: block;
-    }
-  }
-
-  @media #{$large-up} {
-    .video-item {
-      opacity: 0.8;
-      transition-duration: 100ms;
-      transition-property: all;
-
-      &:hover, &:focus, &:active {
-        opacity: 1;
-
-        img {
-          height: 181px;
-          width: 317.1;
-        }
-      }
     }
   }
 
@@ -110,6 +81,7 @@
     width: $tileWidth;
     height: $tileHeight;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   .tile:hover .tile__details {

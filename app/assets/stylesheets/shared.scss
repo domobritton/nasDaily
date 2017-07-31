@@ -52,6 +52,10 @@ input {
   min-height: calc(100vh - #{$footer-height});
 }
 
+.yellow-color {
+  color: $yellow-color;
+}
+
 @media #{$large-up} {
   body.shop-tab {
     background-position: 0 0;
