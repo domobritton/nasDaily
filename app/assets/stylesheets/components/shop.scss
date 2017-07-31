@@ -16,11 +16,13 @@
     font-size: 60px;
     line-height: 1;
     margin-bottom: 24px;
+    font-family: 'FatFrank', 'BebasNeueRegular', Arial, sans-serif;
   }
 
   p {
     line-height: 1.4;
     font-size: 24px;
+    margin-bottom: 24px;
   }
 
   @media #{$large-up} {

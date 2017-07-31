@@ -96,14 +96,14 @@ export default class EmailForm extends React.Component {
             onChange={this.onChange}
             spellCheck={false}
             placeholder='Your email'
-            tabIndex={1}
+            tabIndex={0}
           />
-          <button
-            type='submit'
-            tabIndex={2}
-          >
-            Go
-          </button>
+          <a
+            className='submit-arrow'
+            tabIndex={0}
+            onClick={this.onSubmit}
+            onKeyPress={(e) => { e.key === 'Enter' && this.onSubmit(e)}}
+          />
         </div>
         <Collapse isOpened={showErrorMessage}>
           <div className='error-message'>

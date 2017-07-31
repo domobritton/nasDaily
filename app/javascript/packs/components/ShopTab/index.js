@@ -7,7 +7,7 @@ export default class ShopTab extends React.Component {
       <div className='nd-shop'>
         <h1>The Life Shirt</h1>
         <br/>
-        <p>Coming your way soon.</p>
+        <p className='yellow-color'>Coming your way soon.</p>
         <EmailForm submitOptions={{ early_interest_in_tshirt: true }}/>
       </div>
     );

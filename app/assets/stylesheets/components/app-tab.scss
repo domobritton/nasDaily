@@ -14,12 +14,26 @@
   h1 {
     font-size: 60px;
     line-height: 1;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
+    font-family: 'FatFrank', 'BebasNeueRegular', Arial, sans-serif;
+
+    div {
+      display: inline;
+    }
   }
 
   p {
     line-height: 1.4;
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  @media #{$small-only} {
+    p {
+      text-align: center;
+      font-size: 20px;
+      width: 100%;
+    }
   }
 
   @media #{$large-up} {

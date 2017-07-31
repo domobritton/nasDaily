@@ -1,8 +1,9 @@
 .email-form {
   display: flex;
   flex-direction: column;
-  margin-top: 48px;
   min-height: 80px;
+  width: 100%;
+  margin-bottom: 12px;
 
   form {
     display: flex;
@@ -10,10 +11,28 @@
     align-items: flex-start;
   }
 
+  .form-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  .submit-arrow {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background-position: center;
+    right: 10px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501466052/arrow_email_hdo9hj.svg);
+  }
+
   input {
-    height: 44px;
-    width: 260px;
-    border-radius: 5px 0 0 5px;
+    height: 50px;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
     border: none;
     font-size: 24px;
     padding-left: 8px;
@@ -21,6 +40,7 @@
     font-family: $main-font;
     padding-top: 6px;
     padding-bottom: 0;
+    background-color: lighten(#313131, 15%);
   }
 
   button {
@@ -44,15 +64,5 @@
   .error-message {
     padding-top: 12px;
     color: $yellow-color;
-  }
-
-  .form-wrapper {
-    display: flex;
-  }
-
-  @media #{$small-only} {
-    input {
-      width: 220px;
-    }
   }
 }
