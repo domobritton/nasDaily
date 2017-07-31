@@ -27,6 +27,10 @@ export default class Videos extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.setState({});
+  }
+
   showVideo = (src) => {
     this.setState({
       videoId: src
