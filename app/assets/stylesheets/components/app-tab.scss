@@ -16,16 +16,16 @@
     line-height: 1;
     margin-bottom: 48px;
     font-family: 'FatFrank', 'BebasNeueRegular', Arial, sans-serif;
-
-    div {
-      display: inline;
-    }
   }
 
   p {
     line-height: 1.4;
     font-size: 22px;
     margin-bottom: 12px;
+
+    span {
+      display: block;
+    }
   }
 
   @media #{$small-only} {
@@ -38,5 +38,9 @@
 
   @media #{$large-up} {
     padding-top: 0px;
+
+    h1 span {
+      display: block;
+    }
   }
 }

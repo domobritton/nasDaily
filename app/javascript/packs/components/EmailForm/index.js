@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import { EMAIL_REGEX } from './constants';
 import {Collapse} from 'react-collapse';
+import classnames from 'classnames';
 
 export default class EmailForm extends React.Component {
   constructor() {
@@ -11,7 +12,8 @@ export default class EmailForm extends React.Component {
       inputValue: '',
       submittedForm: false,
       errorMessage: '',
-      showErrorMessage: false
+      showErrorMessage: false,
+      shouldShake: false
     }
   }
 
@@ -33,8 +35,11 @@ export default class EmailForm extends React.Component {
     if (errorMessage) {
       this.setState({
         errorMessage,
-        showErrorMessage: true
+        showErrorMessage: true,
+        shouldShake: true
       });
+
+      setTimeout(() => this.setState({shouldShake: false}), 500);
 
       return;
     }
@@ -84,12 +89,13 @@ export default class EmailForm extends React.Component {
     const {
       inputValue,
       errorMessage,
-      showErrorMessage
+      showErrorMessage,
+      shouldShake
     } = this.state;
 
     return (
       <form onSubmit={this.onSubmit}>
-        <div className='form-wrapper'>
+        <div className={classnames('form-wrapper', {shake: shouldShake})}>
           <input
             value={inputValue}
             type='text'
