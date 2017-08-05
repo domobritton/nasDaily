@@ -87,6 +87,22 @@ export default class Header extends React.Component {
         >
           Shop.
         </Link>
+
+        <div className='nd-menu-footer'>
+          <a
+            target='_blank'
+            href='https://www.facebook.com/nasdaily/'
+            className='social-icon-wrapper'
+          >
+            <Image
+              publicId="facebook_icon_v02_wk1t1d.svg"
+              className='social-icon'
+            />
+          </a>
+          <div className='subfooter'>
+            Made around the world. All content copyright @ 2017 NasDaily, Inc
+          </div>
+        </div>
       </div>
     );
   }

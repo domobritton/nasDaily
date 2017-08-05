@@ -54,7 +54,7 @@
       height: 56px;
       display: block;
 
-      &:hover {
+      &:hover, &:active, &:focus {
         background-color: $yellow-color;
       }
     }
