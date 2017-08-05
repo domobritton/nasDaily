@@ -32,8 +32,10 @@ export default class VideosTab extends React.Component {
         <div className='input-wrapper'>
           <input
             onChange={(e) => { e.persist(); this.onInputChange(e); }}
+            onKeyPress={(e) => { e.key === 'Enter' && this.searchInput.blur()}}
             placeholder='Search videos...'
             tabIndex='1'
+            ref={(ref) => (this.searchInput = ref)}
             value={inputValue}
             spellCheck={false}
           />
