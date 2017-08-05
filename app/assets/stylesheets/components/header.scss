@@ -68,7 +68,7 @@
     color: $font-color-light;
     margin: 12px;
 
-    &:hover, &:active, &:focus {
+    &.active, &:hover, &:active, &:focus {
       color: $yellow-color;
     }
   }

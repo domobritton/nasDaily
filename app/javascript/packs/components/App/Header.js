@@ -1,9 +1,8 @@
 import React from 'react';
 import { Image } from 'cloudinary-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
-import classnames from 'classnames';
 
 export default class Header extends React.Component {
   constructor() {
@@ -61,6 +60,7 @@ export default class Header extends React.Component {
 
   get hamburgerMenu() {
     const { menuOpen } = this.state;
+    const { location:  { pathname } } = window;
 
     if (!menuOpen) { return null }
 
@@ -69,21 +69,21 @@ export default class Header extends React.Component {
         <Link
           to='/app'
           onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className='nd-menu-item'
+          className={ classnames('nd-menu-item', {active: pathname === '/app'}) }
         >
           The App.
         </Link>
         <Link
           to='/videos'
           onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className='nd-menu-item'
+          className={ classnames('nd-menu-item', {active: pathname === '/videos'}) }
         >
           Videos.
         </Link>
         <Link
           to='/shop'
           onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className='nd-menu-item'
+          className={ classnames('nd-menu-item', {active: pathname === '/shop'}) }
         >
           Shop.
         </Link>
@@ -96,7 +96,7 @@ export default class Header extends React.Component {
 
     return (
       <div>
-        <div className={ classNames('nd-header', {'open-menu': menuOpen})}>
+        <div className={ classnames('nd-header', {'open-menu': menuOpen})}>
           <a
             href='/'
             tabIndex={1}
@@ -108,7 +108,7 @@ export default class Header extends React.Component {
             />
           </a>
           <button
-            className={ classNames('hamburger, hamburger--3dxy', {'is-active': menuOpen}) }
+            className={ classnames('hamburger, hamburger--3dxy', {'is-active': menuOpen}) }
             type='button'
             onClick={this.toggleMenu}
           >
