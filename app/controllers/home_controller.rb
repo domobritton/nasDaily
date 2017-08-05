@@ -1,5 +1,12 @@
 class HomeController < ApplicationController
   def index
-    @videos = CachedVideoCollection.first_or_create.videos_json
+    # this check exists if cached videos were busted and need to be repopulated
+    if CachedVideoCollection.none?
+      @videos = [].to_json
+
+      return
+    end
+
+    @videos = CachedVideoCollection.first.videos_json
   end
 end

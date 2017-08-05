@@ -4,14 +4,13 @@ class Api::ApplicationController < ActionController::API
   def videos
     cached_video_collection = CachedVideoCollection.first
 
-    if cached_video_collection.created_at > VIDEOS_CACHE_INTERVAL_MINUTES.minutes.ago
+    if cached_video_collection &&
+        cached_video_collection.created_at > VIDEOS_CACHE_INTERVAL_MINUTES.minutes.ago
       render json: cached_video_collection.videos_json
 
       return
     end
 
-    # if videos were last fetched more than VIDEOS_CACHE_INTERVAL_MINUTES ago,
-    # then refetch from facebook
     videos = Videos::Fetch.call
     json_videos = videos_to_json(videos)
 
