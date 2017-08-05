@@ -3,7 +3,8 @@ export const modalStyles = {
     zIndex: 3,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'rgba(25, 25, 25, 0.75)'
   },
   content: {
     padding: 0,
