@@ -25,6 +25,5 @@
 @import 'components/shop.scss';
 @import 'components/forms.scss';
 @import 'shared.scss';
-
-$hamburger-layer-color: #787878;
-@import "hamburgers";
+@import 'vendor/loaders.scss';
+@import 'vendor/hamburger-menu.scss';

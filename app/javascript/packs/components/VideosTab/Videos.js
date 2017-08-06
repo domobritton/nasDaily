@@ -1,9 +1,11 @@
 import React from 'react';
 import { take } from 'lodash';
+import $ from 'jquery';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
-import $ from 'jquery';
+import { isMobile, isTablet } from '../../util/viewportSize';
+import { Loader } from 'react-loaders';
 
 export default class Videos extends React.Component {
   constructor() {
@@ -11,10 +13,15 @@ export default class Videos extends React.Component {
 
     this.state = {
       maxNumRows: initialNumRows(),
-      videoId: null
+      videoId: null,
+      loading: false
     }
 
     this.loadMore = this.loadMore.bind(this);
+  }
+
+  componentWillUnmount() {
+    $(window).off('scroll');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,6 +36,23 @@ export default class Videos extends React.Component {
 
   componentDidMount() {
     this.setState({});
+
+    this.setupInfiniteScrollListener();
+  }
+
+  setupInfiniteScrollListener() {
+    if (!isMobile() && !isTablet()) { return }
+
+    $(window).scroll(() => {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+         this.setState({ loading: true });
+
+         setTimeout(() => {
+           this.loadMore({ animate: false });
+           this.setState({ loading: false });
+         }, 1000);
+       }
+    });
   }
 
   showVideo = (src) => {
@@ -43,6 +67,17 @@ export default class Videos extends React.Component {
     this.setState({
       videoId: null
     });
+  }
+
+  get loader() {
+    if (!isMobile() && !isTablet()) { return }
+
+    const { loading } = this.state;
+    if (!loading) { return }
+
+    return (
+      <Loader type="pacman" active />
+    );
   }
 
   get videos() {
@@ -90,14 +125,17 @@ export default class Videos extends React.Component {
           </div>
           ))
         }
+        { this.loader }
       </div>
     );
   }
 
-  loadMore() {
+  loadMore({ animate=true }) {
     const { maxNumRows } = this.state;
 
-    $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 750, 'swing');
+    if (animate) {
+      $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 750, 'swing');
+    }
 
     this.setState({
       maxNumRows: maxNumRows + initialNumRows()

@@ -1,6 +1,5 @@
 import $ from 'jquery';
-import { isMobile } from '../../util/viewportSize';
-import { isTablet } from '../../util/viewportSize';
+import { isMobile, isTablet } from '../../util/viewportSize';
 
 export default () => {
   if (isMobile()) { return 1 };

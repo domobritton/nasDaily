@@ -1,5 +1,5 @@
 .nd-footer {
-  display: flex;
+  display: none;
   background-color: $dark-gray-color;
   justify-content: center;
   flex-direction: column;
@@ -81,7 +81,7 @@
     border-top: 2px solid $gray-color;
   }
 
-  @media #{$small-only} {
-    display: none;
+  @media #{$large-up} {
+    display: flex;
   }
 }
