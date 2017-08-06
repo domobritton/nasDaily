@@ -1,5 +1,5 @@
 class Api::ApplicationController < ActionController::API
-  VIDEOS_CACHE_INTERVAL_MINUTES = 10
+  VIDEOS_CACHE_INTERVAL_MINUTES = 360
 
   def videos
     cached_video_collection = CachedVideoCollection.first
