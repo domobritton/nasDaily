@@ -52,6 +52,10 @@ export default class Videos extends React.Component {
         this.setState({ loading: true });
 
         setTimeout(() => {
+          ('html, body').animate({ scrollTop: $(document).height() })
+        }, 40);
+
+        setTimeout(() => {
           this.loadMore({ animate: false });
           this.setState({ loading: false });
         }, 1250);
