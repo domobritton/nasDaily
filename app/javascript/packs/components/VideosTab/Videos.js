@@ -44,13 +44,13 @@ export default class Videos extends React.Component {
     if (!isMobile() && !isTablet()) { return }
 
     $(window).scroll(() => {
-       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       if($(window).scrollTop() + $(window).height() >= $(document).height()) {
          this.setState({ loading: true });
 
          setTimeout(() => {
            this.loadMore({ animate: false });
            this.setState({ loading: false });
-         }, 1000);
+         }, 1250);
        }
     });
   }
