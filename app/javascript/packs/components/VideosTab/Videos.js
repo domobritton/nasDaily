@@ -48,7 +48,7 @@ export default class Videos extends React.Component {
       const { loading } = this.state;
       if (loading) { return }
 
-      if($(window).scrollTop() + $(window).height() >= $(document).height() - 20) {
+      if($(window).scrollTop() + $(window).height() >= $(document).height() - 30) {
         this.setState({ loading: true });
 
         setTimeout(() => {
