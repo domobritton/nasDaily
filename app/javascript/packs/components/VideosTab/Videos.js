@@ -44,7 +44,7 @@ export default class Videos extends React.Component {
     if (!isMobile() && !isTablet()) { return }
 
     $(window).scroll(() => {
-       if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+       if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
          this.setState({ loading: true });
 
          setTimeout(() => {
