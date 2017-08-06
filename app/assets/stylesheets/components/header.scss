@@ -66,7 +66,7 @@
   .nd-menu-item {
     font-size: 35px;
     color: $font-color-light;
-    margin: 12px;
+    margin: 10px;
 
     &.active, &:hover, &:active, &:focus {
       color: $yellow-color;
@@ -77,11 +77,8 @@
     position: absolute;
     bottom: 20px;
     color: $font-color-light;
-  }
-
-  .subfooter {
-    text-align: center;
-    margin: 0 5px;
+    left: 0;
+    right: 0;
   }
 
   .social-icon-wrapper {

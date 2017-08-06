@@ -99,9 +99,6 @@ export default class Header extends React.Component {
               className='social-icon'
             />
           </a>
-          <div className='subfooter'>
-            Made around the world. All content copyright @ 2017 NasDaily, Inc
-          </div>
         </div>
       </div>
     );
