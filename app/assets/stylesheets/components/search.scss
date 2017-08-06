@@ -3,7 +3,6 @@
   height: 200px;
   align-items: center;
   justify-content: center;
-  margin-top: $header-height;
 
   .input-wrapper {
     position: relative;
@@ -66,9 +65,5 @@
     .input-highlight {
       font-size: $search-input-font-size-mobile;
     }
-  }
-
-  @media #{$large-up} {
-    margin-top: 0;
   }
 }

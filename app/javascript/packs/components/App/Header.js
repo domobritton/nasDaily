@@ -132,6 +132,7 @@ export default class Header extends React.Component {
           { this.navigationMenu }
           { this.hamburgerMenu }
         </div>
+        <div className='header-filler'/>
       </div>
     );
   }
