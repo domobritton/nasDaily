@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   height: 50px;
-  transition: 250ms height;
+  transition: 150ms height;
   overflow: hidden;
 
   &.loader-hidden {
