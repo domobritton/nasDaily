@@ -1,8 +1,8 @@
 import React from 'react';
 import { take } from 'lodash';
 import $ from 'jquery';
-import { Loader } from 'react-loaders';
 import { debounce } from 'lodash';
+import { Preload } from 'react-preload';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
@@ -13,7 +13,7 @@ export default class Videos extends React.Component {
     super();
 
     this.state = {
-      maxNumRows: initialNumRows(),
+      maxNumRows: initialNumRows() * 2,
       videoId: null,
       loading: false
     }
@@ -31,7 +31,7 @@ export default class Videos extends React.Component {
     if (!resetMaxVideos) { return null }
 
     this.setState({
-      maxNumRows: initialNumRows()
+      maxNumRows: initialNumRows() * 2
     });
   }
 
@@ -45,20 +45,12 @@ export default class Videos extends React.Component {
     if (!isMobile() && !isTablet()) { return }
 
     $(window).scroll(() => {
-      const { loading } = this.state;
-      if (loading) { return }
+      if($(window).scrollTop() + $(window).height() >= $(document).height() - 1000) {
+        const { loading } = this.state;
+        if (loading) { return }
 
-      if($(window).scrollTop() + $(window).height() >= $(document).height() - 40) {
-        this.setState({ loading: true });
-
-        setTimeout(() => {
-          $('html, body').scrollTop($(document).height())
-        }, 50);
-
-        setTimeout(() => {
-          this.loadMore({ animate: false });
-          this.setState({ loading: false });
-        }, 1250);
+        this.setState({loading: true});
+        this.loadMore({ animate: false });
       }
     });
   }
@@ -77,14 +69,6 @@ export default class Videos extends React.Component {
     });
   }
 
-  get loader() {
-    const { loading } = this.state;
-
-    return (
-      <Loader type="pacman" active={loading} />
-    );
-  }
-
   get videos() {
     const { videos } = this.props;
     const { maxNumRows } = this.state;
@@ -101,36 +85,41 @@ export default class Videos extends React.Component {
     return (
       <div>
         { chunks.map((row, rowIdx) => (
-          <div className="row" key={rowIdx}>
-            <div className="row__inner">
-              { row.map((v, itemIdx) => (
-                <div
-                  className="tile"
-                  key={itemIdx}
-                  onClick={() => this.showVideo(v.facebook_id)}
-                  onKeyPress={(e) => { e.key === 'Enter' && this.showVideo(v.facebook_id) }}
-                >
-                  <div className="tile__media">
-                    <img
-                      className="tile__img"
-                      data-id={v.facebook_id}
-                      src={v.full_picture}
-                      alt={v.title}
-                    />
-                  </div>
+          <Preload
+            images={videosToShow.map((v) => v.full_picture)}
+            loadingIndicator={<span/>}
+            key={rowIdx}
+            onSuccess={() => this.setState({loading: false})}
+          >
+            <div className="row">
+              <div className="row__inner">
+                { row.map((v, itemIdx) => (
                   <div
-                    className="tile__details"
-                    tabIndex='0'
+                    className="tile"
+                    key={itemIdx}
+                    onClick={() => this.showVideo(v.facebook_id)}
+                    onKeyPress={(e) => { e.key === 'Enter' && this.showVideo(v.facebook_id) }}
                   >
-                    <div className="tile__title" />
-                  </div>
-                </div>))
-              }
+                    <div className="tile__media">
+                      <img
+                        className="tile__img"
+                        data-id={v.facebook_id}
+                        src={v.full_picture}
+                        alt={v.title}
+                      />
+                    </div>
+                    <div
+                      className="tile__details"
+                      tabIndex='0'
+                    >
+                      <div className="tile__title" />
+                    </div>
+                  </div>))
+                }
+              </div>
             </div>
-          </div>
-          ))
+          </Preload>))
         }
-        { this.loader }
       </div>
     );
   }
