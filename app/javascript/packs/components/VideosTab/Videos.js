@@ -1,11 +1,12 @@
 import React from 'react';
 import { take } from 'lodash';
 import $ from 'jquery';
+import { Loader } from 'react-loaders';
+import { debounce } from 'lodash';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
 import { isMobile, isTablet } from '../../util/viewportSize';
-import { Loader } from 'react-loaders';
 
 export default class Videos extends React.Component {
   constructor() {
@@ -44,14 +45,17 @@ export default class Videos extends React.Component {
     if (!isMobile() && !isTablet()) { return }
 
     $(window).scroll(() => {
-       if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
-         this.setState({ loading: true });
+      const { loading } = this.state;
+      if (loading) { return }
 
-         setTimeout(() => {
-           this.loadMore({ animate: false });
-           this.setState({ loading: false });
-         }, 1250);
-       }
+      if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+        this.setState({ loading: true });
+
+        setTimeout(() => {
+          this.loadMore({ animate: false });
+          this.setState({ loading: false });
+        }, 1250);
+      }
     });
   }
 
@@ -70,13 +74,10 @@ export default class Videos extends React.Component {
   }
 
   get loader() {
-    if (!isMobile() && !isTablet()) { return }
-
     const { loading } = this.state;
-    if (!loading) { return }
 
     return (
-      <Loader type="pacman" active />
+      <Loader type="pacman" active={loading} />
     );
   }
 

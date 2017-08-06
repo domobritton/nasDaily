@@ -3,4 +3,11 @@
 .loader {
   display: flex;
   justify-content: center;
+  height: 50px;
+  transition: 250ms height;
+  overflow: hidden;
+
+  &.loader-hidden {
+    height: 0 !important;
+  }
 }
