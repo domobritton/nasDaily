@@ -8,7 +8,7 @@
   padding-left: 12px;
   padding-right: 12px;
   max-width: 320px;
-  margin: auto;
+  margin-left: 15%;
 
   h1 {
     font-size: 60px;
@@ -38,6 +38,104 @@
 
     h1 span {
       display: block;
+    }
+  }
+}
+
+.app-tab-form-overlay {
+  position: absolute;
+  bottom: 0;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  background: rgba(31,31,31,0.8);
+  background: linear-gradient(180deg, rgba(31,31,31,0.8), rgba(31,31,31,1) 30%, rgba(31,31,31,1));
+
+  p {
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: white;
+  }
+}
+
+.app-tab-header-on-small {
+  margin-left: 12px;
+  display: flex;
+  height: 50%;
+  align-items: center;
+
+  h1 {
+    color: white;
+    font-size: 60px;
+    line-height: 1;
+    max-width: 40%;
+    line-height: 1.4;
+    font-family: 'FatFrank', 'BebasNeueRegular', Arial, sans-serif;
+  }
+
+  @media #{$medium-up} {
+    display: none;
+  }
+}
+
+body {
+  .background-filler {
+    &__hand {
+      display: none;
+    }
+  }
+}
+
+body.app {
+  overflow-x: hidden;
+
+  .background-filler {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    &__left {
+      width: 65%;
+      height: 100%;
+      background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1502157744/bg_shape_dark_bxsmdj.png);
+      background-repeat: no-repeat;
+      background-position: -100px center;
+      background-size: 750px;
+    }
+
+    &__right {
+      width: 35%;
+      height: 100%;
+      background-color: white;
+      background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1502157743/bg_shape_light_v6a7rz.png);
+      background-repeat: no-repeat;
+      background-position: -200px center;
+      background-size: 650px;
+    }
+
+    &__hand {
+      display: none;
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      display: block;
+    }
+  }
+
+  .background-filler {
+    &__hand {
+      @media #{$small-only} {
+        top: 17.5%;
+        bottom: 17.5%;
+        max-height: 65%;
+      }
     }
   }
 }

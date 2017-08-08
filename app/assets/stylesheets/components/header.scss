@@ -133,6 +133,12 @@ body.shop {
   }
 }
 
+body.app {
+  .nd-header:not(.open-menu) {
+    background-color: transparent;
+  }
+}
+
 .header-filler {
   height: $header-height;
   width: 100%;

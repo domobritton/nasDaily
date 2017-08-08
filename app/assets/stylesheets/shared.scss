@@ -34,6 +34,11 @@ body {
   &.with-overlay {
     overflow: hidden;
   }
+
+  &.app {
+    background-image: none;
+    background-color: #1F1F1F;
+  }
 }
 
 button, a {
@@ -50,10 +55,23 @@ input {
 
 .content {
   min-height: calc(100vh - #{$footer-height});
+  position: relative;
 }
 
 .yellow-color {
   color: $yellow-color;
+}
+
+.hide-on-small {
+  @media #{$small-only} {
+    display: none;
+  }
+}
+
+.show-on-small-only {
+  @media #{$medium-up} {
+    display: none;
+  }
 }
 
 .display-block {

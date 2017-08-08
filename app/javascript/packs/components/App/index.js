@@ -37,6 +37,15 @@ export default class App extends React.Component {
     return (
       <div>
         <div className='content'>
+          <div className='background-filler'>
+            <div className='background-filler__left'/>
+            <div className='background-filler__right'>
+              <Image
+                publicId="hand_phone_image_oerq6s.png"
+                className='background-filler__hand'
+              />
+            </div>
+          </div>
           <Header />
           <Switch>
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>

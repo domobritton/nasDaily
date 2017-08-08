@@ -90,10 +90,21 @@
 
   .success-message {
     font-size: 30px;
+    color: white;
   }
 
   .error-message {
     padding-top: 12px;
     color: $yellow-color;
+  }
+}
+
+.app-tab-form-overlay {
+  .form-wrapper {
+    width: 90%;
+  }
+
+  form {
+    align-items: center;
   }
 }
