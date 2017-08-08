@@ -45,7 +45,8 @@
 .app-tab-form-overlay {
   position: absolute;
   bottom: 0;
-  padding-top: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -58,7 +59,6 @@
     font-size: 20px;
     width: 100%;
     line-height: 1.5;
-    margin-bottom: 24px;
     color: white;
   }
 }
