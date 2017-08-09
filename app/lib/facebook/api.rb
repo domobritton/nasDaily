@@ -30,7 +30,7 @@ class Facebook::API
 
   def get_content_tag(tag_id)
     # rescue because facebook's content_tag ids don't work sometimes
-    graph.get_object("#{t}?fields=name") rescue nil
+    graph.get_object("#{tag_id}?fields=name") rescue nil
   end
 
   private
