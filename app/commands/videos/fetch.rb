@@ -60,6 +60,7 @@ class Videos::Fetch
       description: raw_video['description'],
       picture: raw_video['picture'],
       full_picture: full_picture,
+      originally_posted_at: raw_video['created_time']
     )
   end
 

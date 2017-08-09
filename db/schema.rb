@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170717010309) do
+ActiveRecord::Schema.define(version: 20170809032534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170717010309) do
     t.string "full_picture", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "originally_posted_at"
     t.index ["facebook_id"], name: "index_videos_on_facebook_id"
   end
 

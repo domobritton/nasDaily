@@ -47,6 +47,7 @@ class Api::ApplicationController < ActionController::API
         json.title v.title
         json.full_picture v.full_picture
         json.content_tags v.content_tags.map(&:name)
+        json.originally_posted_at v.originally_posted_at
       end
     end
   end

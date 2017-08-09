@@ -6,6 +6,7 @@ class Facebook::API
     description
     title
     picture
+    created_time
   }
 
   MAX_NUM_VIDEOS = 2000
