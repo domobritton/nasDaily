@@ -20,7 +20,7 @@
     position: absolute;
     right: 0;
     height: 100%;
-    width: 30px;
+    width: 24px;
     background-position: center;
     right: 10px;
     background-repeat: no-repeat;
@@ -29,18 +29,19 @@
   }
 
   input {
-    height: 50px;
+    height: 54px;
     width: 100%;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 24px;
+    border-radius: 7px;
+    font-size: 22px;
     padding-left: 8px;
     padding-right: 8px;
     font-family: $main-font;
     padding-top: 6px;
     padding-bottom: 0;
-    background-color: lighten(#313131, 15%);
+    background-color: #313131;
+    box-shadow: 0px 10px 30px rgb(20,20,20);
   }
 
   button {
@@ -89,7 +90,7 @@
   }
 
   .success-message {
-    font-size: 30px;
+    font-size: 22px;
     color: white;
   }
 

@@ -33,13 +33,14 @@
 
   .nd-navigation {
     display: none;
+    margin-right: 34px;
   }
 
   .nd-navigation-item {
     font-size: 26px;
     color: $font-color-light;
     text-transform: uppercase;
-    margin-right: 48px;
+    margin-left: 54px;
 
     &:hover, &:active, &:focus {
       color: $yellow-color;
@@ -136,6 +137,18 @@ body.shop {
 body.app {
   .nd-header:not(.open-menu) {
     background-color: transparent;
+  }
+
+  .nd-navigation-item {
+    color: #c2c2c2;
+
+    &:hover, &:active, &:focus {
+      color: #1f1f1f;
+    }
+
+    &.active {
+      color: #1f1f1f;
+    }
   }
 }
 
