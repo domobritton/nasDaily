@@ -17,5 +17,6 @@
 
 <body>
   <%= render partial: 'home/facebook_sdk' %>
-  <%= tag('div', id: 'initial-videos-data', data: @videos) %>
+  <%= tag('div', id: 'fb-app-id', data: ENV.fetch('FB_APP_ID'))%></div>
+  <%= tag('div', id: 'initial-videos-data', data: @videos)%></div>
 </body>

@@ -2772,6 +2772,10 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isequal@^4.0.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.keys@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
@@ -4006,6 +4010,12 @@ react-dom@^15.6.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
+
+react-facebook-player@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/react-facebook-player/-/react-facebook-player-0.0.10.tgz#246f629f96087100d2b25ae62f726e4692a04d09"
+  dependencies:
+    lodash.isequal "^4.0.0"
 
 react-loaders@^2.5.0:
   version "2.5.0"

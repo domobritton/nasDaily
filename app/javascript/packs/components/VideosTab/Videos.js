@@ -59,8 +59,6 @@ export default class Videos extends React.Component {
     this.setState({
       videoId: src
     });
-
-    setTimeout(() => FB.XFBML.parse(document.querySelector('.react-modal')));
   }
 
   closeModal = () => {
