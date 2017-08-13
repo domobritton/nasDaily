@@ -1,7 +1,7 @@
 .email-form {
   display: flex;
   flex-direction: column;
-  min-height: 80px;
+  min-height: 84px;
   width: 100%;
   margin-bottom: 12px;
 
@@ -34,7 +34,7 @@
     color: white;
     border: none;
     border-radius: 7px;
-    font-size: 22px;
+    font-size: $email-input-font-size;
     padding-left: 8px;
     padding-right: 8px;
     font-family: $main-font;
@@ -49,20 +49,6 @@
       background-color: white;
       color: black;
     }
-  }
-
-  button {
-    height: 44px;
-    border-radius: 0 5px 5px 0;
-    border: none;
-    color: black;
-    margin: 0;
-    font-size: 24px;
-    background-color: $yellow-color;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 6px;
-    padding-bottom: 0;
   }
 
   .shake {
@@ -97,13 +83,14 @@
   }
 
   .success-message {
-    font-size: 22px;
+    font-size: $email-input-font-size;
     color: white;
   }
 
   .error-message {
     padding-top: 12px;
     color: $yellow-color;
+    font-size: 18px;
   }
 }
 

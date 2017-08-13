@@ -18,12 +18,12 @@
     font-size: 60px;
     line-height: 1;
     margin-bottom: 48px;
-    font-family: 'FatFrank', 'BebasNeueRegular', Arial, sans-serif;
+    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
   }
 
   p {
     line-height: 1.4;
-    font-size: 22px;
+    font-size: $email-input-font-size;
     margin-bottom: 12px;
   }
 
@@ -83,7 +83,7 @@
     line-height: 1;
     max-width: 40%;
     line-height: 1.4;
-    font-family: 'FatFrank', 'BebasNeueRegular', Arial, sans-serif;
+    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
   }
 
   @media #{$medium-up} {

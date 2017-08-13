@@ -6,7 +6,7 @@ $font-color-light: #787878;
 $font-color-dark: #4E4E4E;
 
 /* fonts: */
-$main-font: 'BebasNeueRegular', Arial, sans-serif;
+$main-font: 'Teko', Arial, sans-serif;
 
 /* viewport sizes */
 
@@ -41,6 +41,7 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 /* misc */
 $footer-height: 400px;
 $header-height: 70px;
+$email-input-font-size: 24px;
 
 /* search */
 $search-input-font-size: 59px;
