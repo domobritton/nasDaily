@@ -153,6 +153,7 @@ export default class Videos extends React.Component {
 
   render() {
     const { videoId } = this.state;
+    const { videos } = this.props;
 
     return (
       <div>
@@ -161,6 +162,7 @@ export default class Videos extends React.Component {
           <Modal
             onClose={this.closeModal}
             videoId={videoId}
+            videos={videos}
           />
         </div>
         { this.loadMoreButton }
