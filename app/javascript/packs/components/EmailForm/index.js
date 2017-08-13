@@ -90,22 +90,28 @@ export default class EmailForm extends React.Component {
       inputValue,
       errorMessage,
       showErrorMessage,
-      shouldShake
+      shouldShake,
+      inputActive
     } = this.state;
 
     return (
       <form onSubmit={this.onSubmit}>
         <div className={classnames('form-wrapper', {shake: shouldShake})}>
           <input
+            className={classnames({active: inputActive})}
             value={inputValue}
             type='text'
             onChange={this.onChange}
             spellCheck={false}
             placeholder='Your email'
             tabIndex={0}
+            onFocus={() => this.setState({inputActive: true})}
+            onBlur={() => this.setState({inputActive: false})}
           />
           <a
             className='submit-arrow'
+            onFocus={() => this.setState({inputActive: true})}
+            onBlur={() => this.setState({inputActive: false})}
             tabIndex={0}
             onClick={this.onSubmit}
             onKeyPress={(e) => { e.key === 'Enter' && this.onSubmit(e)}}
