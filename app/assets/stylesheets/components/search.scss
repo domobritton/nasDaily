@@ -72,7 +72,8 @@
     height: 150px;
 
     .input-wrapper {
-      width: 290px;
+      width: 80%;
+      max-width: 400px;
     }
 
     input {
@@ -87,6 +88,7 @@
 
     .cancel-input {
       top: 25%;
+      right: -20px;
       font-size: 25px;
     }
   }
