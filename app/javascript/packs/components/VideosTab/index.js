@@ -2,6 +2,7 @@ import React from 'react';
 import Fuse from 'fuse.js';
 import { debounce } from 'lodash';
 import Videos from './Videos';
+import classnames from 'classnames';
 
 export default class VideosTab extends React.Component {
   constructor(props) {
@@ -41,6 +42,12 @@ export default class VideosTab extends React.Component {
           />
           <span className='input-highlight'>
             { inputValue.replace(/ /g, "\u00a0") }
+          </span>
+          <span
+            className={classnames('cancel-input', { active: inputValue.length > 0})}
+            onClick={() => this.setState({ inputValue: ''})}
+          >
+            x
           </span>
         </div>
       </div>

@@ -22,6 +22,25 @@
     color: transparent;
   }
 
+  .cancel-input {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 30%;
+    right: -30px;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: Arial;
+
+    &.active {
+      display: block;
+    }
+
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+
   input {
     height: 80px;
     width: 100%;
