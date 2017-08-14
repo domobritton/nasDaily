@@ -32,7 +32,7 @@ export default class VideosTab extends React.Component {
       <div className='nd-search'>
         <div className='input-wrapper'>
           <input
-            onChange={(e) => { e.persist(); this.onInputChange(e); }}
+            onChange={(e) => { e.persist(); this.onInputChange(e.target.value); }}
             onKeyPress={(e) => { e.key === 'Enter' && this.searchInput.blur()}}
             placeholder='Search videos...'
             tabIndex='1'
@@ -45,7 +45,7 @@ export default class VideosTab extends React.Component {
           </span>
           <span
             className={classnames('cancel-input', { active: inputValue.length > 0})}
-            onClick={() => this.setState({ inputValue: ''})}
+            onClick={() => this.onInputChange('')}
           >
             x
           </span>
@@ -79,9 +79,7 @@ export default class VideosTab extends React.Component {
     }
   }
 
-  onInputChange = (e) => {
-    const { value } = e.target;
-
+  onInputChange = (value) => {
     this.setState({
       inputValue: value
     });
