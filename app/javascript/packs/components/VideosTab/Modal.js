@@ -16,7 +16,6 @@ export default class Modal extends React.PureComponent {
   }
 
   onPlayerReady = (_id, player) => {
-    console.log('onReady')
     this.setState({
       player: player,
     });
@@ -26,7 +25,6 @@ export default class Modal extends React.PureComponent {
   }
 
   onPlayerFinished = () => {
-    console.log('onFinish');
     const { videos } = this.props;
     const { videoId, player } = this.state;
 

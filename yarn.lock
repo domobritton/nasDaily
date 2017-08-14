@@ -4011,9 +4011,9 @@ react-dom@^15.6.1:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-facebook-player@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/react-facebook-player/-/react-facebook-player-0.0.10.tgz#246f629f96087100d2b25ae62f726e4692a04d09"
+"react-facebook-player@https://github.com/petrgazarov/react-facebook-player#fix-events-listeners":
+  version "0.0.9"
+  resolved "https://github.com/petrgazarov/react-facebook-player#80f767f00f11a0280ea2cc3ecd8b8a1539ca3f3b"
   dependencies:
     lodash.isequal "^4.0.0"
 
