@@ -18,5 +18,6 @@ export const modalStyles = {
     bottom: 'auto',
     left: 0,
     right: 0,
+    outline: 'none',
   }
 }

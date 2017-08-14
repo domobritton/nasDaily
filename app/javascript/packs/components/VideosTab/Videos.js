@@ -3,6 +3,7 @@ import { take } from 'lodash';
 import $ from 'jquery';
 import { debounce } from 'lodash';
 import { Preload } from 'react-preload';
+import { Loader } from 'react-loaders';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
@@ -159,6 +160,7 @@ export default class Videos extends React.Component {
       <div>
         <div className='videos-rows'>
           { this.videos }
+          { videoId && <Loader type="pacman" active={true} className='nd-modal-loader'/> }
           <Modal
             onClose={this.closeModal}
             videoId={videoId}

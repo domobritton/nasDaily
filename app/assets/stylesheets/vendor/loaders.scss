@@ -1,13 +1,10 @@
 @import 'loaders.css/src/animations/pacman.scss';
 
-.loader {
-  display: flex;
-  justify-content: center;
+.nd-modal-loader {
   height: 50px;
-  transition: 150ms height;
-  overflow: hidden;
-
-  &.loader-hidden {
-    height: 0 !important;
-  }
+  position: fixed;
+  top: 48%;
+  bottom: 52%;
+  left: 50%;
+  right: 50%;
 }
