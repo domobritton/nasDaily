@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactSelect from 'react-select';
+// import 'react-select/dist/react-select.css';
 import EmailForm from '../EmailForm';
-import { genderOptions, countryOptions } from './constants';
+import { genderOptions, countryOptions, selectStyles } from './constants';
 
 export default class ShopTab extends React.Component {
   constructor() {
@@ -42,43 +44,27 @@ export default class ShopTab extends React.Component {
           <label>Your <span className='white-color'>Gender</span></label>
           <div className='input-group'>
             <div className='select-wrapper'>
-              <select
+              <ReactSelect
+                name="gender"
+                placeholder='Choose'
                 value={ gender }
-                onChange={({target: {value}}) => { this.setState({ gender: value })}}
-              >
-                {
-                  genderOptions.map((o, idx) => (
-                    <option
-                      key={idx}
-                      value={o[0]}
-                      disabled={ idx === 0 ? true : false }
-                    >
-                      {o[1]}
-                    </option>
-                  ))
-                }
-              </select>
+                onChange={(value) => { this.setState({ gender: value })}}
+                options={ genderOptions }
+                style={selectStyles}
+              />
             </div>
           </div>
           <label>Your <span className='white-color'>Country</span></label>
           <div className='input-group'>
             <div className='select-wrapper'>
-              <select
+              <ReactSelect
+                name="gender"
                 value={ country }
-                onChange={({target: {value}}) => { this.setState({ country: value })}}
-              >
-                {
-                  countryOptions.map((o, idx) => (
-                    <option
-                      key={idx}
-                      value={o[0]}
-                      disabled={ idx === 0 ? true : false }
-                    >
-                      {o[1]}
-                    </option>
-                  ))
-                }
-              </select>
+                placeholder='Choose'
+                onChange={(value) => { this.setState({ country: value })}}
+                options={ countryOptions }
+                style={selectStyles}
+              />
             </div>
           </div>
           <button
