@@ -1,30 +1,78 @@
 .nd-shop {
-  justify-content: center;
-  align-items: center;
+  background-color: gray;
   height: calc(100% - #{$header-height});
-  display: flex;
-  color: white;
-  flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
-  text-align: center;
-  max-width: 400px;
-  margin: auto;
 
-  h1 {
-    font-size: 60px;
+  .form {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 48px;
+  }
+
+  label {
+    font-size: 40px;
     line-height: 1;
     margin-bottom: 24px;
     font-family: 'FatFrank', 'Teko', Arial, sans-serif;
+    color: black;
+    text-transform: uppercase;
   }
 
-  p {
-    line-height: 1.4;
-    font-size: $email-input-font-size;
-    margin-bottom: 24px;
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
   }
 
-  @media #{$large-up} {
-    padding-top: 0px;
+  .input-wrapper {
+    border: 1px solid black;
+  }
+
+  input {
+    width: 200px;
+    height: 40px;
+    font-family: 'Teko', Arial, sans-serif;
+    font-size: 25px;
+    padding-left: 12px;
+    padding-top: 3px;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+
+  .select-wrapper {
+    border: 1px solid black;
+  }
+
+  select {
+    appearance: none;
+    width: 200px;
+    height: 40px;
+    font-family: 'Teko', Arial, sans-serif;
+    font-size: 25px;
+    padding-left: 12px;
+    padding-top: 3px;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+
+  .submit-button {
+    background-color: $yellow-color;
+    border: 1px solid black;
+    width: 200px;
+    height: 40px;
+    font-family: 'Teko', Arial, sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+
+  @media #{$small-only} {
+    .input-group {
+      flex-direction: row;
+    }
   }
 }
