@@ -5,6 +5,8 @@ import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import VideosTab from '../VideosTab';
 import AppTab from '../AppTab';
 import ShopTab from '../ShopTab';
+import PrivacyTab from '../PrivacyTab';
+import TermsTab from '../TermsTab';
 import initialVideos from './initialVideos';
 import Footer from './Footer';
 import Header from './Header';
@@ -51,6 +53,8 @@ export default class App extends React.Component {
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
             <Route path="/app" component={AppTab}/>
             <Route path="/shop" component={ShopTab}/>
+            <Route path="/privacy" component={PrivacyTab}/>
+            <Route path="/terms" component={TermsTab}/>
             <Redirect to={{pathname: '/videos'}}/>
           </Switch>
         </div>

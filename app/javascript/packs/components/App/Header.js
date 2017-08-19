@@ -89,6 +89,13 @@ export default class Header extends React.Component {
         </Link>
 
         <div className='nd-menu-footer'>
+          <Link
+            className='privacy-and-terms-link'
+            to='/privacy'
+            onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
+          >
+            Privacy Policy
+          </Link>
           <a
             target='_blank'
             href='https://www.facebook.com/nasdaily/'
@@ -99,6 +106,13 @@ export default class Header extends React.Component {
               className='social-icon'
             />
           </a>
+          <Link
+            className='privacy-and-terms-link'
+            to='/terms'
+            onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
+          >
+            Terms and Conditions
+          </Link>
         </div>
       </div>
     );

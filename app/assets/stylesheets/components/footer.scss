@@ -72,6 +72,7 @@
   }
 
   .subfooter {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +82,26 @@
     border-top: 2px solid $gray-color;
   }
 
+  .privacy-and-terms {
+    display: none;
+    position: absolute;
+    right: 12px;
+    justify-content: space-around;
+    min-width: 200px;
+    top: 38%;
+  }
+
+  .privacy-and-terms-link {
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+
   @media #{$large-up} {
     display: flex;
+
+    .privacy-and-terms {
+      display: flex;
+    }
   }
 }

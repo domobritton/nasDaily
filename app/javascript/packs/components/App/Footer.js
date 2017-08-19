@@ -61,6 +61,26 @@ export default class Footer extends React.Component {
         </ul>
         <div className='subfooter'>
           Made around the world. All content copyright @ 2017 NasDaily, Inc
+          <div className='privacy-and-terms'>
+            <div>
+              <Link
+                className='privacy-and-terms-link'
+                to='/privacy'
+                onClick={() => scrollTo(0,0)}
+              >
+                Privacy Policy
+              </Link>
+            </div>
+            <div>
+              <Link
+                className='privacy-and-terms-link'
+                to='/terms'
+                onClick={() => scrollTo(0,0)}
+              >
+                Terms and Conditions
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );

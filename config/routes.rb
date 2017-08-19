@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get 'videos', to: 'home#index'
   get 'app', to: 'home#index'
   get 'shop', to: 'home#index'
+  get 'privacy', to: 'home#index'
+  get 'terms', to: 'home#index'
 end
