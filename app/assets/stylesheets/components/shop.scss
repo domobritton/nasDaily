@@ -1,8 +1,60 @@
 .nd-shop {
-  background-color: gray;
+  background-color: $gray-color;
   height: calc(100% - #{$header-height});
   padding-left: 12px;
   padding-right: 12px;
+  /* overflow: auto; */
+  color: white;
+
+  .landing {
+    flex-direction: row;
+    display: flex;
+    align-items: stretch;
+    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: cover;
+  }
+
+  .landing--left,
+  .landing--right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    justify-content: start;
+    margin-top: 150px;
+  }
+
+  .form-section {
+    background-color: gray;
+  }
+
+  h2 {
+    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  p {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .shop-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 24px;
+  }
 
   .form {
     justify-content: center;
@@ -74,5 +126,10 @@
     .input-group {
       flex-direction: row;
     }
+  }
+
+  @media #{$large-up} {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

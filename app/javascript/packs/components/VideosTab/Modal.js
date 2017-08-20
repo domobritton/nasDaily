@@ -3,7 +3,7 @@ import ReactModal from 'react-modal';
 import FacebookPlayer from 'react-facebook-player';
 import { findIndex } from 'lodash';
 import { modalStyles } from './constants';
-import facebookAppId from './facebookAppId';
+import facebookAppId from '../../util/facebookAppId';
 import { Loader } from 'react-loaders';
 
 export default class Modal extends React.PureComponent {
