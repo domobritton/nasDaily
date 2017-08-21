@@ -1,8 +1,8 @@
 .nd-shop {
   background-color: $gray-color;
   height: calc(100% - #{$header-height});
-  padding-left: 12px;
-  padding-right: 12px;
+  /* padding-left: 12px; */
+  /* padding-right: 12px; */
   /* overflow: auto; */
   color: white;
 
@@ -10,20 +10,57 @@
     flex-direction: row;
     display: flex;
     align-items: stretch;
-    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
-    background-repeat: no-repeat;
-    background-position: center 40%;
-    background-size: cover;
+    /* transition: filter 500ms linear, opacity 500ms linear; */
+
+    &:hover .landing--left,
+    &:hover .landing--right {
+      opacity: 0.5;
+    }
   }
 
   .landing--left,
   .landing--right {
+    position: relative;
+    padding-top: 150px;
+    flex: 1;
+    opacity: 1;
+    transition: opacity 250ms linear;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  .landing--left-content,
+  .landing--right-content {
+    /* position: fixed; */
     display: flex;
     align-items: center;
     flex-direction: column;
-    flex: 1;
     justify-content: start;
-    margin-top: 150px;
+    z-index: 2;
+    opacity: 1;
+  }
+
+  .landing--left-background,
+  .landing--right-background {
+    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .landing--left-background {
+    background-position: 0 40%;
+  }
+
+  .landing--right-background {
+    background-position: 100% 40%;
   }
 
   .form-section {
@@ -41,6 +78,7 @@
     font-size: 30px;
     text-transform: uppercase;
     margin-bottom: 24px;
+    text-align: center;
   }
 
   .shop-cta {
@@ -123,8 +161,31 @@
   }
 
   @media #{$small-only} {
+    min-height: 800px;
+
     .input-group {
       flex-direction: row;
+    }
+
+    .landing {
+      flex-direction: column;
+      background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
+      background-repeat: no-repeat;
+      background-position: center 40%;
+      background-size: cover;
+    }
+
+    .landing--left {
+      padding-top: 50px;
+    }
+
+    .landing--right {
+      padding-top: 0;
+    }
+
+    .landing--left-background,
+    .landing--right-background {
+      background-image: none;
     }
   }
 

@@ -71,24 +71,30 @@ export default class ShopTab extends React.Component {
         >
           <div className='landing'>
             <div className='landing--left'>
-              <h2><span className='yellow-color'>The</span> Story</h2>
-              <p>Watch the video behind the story of Nas Daily T-shirts</p>
-              <a
-                className='shop-cta'
-                onClick={() => this.setState({openedModal: true})}
-              >
-                Watch now
-              </a>
+              <div className='landing--left-background'/>
+              <div className='landing--left-content'>
+                <h2><span className='yellow-color'>The</span> Story</h2>
+                <p>Watch the video behind the story of Nas Daily T-shirts</p>
+                <a
+                  className='shop-cta'
+                  onClick={() => this.setState({openedModal: true})}
+                >
+                  Watch now
+                </a>
+              </div>
             </div>
             <div className='landing--right'>
-              <h2><span className='yellow-color'>The</span> Tshirt</h2>
-              <p>Custom made for you</p>
-              <a
-                className='shop-cta'
-                onClick={() => this.slider.slickNext()}
-              >
-                Buy now
-              </a>
+              <div className='landing--right-background'/>
+              <div className='landing--right-content'>
+                <h2><span className='yellow-color'>The</span> Tshirt</h2>
+                <p>Custom made for you</p>
+                <a
+                  className='shop-cta'
+                  onClick={() => this.slider.slickNext()}
+                >
+                  Buy now
+                </a>
+              </div>
             </div>
           </div>
           <div className='form-section'>
@@ -97,6 +103,7 @@ export default class ShopTab extends React.Component {
               <div className='input-group'>
                 <div className='input-wrapper'>
                   <input
+                    name='age'
                     placeholder='Enter your age'
                     value={age}
                     onChange={this.setAge}
@@ -120,7 +127,7 @@ export default class ShopTab extends React.Component {
               <div className='input-group'>
                 <div className='select-wrapper'>
                   <ReactSelect
-                    name="gender"
+                    name="country"
                     value={ country }
                     placeholder='Choose'
                     onChange={(value) => { this.setState({ country: value })}}
