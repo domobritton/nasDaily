@@ -98,7 +98,7 @@ export default class ShopTab extends React.Component {
             </div>
           </div>
           <div className='form-section'>
-            <form className='form'>
+            <form className='form' action='http://apps02.saltycustoms.com/' method='get'>
               <label>Your <span className='white-color'>Age</span></label>
               <div className='input-group'>
                 <div className='input-wrapper'>
