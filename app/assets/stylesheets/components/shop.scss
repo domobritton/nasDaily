@@ -123,14 +123,15 @@
     border: 1px solid black;
   }
 
-  input {
+  .form-input {
     width: 200px;
     height: 40px;
     font-family: 'Teko', Arial, sans-serif;
     font-size: 25px;
     padding-left: 12px;
-    padding-top: 3px;
+    padding-top: 4px;
     border-radius: 0;
+    text-align: center;
     text-transform: uppercase;
   }
 
@@ -138,16 +139,15 @@
     border: 1px solid black;
   }
 
-  select {
-    appearance: none;
-    width: 200px;
-    height: 40px;
-    font-family: 'Teko', Arial, sans-serif;
-    font-size: 25px;
-    padding-left: 12px;
+  /* react-select overrides */
+  .Select-input > input {
+    max-height: 23px;
+    max-width: 140px;
+  }
+
+  .Select-value,
+  .Select-placeholder {
     padding-top: 3px;
-    border-radius: 0;
-    text-transform: uppercase;
   }
 
   .submit-button {

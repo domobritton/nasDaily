@@ -104,6 +104,7 @@ export default class ShopTab extends React.Component {
                 <div className='input-wrapper'>
                   <input
                     name='age'
+                    className='form-input'
                     placeholder='Enter your age'
                     value={age}
                     onChange={this.setAge}
