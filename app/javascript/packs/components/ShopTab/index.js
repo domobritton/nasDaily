@@ -3,6 +3,8 @@ import ReactSelect from 'react-select';
 import Slider from 'react-slick';
 import FacebookPlayer from 'react-facebook-player';
 import ReactModal from 'react-modal';
+import classnames from 'classnames';
+import { find } from 'lodash';
 import { modalStyles } from '../VideosTab/constants';
 import EmailForm from '../EmailForm';
 import facebookAppId from '../../util/facebookAppId';
@@ -16,10 +18,62 @@ export default class ShopTab extends React.Component {
       age: '',
       gender: '',
       country: '',
-      openedModal: false
+      openedModal: false,
+      errorMessage: '',
+      showErrorMessage: false,
+      shouldShake: false
     }
 
     this.setAge = this.setAge.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  validate() {
+    const { country, gender, age } = this.state;
+
+    if (!country || !gender || !age) {
+      return false;
+    }
+
+    return true;
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const formValid = this.validate();
+
+    if (!formValid) {
+      this.setState({
+        showErrorMessage: true,
+        shouldShake: true
+      });
+
+      setTimeout(() => this.setState({shouldShake: false}), 500);
+
+      return;
+    }
+
+    this.submitForm();
+  }
+
+  submitForm() {
+    const { country, gender, age } = this.state;
+    const selectedCountry = find(countryOptions, (el) => el['value'] === country);
+
+    let expectancyColumn;
+    if (gender === 'male') {
+      expectancyColumn = 'life_expectancy_male';
+    } else if (gender === 'female') {
+      expectancyColumn = 'life_expectancy_female';
+    } else {
+      expectancyColumn = 'life_expectancy';
+    }
+
+    const lifeExpectancy = selectedCountry[expectancyColumn];
+    const percent = Math.floor((Number(age) /  Number(lifeExpectancy)) * 100);
+
+    window.location.href = `http://apps02.saltycustoms.com?percent=${percent}`;
   }
 
   setAge(e) {
@@ -52,7 +106,7 @@ export default class ShopTab extends React.Component {
   }
 
   render() {
-    const { age, gender, country } = this.state;
+    const { age, gender, country, shouldShake } = this.state;
     const sliderSettings = {
       dots: false,
       infinite: false,
@@ -98,7 +152,10 @@ export default class ShopTab extends React.Component {
             </div>
           </div>
           <div className='form-section'>
-            <form className='form' action='http://apps02.saltycustoms.com/' method='get'>
+            <form
+              className='form'
+              onSubmit={this.onSubmit}
+            >
               <label>Your <span className='white-color'>Age</span></label>
               <div className='input-group'>
                 <div className='input-wrapper'>
@@ -118,7 +175,7 @@ export default class ShopTab extends React.Component {
                     name="gender"
                     placeholder='Choose'
                     value={ gender }
-                    onChange={(value) => { this.setState({ gender: value })}}
+                    onChange={(gender) => { this.setState({ gender: gender['value'] })}}
                     options={ genderOptions }
                     style={selectStyles}
                   />
@@ -131,7 +188,7 @@ export default class ShopTab extends React.Component {
                     name="country"
                     value={ country }
                     placeholder='Choose'
-                    onChange={(value) => { this.setState({ country: value })}}
+                    onChange={(country) => { this.setState({ country: country['value'] })}}
                     options={ countryOptions }
                     style={selectStyles}
                   />
@@ -139,7 +196,7 @@ export default class ShopTab extends React.Component {
               </div>
               <button
                 type='submit'
-                className='submit-button'
+                className={classnames('submit-button', { shake: shouldShake })}
               >
                 Calculate
               </button>
