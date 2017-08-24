@@ -73,7 +73,7 @@ export default class ShopTab extends React.Component {
     const lifeExpectancy = selectedCountry[expectancyColumn];
     const percent = Math.floor((Number(age) /  Number(lifeExpectancy)) * 100);
 
-    window.location.href = `http://apps02.saltycustoms.com?percent=${percent}`;
+    window.location.href = `http://apps02.saltycustoms.com?percentage=${percent}`;
   }
 
   setAge(e) {
