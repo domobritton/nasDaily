@@ -9,6 +9,7 @@ import { modalStyles } from '../VideosTab/constants';
 import EmailForm from '../EmailForm';
 import facebookAppId from '../../util/facebookAppId';
 import { genderOptions, countryOptions, selectStyles } from './constants';
+import {Collapse} from 'react-collapse';
 
 export default class ShopTab extends React.Component {
   constructor() {
@@ -73,11 +74,15 @@ export default class ShopTab extends React.Component {
     const lifeExpectancy = selectedCountry[expectancyColumn];
     const percent = Math.floor((Number(age) /  Number(lifeExpectancy)) * 100);
 
-    window.location.href = `http://apps02.saltycustoms.com?percentage=${percent}`;
+    window.location.href = `http://nastshirt.saltycustoms.com/?percentage=${percent}`;
   }
 
   setAge(e) {
     const { value } = e.target;
+
+    this.setState({
+      showErrorMessage: false
+    });
 
     if (isFinite(value) && Number(value) >= 0 && Number(value) < 126) {
       this.setState({ age: value });
@@ -106,7 +111,13 @@ export default class ShopTab extends React.Component {
   }
 
   render() {
-    const { age, gender, country, shouldShake } = this.state;
+    const {
+      age,
+      gender,
+      country,
+      shouldShake,
+      showErrorMessage
+    } = this.state;
     const sliderSettings = {
       dots: false,
       infinite: false,
@@ -167,6 +178,11 @@ export default class ShopTab extends React.Component {
                     onChange={this.setAge}
                   />
                 </div>
+                <Collapse isOpened={showErrorMessage && !age}>
+                  <div className='error-message'>
+                    This field is required
+                  </div>
+                </Collapse>
               </div>
               <label>Your <span className='white-color'>Gender</span></label>
               <div className='input-group'>
@@ -175,11 +191,16 @@ export default class ShopTab extends React.Component {
                     name="gender"
                     placeholder='Choose'
                     value={ gender }
-                    onChange={(gender) => { this.setState({ gender: gender['value'] })}}
+                    onChange={(gender) => { this.setState({ gender: gender ? gender['value'] : '', showErrorMessage: false })}}
                     options={ genderOptions }
                     style={selectStyles}
                   />
                 </div>
+                <Collapse isOpened={showErrorMessage && !gender}>
+                  <div className='error-message'>
+                    This field is required
+                  </div>
+                </Collapse>
               </div>
               <label>Your <span className='white-color'>Country</span></label>
               <div className='input-group'>
@@ -188,11 +209,16 @@ export default class ShopTab extends React.Component {
                     name="country"
                     value={ country }
                     placeholder='Choose'
-                    onChange={(country) => { this.setState({ country: country['value'] })}}
+                    onChange={(country) => { this.setState({ country: country ? country['value'] : '', showErrorMessage: false })}}
                     options={ countryOptions }
                     style={selectStyles}
                   />
                 </div>
+                <Collapse isOpened={showErrorMessage && !country}>
+                  <div className='error-message'>
+                    This field is required
+                  </div>
+                </Collapse>
               </div>
               <button
                 type='submit'

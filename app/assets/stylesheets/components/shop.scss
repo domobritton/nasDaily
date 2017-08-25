@@ -119,8 +119,10 @@
     margin-bottom: 48px;
   }
 
-  .input-wrapper {
+  .input-wrapper,
+  .select-wrapper {
     border: 1px solid black;
+    margin-bottom: 12px;
   }
 
   .form-input {
@@ -133,10 +135,6 @@
     border-radius: 0;
     text-align: center;
     text-transform: uppercase;
-  }
-
-  .select-wrapper {
-    border: 1px solid black;
   }
 
   /* react-select overrides */
@@ -162,10 +160,6 @@
 
   @media #{$small-only} {
     min-height: 800px;
-
-    .input-group {
-      flex-direction: row;
-    }
 
     .landing {
       flex-direction: column;
