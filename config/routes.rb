@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'shop', to: 'home#index'
   get 'privacy', to: 'home#index'
   get 'terms', to: 'home#index'
+  get 'eula', to: 'home#index'
 end
