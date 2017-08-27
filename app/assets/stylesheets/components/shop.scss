@@ -1,9 +1,6 @@
 .nd-shop {
   background-color: $gray-color;
   height: calc(100% - #{$header-height});
-  /* padding-left: 12px; */
-  /* padding-right: 12px; */
-  /* overflow: auto; */
   color: white;
 
   .landing {
@@ -33,7 +30,6 @@
 
   .landing--left-content,
   .landing--right-content {
-    /* position: fixed; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -64,7 +60,7 @@
   }
 
   .form-section {
-    background-color: gray;
+    background-color: #717171;
     overflow-y: scroll;
   }
 
@@ -133,32 +129,62 @@
 
   .form-input {
     width: 200px;
-    height: 40px;
+    height: $shop-form-input-height;
     font-family: 'Teko', Arial, sans-serif;
     font-size: 25px;
     padding-left: 12px;
     padding-top: 4px;
+    border: none;
     border-radius: 0;
     text-align: center;
     text-transform: uppercase;
+    background-color: #717171;
+
+    &:focus, &:active {
+      background-color: white;
+    }
+
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: black;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: black;
+      opacity:  1;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: black;
+      opacity:  1;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: black;
+    }
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: black;
+    }
   }
 
   /* react-select overrides */
   .Select-input > input {
-    max-height: 23px;
+    max-height: 27px;
     max-width: 140px;
   }
 
   .Select-value,
+  .Select-placeholder,
+  .Select-value-label {
+    color: black !important;
+  }
+
+  .Select-value,
   .Select-placeholder {
-    padding-top: 3px;
+    padding-top: 5px;
   }
 
   .submit-button {
     background-color: $yellow-color;
     border: 1px solid black;
     width: 200px;
-    height: 40px;
+    height: $shop-form-input-height;
     font-family: 'Teko', Arial, sans-serif;
     font-size: 25px;
     text-transform: uppercase;

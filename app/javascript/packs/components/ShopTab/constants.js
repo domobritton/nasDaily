@@ -17,9 +17,12 @@ export const genderOptions = [
 
 export const selectStyles = {
   width: '200px',
-  height: '40px',
+  height: '45px',
   fontSize: '25px',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  backgroundColor: '#717171',
+  border: 'none',
+  borderRadius: 0
 };
 
 export const countryOptions = [
