@@ -1,3 +1,14 @@
+export const sliderSettings = {
+  dots: false,
+  infinite: false,
+  speed: 1000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  draggable: true
+};
+
+
 export const genderOptions = [
   { value: "male", label: "Male"},
   { value: "female", label: "Female"},
