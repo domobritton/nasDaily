@@ -65,6 +65,7 @@
 
   .form-section {
     background-color: gray;
+    overflow-y: scroll;
   }
 
   h2 {
@@ -102,6 +103,7 @@
     flex-direction: column;
     text-align: center;
     padding-top: 48px;
+    padding-bottom: 36px;
   }
 
   .error-message {
@@ -171,6 +173,7 @@
       background-repeat: no-repeat;
       background-position: center 40%;
       background-size: cover;
+      height: 100%;
     }
 
     .landing--left {
