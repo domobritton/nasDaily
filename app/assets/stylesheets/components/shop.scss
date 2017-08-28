@@ -2,6 +2,8 @@
   background-color: $gray-color;
   height: calc(100% - #{$header-height});
   color: white;
+  min-height: 700px;
+
 
   .landing {
     flex-direction: row;
@@ -239,8 +241,6 @@
   }
 
   @media #{$small-only} {
-    min-height: 800px;
-
     .landing {
       flex-direction: column;
       background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
