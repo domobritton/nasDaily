@@ -133,6 +133,7 @@
     font-family: 'Teko', Arial, sans-serif;
     font-size: 25px;
     padding-left: 12px;
+    padding-right: 12px;
     padding-top: 4px;
     border: none;
     border-radius: 0;
@@ -177,7 +178,52 @@
 
   .Select-value,
   .Select-placeholder {
-    padding-top: 5px;
+    padding-top: 6px;
+  }
+
+  .Select-option {
+    height: $shop-form-input-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.is-selected,
+    &.is-focused {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .Select.is-open .Select-control {
+    background-color: white !important;
+  }
+
+  .Select-menu, .Select-menu-outer {
+    border-radius: 0 !important;
+  }
+
+  .Select-arrow {
+    border-color: black transparent transparent;
+
+    &:hover {
+      border-color: white transparent transparent;
+    }
+  }
+
+  .is-open .Select-arrow,
+  .Select-arrow-zone:hover > .Select-arrow {
+    border-top-color: white;
+  }
+
+  .is-open > .Select-control .Select-arrow {
+    border-color: transparent transparent black;
+  }
+
+  .Select-clear-zone {
+    color: black;
+
+    &:hover {
+      color: #D0021B;
+    }
   }
 
   .submit-button {
@@ -188,6 +234,7 @@
     font-family: 'Teko', Arial, sans-serif;
     font-size: 25px;
     text-transform: uppercase;
+    padding-top: 5px;
   }
 
   @media #{$small-only} {
