@@ -50,7 +50,7 @@ export default class ShopTab extends React.Component {
       this.setState({showFormOnMobile: true});
 
       setTimeout(() =>
-        $('html, body').animate({ scrollTop: $('form').position().top }, 600, 'swing')
+        $('html, body').animate({ scrollTop: $('form').position().top - 70 }, 600, 'swing')
       );
     } else {
       this.sliderElement.slickNext()

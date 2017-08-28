@@ -11,7 +11,7 @@
 
     &:hover .landing--left,
     &:hover .landing--right {
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 
@@ -186,6 +186,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 25px;
 
     &.is-selected,
     &.is-focused {
@@ -261,10 +262,21 @@
     .landing--right-background {
       background-image: none;
     }
+
+    form {
+      padding-bottom: 100px !important;
+    }
   }
 
   @media #{$large-up} {
     padding-left: 0;
     padding-right: 0;
+
+    .landing {
+      &:hover .landing--left,
+      &:hover .landing--right {
+        opacity: 0.5;
+      }
+    }
   }
 }
