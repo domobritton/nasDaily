@@ -41,6 +41,10 @@
     margin-left: 12%;
   }
 
+  @media #{$medium-up} {
+    min-height: 700px; // for firefox
+  }
+
   @media #{$large-up} {
     padding-top: 0px;
 
