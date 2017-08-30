@@ -4,7 +4,6 @@
   color: white;
   min-height: 700px;
 
-
   .landing {
     flex-direction: row;
     display: flex;
@@ -51,6 +50,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    transition: filter 250ms linear;
   }
 
   .landing--left-background {
@@ -137,6 +137,7 @@
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 4px;
+    padding-bottom: 0;
     border: none;
     border-radius: 0;
     text-align: center;
@@ -276,6 +277,16 @@
       &:hover .landing--left,
       &:hover .landing--right {
         opacity: 0.5;
+      }
+    }
+
+    .landing--left,
+    .landing--right {
+      &:hover {
+        .landing--right-background,
+        .landing--left-background {
+          filter: blur(8px);
+        }
       }
     }
   }
