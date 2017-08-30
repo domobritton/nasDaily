@@ -145,6 +145,18 @@ body.shop {
   }
 }
 
+body.videos {
+  .nd-navigation-item {
+    &.active {
+      color: white;
+    }
+
+    &:hover, &:active, &:focus {
+      color: white;
+    }
+  }
+}
+
 body.app {
   .nd-header:not(.open-menu) {
     background-color: transparent;
