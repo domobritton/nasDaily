@@ -100,7 +100,7 @@
   }
 
   /* hack for mobile phones in horizontal mode */
-  @media only screen and (max-height: 500px) {
+  @media only screen and (max-height: 450px) {
     h1 {
       font-size: 40px;
       max-width: none;
