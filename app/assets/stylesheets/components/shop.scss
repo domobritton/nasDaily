@@ -1,5 +1,4 @@
 .nd-shop {
-  background-color: $gray-color;
   height: calc(100% - #{$header-height});
   color: white;
   min-height: 700px;
@@ -8,6 +7,7 @@
     flex-direction: row;
     display: flex;
     align-items: stretch;
+    height: 100%;
     /* transition: filter 500ms linear, opacity 500ms linear; */
 
     &:hover .landing--left,
@@ -19,7 +19,6 @@
   .landing--left,
   .landing--right {
     position: relative;
-    padding-top: 150px;
     flex: 1;
     opacity: 1;
     transition: opacity 250ms linear;
@@ -27,6 +26,14 @@
     &:hover {
       opacity: 1 !important;
     }
+  }
+
+  .landing--right {
+    padding-top: 10px;
+  }
+
+  .landing--left {
+    padding-top: 150px;
   }
 
   .landing--left-content,
@@ -59,11 +66,6 @@
 
   .landing--right-background {
     background-position: 100% 40%;
-  }
-
-  .form-section {
-    background-color: #717171;
-    overflow-y: scroll;
   }
 
   h2 {
