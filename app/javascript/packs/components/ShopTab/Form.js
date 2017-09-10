@@ -60,6 +60,7 @@ export default class ShopTabForm extends React.PureComponent {
   }
 
   submitForm() {
+    const { setPercent } = this.props;
     const {
       country,
       gender,
@@ -85,7 +86,7 @@ export default class ShopTabForm extends React.PureComponent {
     const lifeExpectancy = selectedCountry[expectancyColumn];
     const percent = Math.floor((age / Number(lifeExpectancy)) * 100);
 
-    window.location.href = `http://nastshirt.saltycustoms.com/?percentage=${percent}`;
+    setPercent(percent);
   }
 
   get birthDayOptions() {

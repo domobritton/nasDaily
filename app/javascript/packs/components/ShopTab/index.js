@@ -14,8 +14,19 @@ export default class ShopTab extends React.Component {
 
     this.state = {
       openedModal: false,
-      showForm: false
+      showForm: false,
+      percent: null,
     }
+
+    this.navigateToSaltyGuys = this.navigateToSaltyGuys.bind(this);
+  }
+
+  navigateToSaltyGuys() {
+    const { percent } = this.state;
+
+    if (!percent) { return }
+
+    window.location.href = `http://nastshirt.saltycustoms.com/?percentage=${percent}`;
   }
 
   get videoModal() {
@@ -79,6 +90,47 @@ export default class ShopTab extends React.Component {
     );
   }
 
+  get doneWithLife() {
+    const { percent } = this.state;
+
+    if (!percent) { return }
+
+    return (
+      <label>
+        You are {percent}% done with life
+      </label>
+    );
+  }
+
+  get facebookShareButton() {
+    return (
+      <a
+        className='facebook-share-button'
+        onClick={this.shareOnFacebook}
+      >
+        Share on Facebook
+      </a>
+    );
+  }
+
+  get buyButton() {
+    return (
+      <a
+        className='buy-button'
+        onClick={this.navigateToSaltyGuys}
+      >
+        Buy T-shirt
+      </a>
+    );
+  }
+
+  shareOnFacebook() {
+    FB.ui({
+      method: 'share',
+      href: 'https://www.nasdaily.com',
+    }, function(response){ console.log(response)});
+  }
+
   get tshirtWithProgressBar() {
     return (
       <div className='landing--right-content'>
@@ -87,6 +139,9 @@ export default class ShopTab extends React.Component {
         >
           The <span className='yellow-color'>Result</span>
         </label>
+        { this.doneWithLife }
+        { this.facebookShareButton }
+        { this.buyButton }
       </div>
     );
   }
@@ -100,7 +155,7 @@ export default class ShopTab extends React.Component {
       >
         <div className='landing--left'>
           <div className='landing--left-background'/>
-          { showForm ? <ShopTabForm /> : this.storyLandingSection }
+          { showForm ? <ShopTabForm setPercent={(p) => this.setState({percent: p})}/> : this.storyLandingSection }
         </div>
         <div className='landing--right'>
           <div className='landing--right-background'/>
