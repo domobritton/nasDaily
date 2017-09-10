@@ -3,10 +3,14 @@ import {Collapse} from 'react-collapse';
 import ReactSelect from 'react-select';
 import classnames from 'classnames';
 import { find } from 'lodash';
+import moment from 'moment';
 import {
   genderOptions,
   countryOptions,
-  selectStyles
+  birthMonthOptions,
+  birthYearOptions,
+  selectStyles,
+  smallSelectStyles
 } from './constants';
 
 export default class ShopTabForm extends React.PureComponent {
@@ -14,21 +18,22 @@ export default class ShopTabForm extends React.PureComponent {
     super();
 
     this.state = {
-      age: '',
+      birthDay: '',
+      birthMonth: '',
+      birthYear: '',
       gender: '',
       country: '',
       showErrorMessage: false,
       shouldShake: false
     }
 
-    this.setAge = this.setAge.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   validate() {
-    const { country, gender, age } = this.state;
+    const { country, gender, birthDay, birthMonth, birthYear } = this.state;
 
-    if (!country || !gender || !age) {
+    if (!country || !gender || !birthDay || !birthMonth || !birthYear) {
       return false;
     }
 
@@ -58,7 +63,9 @@ export default class ShopTabForm extends React.PureComponent {
     const {
       country,
       gender,
-      age
+      birthDay,
+      birthMonth,
+      birthYear
     } = this.state;
     const selectedCountry = find(countryOptions, (el) => el['value'] === country);
 
@@ -71,29 +78,48 @@ export default class ShopTabForm extends React.PureComponent {
       expectancyColumn = 'life_expectancy';
     }
 
+    const birthDate = moment(`${birthYear}-${birthMonth}-${birthDay}`, 'YYYY-MM-DD');
+    const now = moment();
+    const age = now.diff(birthDate, 'years', true);
+
     const lifeExpectancy = selectedCountry[expectancyColumn];
-    const percent = Math.floor((Number(age) /  Number(lifeExpectancy)) * 100);
+    const percent = Math.floor((age / Number(lifeExpectancy)) * 100);
 
     window.location.href = `http://nastshirt.saltycustoms.com/?percentage=${percent}`;
   }
 
-  setAge(e) {
-    const { value } = e.target;
+  get birthDayOptions() {
+    const allDays = [];
 
-    this.setState({
-      showErrorMessage: false
-    });
-
-    if (isFinite(value) && Number(value) >= 0 && Number(value) < 126) {
-      this.setState({ age: value });
+    for (let i = 1; i < 32; i++) {
+      allDays.push({ value: String(i), label: String(i) });
     }
+
+    return allDays;
+  }
+
+  validateBirthDate() {
+    const {
+      birthDay,
+      birthMonth,
+      birthYear,
+    } = this.state;
+
+    if (!birthDay || !birthMonth || !birthYear) { return true };
+
+    const date = moment(`${birthYear}-${birthMonth}-${birthDay}`, 'YYYY-MM-DD');
+
+    console.log(date, date.isValid());
+    return !date.isValid();
   }
 
   render() {
     const {
       country,
       gender,
-      age,
+      birthDay,
+      birthMonth,
+      birthYear,
       showErrorMessage,
       shouldShake
     } = this.state;
@@ -103,24 +129,53 @@ export default class ShopTabForm extends React.PureComponent {
         className='form'
         onSubmit={this.onSubmit}
       >
-        <label>Your <span className='white-color'>Age</span></label>
+        <label>Your <span className='yellow-color'>Age</span></label>
         <div className='input-group'>
-          <div className='input-wrapper'>
-            <input
-              name='age'
-              className='form-input'
-              placeholder='Enter your age'
-              value={age}
-              onChange={this.setAge}
-            />
+          <div className='multi-select-wrapper'>
+            <div className='select-wrapper'>
+              <ReactSelect
+                name="birthDay"
+                placeholder='Day'
+                value={birthDay}
+                onChange={(day) => {
+                  this.setState({ birthDay: day ? day['value'] : '', showErrorMessage: false });
+                }}
+                options={ this.birthDayOptions }
+                style={smallSelectStyles}
+              />
+            </div>
+            <div className='select-wrapper'>
+              <ReactSelect
+                name="birthMonth"
+                placeholder='Month'
+                value={birthMonth}
+                onChange={(month) => {
+                  this.setState({ birthMonth: month ? month['value'] : '', showErrorMessage: false });
+                }}
+                options={ birthMonthOptions }
+                style={smallSelectStyles}
+              />
+            </div>
+            <div className='select-wrapper'>
+              <ReactSelect
+                name="birthYear"
+                placeholder='Year'
+                value={birthYear}
+                onChange={(year) => {
+                  this.setState({ birthYear: year ? year['value'] : '', showErrorMessage: false });
+                }}
+                options={ birthYearOptions }
+                style={smallSelectStyles}
+              />
+            </div>
           </div>
-          <Collapse isOpened={showErrorMessage && !age}>
+          <Collapse isOpened={showErrorMessage && this.validateBirthDate()}>
             <div className='error-message'>
-              This field is required
+              This doesn't look like a valid date
             </div>
           </Collapse>
         </div>
-        <label>Your <span className='white-color'>Gender</span></label>
+        <label>Your <span className='yellow-color'>Gender</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
             <ReactSelect
@@ -138,7 +193,7 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
           </Collapse>
         </div>
-        <label>Your <span className='white-color'>Country</span></label>
+        <label>Your <span className='yellow-color'>Country</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
             <ReactSelect

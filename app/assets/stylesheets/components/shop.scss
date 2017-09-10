@@ -28,11 +28,8 @@
     }
   }
 
-  .landing--right {
-    padding-top: 10px;
-  }
-
-  .landing--left {
+  .story-header,
+  .tshirt-header {
     padding-top: 150px;
   }
 
@@ -115,7 +112,6 @@
     line-height: 1;
     margin-bottom: 24px;
     font-family: 'FatFrank', 'Teko', Arial, sans-serif;
-    color: black;
     text-transform: uppercase;
   }
 
@@ -125,10 +121,18 @@
     margin-bottom: 48px;
   }
 
-  .input-wrapper,
+  .multi-select-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .multi-select-wrapper,
+  .select-wrapper {
+    margin-bottom: 12px;
+  }
+
   .select-wrapper {
     border: 1px solid black;
-    margin-bottom: 12px;
   }
 
   .form-input {
@@ -253,11 +257,11 @@
       height: 100%;
     }
 
-    .landing--left {
+    .story-header {
       padding-top: 50px;
     }
 
-    .landing--right {
+    .tshirt-header {
       padding-top: 0;
     }
 
@@ -275,10 +279,28 @@
     padding-left: 0;
     padding-right: 0;
 
+    .multi-select-wrapper {
+      justify-content: space-between;
+      flex-direction: row;
+      width: 500px;
+    }
+
     .landing {
       &:hover .landing--left,
       &:hover .landing--right {
         opacity: 0.5;
+      }
+
+      &.show-form {
+        .landing--right-background,
+        .landing--left-background {
+          filter: blur(8px);
+        }
+
+        .landing--left,
+        .landing--right {
+          opacity: 1 !important;
+        }
       }
     }
 
