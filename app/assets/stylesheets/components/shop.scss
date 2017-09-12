@@ -142,7 +142,7 @@
 
   .multi-select-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .multi-select-wrapper,
@@ -291,6 +291,22 @@
 
     form {
       padding-bottom: 100px !important;
+    }
+
+    .multi-select-wrapper {
+      justify-content: space-around;
+
+      .Select-control {
+        width: 110px !important;
+      }
+    }
+
+    .input-group {
+      margin-bottom: 32px;
+
+      &.multi {
+        width: 100%;
+      }
     }
   }
 

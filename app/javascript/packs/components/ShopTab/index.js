@@ -15,10 +15,12 @@ export default class ShopTab extends React.Component {
     this.state = {
       openedModal: false,
       showForm: false,
+      showTshirtOnMobile: false,
       percent: null,
     }
 
     this.navigateToSaltyGuys = this.navigateToSaltyGuys.bind(this);
+    this.onBuyButtonClick = this.onBuyButtonClick.bind(this);
   }
 
   navigateToSaltyGuys() {
@@ -113,11 +115,19 @@ export default class ShopTab extends React.Component {
     );
   }
 
+  onBuyButtonClick() {
+    if (this.formElement) {
+      this.formElement.onSubmit({preventDefault: () => {}}) && this.navigateToSaltyGuys();
+    } else {
+      this.navigateToSaltyGuys();
+    }
+  }
+
   get buyButton() {
     return (
       <a
         className='buy-button'
-        onClick={this.navigateToSaltyGuys}
+        onClick={this.onBuyButtonClick}
       >
         Buy T-shirt
       </a>
@@ -146,8 +156,29 @@ export default class ShopTab extends React.Component {
     );
   }
 
+  get form() {
+    return (
+      <ShopTabForm
+        ref={(r) => this.formElement = r}
+        setPercent={(p) => this.setState({percent: p, showTshirtOnMobile: true})}
+      />
+    );
+  }
+
+  get leftSection() {
+    const { showForm, showTshirtOnMobile } = this.state;
+
+    if (isMobile() && showTshirtOnMobile) {
+      return this.tshirtWithProgressBar;
+    } else if (showForm) {
+      return this.form;
+    }
+
+    return this.storyLandingSection;
+  }
+
   get mainSection() {
-    const { showForm } = this.state;
+    const { showForm, showTshirtOnMobile } = this.state;
 
     return (
       <div
@@ -155,9 +186,9 @@ export default class ShopTab extends React.Component {
       >
         <div className='landing--left'>
           <div className='landing--left-background'/>
-          { showForm ? <ShopTabForm setPercent={(p) => this.setState({percent: p})}/> : this.storyLandingSection }
+          { this.leftSection }
         </div>
-        <div className='landing--right'>
+        <div className={classnames('landing--right', { hide: isMobile() && showForm })}>
           <div className='landing--right-background'/>
           { showForm ? this.tshirtWithProgressBar : this.tshirtLandingSection }
         </div>

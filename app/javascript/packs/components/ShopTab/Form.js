@@ -4,6 +4,7 @@ import ReactSelect from 'react-select';
 import classnames from 'classnames';
 import { find } from 'lodash';
 import moment from 'moment';
+import { isMobile } from '../../util/viewportSize';
 import {
   genderOptions,
   countryOptions,
@@ -37,6 +38,8 @@ export default class ShopTabForm extends React.PureComponent {
       return false;
     }
 
+    if (this.validateBirthDate()) { return false }
+
     return true;
   }
 
@@ -53,7 +56,7 @@ export default class ShopTabForm extends React.PureComponent {
 
       setTimeout(() => this.setState({shouldShake: false}), 500);
 
-      return;
+      return false;
     }
 
     this.submitForm();
@@ -87,6 +90,7 @@ export default class ShopTabForm extends React.PureComponent {
     const percent = Math.floor((age / Number(lifeExpectancy)) * 100);
 
     setPercent(percent);
+    return true;
   }
 
   get birthDayOptions() {
@@ -110,8 +114,37 @@ export default class ShopTabForm extends React.PureComponent {
 
     const date = moment(`${birthYear}-${birthMonth}-${birthDay}`, 'YYYY-MM-DD');
 
-    console.log(date, date.isValid());
     return !date.isValid();
+  }
+
+  componentDidUpdate(_, prevState) {
+    const {
+      country,
+      gender,
+      birthDay,
+      birthMonth,
+      birthYear
+    } = this.state;
+
+    if (
+      country !== prevState.country
+      || gender !== prevState.gender
+      || birthDay !== prevState.birthDay
+      || birthMonth !== prevState.birthMonth
+      || birthYear !== prevState.birthYear
+    ) {
+      this.validateFormOnDesktopAndTablet();
+    }
+  }
+
+  validateFormOnDesktopAndTablet() {
+    if (isMobile()) { return }
+
+    const formValid = this.validate();
+
+    if (formValid) {
+      this.submitForm();
+    }
   }
 
   render() {
@@ -131,7 +164,7 @@ export default class ShopTabForm extends React.PureComponent {
         onSubmit={this.onSubmit}
       >
         <label>Your <span className='yellow-color'>Age</span></label>
-        <div className='input-group'>
+        <div className='input-group multi'>
           <div className='multi-select-wrapper'>
             <div className='select-wrapper'>
               <ReactSelect
@@ -183,7 +216,9 @@ export default class ShopTabForm extends React.PureComponent {
               name="gender"
               placeholder='Choose'
               value={ gender }
-              onChange={(gender) => { this.setState({ gender: gender ? gender['value'] : '', showErrorMessage: false })}}
+              onChange={(gender) => {
+                this.setState({ gender: gender ? gender['value'] : '', showErrorMessage: false })
+              }}
               options={ genderOptions }
               style={selectStyles}
             />
@@ -201,7 +236,9 @@ export default class ShopTabForm extends React.PureComponent {
               name="country"
               value={ country }
               placeholder='Choose'
-              onChange={(country) => { this.setState({ country: country ? country['value'] : '', showErrorMessage: false })}}
+              onChange={(country) => {
+                this.setState({ country: country ? country['value'] : '', showErrorMessage: false })
+              }}
               options={ countryOptions }
               style={selectStyles}
             />
@@ -214,7 +251,7 @@ export default class ShopTabForm extends React.PureComponent {
         </div>
         <button
           type='submit'
-          className={classnames('submit-button', { shake: shouldShake })}
+          className={classnames('submit-button show-on-small-only', { shake: shouldShake })}
         >
           Calculate
         </button>

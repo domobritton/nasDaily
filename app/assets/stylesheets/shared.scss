@@ -45,6 +45,10 @@ input {
   outline-color: $yellow-color;
 }
 
+.hide {
+  display: none !important;
+}
+
 .content {
   min-height: calc(100vh - #{$footer-height});
   position: relative;
