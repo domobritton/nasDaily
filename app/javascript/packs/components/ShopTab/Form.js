@@ -59,7 +59,7 @@ export default class ShopTabForm extends React.PureComponent {
       return false;
     }
 
-    this.submitForm();
+    return this.submitForm();
   }
 
   submitForm() {

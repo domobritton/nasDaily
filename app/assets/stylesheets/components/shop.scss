@@ -37,6 +37,24 @@
 
   }
 
+  .tshirt-image {
+    margin-bottom: -150px;
+  }
+
+  .percentage-bar-image {
+    position: absolute;
+    width: 108%;
+    top: 36px;
+    left: -19px;
+  }
+
+  .tshirt-cta-buttons {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    z-index: 2;
+  }
+
   .landing--left-content,
   .landing--right-content {
     display: flex;

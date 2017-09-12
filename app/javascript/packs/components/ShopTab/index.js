@@ -7,6 +7,7 @@ import { modalStyles } from '../VideosTab/constants';
 import facebookAppId from '../../util/facebookAppId';
 import ShopTabForm from './Form';
 import { isMobile } from '../../util/viewportSize';
+import { Image } from 'cloudinary-react';
 
 export default class ShopTab extends React.Component {
   constructor() {
@@ -142,6 +143,10 @@ export default class ShopTab extends React.Component {
   }
 
   get tshirtWithProgressBar() {
+    const { percent } = this.state;
+
+    const actualPercent = percent && percent > 100 ? 100 : percent;
+
     return (
       <div className='landing--right-content'>
         <label
@@ -149,9 +154,23 @@ export default class ShopTab extends React.Component {
         >
           The <span className='yellow-color'>Result</span>
         </label>
+        <Image
+          publicId="t_shirt_zero_percent_qq2hxx.png"
+          className="tshirt-image"
+        />
+        { percent
+          && (
+              <img
+                className='percentage-bar-image'
+                src={`http://nastshirt.saltycustoms.com/assets/img/percentage/${actualPercent}.gif`}
+              />
+          )
+        }
         { this.doneWithLife }
-        { this.facebookShareButton }
-        { this.buyButton }
+        <div className='tshirt-cta-buttons' >
+          { this.facebookShareButton }
+          { this.buyButton }
+        </div>
       </div>
     );
   }
