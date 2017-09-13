@@ -6,7 +6,7 @@
   right: 0;
   left: 0;
   background-color: $dark-gray-color;
-  z-index: 2;
+  z-index: 3;
   justify-content: space-between;
   flex-wrap: wrap;
   transition: height 250ms ease-out;
@@ -144,22 +144,21 @@ body.shop {
     color: white;
   }
 
-  /* TO BE USED AFTER THERE IS LOGO IN BLACK AND YELLOW */
-  /* .nd-header { */
-    /* background-color: white; */
-  /* } */
+  .nd-header {
+    background-color: white;
+  }
 
-  /* .nd-navigation-item { */
-    /* color: #c2c2c2; */
+  .nd-navigation-item {
+    color: #c2c2c2;
 
-    /* &:hover, &:active, &:focus { */
-      /* color: #1f1f1f; */
-    /* } */
+    &:hover, &:active, &:focus {
+      color: #1f1f1f;
+    }
 
-    /* &.active { */
-      /* color: #1f1f1f; */
-    /* } */
-  /* } */
+    &.active {
+      color: #1f1f1f;
+    }
+  }
 }
 
 body.app {

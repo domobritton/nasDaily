@@ -43,9 +43,9 @@
 
   .percentage-bar-image {
     position: absolute;
-    width: 108%;
+    width: 122%;
     top: 36px;
-    left: -19px;
+    left: -53px;
   }
 
   .tshirt-cta-buttons {
@@ -63,6 +63,10 @@
     justify-content: start;
     z-index: 2;
     opacity: 1;
+  }
+
+  .landing--right-content {
+    position: relative;
   }
 
   .landing--left-background,

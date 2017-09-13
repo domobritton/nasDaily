@@ -154,18 +154,22 @@ export default class ShopTab extends React.Component {
         >
           The <span className='yellow-color'>Result</span>
         </label>
-        <Image
-          publicId="t_shirt_zero_percent_qq2hxx.png"
-          className="tshirt-image"
-        />
-        { percent
-          && (
-              <img
-                className='percentage-bar-image'
-                src={`http://nastshirt.saltycustoms.com/assets/img/percentage/${actualPercent}.gif`}
-              />
-          )
-        }
+        <div
+          className='tshirt-images-container'
+        >
+          <Image
+            publicId="t_shirt_zero_percent_qq2hxx.png"
+            className="tshirt-image"
+          />
+          { percent
+            && (
+                <img
+                  className='percentage-bar-image'
+                  src={`http://nastshirt.saltycustoms.com/assets/img/percentage/${actualPercent}.gif`}
+                />
+            )
+          }
+        </div>
         { this.doneWithLife }
         <div className='tshirt-cta-buttons' >
           { this.facebookShareButton }
