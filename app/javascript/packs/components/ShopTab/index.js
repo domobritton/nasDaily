@@ -29,7 +29,7 @@ export default class ShopTab extends React.Component {
 
     if (!percent) { return }
 
-    window.location.href = `http://nastshirt.saltycustoms.com/?percentage=${percent}`;
+    window.location.href = `http://shop.nasdaily.com/?percentage=${percent}`;
   }
 
   get videoModal() {
