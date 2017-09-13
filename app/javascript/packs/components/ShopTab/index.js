@@ -138,7 +138,7 @@ export default class ShopTab extends React.Component {
   shareOnFacebook() {
     FB.ui({
       method: 'share',
-      href: 'https://www.nasdaily.com',
+      href: 'https://www.nasdaily.com/shop',
     }, function(response){ console.log(response)});
   }
 
