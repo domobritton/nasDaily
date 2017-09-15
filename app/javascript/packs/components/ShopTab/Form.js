@@ -1,6 +1,5 @@
 import React from 'react';
 import {Collapse} from 'react-collapse';
-import ReactSelect from 'react-select';
 import classnames from 'classnames';
 import { find } from 'lodash';
 import moment from 'moment';
@@ -167,40 +166,43 @@ export default class ShopTabForm extends React.PureComponent {
         <div className='input-group multi'>
           <div className='multi-select-wrapper'>
             <div className='select-wrapper'>
-              <ReactSelect
+              <select
                 name="birthDay"
                 placeholder='Day'
                 value={birthDay}
-                onChange={(day) => {
-                  this.setState({ birthDay: day ? day['value'] : '', showErrorMessage: false });
+                onChange={({target: { value }}) => {
+                  this.setState({ birthDay: value, showErrorMessage: false })
                 }}
-                options={ this.birthDayOptions }
                 style={smallSelectStyles}
-              />
+              >
+                { this.birthDayOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+              </select>
             </div>
             <div className='select-wrapper'>
-              <ReactSelect
+              <select
                 name="birthMonth"
                 placeholder='Month'
                 value={birthMonth}
-                onChange={(month) => {
-                  this.setState({ birthMonth: month ? month['value'] : '', showErrorMessage: false });
+                onChange={({target: { value }}) => {
+                  this.setState({ birthMonth: value, showErrorMessage: false })
                 }}
-                options={ birthMonthOptions }
                 style={smallSelectStyles}
-              />
+              >
+                { birthMonthOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+              </select>
             </div>
             <div className='select-wrapper'>
-              <ReactSelect
+              <select
                 name="birthYear"
                 placeholder='Year'
                 value={birthYear}
-                onChange={(year) => {
-                  this.setState({ birthYear: year ? year['value'] : '', showErrorMessage: false });
+                onChange={({target: { value }}) => {
+                  this.setState({ birthYear: value, showErrorMessage: false })
                 }}
-                options={ birthYearOptions }
                 style={smallSelectStyles}
-              />
+              >
+                { birthYearOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+              </select>
             </div>
           </div>
           <Collapse isOpened={showErrorMessage && this.validateBirthDate()}>
@@ -212,16 +214,17 @@ export default class ShopTabForm extends React.PureComponent {
         <label>Your <span className='yellow-color'>Gender</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
-            <ReactSelect
+            <select
               name="gender"
               placeholder='Choose'
               value={ gender }
-              onChange={(gender) => {
-                this.setState({ gender: gender ? gender['value'] : '', showErrorMessage: false })
+              onChange={({target: { value }}) => {
+                this.setState({ gender: value, showErrorMessage: false })
               }}
-              options={ genderOptions }
               style={selectStyles}
-            />
+            >
+              { genderOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+            </select>
           </div>
           <Collapse isOpened={showErrorMessage && !gender}>
             <div className='error-message'>
@@ -232,16 +235,17 @@ export default class ShopTabForm extends React.PureComponent {
         <label>Your <span className='yellow-color'>Country</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
-            <ReactSelect
+            <select
               name="country"
               value={ country }
               placeholder='Choose'
-              onChange={(country) => {
-                this.setState({ country: country ? country['value'] : '', showErrorMessage: false })
+              onChange={({target: { value }}) => {
+                this.setState({ country: value, showErrorMessage: false })
               }}
-              options={ countryOptions }
               style={selectStyles}
-            />
+            >
+              { countryOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+            </select>
           </div>
           <Collapse isOpened={showErrorMessage && !country}>
             <div className='error-message'>

@@ -33,19 +33,19 @@
     padding-top: 150px;
   }
 
-  .buy-button {
-
+  .tshirt-images-container {
+    margin-bottom: -150px;
   }
 
+  .percentage-bar-image,
   .tshirt-image {
-    margin-bottom: -150px;
+    width: 100%;
+    height: auto;
   }
 
   .percentage-bar-image {
     position: absolute;
-    width: 122%;
-    top: 36px;
-    left: -53px;
+    left: 0;
   }
 
   .tshirt-cta-buttons {

@@ -157,15 +157,15 @@ export default class ShopTab extends React.Component {
         <div
           className='tshirt-images-container'
         >
-          <Image
-            publicId="t_shirt_zero_percent_qq2hxx.png"
+          <img
+            src='/assets/tshirt_life.png'
             className="tshirt-image"
           />
           { percent
             && (
                 <img
                   className='percentage-bar-image'
-                  src={`http://nastshirt.saltycustoms.com/assets/img/percentage/${actualPercent}.gif`}
+                  src={`/assets/percentages/${actualPercent}.png`}
                 />
             )
           }
