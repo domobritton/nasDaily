@@ -1,10 +1,12 @@
 export const genderOptions = [
+  { value: "", label: "Choose"},
   { value: "male", label: "Male"},
   { value: "female", label: "Female"},
   { value: "other", label: "Other"}
 ];
 
 export const birthMonthOptions = [
+  { value: "", label: "Month"},
   { value: "1", label: "January"},
   { value: "2", label: "February"},
   { value: "3", label: "March"},
@@ -20,6 +22,7 @@ export const birthMonthOptions = [
 ];
 
 export const birthYearOptions = [
+  { value: "", label: "Year"},
   { value: "2017", label: "2017"},
   { value: "2016", label: "2016"},
   { value: "2015", label: "2015"},
@@ -146,6 +149,7 @@ export const smallSelectStyles = {
 };
 
 export const countryOptions = [
+  { value: "", label: "Choose"},
   {label:"Afghanistan", value:"Afghanistan", life_expectancy:"59.82", life_expectancy_male:"58.67", life_expectancy_female:"61.06"},
   {label:"Albania", value:"Albania", life_expectancy:"77.49", life_expectancy_male:"75.04", life_expectancy_female:"80.19"},
   {label:"Algeria", value:"Algeria", life_expectancy:"74.42", life_expectancy_male:"72.14", life_expectancy_female:"76.84"},

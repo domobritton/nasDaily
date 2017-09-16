@@ -22,6 +22,7 @@ export default class ShopTab extends React.Component {
 
     this.navigateToSaltyGuys = this.navigateToSaltyGuys.bind(this);
     this.onBuyButtonClick = this.onBuyButtonClick.bind(this);
+    this.setPercent = this.setPercent.bind(this);
   }
 
   navigateToSaltyGuys() {
@@ -99,7 +100,7 @@ export default class ShopTab extends React.Component {
     if (!percent) { return }
 
     return (
-      <label>
+      <label className='done-with-life'>
         You are {percent}% done with life
       </label>
     );
@@ -135,6 +136,12 @@ export default class ShopTab extends React.Component {
     );
   }
 
+  setPercent(p) {
+    const actualPercent = p && p > 100 ? 100 : p;
+
+    this.setState({percent: actualPercent, showTshirtOnMobile: true});
+  }
+
   shareOnFacebook() {
     FB.ui({
       method: 'share',
@@ -145,35 +152,50 @@ export default class ShopTab extends React.Component {
   get tshirtWithProgressBar() {
     const { percent } = this.state;
 
-    const actualPercent = percent && percent > 100 ? 100 : percent;
-
     return (
       <div className='landing--right-content'>
-        <label
-          style={{paddingTop: '48px', fontSize: '40px'}}
-        >
-          The <span className='yellow-color'>Result</span>
-        </label>
-        <div
-          className='tshirt-images-container'
-        >
-          <img
-            src='/assets/tshirt_life.png'
-            className="tshirt-image"
-          />
-          { percent
-            && (
+        <div className='tshirt-display-wrapper'>
+          <a
+            onClick={() => this.setState({percent: null, showTshirtOnMobile: false})}
+            className='arrow-back'
+          >
+            <Image
+              publicId="arrow_back_ekioqi.svg"
+              className='arrow-back-img'
+            />
+          </a>
+          <label
+            style={{fontSize: '40px'}}
+          >
+            The <span className='yellow-color'>Result</span>
+          </label>
+          <div
+            className='tshirt-images-container'
+          >
+            <img
+              src='/assets/tshirt_life.png'
+              className="tshirt-image"
+            />
+            { percent
+              ? (
+                  <img
+                    className='percentage-bar-image'
+                    src={`/assets/percentages/${percent}.png`}
+                  />
+                )
+              : (
                 <img
                   className='percentage-bar-image'
-                  src={`/assets/percentages/${actualPercent}.png`}
+                  src={`/assets/percentages/0_no_number.png`}
                 />
-            )
-          }
-        </div>
-        { this.doneWithLife }
-        <div className='tshirt-cta-buttons' >
-          { this.facebookShareButton }
-          { this.buyButton }
+              )
+            }
+          </div>
+          { this.doneWithLife }
+          <div className='tshirt-cta-buttons' >
+            { this.facebookShareButton }
+            { this.buyButton }
+          </div>
         </div>
       </div>
     );
@@ -181,10 +203,12 @@ export default class ShopTab extends React.Component {
 
   get form() {
     return (
-      <ShopTabForm
-        ref={(r) => this.formElement = r}
-        setPercent={(p) => this.setState({percent: p, showTshirtOnMobile: true})}
-      />
+      <div className='form-wrapper'>
+        <ShopTabForm
+          ref={(r) => this.formElement = r}
+          setPercent={this.setPercent}
+        />
+      </div>
     );
   }
 

@@ -8,49 +8,67 @@
     display: flex;
     align-items: stretch;
     height: 100%;
-    /* transition: filter 500ms linear, opacity 500ms linear; */
 
-    &:hover .landing--left,
-    &:hover .landing--right {
-      opacity: 1;
+    &.show-form {
+      .landing--right-background,
+      .landing--left-background {
+        background-color: rgba(12, 12, 12, 0.9);
+      }
     }
+  }
+
+  .arrow-back {
+    display: none;
   }
 
   .landing--left,
   .landing--right {
+    display: flex;
+    justify-content: center;
     position: relative;
     flex: 1;
-    opacity: 1;
     transition: opacity 250ms linear;
-
-    &:hover {
-      opacity: 1 !important;
-    }
   }
 
   .story-header,
   .tshirt-header {
-    padding-top: 150px;
+    padding-top: 230px;
+  }
+
+  .done-with-life {
+    z-index: 3;
+    text-align: center;
+    font-size: 38px;
   }
 
   .tshirt-images-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
     margin-bottom: -150px;
+    max-width: 512px;
+    max-height: 516px;
+    margin-top: -50px;
   }
 
-  .percentage-bar-image,
   .tshirt-image {
     width: 100%;
     height: auto;
+    top: 0;
+    left: 0;
   }
 
   .percentage-bar-image {
     position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
     left: 0;
   }
 
   .tshirt-cta-buttons {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-around;
     z-index: 2;
   }
@@ -62,7 +80,7 @@
     flex-direction: column;
     justify-content: start;
     z-index: 2;
-    opacity: 1;
+    max-width: 100%;
   }
 
   .landing--right-content {
@@ -71,16 +89,13 @@
 
   .landing--left-background,
   .landing--right-background {
-    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
-    background-repeat: no-repeat;
-    background-size: 200%;
     z-index: -1;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    transition: filter 250ms linear;
+    transition: background-color 250ms linear;
   }
 
   .landing--left-background {
@@ -118,6 +133,18 @@
     font-size: 24px;
   }
 
+  .form-wrapper,
+  .tshirt-display-wrapper {
+    padding-top: 100px;
+    width: 100%;
+  }
+
+  .tshirt-display-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
   .shop-cta {
     border: 1px solid white;
     background-color: transparent;
@@ -140,7 +167,6 @@
     color: white;
     flex-direction: column;
     text-align: center;
-    padding-top: 48px;
     padding-bottom: 36px;
   }
 
@@ -291,11 +317,27 @@
   @media #{$small-only} {
     .landing {
       flex-direction: column;
-      background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
-      background-repeat: no-repeat;
-      background-position: center 40%;
-      background-size: cover;
       height: 100%;
+    }
+
+    .arrow-back {
+      display: block;
+      position: absolute;
+      top: 54px;
+      left: 15px;
+      z-index: 10;
+    }
+
+    .arrow-back-img {
+      width: 50px;
+    }
+
+    .form-wrapper {
+      padding-top: 50px;
+    }
+
+    .tshirt-display-wrapper {
+      padding-top: 48px;
     }
 
     .story-header {
@@ -304,15 +346,6 @@
 
     .tshirt-header {
       padding-top: 0;
-    }
-
-    .landing--left-background,
-    .landing--right-background {
-      background-image: none;
-    }
-
-    form {
-      padding-bottom: 100px !important;
     }
 
     .multi-select-wrapper {
@@ -330,6 +363,13 @@
         width: 100%;
       }
     }
+
+    .multi-select-wrapper {
+      select {
+        width: auto !important;
+        max-width: 125px !important;
+      }
+    }
   }
 
   @media #{$large-up} {
@@ -343,20 +383,12 @@
     }
 
     .landing {
-      &:hover .landing--left,
-      &:hover .landing--right {
-        opacity: 0.5;
-      }
-
-      &.show-form {
-        .landing--right-background,
-        .landing--left-background {
-          filter: blur(8px);
-        }
-
-        .landing--left,
-        .landing--right {
-          opacity: 1 !important;
+      &:not(.show-form) {
+        &:hover {
+          .landing--left,
+          .landing--right {
+            opacity: 0.5;
+          }
         }
       }
     }
@@ -364,9 +396,11 @@
     .landing--left,
     .landing--right {
       &:hover {
+        opacity: 1 !important;
+
         .landing--right-background,
         .landing--left-background {
-          filter: blur(8px);
+          background-color: rgba(12, 12, 12, 0.9);
         }
       }
     }

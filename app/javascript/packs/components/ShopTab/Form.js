@@ -99,6 +99,8 @@ export default class ShopTabForm extends React.PureComponent {
       allDays.push({ value: String(i), label: String(i) });
     }
 
+    allDays.unshift({value: '', label: 'Day'});
+
     return allDays;
   }
 
@@ -168,40 +170,37 @@ export default class ShopTabForm extends React.PureComponent {
             <div className='select-wrapper'>
               <select
                 name="birthDay"
-                placeholder='Day'
                 value={birthDay}
                 onChange={({target: { value }}) => {
                   this.setState({ birthDay: value, showErrorMessage: false })
                 }}
                 style={smallSelectStyles}
               >
-                { this.birthDayOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+                { this.birthDayOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
             </div>
             <div className='select-wrapper'>
               <select
                 name="birthMonth"
-                placeholder='Month'
                 value={birthMonth}
                 onChange={({target: { value }}) => {
                   this.setState({ birthMonth: value, showErrorMessage: false })
                 }}
                 style={smallSelectStyles}
               >
-                { birthMonthOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+                { birthMonthOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
             </div>
             <div className='select-wrapper'>
               <select
                 name="birthYear"
-                placeholder='Year'
                 value={birthYear}
                 onChange={({target: { value }}) => {
                   this.setState({ birthYear: value, showErrorMessage: false })
                 }}
                 style={smallSelectStyles}
               >
-                { birthYearOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+                { birthYearOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
             </div>
           </div>
@@ -216,14 +215,13 @@ export default class ShopTabForm extends React.PureComponent {
           <div className='select-wrapper'>
             <select
               name="gender"
-              placeholder='Choose'
               value={ gender }
               onChange={({target: { value }}) => {
                 this.setState({ gender: value, showErrorMessage: false })
               }}
               style={selectStyles}
             >
-              { genderOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+              { genderOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
             </select>
           </div>
           <Collapse isOpened={showErrorMessage && !gender}>
@@ -238,13 +236,12 @@ export default class ShopTabForm extends React.PureComponent {
             <select
               name="country"
               value={ country }
-              placeholder='Choose'
               onChange={({target: { value }}) => {
                 this.setState({ country: value, showErrorMessage: false })
               }}
               style={selectStyles}
             >
-              { countryOptions.map((o, idx) => <option key={idx} value={o['value']}>{o['label']}</option>) }
+              { countryOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
             </select>
           </div>
           <Collapse isOpened={showErrorMessage && !country}>
