@@ -22,8 +22,6 @@ module Nasdailywebsite
   class Application < Rails::Application
     config.load_defaults 5.1
 
-    config.api_only = true
-
     config.serve_static_assets = true
 
     config.generators.system_tests = nil
