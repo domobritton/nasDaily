@@ -86,7 +86,7 @@ export default class ShopTab extends React.Component {
         <p>Custom made for you</p>
         <a
           className='shop-cta'
-          onClick={() => this.setState({showForm: true})}
+          onClick={() => { this.setState({showForm: true}); scrollTo(0,0);}}
         >
           Buy now
         </a>
