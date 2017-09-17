@@ -375,6 +375,11 @@
         max-width: 100px !important;
       }
     }
+
+    .tshirt-images-container {
+      margin-bottom: -50px;
+      height: auto;
+    }
   }
 
   @media #{$large-up} {
