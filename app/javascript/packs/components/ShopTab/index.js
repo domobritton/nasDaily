@@ -3,6 +3,7 @@ import FacebookPlayer from 'react-facebook-player';
 import ReactModal from 'react-modal';
 import $ from 'jquery';
 import classnames from 'classnames';
+import { isNull } from 'lodash';
 import { modalStyles } from '../VideosTab/constants';
 import facebookAppId from '../../util/facebookAppId';
 import ShopTabForm from './Form';
@@ -178,7 +179,7 @@ export default class ShopTab extends React.Component {
               src='/assets/tshirt_life.png'
               className="tshirt-image"
             />
-            { percent
+            { !isNull(percent)
               ? (
                   <img
                     className='percentage-bar-image'
