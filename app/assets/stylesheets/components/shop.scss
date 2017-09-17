@@ -89,8 +89,8 @@
 
   .landing--left-background,
   .landing--right-background {
-    z-index: -1;
     position: absolute;
+    z-index: -1;
     top: 0;
     bottom: 0;
     left: 0;
@@ -108,7 +108,7 @@
 
   h2 {
     font-family: 'FatFrank', 'Teko', Arial, sans-serif;
-    font-size: 60px;
+    font-size: 59px;
     text-transform: uppercase;
     margin-bottom: 48px;
   }
@@ -196,10 +196,6 @@
   .multi-select-wrapper,
   .select-wrapper {
     margin-bottom: 12px;
-  }
-
-  .select-wrapper {
-    border: 1px solid black;
   }
 
   .form-input {
@@ -318,18 +314,27 @@
     .landing {
       flex-direction: column;
       height: 100%;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .landing--left-background {
+      position: fixed;
+    }
+
+    .landing--right-background {
+      display: none;
     }
 
     .arrow-back {
       display: block;
       position: absolute;
-      top: 54px;
-      left: 15px;
+      top: 58px;
       z-index: 10;
     }
 
     .arrow-back-img {
-      width: 50px;
+      width: 35px;
     }
 
     .form-wrapper {

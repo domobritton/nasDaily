@@ -42,7 +42,7 @@ export default class ShopTab extends React.Component {
       <ReactModal
         isOpen={openedModal}
         contentLabel="Modal"
-        onRequestClose={() => this.setState({openedModal: false})}
+        onRequestClose={() => { this.setState({openedModal: false}); scrollTo(0,0);}}
         style={modalStyles}
         className='react-modal'
       >
@@ -140,6 +140,8 @@ export default class ShopTab extends React.Component {
     const actualPercent = p && p > 100 ? 100 : p;
 
     this.setState({percent: actualPercent, showTshirtOnMobile: true});
+
+    scrollTo(0, 0);
   }
 
   shareOnFacebook() {
