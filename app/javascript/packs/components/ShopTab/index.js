@@ -19,6 +19,7 @@ export default class ShopTab extends React.Component {
       showForm: false,
       showTshirtOnMobile: false,
       percent: null,
+      tabOnMobile: 'video'
     }
 
     this.navigateToSaltyGuys = this.navigateToSaltyGuys.bind(this);
@@ -67,11 +68,24 @@ export default class ShopTab extends React.Component {
         </h2>
         <p>Watch the video behind the story of Nas Daily T-shirts</p>
         <a
-          className='shop-cta'
+          className='shop-cta hide-on-small'
           onClick={() => this.setState({openedModal: true})}
         >
           Watch now
         </a>
+        <div className="tile show-on-small-only">
+          <div className="tile__media">
+            <img
+              onClick={() => this.setState({openedModal: true})}
+              className="tile__img"
+              src="https://scontent.xx.fbcdn.net/v/t15.0-10/s480x480/20813631_877313312420822_6824652331255070720_n.jpg?oh=dd9238cd4afadaf11bf8139d766829b4&oe=59F1866C"
+              alt="HOW OLD ARE YOU?"
+            />
+          </div>
+          <div className="tile__details">
+            <div className="tile__title"/>
+          </div>
+        </div>
       </div>
     );
   }
@@ -228,19 +242,36 @@ export default class ShopTab extends React.Component {
   }
 
   get mainSection() {
-    const { showForm, showTshirtOnMobile } = this.state;
+    const { showForm, showTshirtOnMobile, tabOnMobile } = this.state;
 
     return (
       <div
         className={classnames('landing', { 'show-form': showForm })}
       >
-        <div className='landing--left'>
-          <div className='landing--left-background'/>
-          { this.leftSection }
-        </div>
-        <div className={classnames('landing--right', { hide: isMobile() && showForm })}>
-          <div className='landing--right-background'/>
-          { showForm ? this.tshirtWithProgressBar : this.tshirtLandingSection }
+        {
+          tabOnMobile === 'video'
+          ? (<div className='landing--left'>
+              <div className='landing--left-background'/>
+              { this.leftSection }
+            </div>)
+          : (<div className={classnames('landing--right', { hide: isMobile() && showForm })}>
+              <div className='landing--right-background'/>
+              { showForm ? this.tshirtWithProgressBar : this.tshirtLandingSection }
+            </div>)
+        }
+        <div className='tabs-container show-on-small-only'>
+          <div
+            className={classnames('tab', { active: tabOnMobile === 'video'})}
+            onClick={() => this.setState({ tabOnMobile: 'video' })}
+          >
+            The Story
+          </div>
+          <div
+            className={classnames('tab', { active: tabOnMobile !== 'video'})}
+            onClick={() => this.setState({ tabOnMobile: 'calculator' })}
+          >
+            The T-shirt
+          </div>
         </div>
       </div>
     );

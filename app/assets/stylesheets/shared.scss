@@ -37,6 +37,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    @media #{$small-only} {
+      background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1506028485/shop_bg_qjvemj.png);
+    }
   }
 }
 
@@ -71,13 +75,13 @@ input {
 
 .hide-on-small {
   @media #{$small-only} {
-    display: none;
+    display: none !important;
   }
 }
 
 .show-on-small-only {
   @media #{$medium-up} {
-    display: none;
+    display: none !important;
   }
 }
 
