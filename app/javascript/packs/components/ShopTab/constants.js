@@ -2,7 +2,6 @@ export const genderOptions = [
   { value: "", label: "Choose"},
   { value: "male", label: "Male"},
   { value: "female", label: "Female"},
-  { value: "other", label: "Other"}
 ];
 
 export const birthMonthOptions = [
