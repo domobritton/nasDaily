@@ -405,7 +405,7 @@
   }
 
   @media #{$small-only} {
-    min-height: 0;
+    min-height: 560px;
 
     .landing {
       flex-direction: column;
@@ -488,7 +488,6 @@
     .tshirt-images-container {
       margin-bottom: -100px;
       height: auto;
-      display: flex;
       align-self: center;
     }
   }
