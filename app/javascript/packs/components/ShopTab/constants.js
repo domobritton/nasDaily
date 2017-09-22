@@ -136,7 +136,7 @@ export const birthYearOptions = [
 export const selectStyles = {
   width: '300px',
   height: '45px',
-  fontSize: '25px',
+  fontSize: '21px',
   textTransform: 'uppercase',
   backgroundColor: '#717171',
   border: 'none',

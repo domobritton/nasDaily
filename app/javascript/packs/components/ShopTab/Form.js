@@ -164,7 +164,7 @@ export default class ShopTabForm extends React.PureComponent {
         className='form'
         onSubmit={this.onSubmit}
       >
-        <label>Your <span className='yellow-color'>Age</span></label>
+        <label><span className='yellow-color'>Age</span></label>
         <div className='input-group multi'>
           <div className='multi-select-wrapper'>
             <div className='select-wrapper'>
@@ -210,7 +210,7 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
           </Collapse>
         </div>
-        <label>Your <span className='yellow-color'>Gender</span></label>
+        <label><span className='yellow-color'>Gender</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
             <select
@@ -230,7 +230,7 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
           </Collapse>
         </div>
-        <label>Your <span className='yellow-color'>Country</span></label>
+        <label><span className='yellow-color'>Country</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
             <select

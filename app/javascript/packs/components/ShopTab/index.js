@@ -73,10 +73,12 @@ export default class ShopTab extends React.Component {
         >
           Watch now
         </a>
-        <div className="tile show-on-small-only">
+        <div
+          className="tile show-on-small-only"
+          onClick={() => this.setState({openedModal: true})}
+        >
           <div className="tile__media">
             <img
-              onClick={() => this.setState({openedModal: true})}
               className="tile__img"
               src="https://scontent.xx.fbcdn.net/v/t15.0-10/s480x480/20813631_877313312420822_6824652331255070720_n.jpg?oh=dd9238cd4afadaf11bf8139d766829b4&oe=59F1866C"
               alt="HOW OLD ARE YOU?"
@@ -98,7 +100,7 @@ export default class ShopTab extends React.Component {
             The
           </span> Tshirt
         </h2>
-        <p>Custom made for you</p>
+        <p>Click below to calculate and buy your new t-shirt</p>
         <a
           className='shop-cta'
           onClick={() => { this.setState({showForm: true}); scrollTo(0,0);}}
@@ -182,7 +184,7 @@ export default class ShopTab extends React.Component {
             />
           </a>
           <label
-            style={{fontSize: '40px'}}
+            style={{fontSize: '40px', marginBottom: 0 }}
           >
             The <span className='yellow-color'>Result</span>
           </label>
@@ -230,35 +232,49 @@ export default class ShopTab extends React.Component {
   }
 
   get leftSection() {
-    const { showForm, showTshirtOnMobile } = this.state;
+    const { showForm } = this.state;
 
-    if (isMobile() && showTshirtOnMobile) {
-      return this.tshirtWithProgressBar;
-    } else if (showForm) {
+    if (showForm) {
       return this.form;
     }
 
     return this.storyLandingSection;
   }
 
+  get tshirtTab() {
+    const { showForm, showTshirtOnMobile } = this.state;
+
+    if (showTshirtOnMobile) {
+      return this.tshirtWithProgressBar;
+    } else {
+      return this.form;
+    }
+  }
+
   get mainSection() {
-    const { showForm, showTshirtOnMobile, tabOnMobile } = this.state;
+    const { showForm, tabOnMobile } = this.state;
 
     return (
-      <div
-        className={classnames('landing', { 'show-form': showForm })}
-      >
-        {
-          tabOnMobile === 'video'
-          ? (<div className='landing--left'>
-              <div className='landing--left-background'/>
-              { this.leftSection }
-            </div>)
-          : (<div className={classnames('landing--right', { hide: isMobile() && showForm })}>
-              <div className='landing--right-background'/>
-              { showForm ? this.tshirtWithProgressBar : this.tshirtLandingSection }
-            </div>)
-        }
+      <div>
+        <div className='show-on-small-only'>
+          {
+            tabOnMobile === 'video'
+            ? this.storyLandingSection
+            : this.tshirtTab
+          }
+        </div>
+        <div
+          className={classnames('landing hide-on-small', { 'show-form': showForm })}
+        >
+          <div className='landing--left'>
+            <div className='landing--left-background'/>
+            { this.leftSection }
+          </div>
+          <div className='landing--right'>
+            <div className='landing--right-background'/>
+            { showForm ? this.tshirtWithProgressBar : this.tshirtLandingSection }
+          </div>
+        </div>
         <div className='tabs-container show-on-small-only'>
           <div
             className={classnames('tab', { active: tabOnMobile === 'video'})}

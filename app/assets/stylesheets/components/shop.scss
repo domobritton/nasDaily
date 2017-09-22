@@ -332,6 +332,7 @@
     height: 100%;
     align-items: center;
     cursor: pointer;
+    text-transform: uppercase;
 
     &.active {
       color: white;
@@ -404,11 +405,21 @@
   }
 
   @media #{$small-only} {
+    min-height: 0;
+
     .landing {
       flex-direction: column;
       height: 100%;
       padding-left: 12px;
       padding-right: 12px;
+    }
+
+    .submit-button {
+      margin-bottom: 75px;
+    }
+
+    .landing--right-content {
+      padding-top: 50px;
     }
 
     .landing--left-background {
@@ -422,12 +433,17 @@
     .arrow-back {
       display: block;
       position: absolute;
-      top: 58px;
+      top: 107px;
+      left: 10px;
       z-index: 10;
     }
 
     .arrow-back-img {
       width: 35px;
+    }
+
+    .tshirt-cta-buttons {
+      margin-bottom: 100px;
     }
 
     .form-wrapper {
@@ -470,8 +486,10 @@
     }
 
     .tshirt-images-container {
-      margin-bottom: -50px;
+      margin-bottom: -100px;
       height: auto;
+      display: flex;
+      align-self: center;
     }
   }
 
