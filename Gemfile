@@ -22,6 +22,10 @@ gem 'hamburgers', '~> 0.9.1'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development do
   gem 'pry'
   gem 'web-console', '>= 3.3.0'

@@ -118,6 +118,18 @@ export default class Header extends React.Component {
     );
   }
 
+  get isShopPage() {
+    return window.location.href.indexOf('shop') > 0;
+  }
+
+  get headerLogoId() {
+    if (this.isShopPage) {
+      return "NASDAILY_black_logo_twgpqq.png";
+    } else {
+      return "NASDAILY._g21um6.png";
+    }
+  }
+
   render() {
     const { menuOpen } = this.state;
 
@@ -130,7 +142,7 @@ export default class Header extends React.Component {
             className='logo-link'
           >
             <Image
-              publicId="NASDAILY._g21um6.png"
+              publicId={this.headerLogoId}
               className='logo-image'
             />
           </a>

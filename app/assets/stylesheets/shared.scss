@@ -23,14 +23,6 @@ body {
   background-position: top;
   background-size: 60%;
 
-  &.shop {
-    overflow: auto;
-    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
-    background-repeat: no-repeat;
-    background-position: center 40%;
-    background-size: cover;
-  }
-
   &.with-overlay {
     overflow: hidden;
   }
@@ -38,6 +30,17 @@ body {
   &.app {
     background-image: none;
     background-color: #1F1F1F;
+  }
+
+  &.shop {
+    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501383337/Nas_shirt_bg_v13rv6_1_w96wwj.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media #{$small-only} {
+      background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1506028485/shop_bg_qjvemj.png);
+    }
   }
 }
 
@@ -53,6 +56,10 @@ input {
   outline-color: $yellow-color;
 }
 
+.hide {
+  display: none !important;
+}
+
 .content {
   min-height: calc(100vh - #{$footer-height});
   position: relative;
@@ -62,26 +69,24 @@ input {
   color: $yellow-color;
 }
 
+.white-color {
+  color: white;
+}
+
 .hide-on-small {
   @media #{$small-only} {
-    display: none;
+    display: none !important;
   }
 }
 
 .show-on-small-only {
   @media #{$medium-up} {
-    display: none;
+    display: none !important;
   }
 }
 
 .display-block {
   display: block;
-}
-
-@media #{$large-up} {
-  body.shop-tab {
-    background-position: 0 0;
-  }
 }
 
 @media #{$small-only} {

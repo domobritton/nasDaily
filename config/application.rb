@@ -9,7 +9,7 @@ require_relative 'boot'
 # require "action_mailer/railtie"
 # require "action_view/railtie"
 # require "action_cable/engine"
-# require "sprockets/railtie"
+require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 require 'rails/all'
@@ -22,7 +22,7 @@ module Nasdailywebsite
   class Application < Rails::Application
     config.load_defaults 5.1
 
-    config.api_only = true
+    config.serve_static_assets = true
 
     config.generators.system_tests = nil
   end
