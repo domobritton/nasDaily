@@ -114,7 +114,7 @@ export default class ShopTab extends React.Component {
   get doneWithLife() {
     const { percent } = this.state;
 
-    if (!percent) { return }
+    if (!percent && percent !== 0) { return }
 
     return (
       <label className='done-with-life'>
