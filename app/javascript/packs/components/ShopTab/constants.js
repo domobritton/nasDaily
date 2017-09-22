@@ -137,7 +137,6 @@ export const selectStyles = {
   width: '300px',
   height: '45px',
   fontSize: '19px',
-  textTransform: 'uppercase',
   backgroundColor: '#717171',
   border: 'none',
   borderRadius: 0
