@@ -278,13 +278,13 @@ export default class ShopTab extends React.Component {
         <div className='tabs-container show-on-small-only'>
           <div
             className={classnames('tab', { active: tabOnMobile === 'video'})}
-            onClick={() => this.setState({ tabOnMobile: 'video' })}
+            onClick={() => { this.setState({ tabOnMobile: 'video' }); scroll(0,0)}}
           >
             The Story
           </div>
           <div
             className={classnames('tab', { active: tabOnMobile !== 'video'})}
-            onClick={() => this.setState({ tabOnMobile: 'calculator' })}
+            onClick={() => { this.setState({ tabOnMobile: 'calculator' }); scroll(0,0)}}
           >
             The T-shirt
           </div>
