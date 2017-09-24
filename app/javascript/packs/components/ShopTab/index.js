@@ -158,7 +158,7 @@ export default class ShopTab extends React.Component {
 
     this.setState({percent: actualPercent, showTshirtOnMobile: true});
 
-    scrollTo(0, 0);
+    isMobile() && scrollTo(0, 0);
   }
 
   shareOnFacebook() {

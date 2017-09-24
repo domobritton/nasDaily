@@ -256,6 +256,9 @@ export default class ShopTabForm extends React.PureComponent {
         >
           Calculate
         </button>
+        <div className='form-footnote'>
+          We need your age, gender, and country to know roughly how much of life you're done with... on average
+        </div>
       </form>
     );
   }

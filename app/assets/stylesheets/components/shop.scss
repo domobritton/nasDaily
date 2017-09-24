@@ -41,6 +41,12 @@
     font-size: 34px;
   }
 
+  .form-footnote {
+    font-size: 20px;
+    text-align: center;
+    margin-top: -20px;
+  }
+
   .tshirt-images-container {
     position: relative;
     width: 100%;
@@ -406,13 +412,21 @@
   /* } */
 
   @media #{$small-only} {
-    min-height: 560px;
+    min-height: 725px;
 
     .landing {
       flex-direction: column;
       height: 100%;
       padding-left: 12px;
       padding-right: 12px;
+    }
+
+    .form-footnote {
+      margin-top: -40px;
+    }
+
+    .input-group {
+      margin-bottom: 25px !important;
     }
 
     .submit-button {
@@ -448,7 +462,7 @@
     }
 
     .form-wrapper {
-      padding-top: 50px;
+      padding-top: 30px;
     }
 
     .tshirt-display-wrapper {
