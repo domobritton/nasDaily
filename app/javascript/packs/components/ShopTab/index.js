@@ -25,6 +25,7 @@ export default class ShopTab extends React.Component {
     this.navigateToSaltyGuys = this.navigateToSaltyGuys.bind(this);
     this.onBuyButtonClick = this.onBuyButtonClick.bind(this);
     this.setPercent = this.setPercent.bind(this);
+    this.shareOnFacebook = this.shareOnFacebook.bind(this);
   }
 
   navigateToSaltyGuys() {
@@ -162,9 +163,18 @@ export default class ShopTab extends React.Component {
   }
 
   shareOnFacebook() {
+    const { percent } = this.state;
+
+    const quote =
+      percent || percent === 0
+      ? `I'm ${percent}% done with life! Check out your percentage at nasdaily.com/shop`
+      : null;
+
     FB.ui({
       method: 'share',
       href: 'https://www.nasdaily.com/shop',
+      hashtag: '#nasdaily',
+      quote: quote,
     }, function(response){ console.log(response)});
   }
 
