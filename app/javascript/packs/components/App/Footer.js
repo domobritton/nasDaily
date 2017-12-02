@@ -43,6 +43,15 @@ export default class Footer extends React.Component {
               Shop
             </Link>
           </li>
+          <li>
+            <Link
+              to='/agency'
+              className={ classnames('navigation-link', {active: pathname === '/agency'}) }
+              onClick={() => scrollTo(0,0)}
+            >
+              Agency
+            </Link>
+          </li>
         </ul>
         <div className='social-list-header'>Only on:</div>
         <ul className='social-list'>

@@ -54,6 +54,12 @@ export default class Header extends React.Component {
         >
           Shop
         </Link>
+        <Link
+          to='/agency'
+          className={ classnames('nd-navigation-item', {active: pathname === '/agency'}) }
+        >
+          Agency
+        </Link>
       </div>
     );
   }
@@ -86,6 +92,13 @@ export default class Header extends React.Component {
           className={ classnames('nd-menu-item', {active: pathname === '/shop'}) }
         >
           Shop.
+        </Link>
+        <Link
+          to='/agency'
+          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
+          className={ classnames('nd-menu-item', {active: pathname === '/agency'}) }
+        >
+          Agency.
         </Link>
 
         <div className='nd-menu-footer'>

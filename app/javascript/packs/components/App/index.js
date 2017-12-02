@@ -6,6 +6,7 @@ import VideosTab from '../VideosTab';
 import AppTab from '../AppTab';
 import ShopTab from '../ShopTab';
 import PrivacyTab from '../PrivacyTab';
+import AgencyTab from '../AgencyTab';
 import TermsTab from '../TermsTab';
 import initialVideos from './initialVideos';
 import Footer from './Footer';
@@ -55,6 +56,7 @@ export default class App extends React.Component {
             <Route path="/shop" component={ShopTab}/>
             <Route path="/privacy" component={PrivacyTab}/>
             <Route path="/terms" component={TermsTab}/>
+            <Route path="/agency" component={AgencyTab}/>
             <Redirect to={{pathname: '/videos'}}/>
           </Switch>
         </div>

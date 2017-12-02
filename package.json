@@ -44,6 +44,7 @@
     "react-router-dom": "^4.1.1",
     "react-select": "^1.0.0-rc.5",
     "react-slick": "^0.14.11",
+    "react-tabs": "^2.1.1",
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "slick-carousel": "^1.7.1",
