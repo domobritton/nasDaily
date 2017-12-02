@@ -53,10 +53,10 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
             <Route path="/app" component={AppTab}/>
-            <Route path="/shop" component={ShopTab}/>
+            <Route path="/shop" render={() => <ShopTab videos={videos} /> }/>
             <Route path="/privacy" component={PrivacyTab}/>
             <Route path="/terms" component={TermsTab}/>
-            <Route path="/agency" component={AgencyTab}/>
+            <Route path="/agency" render={() => <AgencyTab videos={videos} />}/>
             <Redirect to={{pathname: '/videos'}}/>
           </Switch>
         </div>

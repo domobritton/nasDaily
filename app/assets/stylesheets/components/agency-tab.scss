@@ -1,4 +1,9 @@
 .nd-agency {
+  $tileWidth: 480px;
+  $tileHeight: ($tileWidth / (16/9));
+  $duration: 350ms;
+  $iconSize: 50px;
+
   color: white;
   font-size: 20px;
 
@@ -20,6 +25,7 @@
 
   .nd-agency-intro-cards-container {
     display: flex;
+    margin-top: 200px;
   }
 
   .nd-agency-intro-card {
@@ -27,31 +33,35 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 300px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
 
     &.card-1 {
-      background-image: url(/assets/agency/card-bg-1.png);
+      background-image: url(/assets/agency/card-bg-1.svg), linear-gradient(#575757, #3E3E3E);
     }
 
     &.card-2 {
-      background-image: url(/assets/agency/card-bg-2.png);
+      background-image: url(/assets/agency/card-bg-2.svg), linear-gradient(#575757, #3E3E3E);
     }
 
     &.card-3 {
-      background-image: url(/assets/agency/card-bg-3.png);
+      background-image: url(/assets/agency/card-bg-3.svg), linear-gradient(#575757, #3E3E3E);
     }
   }
 
   .agency-card-title {
-    padding-bottom: 24px;
+    margin-bottom: 24px;
+    margin-top: 12px;
+    font-size: 26px;
   }
 
   .agency-card-icon-container {
     padding-top: 24px;
     padding-bottom: 6px;
-
-    img {
-      width: 50%;
-    }
   }
 
   .nd-agency-featured-videos {
@@ -75,6 +85,53 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 48px;
+  }
+
+  .nd-agency-featured-video-tab-video-item {
+    display: flex;
+    margin-top: 100px;
+  }
+
+  .featured-video-video-player {
+    width: 60%;
+
+    .tile {
+      position: relative;
+      width: $tileWidth;
+      height: $tileHeight;
+      font-size: 20px;
+      cursor: pointer;
+      transition: $duration all;
+    }
+
+    .tile:hover .tile__details {
+      opacity: 1;
+    }
+
+    .tile__img {
+      border-radius: 5px;
+    }
+  }
+
+  .featured-video-video-metrics-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .featured-video-video-metric {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    img {
+      margin-right: 24px;
+    }
   }
 
   .nd-agency-contact {
@@ -91,5 +148,52 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 6px;
+  }
+
+  @media #{$large-up} {
+    .tile__details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      color: white;
+      font-size: 10px;
+      opacity: 0;
+      transition: $duration opacity;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: black;
+      }
+
+      &:after {
+        margin-top: (-($iconSize / 2));
+        margin-left: (-($iconSize / 2));
+        width: $iconSize;
+        height: $iconSize;
+        border: 3px solid #ecf0f1;
+        line-height: $iconSize;
+        text-align: center;
+        border-radius: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+      }
+
+      &:before {
+        content: '▶';
+        left: 0;
+        width: 100%;
+        font-size: 30px;
+        margin-left: 7px;
+        margin-top: -7px;
+        text-align: center;
+        z-index: 2;
+      }
+    }
   }
 }

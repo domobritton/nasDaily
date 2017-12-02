@@ -60,6 +60,10 @@ export default class ShopTab extends React.Component {
   }
 
   get storyLandingSection() {
+    const { videos } = this.props;
+
+    const tshirtVideo = videos.find(video => video.facebook_id === '877310772421076');
+
     return (
       <div className='landing--left-content'>
         <h2 className='story-header'>
@@ -81,7 +85,7 @@ export default class ShopTab extends React.Component {
           <div className="tile__media">
             <img
               className="tile__img"
-              src="https://scontent.xx.fbcdn.net/v/t15.0-10/s480x480/20813631_877313312420822_6824652331255070720_n.jpg?oh=dd9238cd4afadaf11bf8139d766829b4&oe=59F1866C"
+              src={ tshirtVideo.full_picture }
               alt="HOW OLD ARE YOU?"
             />
           </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import FacebookPlayer from 'react-facebook-player';
-import { findIndex } from 'lodash';
 import { modalStyles } from './constants';
 import facebookAppId from '../../util/facebookAppId';
 
@@ -22,19 +21,6 @@ export default class Modal extends React.PureComponent {
 
     player.unmute();
     player.play();
-  }
-
-  onPlayerFinished = () => {
-    const { videos } = this.props;
-    const { videoId, player } = this.state;
-
-    let currentVideoIndex = findIndex(videos, (v) => v.facebook_id === videoId);
-
-    if (currentVideoIndex >= videos.length - 1) { return }
-    const nextVideoId = videos[currentVideoIndex + 1].facebook_id;
-
-    this.setState({videoId: null}); // unmount facebook video player before playing next video
-    this.setState({videoId: nextVideoId});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,7 +49,6 @@ export default class Modal extends React.PureComponent {
                 videoId={ videoId }
                 id={ `video-id-${videoId}` }
                 onReady={this.onPlayerReady}
-                onFinishedPlaying={this.onPlayerFinished}
               />
           )
           : null

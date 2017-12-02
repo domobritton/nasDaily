@@ -5,6 +5,7 @@ import {
   TabList,
   TabPanel
 } from 'react-tabs';
+import ReactMessengerButton from 'react-messenger-plugin/lib/MessengerPlugin';
 import {
   TechTabContent,
   TravelTabContent,
@@ -13,9 +14,43 @@ import {
   ArtistsTabContent,
   SocialEnterpriseTabContent,
 } from './featuredVideosTabs';
-import 'react-tabs/style/react-tabs.css';
+import facebookAppId from '../../util/facebookAppId';
+import Modal from './Modal';
 
 export default class AgencyTab extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      videoId: null
+    }
+  }
+
+  get modal() {
+    const { videoId } = this.state;
+    const { videos } = this.props;
+
+    return (
+      <Modal
+        onClose={this.closeModal}
+        videoId={videoId}
+        videos={videos}
+      />
+    );
+  }
+
+  showVideo = (videoId) => {
+    this.setState({
+      videoId: videoId
+    });
+  }
+
+  closeModal = () => {
+    this.setState({
+      videoId: null
+    });
+  }
+
   render() {
     return (
       <div className='nd-agency'>
@@ -65,30 +100,33 @@ export default class AgencyTab extends React.Component {
           <div className='nd-agency-videos-tabs-container'>
             <Tabs>
               <TabList>
-                <Tab>Tech</Tab>
-                <Tab>Travel</Tab>
-                <Tab>Food and Drink</Tab>
-                <Tab>Lifestyle</Tab>
-                <Tab>Artists</Tab>
-                <Tab>Social Enterprise</Tab>
+                <Tab><span>Tech</span></Tab>
+                <Tab><span>Travel</span></Tab>
+                <Tab><span>Food & Drink</span></Tab>
+                <Tab><span>Lifestyle</span></Tab>
+                <Tab><span>Artists</span></Tab>
+                <Tab><span>Social Enterprise</span></Tab>
               </TabList>
               <TabPanel>
-                <TechTabContent />
+                <TechTabContent
+                  { ...this.props }
+                  showVideo={ this.showVideo }
+                />
               </TabPanel>
               <TabPanel>
-                <TravelTabContent />
+                <TravelTabContent { ...this.props }/>
               </TabPanel>
               <TabPanel>
-                <FoodAndDrinkTabContent />
+                <FoodAndDrinkTabContent { ...this.props }/>
               </TabPanel>
               <TabPanel>
-                <LifestyleTabContent />
+                <LifestyleTabContent { ...this.props }/>
               </TabPanel>
               <TabPanel>
-                <ArtistsTabContent />
+                <ArtistsTabContent { ...this.props }/>
               </TabPanel>
               <TabPanel>
-                <SocialEnterpriseTabContent />
+                <SocialEnterpriseTabContent { ...this.props }/>
               </TabPanel>
             </Tabs>
           </div>
@@ -100,7 +138,13 @@ export default class AgencyTab extends React.Component {
           <p className='nd-agency-contact-subheader'>
             Drop us an enquiry or just say hello!
           </p>
+          <ReactMessengerButton
+            appId={ facebookAppId() }
+            pageId='574719552680201'
+            FB={window.FB}
+          />
         </div>
+        { this.modal }
       </div>
     );
   }
