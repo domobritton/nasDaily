@@ -14,13 +14,22 @@
     align-items: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    background: url(/assets/agency/eyes-bg.png), rgba(12, 12, 12, 1);
+    background-repeat: no-repeat;
+    background-color: #1F1F1F;
+    background-size: cover;
   }
 
   .nd-agency-intro-header {
-    font-size: 56px;
+    font-size: 60px;
+    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
     text-transform: uppercase;
     margin-bottom: 12px;
     font-weight: bold;
+  }
+
+  .nd-agency-intro-subheader {
+    font-size: 22px;
   }
 
   .nd-agency-intro-cards-container {
@@ -39,6 +48,7 @@
     margin-right: 10px;
     border-radius: 5px;
     background-repeat: no-repeat;
+    box-shadow: 0px 5px 5px rgb(20,20,20);
 
     &.card-1 {
       background-image: url(/assets/agency/card-bg-1.svg), linear-gradient(#575757, #3E3E3E);
@@ -141,6 +151,11 @@
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    background-color: #1F1F1F;
+    background-image: url(/assets/agency/world-map-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 270px;
   }
 
   .nd-agency-contact-header {
@@ -148,6 +163,126 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 6px;
+  }
+
+  .nd-agency-featured-video-tab-content {
+    > div:nth-child(1) {
+      .featured-video-video-metrics-container {
+        padding-left: 24px;
+      }
+    }
+
+    > div:nth-child(2) {
+      .featured-video-video-player {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @media #{$small-only} {
+    .nd-agency-intro {
+      padding-top: 75px;
+      background-size: 130% auto;
+      background-position-x: center;
+    }
+
+    .nd-agency-intro-header {
+      width: 300px;
+      font-size: 52px;
+    }
+
+    .nd-agency-intro-subheader {
+      width: 300px;
+
+      br { display: none; }
+    }
+
+    .nd-agency-intro-cards-container {
+      flex-direction: column;
+      margin-top: 100px;
+    }
+
+    .nd-agency-intro-card {
+      margin-bottom: 24px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .nd-agency-featured-video-tab-video-item {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .featured-video-video-player {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .featured-video-video-metrics-container {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .tile__img,
+    .tile {
+      max-width: 100%;
+    }
+
+    .nd-agency-featured-video-tab-content {
+      > div:nth-child(1) {
+        .featured-video-video-metrics-container {
+          padding-left: 0;
+        }
+      }
+
+      > div:nth-child(2) {
+        flex-direction: column-reverse;
+
+        .featured-video-video-player {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  @media #{$medium-only} {
+    .nd-agency-intro {
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+
+    .nd-agency-intro-cards-container {
+      margin-top: 100px;
+    }
+
+    .nd-agency-intro-card {
+      width: 230px;
+      height: 165px;
+    }
+
+    .nd-agency-featured-video-tab-content {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
+    .tile__img,
+    .tile {
+      max-width: 100%;
+    }
+
+    .nd-agency-featured-video-tab-video-item {
+      margin-top: 75px;
+    }
+
+    .nd-agency-contact {
+      height: 200px;
+    }
   }
 
   @media #{$large-up} {

@@ -59,7 +59,7 @@ export default class AgencyTab extends React.Component {
             Nas Daily <span className='yellow-color'>Agency</span>
           </h1>
           <p className='nd-agency-intro-subheader'>
-            A brand marketing philosophy we can finally get behind.
+            A brand marketing philosophy we can finally get behind.&nbsp;
             <br />
             Human beings make human brands. Let’s tell stories!
           </p>

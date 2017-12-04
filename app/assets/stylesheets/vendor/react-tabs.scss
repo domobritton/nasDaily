@@ -51,3 +51,15 @@
     border-radius: 1px;
   }
 }
+
+@media #{$small-only} {
+  .react-tabs__tab-list {
+    flex-wrap: wrap;
+    height: auto;
+    background: unset;
+  }
+
+  .react-tabs__tab {
+    flex-basis: 33.3%;
+  }
+}
