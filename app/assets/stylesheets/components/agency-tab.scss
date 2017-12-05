@@ -226,8 +226,13 @@
     .featured-video-video-metrics-container {
       width: 100%;
       justify-content: center;
-      align-items: center;
+      align-items: start;
       margin-top: 24px;
+    }
+
+    .featured-video-video-metric {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
     .tile__img,
