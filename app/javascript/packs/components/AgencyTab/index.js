@@ -59,9 +59,11 @@ export default class AgencyTab extends React.Component {
             Nas Daily <span className='yellow-color'>Agency</span>
           </h1>
           <p className='nd-agency-intro-subheader'>
-            A brand marketing philosophy we can finally get behind.&nbsp;
+            Ads don’t work on Facebook.&nbsp;
             <br />
-            Human beings make human brands. Let’s tell stories!
+            We tell the story of your brand through your community.&nbsp;
+            <br />
+            That works.
           </p>
           <div className='nd-agency-intro-cards-container'>
             <div className='nd-agency-intro-card card-1'>
@@ -114,19 +116,34 @@ export default class AgencyTab extends React.Component {
                 />
               </TabPanel>
               <TabPanel>
-                <TravelTabContent { ...this.props }/>
+                <TravelTabContent
+                  { ...this.props }
+                  showVideo={ this.showVideo }
+                />
               </TabPanel>
               <TabPanel>
-                <FoodAndDrinkTabContent { ...this.props }/>
+                <FoodAndDrinkTabContent
+                  { ...this.props }
+                  showVideo={ this.showVideo }
+                />
               </TabPanel>
               <TabPanel>
-                <LifestyleTabContent { ...this.props }/>
+                <LifestyleTabContent
+                  { ...this.props }
+                  showVideo={ this.showVideo }
+                />
               </TabPanel>
               <TabPanel>
-                <ArtistsTabContent { ...this.props }/>
+                <ArtistsTabContent
+                  { ...this.props }
+                  showVideo={ this.showVideo }
+                />
               </TabPanel>
               <TabPanel>
-                <SocialEnterpriseTabContent { ...this.props }/>
+                <SocialEnterpriseTabContent
+                  { ...this.props }
+                  showVideo={ this.showVideo }
+                />
               </TabPanel>
             </Tabs>
           </div>

@@ -8,7 +8,7 @@ export default class ArtistsTabContents extends React.Component {
     } = this.props;
 
     const video1 = videos.find(video => video.facebook_id === '896482347170585');
-    const video2 = videos.find(video => video.facebook_id === '896482347170585');
+    const video2 = videos.find(video => video.facebook_id === '855894451229375');
 
     return (
       <div className='nd-agency-featured-video-tab-content'>
@@ -37,15 +37,19 @@ export default class ArtistsTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 1M</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 3 hours</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favourite comment:
+                spending 19 years in a profession and then realizing it's not my calling
+                is my biggest fear but this guy made it look so damn cool
+              </p>
             </div>
           </div>
         </div>
@@ -53,15 +57,19 @@ export default class ArtistsTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 336K</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production Time: 2 hours</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favorite comment:
+                It is awesome, I am discovering stuff about my own country that
+                I didn't know with your videos, Nas! You're amazing dude! I love your work!
+              </p>
             </div>
           </div>
           <div className='featured-video-video-player'>

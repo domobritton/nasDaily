@@ -37,15 +37,18 @@ export default class TechTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 173K</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 2 days</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favourite comment: Thanks you Dolapo for representing Nigeria well.
+                God bless you.. thanks Nas for restoring hope that there’s still good in this world.
+              </p>
             </div>
           </div>
         </div>
@@ -53,15 +56,18 @@ export default class TechTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 12M views</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 2 hours</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favourite comment: Take my money Takuro😍 How can I buy this device?
+                This is my most favorite video Nas Daily. Well done👊
+              </p>
             </div>
           </div>
           <div className='featured-video-video-player'>

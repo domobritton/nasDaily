@@ -37,15 +37,20 @@ export default class SocialEnterpriseTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 476K</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 3 hours</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favourite comment:
+                Thank you, Pravin. Sadly, it's not just a problem in India. The taboo
+                is here in the US as well. My husband refuses to be seen in the check-out
+                line with me when I by feminine hygiene products.
+              </p>
             </div>
           </div>
         </div>
@@ -53,15 +58,19 @@ export default class SocialEnterpriseTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 1.8M views</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 1 day</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favourite comments:
+                At first I sucked my teeth but as the video went on...I had tears in my eyes. Makes sense...
+                I'm gonna bring all my stuffed animals to her 🐷
+              </p>
             </div>
           </div>
           <div className='featured-video-video-player'>

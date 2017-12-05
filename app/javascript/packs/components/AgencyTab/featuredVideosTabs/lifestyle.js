@@ -37,15 +37,20 @@ export default class LifestyleTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 5.2M</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 2 days</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our favourite comment:
+                As a trans man (FTM) in the LGBT community I really love you showcased her accomplishments
+                and stuff before you said she was trans! Goes to show that trans
+                people don't have to be know for ONLY being trans ya know?
+              </p>
             </div>
           </div>
         </div>

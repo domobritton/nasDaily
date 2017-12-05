@@ -37,15 +37,17 @@ export default class TravelTabContents extends React.Component {
           <div className='featured-video-video-metrics-container'>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-1.svg' />
-              <p>Something about metric 1</p>
+              <p>Views: 532K</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-2.svg' />
-              <p>Something about metric 2</p>
+              <p>Production time: 1.5 hours</p>
             </div>
             <div className='featured-video-video-metric'>
               <img src='/assets/agency/metric-icon-3.svg' />
-              <p>Something about metric 3</p>
+              <p>
+                Our Favourite comment: I blame you Nas for what I'm about to do next!!! [get a credit card]
+              </p>
             </div>
           </div>
         </div>
