@@ -17,6 +17,7 @@ gem "autoprefixer-rails", '~> 7.1.2'
 gem 'pg', '~> 0.18'
 gem 'newrelic_rpm', '~> 4.2.0'
 gem 'paper_trail', '~> 7.1.0'
+gem 'sprockets', '~>3.7.2'
 
 gem 'hamburgers', '~> 0.9.1'
 gem 'turbolinks', '~> 5'
