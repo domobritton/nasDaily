@@ -42,18 +42,21 @@ export default class Videos extends React.Component {
   }
 
   setupInfiniteScrollListener() {
-    if (!isMobile() && !isTablet()) { return }
+    // if (!isMobile() && !isTablet()) { return }
 
     $(window).scroll(() => {
+      console.log($(window).scrollTop() + $(window).height())
       if($(window).scrollTop() + $(window).height() >= $(document).height() - 1000) {
         const { loading } = this.state;
         if (loading) { return }
 
         this.setState({loading: true});
-        this.loadMore({ animate: false });
+        this.loadMore({ animate: true });
       }
     });
+
   }
+
 
   showVideo = (src) => {
     this.setState({
@@ -125,9 +128,9 @@ export default class Videos extends React.Component {
   loadMore({ animate=true }) {
     const { maxNumRows } = this.state;
 
-    if (animate) {
-      $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 750, 'swing');
-    }
+    // if (animate) {
+    //   $('html, body').animate({ scrollTop: $('#load-more-button').position().top - 70 }, 750, 'swing');
+    // }
 
     this.setState({
       maxNumRows: maxNumRows + initialNumRows()

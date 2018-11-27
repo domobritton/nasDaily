@@ -65,16 +65,16 @@ export default class Footer extends React.Component {
         <div className='social-list-header'></div>
         <ul className='social-list'>
           <li>
-            <a
+            {/* <a
               target='_blank'
               href='https://www.facebook.com/nasdaily/'
               className='social-icon-wrapper'
             >
+            </a> */}
               <Image
                 publicId = "NASDAILY._g21um6.png"
                 className='social-icon'
               />
-            </a>
           </li>
         </ul>
         <div className='subfooter'>
