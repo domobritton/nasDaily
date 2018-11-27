@@ -134,22 +134,22 @@ export default class Videos extends React.Component {
     });
   }
 
-  get loadMoreButton() {
-    const { maxNumRows } = this.state;
-    const { videos } = this.props;
+  // get loadMoreButton() {
+  //   const { maxNumRows } = this.state;
+  //   const { videos } = this.props;
 
-    if (videos.length <= (maxNumRows * numVideosInRow())) { return null }
+  //   if (videos.length <= (maxNumRows * numVideosInRow())) { return null }
 
-    return (
-      <button
-        className='load-more-button'
-        id='load-more-button'
-        onClick={ this.loadMore }
-      >
-        Load more
-      </button>
-    );
-  }
+  //   return (
+  //     <button
+  //       className='load-more-button'
+  //       id='load-more-button'
+  //       onClick={ this.loadMore }
+  //     >
+  //       Load more
+  //     </button>
+  //   );
+  // }
 
   render() {
     const { videoId } = this.state;
@@ -165,7 +165,7 @@ export default class Videos extends React.Component {
             videos={videos}
           />
         </div>
-        { this.loadMoreButton }
+        {/* { this.loadMoreButton } */}
       </div>
     );
   }

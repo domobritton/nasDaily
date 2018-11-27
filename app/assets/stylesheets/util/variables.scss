@@ -1,12 +1,12 @@
 /* colors: */
 $yellow-color: #fbc91b;
-$dark-gray-color: #292929;
+$dark-gray-color: #272727;
 $gray-color: #303030;
 $font-color-light: #787878;
 $font-color-dark: #4E4E4E;
 
 /* fonts: */
-$main-font: 'Teko', Arial, sans-serif;
+$main-font: 'Open Sans', sans-serif;
 
 /* viewport sizes */
 
@@ -39,11 +39,11 @@ $xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})";
 $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})";
 
 /* misc */
-$footer-height: 400px;
+$footer-height: 175px;
 $header-height: 70px;
 $email-input-font-size: 24px;
 $shop-form-input-height: 45px;
 
 /* search */
-$search-input-font-size: 59px;
+$search-input-font-size: 21px;
 $search-input-font-size-mobile: 34px;

@@ -14,15 +14,24 @@ export default class Footer extends React.Component {
 
     return (
       <div className='nd-footer'>
-        <Image publicId="NASDAILY._white_w6czgq.svg" className='logo'/>
+        {/* <Image publicId="NASDAILY._white_w6czgq.svg" className='logo'/> */}
         <ul className='navigation'>
           <li>
             <Link
-              to='/app'
-              className={ classnames('navigation-link', {active: pathname === '/app'}) }
+              to='/'
+              className={ classnames('navigation-link', {active: pathname === '/'}) }
               onClick={() => scrollTo(0,0)}
             >
-              The App
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/creators'
+              className={ classnames('navigation-link', {active: pathname === '/creators'}) }
+              onClick={() => scrollTo(0,0)}
+            >
+              Creators
             </Link>
           </li>
           <li>
@@ -40,7 +49,7 @@ export default class Footer extends React.Component {
               className={ classnames('navigation-link', {active: pathname === '/shop'}) }
               onClick={() => scrollTo(0,0)}
             >
-              Shop
+              Store
             </Link>
           </li>
           <li>
@@ -53,7 +62,7 @@ export default class Footer extends React.Component {
             </Link>
           </li>
         </ul>
-        <div className='social-list-header'>Only on:</div>
+        <div className='social-list-header'></div>
         <ul className='social-list'>
           <li>
             <a
@@ -62,7 +71,7 @@ export default class Footer extends React.Component {
               className='social-icon-wrapper'
             >
               <Image
-                publicId="facebook_icon_v02_wk1t1d.svg"
+                publicId = "NASDAILY._g21um6.png"
                 className='social-icon'
               />
             </a>
