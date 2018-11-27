@@ -26,15 +26,17 @@ export default class VideosTab extends React.Component {
   }
 
   get search() {
-    const { inputValue } = this.state;
-
+    const { inputValue, videos } = this.state;
+    const length = videos.length
     return (
       <div className='nd-search'>
         <div className='input-wrapper'>
+        <div classname='search-icon'><i className="fas fa-search"></i></div>
+        <div className='videos-header'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div>
           <input
             onChange={(e) => { e.persist(); this.onInputChange(e.target.value); }}
             onKeyPress={(e) => { e.key === 'Enter' && this.searchInput.blur()}}
-            placeholder='Search videos...'
+            placeholder='SEARCH VIDEOS'
             tabIndex='1'
             ref={(ref) => (this.searchInput = ref)}
             value={inputValue}
@@ -93,10 +95,8 @@ export default class VideosTab extends React.Component {
       videoId,
       resetMaxVideos
     } = this.state;
-
     return (
       <div className='nd-videos'>
-        <div className='videos-header'>{ `Videos (${videos ? videos.length : '0'})` }</div>
         <Videos videos={videos} resetMaxVideos={resetMaxVideos}/>
       </div>
     )

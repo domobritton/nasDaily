@@ -1,20 +1,14 @@
 .nd-videos {
   padding-bottom: 48px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 10%;
+  padding-right: 10%;
 
   .videos-rows {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 12px;
-  }
-
-  .videos-header {
-    font-size: 20px;
-    margin-left: 20px;
-    color: lighten($font-color-light, 20%);
+    align-items: center;
     margin-bottom: 12px;
   }
 
@@ -35,11 +29,6 @@
   @media #{$small-only} {
     padding: 0;
     padding-bottom: 24px;
-
-    .videos-header {
-      text-align: center;
-      display: block;
-    }
   }
 
   @media #{$large-up} {
@@ -49,7 +38,7 @@
   }
 
   $duration: 350ms;
-  $tileWidth: 311px;
+  $tileWidth: 225px;
   $tileHeight: ($tileWidth / (16/9));
   $iconSize: 50px;
   $growFactor: 1.25; // times the original size
@@ -205,3 +194,4 @@
     }
   }
 }
+

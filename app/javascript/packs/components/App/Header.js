@@ -37,10 +37,16 @@ export default class Header extends React.Component {
     return (
       <div className='nd-navigation'>
         <Link
-          to='/app'
-          className={ classnames('nd-navigation-item', {active: pathname === '/app'}) }
+          to='/'
+          className={ classnames('nd-navigation-item', {active: pathname === '/'}) }
         >
-          The App
+          About
+        </Link>
+        <Link
+          to='/creators'
+          className={ classnames('nd-navigation-item', {active: pathname === '/creators'}) }
+        >
+          Creators
         </Link>
         <Link
           to='/videos'
@@ -52,7 +58,7 @@ export default class Header extends React.Component {
           to='/shop'
           className={ classnames('nd-navigation-item', {active: pathname === '/shop'}) }
         >
-          Shop
+          Store
         </Link>
         <Link
           to='/agency'

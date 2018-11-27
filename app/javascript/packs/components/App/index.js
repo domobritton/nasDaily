@@ -2,6 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import { Image } from 'cloudinary-react';
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import AboutTab from '../AboutTab'
+import CreatorsTab from '../CreatorsTab'
 import VideosTab from '../VideosTab';
 import AppTab from '../AppTab';
 import ShopTab from '../ShopTab';
@@ -36,7 +38,7 @@ export default class App extends React.Component {
     const { children, videos } = this.state;
     const { pathname } = window.location;
     $('body').removeClass().addClass(pathname.replace('/', ''));
-
+    debugger;
     return (
       <div>
         <div className='content'>
@@ -51,12 +53,13 @@ export default class App extends React.Component {
           </div>
           <Header />
           <Switch>
+            <Route path='/creators' render={() => <CreatorsTab videos={videos} />} />
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
-            <Route path="/app" component={AppTab}/>
             <Route path="/shop" render={() => <ShopTab videos={videos} /> }/>
             <Route path="/privacy" component={PrivacyTab}/>
             <Route path="/terms" component={TermsTab}/>
             <Route path="/agency" render={() => <AgencyTab videos={videos} />}/>
+            <Route path='/' render={() => <AboutTab videos={videos} />} />
             <Redirect to={{pathname: '/videos'}}/>
           </Switch>
         </div>

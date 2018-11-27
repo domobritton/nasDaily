@@ -1,6 +1,8 @@
 .nd-header {
   display: flex;
   height: $header-height;
+  font-family: 'Raleway',
+  sans-serif;
   position: fixed;
   top: 0;
   right: 0;
@@ -20,7 +22,7 @@
   }
 
   .logo-image {
-    height: 21px;
+    height: 18px;
     margin-top: 24px;
   }
 
@@ -37,19 +39,26 @@
   }
 
   .nd-navigation-item {
-    font-size: 26px;
-    color: $font-color-light;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    line-height: 43px;
+    // color: $font-color-light;
+    color: #c9c9c9;
     text-transform: uppercase;
-    margin-left: 54px;
+    margin-left: 23px;
 
     &:hover, &:active, &:focus {
-      color: $yellow-color;
+      // color: $yellow-color;
+      color: white;
     }
 
     &.active {
-      color: $yellow-color;
+      // color: $yellow-color;
       border-bottom: 2px solid $yellow-color;
-      border-radius: 2px;
+      // border-radius: 2px;
+      padding-bottom: 5px;
+     
     }
   }
 
@@ -140,16 +149,16 @@
 }
 
 body.shop {
-  .nd-navigation-item {
-    color: white;
-  }
+  // .nd-navigation-item {
+  //   color: white;
+  // }
 
   .nd-header {
     background-color: white;
   }
 
   .nd-navigation-item {
-    color: #c2c2c2;
+    color: #c9c9c9;
 
     &:hover, &:active, &:focus {
       color: #1f1f1f;
@@ -180,7 +189,7 @@ body.app {
   }
 
   .nd-navigation-item {
-    color: #c2c2c2;
+    color: #c9c9c9;
 
     &:hover, &:active, &:focus {
       color: #1f1f1f;

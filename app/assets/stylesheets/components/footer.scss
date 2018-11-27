@@ -7,20 +7,27 @@
   color: $font-color-light;
   height: $footer-height;
 
-  .logo {
-    margin: 50px;
-    height: 25px;
-  }
+  // .logo {
+  //   margin: 50px;
+  //   height: 25px;
+  // }
 
   .navigation {
-    padding: 30px;
+    // padding: 30px;
     display: flex;
+    // justify-content: space-between;
+    // align-items: center;
 
     li {
       text-transform: uppercase;
-      font-size: 35px;
-      padding-right: 50px;
-      padding-left: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: 'Raleway',
+      sans-serif;
+      letter-spacing: 1.42px;
+      line-height: 43px;
+      // padding-right: 50px;
+      // padding-left: 50px;
       min-width: 78px;
     }
   }
@@ -73,6 +80,7 @@
   }
 
   .subfooter {
+    visibility: hidden;
     position: relative;
     display: flex;
     justify-content: center;
