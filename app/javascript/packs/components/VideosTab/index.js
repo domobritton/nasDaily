@@ -31,7 +31,7 @@ export default class VideosTab extends React.Component {
     return (
       <div className='nd-search'>
         <div className='input-wrapper'>
-        <div classname='search-icon'><i className="fas fa-search"></i></div>
+        <div className='search-icon'><i className="fas fa-search"></i></div>
         <div className='videos-header'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div>
           <input
             onChange={(e) => { e.persist(); this.onInputChange(e.target.value); }}

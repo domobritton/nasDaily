@@ -38,7 +38,7 @@ export default class App extends React.Component {
     const { children, videos } = this.state;
     const { pathname } = window.location;
     $('body').removeClass().addClass(pathname.replace('/', ''));
-    debugger;
+ 
     return (
       <div>
         <div className='content'>
