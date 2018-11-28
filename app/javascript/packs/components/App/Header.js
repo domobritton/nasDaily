@@ -43,10 +43,10 @@ export default class Header extends React.Component {
           About
         </Link>
         <Link
-          to='/creators'
-          className={ classnames('nd-navigation-item', {active: pathname === '/creators'}) }
+          to='/team'
+          className={ classnames('nd-navigation-item', {active: pathname === '/team'}) }
         >
-          Creators
+          Team
         </Link>
         <Link
           to='/videos'

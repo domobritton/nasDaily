@@ -1,7 +1,9 @@
 .nd-videos {
   padding-bottom: 48px;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  animation-duration: 1s;
+  animation-delay: 1s;
   // height: 100vh;
   // overflow: auto;
   
@@ -50,6 +52,7 @@
   $moveRight: $tileWidth * ($growFactor - 1);
 
   .row {
+
     overflow: visible;
     width: 100%;
     display: flex;
@@ -197,5 +200,41 @@
       height: auto;
     }
   }
+}
+
+.outer-scroll {
+  position: fixed;
+  bottom: 35px;
+  right: 25px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s 3s, opacity 3s linear;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 2s linear;
+}
+
+.scroll {
+  border: 1px solid #545454;
+  width: 109px;
+  height: 109px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 20px;
+  color: white;
+  font-size: 12px;
+  outline: none;
+}
+
+.up-arrow {
+  color: $yellow-color;
+  font-size: 22px;
+  margin-top: -5px;
 }
 

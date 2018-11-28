@@ -7,6 +7,8 @@ import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
 import { isMobile, isTablet } from '../../util/viewportSize';
+import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollButton from './ScrollButton';
 
 export default class Videos extends React.Component {
   constructor() {
@@ -15,7 +17,7 @@ export default class Videos extends React.Component {
     this.state = {
       maxNumRows: initialNumRows() * 2,
       videoId: null,
-      loading: false
+      loading: false,
     }
 
     this.loadMore = this.loadMore.bind(this);
@@ -45,18 +47,27 @@ export default class Videos extends React.Component {
     // if (!isMobile() && !isTablet()) { return }
 
     $(window).scroll(() => {
-      console.log($(window).scrollTop() + $(window).height())
-      if($(window).scrollTop() + $(window).height() >= $(document).height() - 1000) {
+      let height = $(window).scrollTop() + $(window).height();
+      if(height >= $(document).height() - 1000) {
         const { loading } = this.state;
         if (loading) { return }
 
         this.setState({loading: true});
         this.loadMore({ animate: true });
       }
+      this.scrollButton(height);
     });
 
   }
 
+  scrollButton(height) {
+
+    if (height > 2000) {
+      $('.outer-scroll').addClass('show animated fadeInUp delay-2s');
+    } else if (height < 2000) {
+      $('.outer-scroll').removeClass('show');
+    }
+  }
 
   showVideo = (src) => {
     this.setState({
@@ -92,6 +103,7 @@ export default class Videos extends React.Component {
             key={rowIdx}
             onSuccess={() => this.setState({loading: false})}
           >
+          <ScrollAnimation animateIn='fadeIn'>
             <div className="row">
               <div className="row__inner">
                 { row.map((v, itemIdx) => (
@@ -119,8 +131,10 @@ export default class Videos extends React.Component {
                 }
               </div>
             </div>
+            </ScrollAnimation>
           </Preload>))
         }
+        <ScrollButton scrollStepInPx='50' delayInMs='16.66' />
       </div>
     );
   }

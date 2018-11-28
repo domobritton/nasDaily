@@ -1,5 +1,6 @@
 import React from 'react';
 import Fuse from 'fuse.js';
+import ScrollButton from './ScrollButton';
 import { debounce } from 'lodash';
 import Videos from './Videos';
 import classnames from 'classnames';
@@ -29,7 +30,7 @@ export default class VideosTab extends React.Component {
     const { inputValue, videos } = this.state;
     const length = videos.length
     return (
-      <div className='nd-search'>
+      <div className='nd-search animated slideInUp'>
         <div className='input-wrapper'>
         <div className='search-icon'><i className="fas fa-search"></i></div>
         <div className='videos-header'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div>
@@ -95,11 +96,11 @@ export default class VideosTab extends React.Component {
       videoId,
       resetMaxVideos
     } = this.state;
-    return (
-      <div className='nd-videos'>
-        <Videos videos={videos} resetMaxVideos={resetMaxVideos}/>
-      </div>
-    )
+      return (
+        <div className='nd-videos animated fadeIn'>
+          <Videos videos={videos} resetMaxVideos={resetMaxVideos}/>
+        </div>
+      )
   }
 
   render() {

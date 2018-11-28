@@ -34,6 +34,7 @@
     "prop-types": "^15.5.10",
     "rails-erb-loader": "^5.0.2",
     "react": "^15.6.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-collapse": "^4.0.2",
     "react-dom": "^15.6.1",
     "react-facebook-player": "https://github.com/petrgazarov/react-facebook-player#fix-events-listeners",
