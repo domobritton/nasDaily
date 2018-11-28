@@ -27,11 +27,11 @@ export default class Footer extends React.Component {
           </li>
           <li>
             <Link
-              to='/creators'
-              className={ classnames('navigation-link', {active: pathname === '/creators'}) }
+              to='/team'
+              className={ classnames('navigation-link', {active: pathname === '/team'}) }
               onClick={() => scrollTo(0,0)}
             >
-              Creators
+              Team
             </Link>
           </li>
           <li>

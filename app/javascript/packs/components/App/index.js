@@ -3,7 +3,7 @@ import $ from 'jquery';
 import { Image } from 'cloudinary-react';
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import AboutTab from '../AboutTab'
-import CreatorsTab from '../CreatorsTab'
+import TeamTab from '../TeamTab'
 import VideosTab from '../VideosTab';
 import AppTab from '../AppTab';
 import ShopTab from '../ShopTab';
@@ -53,7 +53,7 @@ export default class App extends React.Component {
           </div>
           <Header />
           <Switch>
-            <Route path='/creators' render={() => <CreatorsTab videos={videos} />} />
+            <Route path='/team' render={() => <TeamTab videos={videos} />} />
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
             <Route path="/shop" render={() => <ShopTab videos={videos} /> }/>
             <Route path="/privacy" component={PrivacyTab}/>

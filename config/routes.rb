@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get 'about', to: 'home#index'
   get 'team', to: 'home#index'
-  get 'creators', to: 'home#index'
   get 'videos', to: 'home#index'
   get 'app', to: 'home#index'
   get 'shop', to: 'home#index'
