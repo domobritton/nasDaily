@@ -1,9 +1,12 @@
 .nd-creators {
     padding-top: 150px;
-    padding-left: 11%;
-    padding-right: 11%;
+    width: 100vw;
     font-family: 'Open Sans', sans-serif;
     color: white;
+
+    .creators-top {
+        margin-left: 11%;
+    }
     
     h1 {
         font-size: 50px;
@@ -62,10 +65,98 @@
     ul {
         display: flex;
         justify-content: flex-start;
+        align-items: center;
+        padding-top: 8px;
+        // padding-left: 29.5px;
     }
+
+    li {
+        font-family: 'Raleway';
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.72px;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-left: 28px;
+    }
+    
+    .fab {
+        height: 15.4px;
+        width: 15.4px;
+        margin-right: 15.6px;
+        font-size: 18px;
+    }
+
+
+    .profile-pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 51px;
+        width: 51px;
+        border: 1px solid #FFFFFF;
+        background: transparent;
+        border-radius: 100%;
+
+        img {
+            height: 45px;
+            width: 45px;
+            border-radius: 100%;
+        }
+    }
+
 
     .contact {
         position: absolute;
-        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 21.63px;
+        bottom: 11px;
+        height: 31px;
+        width: 112.37px;
+        border: 1.12px solid $yellow-color;
+        border-radius: 2.1px;
+        font-size: 11px;
+        letter-spacing: 0.88px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .show-more {
+        margin-top: 100px;
+        margin-bottom: 150px;
+    }
+
+    .show-more-inner {
+        font-family: 'Raleway';
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.78px;
+        line-height: 27px;
+    }
+
+    .loader {
+        text-align: center;
+    }
+
+    @keyframes blink {
+        50% {
+            color: transparent
+        }
+    }
+
+    .loader__dot {
+        color: $yellow-color;
+        animation: 2s blink infinite
+    }
+
+    .loader__dot:nth-child(2) {
+        animation-delay: 500ms
+    }
+
+    .loader__dot:nth-child(3) {
+        animation-delay: 750ms
     }
 }
