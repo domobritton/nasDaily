@@ -4,7 +4,12 @@ export default class TeamTab extends Component {
     render() {
         return (
             <div>
-                <div className='nd-creators'>
+               <div className='creators-lower'>
+                    <p>We're building the world's best Facebook Creator Team.<br />
+                    Wanna join? Drop us a note!</p>
+                    <a href=''>creators<span>@nasdaily.com</span></a>
+                </div>
+                {/* <div className='nd-creators'>
                     <div className='creators-top'>
                         <h1>NAS DAILY<span> CREATORS</span></h1>
                         <div className='description'>
@@ -80,6 +85,11 @@ export default class TeamTab extends Component {
                         </div>
                     </div>
                 </div>
+                <div className='creators-lower'>
+                    <p>We're building the world's best Facebook Creator Team.<br />
+                    Wanna join? Drop us a note!</p>
+                    <a href=''>creators<span>@nasdaily.com</span></a>
+                </div> */}
             </div>
         )
     }

@@ -71,7 +71,7 @@
     }
 
     li {
-        font-family: 'Raleway';
+        font-family: 'Raleway, sans-serif';
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.72px;
@@ -129,9 +129,9 @@
     }
 
     .show-more-inner {
-        font-family: 'Raleway';
+        font-family: 'Raleway, sans-serif';
         color: white;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.78px;
         line-height: 27px;
@@ -139,6 +139,7 @@
 
     .loader {
         text-align: center;
+        margin-top: 20px;
     }
 
     @keyframes blink {
@@ -158,5 +159,31 @@
 
     .loader__dot:nth-child(3) {
         animation-delay: 750ms
+    }
+
+    span {
+        font-size: 4px;
+        margin-right: 8px;
+    }
+}
+
+.creators-lower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 144px;
+    text-align: center;
+    color: white;
+    
+    a {
+        font-family: 'Raleway';
+        font-size: 33px;
+        font-weight: bold;
+        letter-spacing: 0.87px;
+        line-height: 36px;
+    }
+    span {
+        color: $yellow-color;    
     }
 }
