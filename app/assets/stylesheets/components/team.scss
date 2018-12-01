@@ -1,3 +1,8 @@
+.team {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .nd-creators {
     padding-top: 150px;
     width: 100vw;
@@ -187,3 +192,4 @@
         color: $yellow-color;    
     }
 }
+

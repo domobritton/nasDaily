@@ -1,5 +1,6 @@
 import React from 'react';
 import Fuse from 'fuse.js';
+import $ from 'jquery';
 import ScrollButton from './ScrollButton';
 import { debounce } from 'lodash';
 import Videos from './Videos';
@@ -86,8 +87,16 @@ export default class VideosTab extends React.Component {
     this.setState({
       inputValue: value
     });
-
+    this.hideSearchIcon(value);
     this.asyncOnChange(value);
+  }
+
+  hideSearchIcon(value) {
+    if (value) {
+      $('.search-icon').addClass('active');
+    } else {
+      $('.search-icon').removeClass('active');
+    }
   }
 
   get videos() {
@@ -105,7 +114,7 @@ export default class VideosTab extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='videos-page'>
         { this.search }
         { this.videos }
       </div>
