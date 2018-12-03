@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import Team  from './Team'
 import teamData from './teamData'
 import $ from 'jquery'
+import { Image } from 'cloudinary-react'
 
 export default class TeamTab extends Component {
     constructor() {
@@ -24,7 +25,7 @@ export default class TeamTab extends Component {
             <div>
                 {chunks.map(person => {
                     return (
-                        <div key={person.id} className='profile-inner'>
+                        <div key={person.id} className='profile-inner animated fadeIn'>
                             <div className='team-member'>
                                 <h1>Person Image</h1>
                                 <div className='team-lower'>
@@ -77,10 +78,15 @@ export default class TeamTab extends Component {
         
          return (
             <div className='team'>
+            {/* <div className='team-img-wrapper'>
+                <Image 
+                    publicId='Creators_BG-17ops_czbmwx.jpg'
+                    className='team-background' />
+            </div> */}
                 <div className='nd-creators'>
                     <div className='creators-top'>
-                        <h1>NAS DAILY<span> CREATORS</span></h1>
-                        <div className='description'>
+                        <h1 className='animated fadeInUp'>NAS DAILY<span> CREATORS</span></h1>
+                        <div className='description animated fadeInup delay-2s'>
                             <p>Nas Daily Creators are creative, authentic and real. From thousands of potential people, we assembled the best team of Facebook creators. We make videos about different topics, but our mission is the same.<span> Come work with us.</span></p>
                         </div>
                     </div>
@@ -88,8 +94,8 @@ export default class TeamTab extends Component {
                 <div className='profile-outer'>
                     <div className='creators-mid'>
                         { this.creators }
-                        { this.loadMoreButton }
                     </div>
+                        { this.loadMoreButton }
                 </div>
                 <div className='creators-lower'>
                     <p>We're building the world's best Facebook Creator Team.<br />

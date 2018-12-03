@@ -1,7 +1,36 @@
 .team {
     overflow-x: hidden;
     overflow-y: auto;
+
+    .team-img-wrapper {
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .team-img-wrapper:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .team-background {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100vw;
+    }
 }
+
 
 .nd-creators {
     display: flex;
@@ -25,6 +54,23 @@
 
     span {
         color: $yellow-color;
+    }
+
+    .description {
+        margin-top: 50px;
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.88px;
+            line-height: 36px;
+        }
+
+        span {
+            color: $yellow-color;
+        }
+
     }
 
     @media #{$medium-only} {
@@ -52,22 +98,6 @@
 
 }
 
-.description {
-    // width: 776px;
-    margin-top: 50px;
-        p {
-            font-family: 'Raleway', sans-serif;
-            font-size: 17px;
-            font-weight: 500;
-            letter-spacing: 0.88px;
-            line-height: 36px;
-        }
-        span {
-            color: $yellow-color;
-        }
-
-}
-
 .profile-outer {
     width: 100vw;
     margin-top: 100px;
@@ -88,6 +118,8 @@
         border-radius: 7px;
         background: #343434;
         margin-bottom: 24px;
+        animation-duration: 1s;
+        animation-delay: 1s;
     }
     
     .team-lower {

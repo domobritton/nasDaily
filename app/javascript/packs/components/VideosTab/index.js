@@ -33,7 +33,7 @@ export default class VideosTab extends React.Component {
     return (
       <div className='nd-search animated slideInUp'>
         <div className='input-wrapper'>
-        <div className='search-icon'><i className="fas fa-search"></i></div>
+        <div className='search-icon'><img src='/assets/search_icon.svg' /></div>
         <div className='videos-header'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div>
           <input
             onChange={(e) => { e.persist(); this.onInputChange(e.target.value); }}
