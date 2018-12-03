@@ -1,8 +1,81 @@
 import React, { Component } from 'react'
+// import Team  from './Team'
+import teamData from './teamData'
+import $ from 'jquery'
 
 export default class TeamTab extends Component {
-    render() {
+    constructor() {
+        super()
+        this.state = {
+            maxCreators: 4
+        }
+
+        this.loadMore = this.loadMore.bind(this)
+    }
+
+    get creators() {
+        const { maxCreators } = this.state 
+        let chunks = []
+        for (let i = 0; i < maxCreators; i++) {
+            chunks.push(teamData[i])
+        }
+
         return (
+            <div>
+                {chunks.map(person => {
+                    return (
+                        <div key={person.id} className='profile-inner'>
+                            <div className='team-member'>
+                                <h1>Person Image</h1>
+                                <div className='team-lower'>
+                                <ul>
+                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
+                                    <li>{person.name}</li>
+                                    <li>{person.project}</li>
+                                    <li><i className="fab fa-facebook-square"></i>{`${person.followers} Followers`}</li>
+                                </ul>
+                                <div className='contact'>WORK WITH ME</div>
+                                </div>
+                            </div>
+                        </div> 
+                    ) 
+                })}
+            </div>
+        )
+    }
+
+    get loadMoreButton() {
+        const { maxCreators } = this.state 
+        if (teamData.length <= maxCreators) { return null }
+
+        return (
+            <div
+                id='show-more-button' 
+                className='show-more'>
+                <div 
+                    className='show-more-inner'
+                    onClick={ this.loadMore }>
+                SHOW MORE CREATORS
+                    <div className="loader">
+                        <span className="loader__dot"><i className="fas fa-circle"></i></span>
+                        <span className="loader__dot"><i className="fas fa-circle"></i></span>
+                        <span className="loader__dot"><i className="fas fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    loadMore() {
+        const { maxCreators } = this.state 
+        $('html, body').animate( { scrollTop: $('#show-more-button').position().top - 70}, 750, 'swing')
+
+        this.setState({ maxCreators: maxCreators + 4})
+    }
+
+    render() {
+        
+         return (
             <div className='team'>
                 <div className='nd-creators'>
                     <div className='creators-top'>
@@ -13,71 +86,9 @@ export default class TeamTab extends Component {
                     </div>
                 </div>
                 <div className='profile-outer'>
-                    <div className='profile-inner'>
-                        <div className='team-member'>
-                            <h1>Person Image</h1>
-                            <div className='team-lower'>
-                                <ul>
-                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
-                                    <li>Person name</li>
-                                    <li>Subject</li>
-                                    <li><i className="fab fa-facebook-square"></i>So many followers!</li>
-                                </ul>
-                                <div className='contact'>WORK WITH ME</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='profile-inner'>
-                        <div className='team-member'>
-                            <h1>Person Image</h1>
-                            <div className='team-lower'>
-                                <ul>
-                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
-                                    <li>Person name</li>
-                                    <li>Subject</li>
-                                    <li><i className="fab fa-facebook-square"></i>So many followers!</li>
-                                </ul>
-                                <div className='contact'>WORK WITH ME</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='profile-inner'>
-                        <div className='team-member'>
-                            <h1>Person Image</h1>
-                            <div className='team-lower'>
-                                <ul>
-                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
-                                    <li>Person name</li>
-                                    <li>Subject</li>
-                                    <li><i className="fab fa-facebook-square"></i>So many followers!</li>
-                                </ul>
-                                <div className='contact'>WORK WITH ME</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='profile-inner'>
-                        <div className='team-member'>
-                            <h1>Person Image</h1>
-                            <div className='team-lower'>
-                                <ul>
-                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
-                                    <li>Person name</li>
-                                    <li>Subject</li>
-                                    <li><i className="fab fa-facebook-square"></i>So many followers!</li>
-                                </ul>
-                                <div className='contact'>WORK WITH ME</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='show-more'>
-                        <div className='show-more-inner'>
-                            SHOW MORE CREATORS
-                            <div className="loader">
-                                <span className="loader__dot"><i className="fas fa-circle"></i></span>
-                                <span className="loader__dot"><i className="fas fa-circle"></i></span>
-                                <span className="loader__dot"><i className="fas fa-circle"></i></span>
-                            </div>
-                        </div>
+                    <div className='creators-mid'>
+                        { this.creators }
+                        { this.loadMoreButton }
                     </div>
                 </div>
                 <div className='creators-lower'>
