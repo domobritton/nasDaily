@@ -8,10 +8,11 @@
   // right: 0;
   // left: 0;
   // background-color: $dark-gray-color;
-  z-index: 5;
+  // z-index: 5;
   justify-content: space-between;
   flex-wrap: wrap;
   transition: height 250ms ease-out;
+  background: transparent;
 
   &.open-menu {
     height: 100%;
@@ -123,7 +124,7 @@
 
   @media #{$large-up} {
     position: relative;
-    background-color: transparent;
+    // background-color: transparent;
     align-items: center;
 
     .header-filler {
@@ -201,13 +202,13 @@ body.app {
   }
 }
 
-.header-filler {
-  height: $header-height;
-  width: 100%;
-  background-color: transparent;
-  display: block;
+// .header-filler {
+//   height: $header-height;
+//   width: 100%;
+//   background-color: transparent;
+//   display: block;
 
-  @media #{$large-up} {
-    display: none;
-  }
-}
+//   @media #{$large-up} {
+//     display: none;
+//   }
+// }

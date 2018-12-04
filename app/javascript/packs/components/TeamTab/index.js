@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import teamData from './teamData'
 import $ from 'jquery'
 import { Image } from 'cloudinary-react'
+import { Parallax } from 'react-scroll-parallax';
 
 export default class TeamTab extends Component {
     constructor() {
@@ -28,6 +29,12 @@ export default class TeamTab extends Component {
                         <div key={person.id} className='profile-inner animated fadeIn'>
                             <div className='team-member'>
                                 <h1>Person Image</h1>
+                                <div className='mobile-profile'>
+                                    <div className='mobile-profile-pic'>
+                                        <img src='https://via.placeholder.com/46' alt='' />
+                                    </div>
+                                    <p>{person.name}</p>
+                                </div>
                                 <div className='team-lower'>
                                 <ul>
                                     <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
@@ -77,12 +84,13 @@ export default class TeamTab extends Component {
     render() {
         
          return (
-            <div className='team'>
-            {/* <div className='team-img-wrapper'>
-                <Image 
-                    publicId='Creators_BG-17ops_czbmwx.jpg'
-                    className='team-background' />
-            </div> */}
+             <div className='team'>
+             <Parallax
+                offsetYMin={'20%'} 
+                offsetYMax={'-20%'} 
+                slowerScrollRate>
+             <div className='radial'></div>
+             </Parallax>
                 <div className='nd-creators'>
                     <div className='creators-top'>
                         <h1 className='animated fadeInUp'>NAS DAILY<span> CREATORS</span></h1>
@@ -97,6 +105,7 @@ export default class TeamTab extends Component {
                     </div>
                         { this.loadMoreButton }
                 </div>
+                
                 <div className='creators-lower'>
                     <p>We're building the world's best Facebook Creator Team.<br />
                     Wanna join? Drop us a note!</p>
