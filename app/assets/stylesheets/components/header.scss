@@ -3,16 +3,11 @@
   height: $header-height;
   font-family: 'Raleway',
   sans-serif;
-  // position: fixed;
-  // top: 0;
-  // right: 0;
-  // left: 0;
-  // background-color: $dark-gray-color;
-  // z-index: 5;
   justify-content: space-between;
   flex-wrap: wrap;
   transition: height 250ms ease-out;
   background: transparent;
+  overflow: hidden;
 
   &.open-menu {
     height: 100%;
@@ -37,6 +32,36 @@
   .nd-navigation {
     display: none;
     margin-right: 34px;
+ 
+    hr {
+      height: .13rem;
+      width: 14%;
+      padding-top: 0;
+      margin-top: -10px;
+      background: $yellow-color;
+      border: none;
+      transition: .3s ease-in-out;
+      }
+
+    .one {
+      margin-left: 6%;
+    }
+
+    .two {
+      margin-left: 25%;
+    }
+
+    .three {
+      margin-left: 44%;
+    }
+
+    .four {
+      margin-left: 64%;
+    }
+
+    .five {
+      margin-left: 85%;
+    }
   }
 
   .nd-navigation-item {
@@ -50,16 +75,7 @@
     margin-left: 23px;
 
     &:hover, &:active, &:focus {
-      // color: $yellow-color;
       color: white;
-    }
-
-    &.active {
-      // color: $yellow-color;
-      border-bottom: 2px solid $yellow-color;
-      // border-radius: 2px;
-      padding-bottom: 5px;
-     
     }
   }
 
