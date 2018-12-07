@@ -164,7 +164,7 @@
         bottom: 0;
         height: 68px;
         width: 100%;
-        background: #2c2c2cab;
+        background-color: #222222;
     }
 
     ul {
@@ -217,7 +217,7 @@
         justify-content: center;
         align-items: center;
         right: 21.63px;
-        bottom: 11px;
+        bottom: 17.14px;
         height: 31px;
         width: 112.37px;
         border: 1.12px solid $yellow-color;
@@ -292,8 +292,8 @@
     justify-content: center;
     flex-direction: column;
     width: 100vw;
-    // margin-top: 50px;
-    // margin-bottom: 160px;
+    margin-top: 80px;
+    margin-bottom: 160px;
     text-align: center;
     color: white;
     

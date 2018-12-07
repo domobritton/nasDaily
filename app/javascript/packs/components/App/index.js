@@ -51,7 +51,7 @@ export default class App extends React.Component {
               />
             </div>
           </div>
-          <Header />
+          {/* <Header /> */}
           <Switch>
             <Route path='/team' render={() => <TeamTab videos={videos} />} />
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>

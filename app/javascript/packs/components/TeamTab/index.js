@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-// import Team  from './Team'
-import teamData from './teamData'
+import HeroBanner from './Herobanner'
+import Creators from './Creators'
 import $ from 'jquery'
-import { Image } from 'cloudinary-react'
-import { Parallax } from 'react-scroll-parallax';
+
 
 export default class TeamTab extends Component {
     constructor() {
@@ -14,43 +13,6 @@ export default class TeamTab extends Component {
 
         this.loadMore = this.loadMore.bind(this)
     }
-
-    // get creators() {
-    //     const { maxCreators } = this.state 
-    //     let chunks = []
-    //     for (let i = 0; i < maxCreators; i++) {
-    //         chunks.push(teamData[i])
-    //     }
-
-    //     return (
-    //         <div>
-    //             {chunks.map(person => {
-    //                 return (
-    //                     <div key={person.id} className='profile-inner animated fadeIn'>
-    //                         <div className='team-member'>
-    //                             <h1>Person Image</h1>
-    //                             <div className='mobile-profile'>
-    //                                 <div className='mobile-profile-pic'>
-    //                                     <img src='https://via.placeholder.com/46' alt='' />
-    //                                 </div>
-    //                                 <p>{person.name}</p>
-    //                             </div>
-    //                             <div className='team-lower'>
-    //                             <ul>
-    //                                 <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
-    //                                 <li>{person.name}</li>
-    //                                 <li>{person.project}</li>
-    //                                 <li><i className="fab fa-facebook-square"></i>{`${person.followers} Followers`}</li>
-    //                             </ul>
-    //                             <div className='contact'>WORK WITH ME</div>
-    //                             </div>
-    //                         </div>
-    //                     </div> 
-    //                 ) 
-    //             })}
-    //         </div>
-    //     )
-    // }
 
     get loadMoreButton() {
         const { more } = this.state 
@@ -120,52 +82,4 @@ export default class TeamTab extends Component {
             </div>
         )
     }
-}
-
-const HeroBanner = ({ image, min, max, children }) => (
-    <div className="hero-container">
-        <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
-            <div
-                className="hero-image"
-                style={{ backgroundImage: `url(${image})` }}
-            />
-        </Parallax>
-        <div className="hero-children">{children}</div>
-    </div>
-);
-
-const Creators = ({start, end}) => {
-    let chunks = []
-    for (let i = start; i < end; i++) {
-        chunks.push(teamData[i])
-    }
-
-    return (
-        <div>
-            {chunks.map(person => {
-                return (
-                    <div key={person.id} className='profile-inner animated fadeIn'>
-                        <div className='team-member'>
-                            <h1>Person Image</h1>
-                            <div className='mobile-profile'>
-                                <div className='mobile-profile-pic'>
-                                    <img src='https://via.placeholder.com/46' alt='' />
-                                </div>
-                                <p>{person.name}</p>
-                            </div>
-                            <div className='team-lower'>
-                                <ul>
-                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
-                                    <li>{person.name}</li>
-                                    <li>{person.project}</li>
-                                    <li><i className="fab fa-facebook-square"></i>{`${person.followers} Followers`}</li>
-                                </ul>
-                                <div className='contact'>WORK WITH ME</div>
-                            </div>
-                        </div>
-                    </div>
-                )
-            })}
-        </div>
-    )
 }

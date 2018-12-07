@@ -6,8 +6,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   transition: height 250ms ease-out;
-  background: transparent;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
 
   &.open-menu {
     height: 100%;
