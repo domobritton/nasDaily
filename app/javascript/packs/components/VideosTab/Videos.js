@@ -63,7 +63,7 @@ export default class Videos extends React.Component {
   scrollButton(height) {
 
     if (height > 2000) {
-      $('.outer-scroll').addClass('show animated fadeInUp delay-2s');
+      $('.outer-scroll').addClass('show animated fadeInUp');
     } else if (height < 2000) {
       $('.outer-scroll').removeClass('show');
     }

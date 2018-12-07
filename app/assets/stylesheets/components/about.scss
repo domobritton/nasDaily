@@ -1,0 +1,43 @@
+
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+        /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.react-player:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(31, 31, 31, 0.8);
+    background: linear-gradient(rgba(31, 31, 31, 0.4),rgba(31, 31, 31, 0.4));
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nd-nav {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.nd-nav-item {
+
+}

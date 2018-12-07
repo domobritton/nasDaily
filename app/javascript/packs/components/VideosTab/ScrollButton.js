@@ -24,8 +24,10 @@ export default class ScrollButton extends Component {
   render () {
       return (
           <div className='outer-scroll'>
-            <button title='Back to top' className='scroll' 
-               onClick={ () => { this.scrollToTop(); }}>
+            <button 
+              title='Back to top' 
+              className='scroll' 
+              onClick={ () => { this.scrollToTop(); }}>
                <div className='up-arrow'>&#8593;</div>
                BACK TO TOP
             </button>
