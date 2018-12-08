@@ -17,9 +17,8 @@ export default class AboutTab extends Component {
         const { videoURL, bool } = this.state
         return (
             <div className='nd-about'>
-
-                <div className='player-wrapper'>
                 <Header />
+                <div className='player-wrapper'>
                     <ReactPlayer 
                     className='react-player'
                     url={videoURL}
@@ -28,8 +27,13 @@ export default class AboutTab extends Component {
                     loop={bool}
                     width='100%'
                     height='100%' />
-                    <AboutBox />
+                    <div className='social-box'>
+                        <p>I'M ONLY ON:</p>
+                        <div className='insta-icon'><img src='/assets/instagram_icon.svg' /></div>
+                        <div className='fb-icon'><img src='/assets/facebook_icon.svg' /></div>
+                    </div>
                 </div>
+                    <AboutBox />
             </div>
         )
     }
