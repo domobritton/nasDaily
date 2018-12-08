@@ -1,8 +1,10 @@
 import React from 'react';
 import { Image } from 'cloudinary-react';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
 import $ from 'jquery';
+
+import { NavigationMenu } from './navigationMenu'
+import HamburgerMenu from './hamburgerMenu'
 
 export default class Header extends React.Component {
   constructor() {
@@ -29,146 +31,6 @@ export default class Header extends React.Component {
     });
   }
 
-  get menuUnderline() {
-    const { location: {pathname} } = window 
- 
-    switch (pathname) {
-      case '/':
-      return <hr className='one'></hr>
-      case '/team':
-      return <hr className='two'></hr>
-      case '/videos':
-      return <hr className='three'></hr>
-      case '/shop':
-      return <hr className='four'></hr>
-      case '/agency':
-      return <hr className='five'></hr>
-      default:
-      return <hr className='one'></hr>
-    }
-  }
-
-  get navigationMenu() {
-    const {
-      location: { pathname },
-    } = window;
-
-    return (
-      <div className='nd-navigation'>
-        <Link
-          to='/'
-          className={ classnames('nd-navigation-item', {active: pathname === '/'}) }
-        >
-          About
-        </Link>
-        <Link
-          to='/team'
-          className={ classnames('nd-navigation-item', {active: pathname === '/team'}) }
-        >
-          Team
-        </Link>
-        <Link
-          to='/videos'
-          className={ classnames('nd-navigation-item', {active: pathname === '/videos'}) }
-        >
-          Videos
-        </Link>
-        <Link
-          to='/shop'
-          className={ classnames('nd-navigation-item', {active: pathname === '/shop'}) }
-        >
-          Store
-        </Link>
-        <Link
-          to='/agency'
-          className={ classnames('nd-navigation-item', {active: pathname === '/agency'}) }
-        >
-          Agency
-        </Link>
-        { this.menuUnderline }
-      </div>
-    );
-  }
-
-  get hamburgerMenu() {
-    const { menuOpen } = this.state;
-    const { location:  { pathname } } = window;
-
-    if (!menuOpen) { return null }
-
-    return (
-      <div className='nd-menu'>
-        <Link
-          to='/app'
-          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className={ classnames('nd-menu-item', {active: pathname === '/app'}) }
-        >
-          The App.
-        </Link>
-        <Link
-          to='/videos'
-          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className={ classnames('nd-menu-item', {active: pathname === '/videos'}) }
-        >
-          Videos.
-        </Link>
-        <Link
-          to='/shop'
-          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className={ classnames('nd-menu-item', {active: pathname === '/shop'}) }
-        >
-          Shop.
-        </Link>
-        <Link
-          to='/agency'
-          onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          className={ classnames('nd-menu-item', {active: pathname === '/agency'}) }
-        >
-          Agency.
-        </Link>
-
-        <div className='nd-menu-footer'>
-          <Link
-            className='privacy-and-terms-link'
-            to='/privacy'
-            onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          >
-            Privacy Policy
-          </Link>
-          <a
-            target='_blank'
-            href='https://www.facebook.com/nasdaily/'
-            className='social-icon-wrapper'
-          >
-            <Image
-              publicId="facebook_icon_v02_wk1t1d.svg"
-              className='social-icon'
-            />
-          </a>
-          <Link
-            className='privacy-and-terms-link'
-            to='/terms'
-            onClick={() => { this.toggleMenu(); window.scrollTo(0,0);}}
-          >
-            Terms and Conditions
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  get isShopPage() {
-    return window.location.href.indexOf('shop') > 0;
-  }
-
-  get headerLogoId() {
-    if (this.isShopPage) {
-      return "NASDAILY_black_logo_twgpqq.png";
-    } else {
-      return "NASDAILY._g21um6.png";
-    }
-  }
-
   render() {
     const { menuOpen } = this.state;
 
@@ -181,7 +43,7 @@ export default class Header extends React.Component {
             className='logo-link'
           >
             <Image
-              publicId={this.headerLogoId}
+              publicId='NASDAILY._g21um6.png'
               className='logo-image'
             />
           </a>
@@ -194,8 +56,8 @@ export default class Header extends React.Component {
               <span className='hamburger-inner'/>
             </span>
           </button>
-          { this.navigationMenu }
-          { this.hamburgerMenu }
+          <NavigationMenu />
+          <HamburgerMenu menuOpen={this.toggleMenu} value={menuOpen} />
         </div>
         <div className='header-filler'/>
       </div>

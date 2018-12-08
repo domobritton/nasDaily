@@ -5,6 +5,7 @@ import ScrollButton from './ScrollButton';
 import { debounce } from 'lodash';
 import Videos from './Videos';
 import classnames from 'classnames';
+import Header from '../App/Header'
 
 export default class VideosTab extends React.Component {
   constructor(props) {
@@ -115,6 +116,7 @@ export default class VideosTab extends React.Component {
   render() {
     return (
       <div className='videos-page'>
+      <Header />
         { this.search }
         { this.videos }
       </div>

@@ -9,6 +9,7 @@ import facebookAppId from '../../util/facebookAppId';
 import ShopTabForm from './Form';
 import { isMobile } from '../../util/viewportSize';
 import { Image } from 'cloudinary-react';
+import Header from '../App/Header'
 
 export default class ShopTab extends React.Component {
   constructor() {
@@ -312,6 +313,7 @@ export default class ShopTab extends React.Component {
 
     return (
       <div className='nd-shop'>
+      <Header />
         { this.mainSection }
         { this.videoModal }
       </div>

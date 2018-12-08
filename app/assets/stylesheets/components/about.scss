@@ -1,7 +1,7 @@
 
 .player-wrapper {
     position: relative;
-    padding-top: 56.25%;
+    padding-top: 53.8%;
         /* Player ratio: 100 / (1280 / 720) */
 }
 
@@ -26,18 +26,4 @@
     background: linear-gradient(rgba(31, 31, 31, 0.4),rgba(31, 31, 31, 0.4));
 }
 
-.header {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
 
-.nd-nav {
-    display: flex;
-    justify-content: flex-end;
-    
-}
-.nd-nav-item {
-
-}

@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from '../App/Header'
 
 export default class TermsTab extends React.Component {
   render() {
     return (
       <div>
         <div className='nd-terms'>
+        <Header />
           <h2>Nas Daily Terms of Service</h2>
           <p>
             Please read these Terms of Service (collectively with Nas Daily, Inc.&rsquo;s

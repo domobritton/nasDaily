@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import HeroBanner from './Herobanner'
 import Creators from './Creators'
 import $ from 'jquery'
+import Header from '../App/Header'
 
 
 export default class TeamTab extends Component {
@@ -46,6 +47,7 @@ export default class TeamTab extends Component {
         const { more } = this.state
          return (
              <div className='team-page'>
+             <Header />
                 <div className='team'>
                     <HeroBanner
                         min={'-20%'}

@@ -1,11 +1,13 @@
 import React from 'react';
 import EmailForm from '../EmailForm';
+import Header from '../App/Header'
 
 export default class AppTab extends React.Component {
   render() {
     return (
       <div>
         <div className='nd-app hide-on-small'>
+        <Header />
           <div>
             <h1>NASDAILY <span className='yellow-color'>APP.</span></h1>
             <p>The best way to create and discover videos. <span className='yellow-color display-block'>Coming soon.</span></p>

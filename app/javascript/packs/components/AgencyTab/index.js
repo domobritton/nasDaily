@@ -16,6 +16,7 @@ import {
 } from './featuredVideosTabs';
 import facebookAppId from '../../util/facebookAppId';
 import Modal from './Modal';
+import Header from '../App/Header'
 
 export default class AgencyTab extends React.Component {
   constructor() {
@@ -54,6 +55,7 @@ export default class AgencyTab extends React.Component {
   render() {
     return (
       <div className='nd-agency'>
+      <Header />
         <div className='nd-agency-intro'>
           <h1 className='nd-agency-intro-header'>
             Nas Daily <span className='yellow-color'>Agency</span>

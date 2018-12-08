@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from '../App/Header'
 
 export default class PrivacyTab extends React.Component {
   render() {
     return (
       <div>
         <div className='nd-privacy'>
+        <Header />
           <h2>Privacy Policy</h2>
           <p>
             Nas Daily Inc. built the Nas Daily app as a Free app. This SERVICE is provided by
