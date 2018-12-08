@@ -78,7 +78,7 @@
     text-transform: uppercase;
     margin-left: 23px;
 
-    &:hover, &:active, &:focus {
+    &:hover, &:active, &:focus, &.active {
       color: white;
     }
   }
