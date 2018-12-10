@@ -124,6 +124,10 @@ export default class ShopTab extends Component {
             </div>
           </div>
           <div className="nd-lower">
+          <div className="works-circle">
+          <p>HOW THIS WORKS?</p>
+          <div className='up-arrow'>&#8593;</div>
+          </div>
             <h2>WHAT THIS MEANS:</h2>
             <div className="description">
               <p>Nas Daily wears the same t-shirt every day. The t-shirt shows how much of his life is over based on his current age. It helps him realize that life is finite and we should use time wisely.</p>
