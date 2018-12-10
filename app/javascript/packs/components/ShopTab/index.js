@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Line } from 'rc-progress'
-import FacebookPlayer from 'react-facebook-player';
-import ReactModal from 'react-modal';
-import $ from 'jquery';
-import classnames from 'classnames';
-import { isNull } from 'lodash';
-import { modalStyles } from '../VideosTab/constants';
-import facebookAppId from '../../util/facebookAppId';
-import ShopTabForm from './Form';
-import { isMobile } from '../../util/viewportSize';
-import { Image } from 'cloudinary-react';
+import FacebookPlayer from 'react-facebook-player'
+import ReactModal from 'react-modal'
+import $ from 'jquery'
+import classnames from 'classnames'
+import { isNull } from 'lodash'
+import { modalStyles } from '../VideosTab/constants'
+import facebookAppId from '../../util/facebookAppId'
+import ShopTabForm from './Form'
+import { isMobile } from '../../util/viewportSize'
+import { Image } from 'cloudinary-react'
+
 import Header from '../App/Header'
+import { ShopUpper } from './ShopUpper'
+import { ShopLower } from './ShopLower'
 
 export default class ShopTab extends Component {
     constructor() {
@@ -88,7 +91,7 @@ export default class ShopTab extends Component {
           </div>
           {percent ? <p>{percent}% LIFE</p> : <p>0% LIFE</p>}
           <div className="browse-button">
-          <a className='browse' href='https://nasdaily.com'>
+          <a className='browse' href='https://nasdaily.com' target='_blank'>
           <img src='/assets/shopping_cart_icon.svg' />
             Browse Shop
           </a>
@@ -101,42 +104,13 @@ export default class ShopTab extends Component {
       return (
         <div className="nd-shop">
           <Header />
-          <div className="nd-upper">
-            <div className="upper-info">
-              <h1><span>T</span> SHOP</h1>
-              <p>Try our calculator below to <br />see how much of your life has passed!</p>
-              <div className="arrow-box">
-                  <div className="arrow-tail">
-                  <hr />
-                  </div>
-                  <div className="arrow">
-                  </div>
-              </div>
-              { this.form }
-            </div>
-            <div className="image-wrapper">
-              <div className="image-text">
-                { this.imageText }
-              </div>
-              <Image 
-                publicId="Nas_Daily_Tshirt_qljlzo"
-                className="nas-tshirt" />
-            </div>
-          </div>
-          <div className="nd-lower">
-          <div className="works-circle">
-          <p>HOW THIS WORKS?</p>
-          <div className='up-arrow'>&#8593;</div>
-          </div>
-            <h2>WHAT THIS MEANS:</h2>
-            <div className="description">
-              <p>Nas Daily wears the same t-shirt every day. The t-shirt shows how much of his life is over based on his current age. It helps him realize that life is finite and we should use time wisely.</p>
-            </div>
-          </div>
+          <ShopUpper form={this.form} imageText={this.imageText} />
+          <ShopLower />
         </div>
       )
     }
 }
+
 
 // export default class ShopTab extends React.Component {
 //   constructor() {
