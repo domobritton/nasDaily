@@ -33,6 +33,7 @@
     "precss": "^2.0.0",
     "prop-types": "^15.5.10",
     "rails-erb-loader": "^5.0.2",
+    "rc-progress": "^2.2.6",
     "react": "^15.6.1",
     "react-animate-on-scroll": "^2.1.5",
     "react-collapse": "^4.0.2",

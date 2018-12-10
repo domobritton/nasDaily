@@ -1,76 +1,247 @@
 .nd-shop {
-  height: calc(100% - #{$header-height});
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
   color: white;
-  min-height: 700px;
+  font-family: 'Raleway', sans-serif;
 
-  .landing {
-    flex-direction: row;
+  .nd-upper {
     display: flex;
-    align-items: stretch;
-    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding-top: 220px;
+    padding-left: 200px;
+    padding-bottom: 150px;
 
-    &.show-form {
-      .landing--right-background,
-      .landing--left-background {
-        background-color: rgba(12, 12, 12, 0.9);
+    .upper-info {
+      width: 355px;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      letter-spacing: 7px;
+      line-height: 58px;
+      margin-bottom: 20px;
+      span {
+        color: $yellow-color;
       }
     }
-  }
 
-  .arrow-back {
-    display: none;
-  }
 
-  .landing--left,
-  .landing--right {
+    p {
+      font-size: 17px;
+      letter-spacing: 0.88px;
+      line-height: 26px;
+      margin-bottom: 25px;
+    }
+
+    
+  .arrow-box {
+    position: relative;
+    height: 17px;
+    width: 375px;
+  
+      $size: 12px;
+      $thickness: 2px;
+      $color: #545454;
+      $ratio: 1.5;
+
+    hr {
+      width: 100%;
+      position: absolute;
+      height: 2px;
+      border: none;
+      background: #545454;
+    }
+    .arrow {
+      width: $size;
+      height: $size;
+      border-top: $thickness solid $color;
+      border-right: $thickness solid $color;
+      transform: rotate(45deg);
+      border-radius: 7%;
+      position: absolute;
+      top: 2px;
+      right: 0;
+        
+      &::before {
+        content: ' ';
+        display: block;
+        width: $thickness;
+        height: $size * $ratio;
+        transform: rotate(45deg);
+        position: absolute;
+        top: $size/2 - $size*$ratio/2;
+        left: $size/2 - $thickness/2;
+        background: $color;
+      }
+    }
+
+  }
+}
+
+  .nd-lower {
     display: flex;
-    justify-content: center;
-    position: relative;
-    flex: 1;
-    transition: opacity 250ms linear;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 190px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    background: #242424;
+    
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 1.37px;
+      line-height: 58px;
+    }
+
+    .description {
+       width: 500px;
+       font-size: 15.2px;
+       font-weight: 500;
+       letter-spacing: 0.78px;
+       line-height: 34px;
+    }
+  }
+  
+  .image-wrapper {
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    height: 792px;
+    width: 718px;
+    overflow: hidden;
+    z-index: -1;
+
+    .image-text {
+      position: relative;
+      width: 50%;
+      float: right;
+    }
+
+    .show-percent {
+        position: absolute;
+        top: 462px;
+        right: 240px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+      .percent-bar {
+        width: 242px;
+        height: 22.8px;
+        z-index: 10;
+        border: 2px solid #FFFFFF;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-family: "Open Sans";
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 4.63px;
+        line-height: 23px;
+      }
+
+      .browse-button {
+        margin-top: 80px;
+        height: 44px;
+        width: 187.1px;
+        border: 1.6px solid $yellow-color;
+        border-radius: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        img {
+          margin-right: 10px;
+        }
+      }
+
+      .nas-tshirt {
+        height: 792px;
+      }
   }
 
-  .story-header,
-  .tshirt-header {
-    padding-top: 230px;
-  }
 
-  .done-with-life {
-    z-index: 3;
-    text-align: center;
-    font-size: 34px;
-  }
+  // .nd-lower {
+  //   height: 373px;
+  //   background-color: #242424;
+  // }
+  // .arrow-back {
+  //   display: none;
+  // }
 
-  .form-footnote {
-    font-size: 20px;
-    text-align: center;
-    margin-top: -20px;
-  }
+  // .landing--left,
+  // .landing--right {
+  //   display: flex;
+  //   justify-content: center;
+  //   position: relative;
+  //   flex: 1;
+  //   transition: opacity 250ms linear;
+  // }
 
-  .tshirt-images-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-bottom: -150px;
-    max-width: 512px;
-    max-height: 516px;
-    margin-top: -50px;
-  }
+  // .story-header,
+  // .tshirt-header {
+  //   padding-top: 230px;
+  // }
 
-  .tshirt-image {
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
-  }
+  // .done-with-life {
+  //   z-index: 3;
+  //   text-align: center;
+  //   font-size: 34px;
+  // }
 
+  // .form-footnote {
+  //   font-size: 20px;
+  //   text-align: center;
+  //   margin-top: -20px;
+  // }
+
+  // .tshirt-images-container {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 100%;
+  //   margin-bottom: -150px;
+  //   max-width: 512px;
+  //   max-height: 516px;
+  //   margin-top: -50px;
+  // }
+
+  // .tshirt-image {
+  //   width: 100%;
+  //   height: auto;
+  //   top: 0;
+  //   left: 0;
+  // }
+// PERCENT BAR MACBOOK
   .percentage-bar-image {
     position: absolute;
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
+    width: 75%;
+    height: 408px;
+    top: 307px;
+    left: 71px;
   }
+
+   .buy-button {
+     position: absolute;
+     width: 200px;
+     height: 50px;
+     text-transform: uppercase;
+     color: white;
+     font-size: 24px;
+   }
 
   .tshirt-cta-buttons {
     display: flex;
@@ -112,19 +283,19 @@
     background-position: 100% 40%;
   }
 
-  h2 {
-    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
-    font-size: 59px;
-    text-transform: uppercase;
-    margin-bottom: 48px;
-  }
+  // h2 {
+  //   font-family: 'FatFrank', 'Teko', Arial, sans-serif;
+  //   font-size: 59px;
+  //   text-transform: uppercase;
+  //   margin-bottom: 48px;
+  // }
 
-  p {
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    text-align: center;
-  }
+  // p {
+  //   font-size: 30px;
+  //   text-transform: uppercase;
+  //   margin-bottom: 24px;
+  //   text-align: center;
+  // }
 
   .shop-cta,
   .facebook-share-button,
@@ -141,7 +312,7 @@
 
   .form-wrapper,
   .tshirt-display-wrapper {
-    padding-top: 100px;
+    padding-top: 25px;
     width: 100%;
   }
 
@@ -166,14 +337,18 @@
     border: 1px solid black;
   }
 
+  // .form {
+  //   justify-content: flex-start;
+  //   align-items: left;
+  //   display: flex;
+  //   color: white;
+  //   flex-direction: column;
+  //   text-align: center;
+  //   padding-bottom: 36px;
+  // }
+
   .form {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 36px;
+    width: 80%;
   }
 
   .error-message {
@@ -181,17 +356,20 @@
   }
 
   label {
-    font-size: 40px;
-    line-height: 1;
     margin-bottom: 24px;
-    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
+    font-family: 'Poppins',
+    sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2.59px;
+    line-height: 40px;
     text-transform: uppercase;
   }
 
   .input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 48px;
+    margin-bottom: 25px;
   }
 
   .multi-select-wrapper {
@@ -199,10 +377,10 @@
     flex-direction: row;
   }
 
-  .multi-select-wrapper,
-  .select-wrapper {
-    margin-bottom: 12px;
-  }
+  // .multi-select-wrapper,
+  // .select-wrapper {
+  //   margin-bottom: 12px;
+  // }
 
   .form-input {
     width: 200px;
@@ -365,6 +543,7 @@
     padding: 10px;
   }
 
+
   /* THIS IS ARROW, BUT IT GETS OVERIDEN BY DEFAULT BROWSER BEHAVIOR ON MOBILE: */
   /* .tile__details { */
     /* position: absolute; */
@@ -518,7 +697,7 @@
     .multi-select-wrapper {
       justify-content: space-between;
       flex-direction: row;
-      width: 500px;
+      width: 275px;
     }
 
     .landing {
@@ -545,3 +724,5 @@
     }
   }
 }
+
+

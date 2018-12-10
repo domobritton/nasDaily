@@ -133,17 +133,22 @@ export const birthYearOptions = [
 ];
 
 export const selectStyles = {
-  width: '300px',
-  height: '45px',
+  width: '86.8px',
+  height: '28px',
   fontSize: '19px',
   backgroundColor: '#717171',
-  border: 'none',
-  borderRadius: 0
+  border: '0.7px solid #545454',
+  borderRadius: '2.1px',
+  backgroundColor: '#2c2c2c',
+  color: 'white',
+  fontSize: '14px',
+  fontWeight: '500',
+  letterSpacing: '0.72px'
 };
 
 export const smallSelectStyles = {
   ...selectStyles,
-  width: '150px'
+
 };
 
 export const countryOptions = [

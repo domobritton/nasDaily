@@ -164,7 +164,7 @@ export default class ShopTabForm extends React.PureComponent {
         className='form'
         onSubmit={this.onSubmit}
       >
-        <label><span className='yellow-color'>Age</span></label>
+        <label><span className='white-color'>Age</span></label>
         <div className='input-group multi'>
           <div className='multi-select-wrapper'>
             <div className='select-wrapper'>
@@ -210,27 +210,8 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
           </Collapse>
         </div>
-        <label><span className='yellow-color'>Gender</span></label>
-        <div className='input-group'>
-          <div className='select-wrapper'>
-            <select
-              name="gender"
-              value={ gender }
-              onChange={({target: { value }}) => {
-                this.setState({ gender: value, showErrorMessage: false })
-              }}
-              style={selectStyles}
-            >
-              { genderOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
-            </select>
-          </div>
-          <Collapse isOpened={showErrorMessage && !gender}>
-            <div className='error-message'>
-              This field is required
-            </div>
-          </Collapse>
-        </div>
-        <label><span className='yellow-color'>Country</span></label>
+
+        <label><span className='white-color'>Country</span></label>
         <div className='input-group'>
           <div className='select-wrapper'>
             <select
@@ -250,15 +231,33 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
           </Collapse>
         </div>
+
+        <label><span className='white-color'>Gender</span></label>
+        <div className='input-group'>
+          <div className='select-wrapper'>
+            <select
+              name="gender"
+              value={ gender }
+              onChange={({target: { value }}) => {
+                this.setState({ gender: value, showErrorMessage: false })
+              }}
+              style={selectStyles}
+            >
+              { genderOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
+            </select>
+          </div>
+          <Collapse isOpened={showErrorMessage && !gender}>
+            <div className='error-message'>
+              This field is required
+            </div>
+          </Collapse>
+        </div>
         <button
           type='submit'
           className={classnames('submit-button show-on-small-only', { shake: shouldShake })}
         >
           Calculate
         </button>
-        <div className='form-footnote'>
-          We need your age, gender, and country to know roughly how much of life you're done with
-        </div>
       </form>
     );
   }
