@@ -13,7 +13,7 @@
       left: 0;
       right: 0;
       margin: auto;
-      width: 814px;
+      width: 70%;
       text-align: center;
     }
 
@@ -82,34 +82,149 @@
     z-index: 0;
   }
 
-  .one-minute {
-    height: 533px;
-    background-color: #2C2C2C;
+  .one-minute-outer {
+    position: relative;
+    height: 613px;
     width: 100vw;
-    text-align: center;
   }
+
+  .one-minute {
+    position: absolute;
+    top: -80px;
+    height: 533px;
+    background: #2C2C2Ce1;
+    width: 100vw;
+    @include linearGradient(rgba(44, 44, 44, 0.85), rgba(44, 44, 44, 1));
+    text-align: center;
+
+    .one-minute-box {
+      margin: auto;
+      padding: 20px 0;
+      width: 70%;
+      h2 {
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: 4.81px;
+        line-height: 58px;
+      }
+      
+      p {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.64px;
+        line-height: 36px;
+        margin: 0 80px;
+        span {
+          color: $yellow-color;
+        }
+      }
+    }
+
+  }
+
 
   .boxes-outer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 40px 100px;
 
     .box {
-      width: 220px;
+      width: 250px;
       height: 220px;
-      background: red;
       display: flex;
       justify-content: center;
       align-content: center;
       flex-direction: column;
-  
+      position: relative;
+      
+      .money-icon {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        right: 0;
+        width: 50px;
+        margin: 0 auto;
+      }
+
+      .faster-icon {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        right: 0;
+        width: 85px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+
+      .stronger-icon {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        right: 0;
+        width: 50px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+      }
+
+      .human-icon {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        right: 0;
+        width: 54px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+      }
+
+      .description {
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2.5px;
+        line-height: 37px;
+      }
+
+      p {
+        color: #C9C9C9;
+        font-family: "Open Sans";
+        font-size: 16px;
+        letter-spacing: 1.1px;
+        line-height: 26px;
+      }
     }
   }
 
   .agency-lower {
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 100px;
+
+    h2 {
+      font-size: 50px;
+      font-weight: bold;
+      letter-spacing: 7px;
+      line-height: 58px;
+      margin-bottom: 28px;
+
+      span {
+        color: $yellow-color;
+      }
+    }
+
+    p {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.88px;
+      line-height: 36px;
+    }
   }
 }
 

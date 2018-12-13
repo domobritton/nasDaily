@@ -47,35 +47,59 @@ export default class AgencyTab extends Component {
               </button>
               </div>
           </div>
-          <div className='one-minute'>
-            <h2>"THAT'S ONE MINUTE"</h2>
-            <p>After creating 1,000 videos in 1,000 days and amassing 12m followers on Facebook, 
-                Nas and his team have opened up the door to working with brands. We specialize in 
-                making authentic videos that communicate a message really fast and really well. 
-                If we can make it work on Facebook, we can make it work anywhere!</p>
-          <div className='boxes-outer'>
-            <div className='box'>
-              <h3>100% CHEAPER</h3>
-              <p>Cheaper than most agencies for any project</p>
+          <div className='one-minute-outer'>
+            <div className='one-minute'>
+            <div className='one-minute-box'>
+              <h2>"THAT'S ONE MINUTE"</h2>
+              <p>After creating <span>1,000</span> videos in 1,000 days and amassing <span>12m followers</span> on Facebook,<br /> 
+                  Nas and his team have opened up the door to working with <span>brands.</span> We specialize in<br />
+                  making authentic videos that communicate a message really fast and really well.<br /> 
+                  If we can make it work on <span>Facebook,</span> we can make it work anywhere!</p>
+              </div>
+              <div className='boxes-outer'>
+                <div className='box'>
+                  <Image 
+                    publicId='Money_icons_lruyku' 
+                    className='money-icon'/>
+                  <div className='description'>
+                    <h3>100% CHEAPER</h3>
+                    <p>Cheaper than most<br /> agencies for any project</p>
+                  </div>
+                </div>
+                <div className='box'>
+                  <Image 
+                    publicId='Faster_icon_lbz437'
+                    className='faster-icon' />
+                  <div className='description'>
+                    <h3>100% FASTER</h3>
+                    <p>30 days or less<br /> for any project</p>
+                  </div>
+                </div>
+                <div className='box'>
+                  <Image 
+                    publicId='Stronger_icon_egf9rt'
+                    className='stronger-icon' />
+                  <div className='description'>
+                    <h3>100% STRONGER</h3>
+                    <p>4x better metrics than other agency videos</p>
+                  </div>
+                </div>
+                <div className='box'>
+                  <Image
+                    publicId='Human_bmt5to' 
+                    className='human-icon'/>
+                  <div className='description'>
+                    <h3>100% HUMAN</h3>
+                    <p>Videos about humans or customers are our speciality</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className='box'>
-              <h3>100% FASTER</h3>
-              <p>30 days or less for any project</p>
-            </div>
-            <div className='box'>
-              <h3>100% STRONGER</h3>
-              <p>4x better metrics than other agency videos</p>
-            </div>
-            <div className='box'>
-              <h3>100% HUMAN</h3>
-              <p>Videos about humans or customers are our speciality</p>
-            </div>
-          </div>
           </div>
           <div className='agency-lower'>
-            <div clasName='work'>
+            <div className='work'>
               <h2>OUR <span>WORK</span></h2>
-              <p>We can work with anyone, anywhere. We have a team of creators from around 
+              <p>We can work with anyone, anywhere. We have a team of creators from around<br />
                 the world ready for any kind of project. Here are some of our favorites. Here is some of our work</p>
             </div>
           </div>
