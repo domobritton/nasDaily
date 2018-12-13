@@ -1,28 +1,48 @@
 import React from 'react'
 import { Image } from 'cloudinary-react'
+import { Line } from 'rc-progress'
 
-export const ShopUpper = (props) => (
-            <div className="nd-upper">
-            <div className="upper-info">
-              <h1>
-                <span>T</span> SHOP
-              </h1>
-              <p>
-                Try our calculator below to <br />see how much of your life has passed!
-              </p>
-              <div className="arrow-box">
-                <div className="arrow-tail">
-                  <hr />
-                </div>
-                <div className="arrow" />
-              </div>
-              {props.form}
-            </div>
-            <div className="image-wrapper">
-              <div className="image-text">
-                {props.imageText}
-              </div>
-              <Image publicId="Nas_Daily_Tshirt_qljlzo" className="nas-tshirt" />
-            </div>
+export const ShopUpper = ({ form, percent}) => (
+      <div className="nd-upper">
+      <div className="upper-info">
+        <h1>
+          <span>T</span> SHOP
+        </h1>
+        <p>
+          Try our calculator below to <br />see how much of your life has passed!
+        </p>
+        <div className="arrow-box">
+          <div className="arrow-tail">
+            <hr />
           </div>
+          <div className="arrow" />
+        </div>
+        {form}
+      </div>
+      <div className="image-wrapper">
+        <div className="image-text">
+          <ImageText percent={percent} />
+        </div>
+        <Image publicId="Nas_Daily_Tshirt_qljlzo" className="nas-tshirt" />
+      </div>
+    </div>
+
+)
+
+const ImageText = ({percent}) => (
+  <div className="show-percent">
+      <div className="percent-bar">
+        <Line percent={percent}
+          strokeWidth="10"
+          trailWidth='0'
+          strokeLinecap='square' strokeColor="#87B04E" />
+      </div>
+      {percent ? <p>{percent}% LIFE</p> : <p>0% LIFE</p>}
+      <div className="browse-button">
+        <a className='browse' href='https://nasdaily.com' target='_blank'>
+        <img src='/assets/shopping_cart_icon.svg' />
+          Browse Shop
+        </a>
+      </div>
+  </div>
 )

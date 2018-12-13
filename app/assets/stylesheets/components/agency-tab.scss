@@ -1,340 +1,458 @@
 .nd-agency {
-  $tileWidth: 480px;
-  $tileHeight: ($tileWidth / (16/9));
-  $duration: 350ms;
-  $iconSize: 50px;
-
+  width: 100vw;
+  font-family: 'Raleway',
+  sans-serif;
   color: white;
-  font-size: 20px;
 
-  .nd-agency-intro {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background: url(/assets/agency/eyes-bg.png), rgba(12, 12, 12, 1);
-    background-repeat: no-repeat;
-    background-color: #1F1F1F;
-    background-size: cover;
-  }
+  .agency-upper {
+    position: relative;
 
-  .nd-agency-intro-header {
-    font-size: 60px;
-    font-family: 'FatFrank', 'Teko', Arial, sans-serif;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    font-weight: bold;
-  }
-
-  .nd-agency-intro-subheader {
-    font-size: 22px;
-  }
-
-  .nd-agency-intro-cards-container {
-    display: flex;
-    margin-top: 200px;
-  }
-
-  .nd-agency-intro-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 300px;
-    height: 200px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 5px;
-    background-repeat: no-repeat;
-    box-shadow: 0px 5px 5px rgb(20,20,20);
-
-    &.card-1 {
-      background-image: url(/assets/agency/card-bg-1.svg), linear-gradient(#575757, #3E3E3E);
-    }
-
-    &.card-2 {
-      background-image: url(/assets/agency/card-bg-2.svg), linear-gradient(#575757, #3E3E3E);
-    }
-
-    &.card-3 {
-      background-image: url(/assets/agency/card-bg-3.svg), linear-gradient(#575757, #3E3E3E);
-    }
-  }
-
-  .agency-card-title {
-    margin-bottom: 24px;
-    margin-top: 12px;
-    font-size: 26px;
-  }
-
-  .agency-card-icon-container {
-    padding-top: 24px;
-    padding-bottom: 6px;
-  }
-
-  .nd-agency-featured-videos {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .nd-agency-videos-header {
-    font-size: 48px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-
-  .nd-agency-videos-tabs-container {
-    width: 100%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 48px;
-  }
-
-  .nd-agency-featured-video-tab-video-item {
-    display: flex;
-    margin-top: 100px;
-  }
-
-  .featured-video-video-player {
-    width: 60%;
-
-    .tile {
-      position: relative;
-      width: $tileWidth;
-      height: $tileHeight;
-      font-size: 20px;
-      cursor: pointer;
-      transition: $duration all;
-    }
-
-    .tile:hover .tile__details {
-      opacity: 1;
-    }
-
-    .tile__img {
-      border-radius: 5px;
-    }
-  }
-
-  .featured-video-video-metrics-container {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-
-  .featured-video-video-metric {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    font-size: 25px;
-
-    img {
-      margin-right: 24px;
-    }
-  }
-
-  .nd-agency-contact {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: #1F1F1F;
-    background-image: url(/assets/agency/world-map-bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 270px;
-  }
-
-  .nd-agency-contact-header {
-    font-size: 48px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-
-  .nd-agency-featured-video-tab-content {
-    > div:nth-child(1) {
-      .featured-video-video-metrics-container {
-        padding-left: 24px;
-      }
-    }
-
-    > div:nth-child(2) {
-      .featured-video-video-player {
-        display: flex;
-        justify-content: flex-end;
-      }
-    }
-  }
-
-  @media #{$small-only} {
-    .nd-agency-intro {
-      padding-top: 75px;
-      background-size: 130% auto;
-      background-position-x: center;
-    }
-
-    .nd-agency-intro-header {
-      width: 300px;
-      font-size: 52px;
-    }
-
-    .nd-agency-intro-subheader {
-      width: 300px;
-
-      br { display: none; }
-    }
-
-    .nd-agency-intro-cards-container {
-      flex-direction: column;
-      margin-top: 100px;
-    }
-
-    .nd-agency-intro-card {
-      margin-bottom: 24px;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .nd-agency-featured-video-tab-video-item {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-    }
-
-    .featured-video-video-player {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .featured-video-video-metrics-container {
-      width: 100%;
-      justify-content: center;
-      align-items: start;
-      margin-top: 24px;
-    }
-
-    .featured-video-video-metric {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-
-    .tile__img,
-    .tile {
-      max-width: 100%;
-    }
-
-    .nd-agency-featured-video-tab-content {
-      > div:nth-child(1) {
-        .featured-video-video-metrics-container {
-          padding-left: 0;
-        }
-      }
-
-      > div:nth-child(2) {
-        flex-direction: column-reverse;
-
-        .featured-video-video-player {
-          justify-content: center;
-        }
-      }
-    }
-  }
-
-  @media #{$medium-only} {
-    .nd-agency-intro {
-      padding-top: 75px;
-      padding-bottom: 75px;
-    }
-
-    .nd-agency-intro-cards-container {
-      margin-top: 100px;
-    }
-
-    .nd-agency-intro-card {
-      width: 230px;
-      height: 165px;
-    }
-
-    .nd-agency-featured-video-tab-content {
-      margin-left: 24px;
-      margin-right: 24px;
-    }
-
-    .tile__img,
-    .tile {
-      max-width: 100%;
-    }
-
-    .nd-agency-featured-video-tab-video-item {
-      margin-top: 75px;
-    }
-
-    .nd-agency-contact {
-      height: 200px;
-    }
-  }
-
-  @media #{$large-up} {
-    .tile__details {
+    .image-text-box {
       position: absolute;
-      bottom: 0;
+      top: 220px;
       left: 0;
       right: 0;
-      top: 0;
-      color: white;
-      font-size: 10px;
-      opacity: 0;
-      transition: $duration opacity;
+      margin: auto;
+      width: 814px;
+      text-align: center;
+    }
 
-      &:after,
-      &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: black;
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        line-height: 30px;
       }
-
-      &:after {
-        margin-top: (-($iconSize / 2));
-        margin-left: (-($iconSize / 2));
-        width: $iconSize;
-        height: $iconSize;
-        border: 3px solid #ecf0f1;
-        line-height: $iconSize;
-        text-align: center;
-        border-radius: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 1;
-      }
-
-      &:before {
-        content: '▶';
-        left: 0;
-        width: 100%;
-        font-size: 30px;
-        margin-left: 7px;
-        margin-top: -7px;
-        text-align: center;
-        z-index: 2;
+      hr {
+        height: 1px;
+        width: 270px;
+        background: #979797;
+        border: none;
       }
     }
+
+    h2 {
+      font-size: 80px;
+      font-weight: bold;
+      letter-spacing: 8px;
+      line-height: 58px;
+      margin-top: 31px;
+      margin-bottom: 47px;
+
+      span {
+        color: $yellow-color;
+      }
+    }
+
+    p {
+      line-height: 33px;
+      font-size: 22px;
+      letter-spacing: 1.14px;
+      font-weight: 500;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .button-outer {
+      margin-top: 57px;
+      height: 44px;
+      width: 194px;
+      color: #FFFFFF;
+      font-size: 15.2px;
+      font-weight: 600;
+      letter-spacing: 0.78px;
+      line-height: 34px;
+      background: transparent;
+      border: 1.6px solid $yellow-color;
+      border-radius: 22px;
+    }
+  }
+
+  .background-upper-img {
+
+    margin-top: -200px;
+    width: 100vw;
+    z-index: 0;
+  }
+
+  .one-minute {
+    height: 533px;
+    background-color: #2C2C2C;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .boxes-outer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    .box {
+      width: 220px;
+      height: 220px;
+      background: red;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+  
+    }
+  }
+
+  .agency-lower {
+    text-align: center;
   }
 }
+
+
+
+
+// .nd-agency {
+//   $tileWidth: 480px;
+//   $tileHeight: ($tileWidth / (16/9));
+//   $duration: 350ms;
+//   $iconSize: 50px;
+
+//   color: white;
+//   font-size: 20px;
+
+//   .nd-agency-intro {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//     background: url(/assets/agency/eyes-bg.png), rgba(12, 12, 12, 1);
+//     background-repeat: no-repeat;
+//     background-color: #1F1F1F;
+//     background-size: cover;
+//   }
+
+//   .nd-agency-intro-header {
+//     font-size: 60px;
+//     font-family: 'FatFrank', 'Teko', Arial, sans-serif;
+//     text-transform: uppercase;
+//     margin-bottom: 12px;
+//     font-weight: bold;
+//   }
+
+//   .nd-agency-intro-subheader {
+//     font-size: 22px;
+//   }
+
+//   .nd-agency-intro-cards-container {
+//     display: flex;
+//     margin-top: 200px;
+//   }
+
+//   .nd-agency-intro-card {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     width: 300px;
+//     height: 200px;
+//     margin-left: 10px;
+//     margin-right: 10px;
+//     border-radius: 5px;
+//     background-repeat: no-repeat;
+//     box-shadow: 0px 5px 5px rgb(20,20,20);
+
+//     &.card-1 {
+//       background-image: url(/assets/agency/card-bg-1.svg), linear-gradient(#575757, #3E3E3E);
+//     }
+
+//     &.card-2 {
+//       background-image: url(/assets/agency/card-bg-2.svg), linear-gradient(#575757, #3E3E3E);
+//     }
+
+//     &.card-3 {
+//       background-image: url(/assets/agency/card-bg-3.svg), linear-gradient(#575757, #3E3E3E);
+//     }
+//   }
+
+//   .agency-card-title {
+//     margin-bottom: 24px;
+//     margin-top: 12px;
+//     font-size: 26px;
+//   }
+
+//   .agency-card-icon-container {
+//     padding-top: 24px;
+//     padding-bottom: 6px;
+//   }
+
+//   .nd-agency-featured-videos {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//   }
+
+//   .nd-agency-videos-header {
+//     font-size: 48px;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     margin-bottom: 6px;
+//   }
+
+//   .nd-agency-videos-tabs-container {
+//     width: 100%;
+//     max-width: 1000px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     margin-top: 48px;
+//   }
+
+//   .nd-agency-featured-video-tab-video-item {
+//     display: flex;
+//     margin-top: 100px;
+//   }
+
+//   .featured-video-video-player {
+//     width: 60%;
+
+//     .tile {
+//       position: relative;
+//       width: $tileWidth;
+//       height: $tileHeight;
+//       font-size: 20px;
+//       cursor: pointer;
+//       transition: $duration all;
+//     }
+
+//     .tile:hover .tile__details {
+//       opacity: 1;
+//     }
+
+//     .tile__img {
+//       border-radius: 5px;
+//     }
+//   }
+
+//   .featured-video-video-metrics-container {
+//     width: 40%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: start;
+//   }
+
+//   .featured-video-video-metric {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding-top: 24px;
+//     padding-bottom: 24px;
+//     font-size: 25px;
+
+//     img {
+//       margin-right: 24px;
+//     }
+//   }
+
+//   .nd-agency-contact {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//     background-color: #1F1F1F;
+//     background-image: url(/assets/agency/world-map-bg.png);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     height: 270px;
+//   }
+
+//   .nd-agency-contact-header {
+//     font-size: 48px;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     margin-bottom: 6px;
+//   }
+
+//   .nd-agency-featured-video-tab-content {
+//     > div:nth-child(1) {
+//       .featured-video-video-metrics-container {
+//         padding-left: 24px;
+//       }
+//     }
+
+//     > div:nth-child(2) {
+//       .featured-video-video-player {
+//         display: flex;
+//         justify-content: flex-end;
+//       }
+//     }
+//   }
+
+//   @media #{$small-only} {
+//     .nd-agency-intro {
+//       padding-top: 75px;
+//       background-size: 130% auto;
+//       background-position-x: center;
+//     }
+
+//     .nd-agency-intro-header {
+//       width: 300px;
+//       font-size: 52px;
+//     }
+
+//     .nd-agency-intro-subheader {
+//       width: 300px;
+
+//       br { display: none; }
+//     }
+
+//     .nd-agency-intro-cards-container {
+//       flex-direction: column;
+//       margin-top: 100px;
+//     }
+
+//     .nd-agency-intro-card {
+//       margin-bottom: 24px;
+//       margin-left: 0;
+//       margin-right: 0;
+//     }
+
+//     .nd-agency-featured-video-tab-video-item {
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+//       margin-top: 50px;
+//     }
+
+//     .featured-video-video-player {
+//       display: flex;
+//       justify-content: center;
+//       width: 100%;
+//     }
+
+//     .featured-video-video-metrics-container {
+//       width: 100%;
+//       justify-content: center;
+//       align-items: start;
+//       margin-top: 24px;
+//     }
+
+//     .featured-video-video-metric {
+//       padding-left: 12px;
+//       padding-right: 12px;
+//     }
+
+//     .tile__img,
+//     .tile {
+//       max-width: 100%;
+//     }
+
+//     .nd-agency-featured-video-tab-content {
+//       > div:nth-child(1) {
+//         .featured-video-video-metrics-container {
+//           padding-left: 0;
+//         }
+//       }
+
+//       > div:nth-child(2) {
+//         flex-direction: column-reverse;
+
+//         .featured-video-video-player {
+//           justify-content: center;
+//         }
+//       }
+//     }
+//   }
+
+//   @media #{$medium-only} {
+//     .nd-agency-intro {
+//       padding-top: 75px;
+//       padding-bottom: 75px;
+//     }
+
+//     .nd-agency-intro-cards-container {
+//       margin-top: 100px;
+//     }
+
+//     .nd-agency-intro-card {
+//       width: 230px;
+//       height: 165px;
+//     }
+
+//     .nd-agency-featured-video-tab-content {
+//       margin-left: 24px;
+//       margin-right: 24px;
+//     }
+
+//     .tile__img,
+//     .tile {
+//       max-width: 100%;
+//     }
+
+//     .nd-agency-featured-video-tab-video-item {
+//       margin-top: 75px;
+//     }
+
+//     .nd-agency-contact {
+//       height: 200px;
+//     }
+//   }
+
+//   @media #{$large-up} {
+//     .tile__details {
+//       position: absolute;
+//       bottom: 0;
+//       left: 0;
+//       right: 0;
+//       top: 0;
+//       color: white;
+//       font-size: 10px;
+//       opacity: 0;
+//       transition: $duration opacity;
+
+//       &:after,
+//       &:before {
+//         content: '';
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         display: black;
+//       }
+
+//       &:after {
+//         margin-top: (-($iconSize / 2));
+//         margin-left: (-($iconSize / 2));
+//         width: $iconSize;
+//         height: $iconSize;
+//         border: 3px solid #ecf0f1;
+//         line-height: $iconSize;
+//         text-align: center;
+//         border-radius: 100%;
+//         background: rgba(0,0,0,0.5);
+//         z-index: 1;
+//       }
+
+//       &:before {
+//         content: '▶';
+//         left: 0;
+//         width: 100%;
+//         font-size: 30px;
+//         margin-left: 7px;
+//         margin-top: -7px;
+//         text-align: center;
+//         z-index: 2;
+//       }
+//     }
+//   }
+// }

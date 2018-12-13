@@ -7,13 +7,15 @@
   font-family: 'Raleway', sans-serif;
 
   .nd-upper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: left;
     padding-top: 220px;
     padding-left: 200px;
-    padding-bottom: 150px;
+    // padding-bottom: 150px;
+    width: 100vw;
+    height: 630px;
 
     .upper-info {
       width: 355px;
@@ -88,8 +90,8 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 85px;
+    padding-bottom: 85px;
     background: #242424;
     
 
@@ -124,7 +126,7 @@
         width: 120px;
         background: #242424;
         border-radius: 100%;
-        margin-top: -112px;
+        margin-top: -85px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -154,7 +156,7 @@
     height: 792px;
     width: 718px;
     overflow: hidden;
-    z-index: -1;
+    z-index: 0;
 
     .image-text {
       position: relative;
@@ -199,9 +201,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        transition: color .35s ease-in-out;
 
         &:hover {
-          background: rgba(255,255,255, 0.3);
+          background: rgba(255,255,255, 0.1);
         }
 
         img {
@@ -224,8 +228,8 @@
 
     .lower-right {
       order: 2;
-      width: 358px;
-      height: 238px;
+      width: 340px;
+      height: 200px;
       margin-left: 50px;
       overflow: hidden;
 

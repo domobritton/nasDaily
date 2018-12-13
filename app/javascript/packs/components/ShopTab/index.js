@@ -68,43 +68,22 @@ export default class ShopTab extends Component {
     }
 
 
-    get tshirtTab() {
-      const { showForm, showTshirtOnMobile } = this.state;
+    // get tshirtTab() {
+    //   const { showForm, showTshirtOnMobile } = this.state;
 
-      if (showTshirtOnMobile) {
-        return this.tshirtWithProgressBar;
-      } else {
-        return this.form;
-      }
-    }
-
-    get imageText() {
-      const { percent } = this.state 
-  
-      return (
-        <div className="show-percent">
-          <div className="percent-bar">
-            <Line percent={percent}
-            strokeWidth="10"
-            trailWidth='0'
-            strokeLinecap='square' strokeColor="#87B04E" />
-          </div>
-          {percent ? <p>{percent}% LIFE</p> : <p>0% LIFE</p>}
-          <div className="browse-button">
-          <a className='browse' href='https://nasdaily.com' target='_blank'>
-          <img src='/assets/shopping_cart_icon.svg' />
-            Browse Shop
-          </a>
-          </div>
-        </div>
-      )
-    }
+    //   if (showTshirtOnMobile) {
+    //     return this.tshirtWithProgressBar;
+    //   } else {
+    //     return this.form;
+    //   }
+    // }
 
     render () {
+      const { percent } = this.state 
       return (
         <div className="nd-shop">
           <Header />
-          <ShopUpper form={this.form} imageText={this.imageText} />
+          <ShopUpper form={this.form} percent={percent} />
           <ShopLower />
         </div>
       )

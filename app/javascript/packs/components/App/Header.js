@@ -42,10 +42,7 @@ export default class Header extends React.Component {
             tabIndex={1}
             className='logo-link'
           >
-            <Image
-              publicId='NASDAILY._g21um6.png'
-              className='logo-image'
-            />
+            <img className='logo-image' src='/assets/nasdaily_logo.svg' alt='nas daily logo'/>
           </a>
           <button
             className={ classnames('hamburger, hamburger--3dxy', {'is-active': menuOpen}) }
