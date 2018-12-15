@@ -71,10 +71,7 @@ export default class Footer extends React.Component {
               className='social-icon-wrapper'
             >
             </a> */}
-              <Image
-                publicId = "NASDAILY._g21um6.png"
-                className='social-icon'
-              />
+              <img className='logo-image' src='/assets/nasdaily_logo.svg' alt='nas daily logo'/>
           </li>
         </ul>
         <div className='subfooter'>

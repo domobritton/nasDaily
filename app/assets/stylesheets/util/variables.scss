@@ -41,7 +41,7 @@ $xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})";
 $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})";
 
 /* misc */
-$footer-height: 175px;
+$footer-height: 190px;
 $header-height: 120px;
 $email-input-font-size: 24px;
 $shop-form-input-height: 45px;

@@ -18,6 +18,7 @@ import facebookAppId from '../../util/facebookAppId';
 import Modal from './Modal';
 import { Image } from 'cloudinary-react'
 import Header from '../App/Header'
+import ScrollButton from '../VideosTab/ScrollButton'
 
 export default class AgencyTab extends Component {
     constructor() {
@@ -101,6 +102,155 @@ export default class AgencyTab extends Component {
               <h2>OUR <span>WORK</span></h2>
               <p>We can work with anyone, anywhere. We have a team of creators from around<br />
                 the world ready for any kind of project. Here are some of our favorites. Here is some of our work</p>
+            </div>
+          </div>
+
+          <div className='agency-clients-outer'>
+            <div className='agency-clients-row'>
+              <div className='client-outer'>
+                <div className='video'>
+                  <Image 
+                    publicId='uber_x77be2'
+                    alt='uber'
+                    className='video-inner' />
+                </div>
+                <div className='video-text'>
+                  <Image 
+                    publicId='Uber_logo4x_jbxvbc'
+                    alt='uber logo'
+                    className='uber-logo' />
+                    <hr />
+                      <div className='text-desc'>
+                      <i className="fas fa-bolt"></i>
+                      <p>Production Time: <span>1d</span></p>
+                      <i className="fas fa-star"></i>
+                      <p>Product: <span>Restaurants</span></p>
+                    </div>
+                </div>
+              </div>
+              <div className='client-outer'>
+                <div className='video'>
+                  <Image 
+                    publicId='WU_thumbnail3x_lozbt3'
+                    alt='western union'
+                    className='video-inner' />
+                </div>
+                <div className='video-text'>
+                <Image 
+                    publicId='WU-Logo_long4x_i9lb1y'
+                    alt='western union logo'
+                    className='wu-logo' />
+                    <hr />
+                      <div className='text-desc'>
+                      <i className="fas fa-bolt"></i>
+                      <p>Production Time: <span>1d</span></p>
+                      <i className="fas fa-star"></i>
+                      <p>Product: <span>Restaurants</span></p>
+                    </div>
+                </div>
+              </div>
+              <div className='client-outer'>
+                <div className='video'>
+                  <Image 
+                    publicId='Galton_Voysey_Tumbnail_3x_mqdebx'
+                    alt='galton voysey'
+                    className='video-inner' />
+                </div>
+                <div className='video-text'>
+                  <Image 
+                      publicId='GaltonVoysey_logo4x_zuf4ur'
+                      alt='galton voysey logo'
+                      className='gv-logo' />
+                      <hr />
+                      <div className='text-desc'>
+                      <i className="fas fa-bolt"></i>
+                      <p>Production Time: <span>1d</span></p>
+                      <i className="fas fa-star"></i>
+                      <p>Product: <span>Restaurants</span></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='agency-clients-outer'>
+            <div className='agency-clients-row'>
+              <div className='client-outer'>
+                <div className='video'>
+                  <Image 
+                    publicId='NTUC_Income3x_fz6uda'
+                    alt='uber'
+                    className='video-inner' />
+                </div>
+                <div className='video-text'>
+                  <Image 
+                    publicId='NTUC_Income4x_vkzgvl'
+                    alt='ntuc logo'
+                    className='ntuc-logo' />
+                    <hr />
+                    <div className='text-desc'>
+                      <i className="fas fa-bolt"></i>
+                      <p>Production Time: <span>1d</span></p>
+                      <i className="fas fa-star"></i>
+                      <p>Product: <span>Restaurants</span></p>
+                    </div>
+                </div>
+              </div>
+              <div className='client-outer'>
+                <div className='video'>
+                  <Image 
+                    publicId='Broome_wnbyae'
+                    alt='broome'
+                    className='video-inner' />
+                </div>
+                <div className='video-text'>
+                  <Image 
+                    publicId='Broome_International4x_kqixea'
+                    alt='broome international logo'
+                    className='broome-logo' />
+                    <hr />
+                      <div className='text-desc'>
+                      <i className="fas fa-bolt"></i>
+                      <p>Production Time: <span>1d</span></p>
+                      <i className="fas fa-star"></i>
+                      <p>Product: <span>Restaurants</span></p>
+                    </div>
+                </div>
+              </div>
+              <div className='client-outer-last'>
+                <div className='video'>
+                  <Image 
+                    publicId='you_nas3x_zzcxlf'
+                    alt='that can be you'
+                    className='video-inner' />
+                </div>
+                <div className='video-text'>
+                  <p className='title'>THAT CAN BE <span>YOU</span></p>
+                  <hr />
+                      <div className='text-desc'>
+                      <p className='you-desc'>We make videos about people first,<br /> 
+                        products second. <span>We're an email away.</span></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='agency-bottom'>
+            <div className='work-together'>
+              <h3>LET'S WORK <span>TOGETHER</span></h3>
+              <p>WE ARE IN EVERY COUNTRY</p>
+              <a href=''>nas<span>@nasdaily.com</span></a>
+            </div>
+            <div className='one-minute-lower'>
+              <Image 
+                publicId='Agency_bg_bottom-short_ngherr'
+                className='lower-hero' />
+              <div className='one-minute-text'>
+                <i className="fas fa-quote-left left"></i>
+                <p>That's <span>1 minute</span>, see you <span>tomorrow</span></p>
+                <i className="fas fa-quote-left right"></i>
+                <ScrollButton scrollStepInPx='50' delayInMs='16.66' />
+              </div>
             </div>
           </div>
         </div>
