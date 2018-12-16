@@ -148,6 +148,8 @@ export default class AgencyTab extends Component {
                     publicId='uber_x77be2'
                     alt='uber'
                     className='video-inner' />
+                    <img src='assets/play.svg'
+                  className='play' />
                 </div>
                 <div className='video-text'>
                   <Image 
@@ -169,6 +171,8 @@ export default class AgencyTab extends Component {
                     publicId='WU_thumbnail3x_lozbt3'
                     alt='western union'
                     className='video-inner' />
+                    <img src='assets/play.svg'
+                  className='play' />
                 </div>
                 <div className='video-text'>
                 <Image 
@@ -190,6 +194,8 @@ export default class AgencyTab extends Component {
                     publicId='Galton_Voysey_Tumbnail_3x_mqdebx'
                     alt='galton voysey'
                     className='video-inner' />
+                    <img src='assets/play.svg'
+                  className='play' />
                 </div>
                 <div className='video-text'>
                   <Image 
@@ -216,6 +222,8 @@ export default class AgencyTab extends Component {
                     publicId='NTUC_Income3x_fz6uda'
                     alt='uber'
                     className='video-inner' />
+                    <img src='assets/play.svg'
+                  className='play' />
                 </div>
                 <div className='video-text'>
                   <Image 
@@ -237,6 +245,8 @@ export default class AgencyTab extends Component {
                     publicId='Broome_wnbyae'
                     alt='broome'
                     className='video-inner' />
+                    <img src='assets/play.svg'
+                  className='play' />
                 </div>
                 <div className='video-text'>
                   <Image 
@@ -253,11 +263,11 @@ export default class AgencyTab extends Component {
                 </div>
               </div>
               <div className='client-outer-last'>
-                <div className='video'>
+                <div className='can-be-you'>
                   <Image 
                     publicId='you_nas3x_zzcxlf'
                     alt='that can be you'
-                    className='video-inner' />
+                    className='can-be-you-inner' />
                 </div>
                 <div className='video-text'>
                   <p className='title'>THAT CAN BE <span>YOU</span></p>
