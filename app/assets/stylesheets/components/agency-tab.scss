@@ -3,7 +3,6 @@
   font-family: 'Raleway',
   sans-serif;
   color: white;
-  overflow-x: hidden;
 
   span {
     color: $yellow-color;
@@ -11,6 +10,7 @@
 
   .agency-upper {
     position: relative;
+    overflow: hidden;
 
     .image-text-box {
       position: absolute;
@@ -20,6 +20,7 @@
       margin: auto;
       width: 70%;
       text-align: center;
+      z-index: 2;
     }
 
     .title {
@@ -81,7 +82,6 @@
   .background-upper-img {
     margin-top: -200px;
     width: 100vw;
-    z-index: 0;
   }
 
   .one-minute-outer {
@@ -94,10 +94,11 @@
     position: absolute;
     top: -80px;
     height: 533px;
-    background: rgba(44, 44, 44, 0.85);
+    background: rgba(44, 44, 44, 0.95);
     width: 100vw;
-    @include linearGradient(rgba(44, 44, 44, 0.85), rgba(44, 44, 44, 1));
+    background: linear-gradient(rgba(44, 44, 44, 0.90),rgba(44, 44, 44, 0.90));
     text-align: center;
+    z-index: 2;
 
     .blink {
       position: absolute;
@@ -305,7 +306,6 @@
         .video-inner {
           width: 100%;
           height: 100%;
-
           -moz-transition: all 0.3s ease-in-out;
           -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
@@ -486,6 +486,18 @@
     }
   }
 }
+
+ .agency-upper:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: 1;
+   background: rgba(31, 31, 31, 0.2);
+   background: linear-gradient(rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2));
+ }
 
 
 

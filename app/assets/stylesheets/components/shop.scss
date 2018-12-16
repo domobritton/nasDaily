@@ -1,25 +1,21 @@
 .nd-shop {
   width: 100vw;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
   color: white;
   font-family: 'Raleway', sans-serif;
 
   .nd-upper {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
-    // align-items: left;
     padding-top: 220px;
-    padding-left: 200px;
-    // padding-bottom: 150px;
     width: 100vw;
     height: 630px;
+    position: relative;
+    z-index: -1;
 
     .upper-info {
       width: 355px;
-      font-family: 'Raleway', sans-serif;
+      position: absolute;
+      left: 15%;
+      z-index: 2;
     }
 
     h1 {
@@ -156,7 +152,6 @@
     height: 792px;
     width: 718px;
     overflow: hidden;
-    z-index: 0;
 
     .image-text {
       position: relative;
@@ -214,9 +209,10 @@
       }
 
       .nas-tshirt {
-        height: 792px;
+        height: 100%;
       }
-  }
+
+    }
 
   .inner-flex {
     display: flex;
@@ -631,6 +627,8 @@
     padding: 10px;
   }
 
+  
+
 
   /* THIS IS ARROW, BUT IT GETS OVERIDEN BY DEFAULT BROWSER BEHAVIOR ON MOBILE: */
   /* .tile__details { */
@@ -811,6 +809,20 @@
       }
     }
   }
+}
+
+
+.nd-upper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 870px;
+  z-index: 1;
+  background: rgba(31, 31, 31, 0.2);
+  background: linear-gradient(rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2));
 }
 
 

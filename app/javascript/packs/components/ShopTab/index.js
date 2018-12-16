@@ -37,7 +37,7 @@ export default class ShopTab extends Component {
       const { percent } = this.state;
       if (!percent) { return }
 
-      window.location.href = `http://shop.nasdaily.com/?percentage=${percent}`;
+      window.location.href=`http://shop.nasdaily.com/?percentage=${percent}`;
     }
 
     setPercent(p) {
