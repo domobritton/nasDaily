@@ -23,8 +23,39 @@ import ScrollButton from '../VideosTab/ScrollButton'
 export default class AgencyTab extends Component {
     constructor() {
       super()
-      this.state = {}
+      this.state = {
+        oneSecond: false,
+      }
     }
+  componentDidMount() {
+    this.intervalID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
+  }
+
+  tick() {
+    const { oneSecond } = this.state
+    this.setState({
+      oneSecond: !oneSecond
+    });
+  }
+
+  get blink() {
+    const { oneSecond } = this.state 
+    if (oneSecond) {
+      return <div className='blink'>
+      <img src='assets/2_dots.svg' />
+      </div>
+    } else {
+      return <div className='blink'>
+      </div>
+    }
+  }
 
     render() {
       return (
@@ -50,6 +81,10 @@ export default class AgencyTab extends Component {
           </div>
           <div className='one-minute-outer'>
             <div className='one-minute'>
+            { this.blink }
+              <div className='time'>
+                <img src='assets/100.svg' />
+              </div>
             <div className='one-minute-box'>
               <h2>"THAT'S ONE MINUTE"</h2>
               <p>After creating <span>1,000</span> videos in 1,000 days and amassing <span>12m followers</span> on Facebook,<br /> 
