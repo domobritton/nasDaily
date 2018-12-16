@@ -63,14 +63,14 @@ export default class TeamTab extends Component {
                     </div>
                         <div className='profile-outer'>
                             <div className='creators-mid'>
-                                <Creators start={0} end={8}></Creators>
+                                <Creators start={0} end={4}></Creators>
                             </div>
-                                {/* { this.loadMoreButton } */}
                             <div className='creators-lower'>
                                 <p>We're building the world's best Facebook Creator Team.<br />
                                     Wanna join? Drop us a note!</p>
-                                <a href=''>creators<span>@nasdaily.com</span></a>
+                                <a href='mailto:creators@nasdaily.com'>creators<span>@nasdaily.com</span></a>
                             </div>
+                                {/* { this.loadMoreButton } */}
                         </div>
                     </HeroBanner>   
                 </div>

@@ -2,49 +2,37 @@ const teamData = [{
         id: 1,
         name: 'Dear Alyne',
         project: 'Women Issues',
-        followers: '1,000,000'
+        followers: '1,000,000',
+        profilePic: 'dear_alyne_profile_uzyp9l',
+        backgroundPic: '',
+        link: 'https://www.facebook.com/dearalyne/'
     },
     {
         id: 2,
-        name: 'Jim Smith',
-        project: 'Global Warming',
-        followers: '1,000,000'
+        name: 'Project Nightfall',
+        project: 'Inspirational Content',
+        followers: '605,000',
+        profilePic: 'project_nightfall_profile_mvwehg',
+        backgroundPic: '',
+        link: 'https://www.facebook.com/projectnightfall/'
     },
     {
         id: 3,
-        name: `Frank O'Brien`,
-        project: 'The U.K.',
-        followers: '1,000,000'
+        name: 'Franco Dubini',
+        project: 'The Energetic Italian',
+        followers: '62,200',
+        profilePic: 'franco_dubini_profile_gnh6tv',
+        backgroundPic: 'franco_dubini_background_jsqqhs',
+        link: 'https://www.facebook.com/francodubi/'
     },
     {
         id: 4,
-        name: 'Mister Watts',
-        project: 'Urban Life',
-        followers: '1,000,000'
-    },
-    {
-        id: 5,
-        name: 'Alyssa Mulkin',
-        project: 'Outdoors',
-        followers: '1,000,000'
-    },
-    {
-        id: 6,
-        name: 'Will Adams',
-        project: 'Voting Rights',
-        followers: '1,000,000'
-    },
-    {
-        id: 7,
-        name: 'Mille Grader',
-        project: 'Politics',
-        followers: '1,000,000'
-    },
-    {
-        id: 8,
-        name: 'Andy Willis',
-        project: 'Travel',
-        followers: '1,000,000'
+        name: 'Mitch Summers',
+        project: 'World Traveler',
+        followers: '13,600',
+        profilePic: 'mitch_summers_profile_neimnc',
+        backgroundPic: 'mitch_summers_background_lultlj',
+        link: 'https://www.facebook.com/unexpectedjrne/'
     },
 ]
 

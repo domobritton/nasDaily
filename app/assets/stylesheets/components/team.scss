@@ -153,6 +153,11 @@
         margin-bottom: 24px;
         animation-duration: 1s;
         animation-delay: 1s;
+
+        .team-member-background {
+            width: 100%;
+            height: 166px;
+        }
     }
 
     .mobile-profile {
@@ -226,6 +231,7 @@
         letter-spacing: 0.88px;
         font-weight: bold;
         color: white;
+        cursor: pointer;
     }
 
  
@@ -290,11 +296,12 @@
 .creators-lower {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 100vw;
-    margin-top: 80px;
-    margin-bottom: 160px;
     text-align: center;
+    height: 600px;
+    width: 100vw;
+    background: #2C2C2C;
     color: white;
     
     a {
@@ -320,12 +327,12 @@
 .team-page {
     height: 100%;
     width: 100vw;
-    position: relative;
+    // position: relative;
 }
 
 .team {
     position: relative;
-    min-height: 580vh;
+    min-height: 480vh;
 
     .hero-container {
         position: relative;

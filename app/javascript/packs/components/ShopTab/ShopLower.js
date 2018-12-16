@@ -24,6 +24,8 @@ export const ShopLower = (props) => (
               <div className="lower-right">
                 {/* Video Section */}
                 <Image publicId="What_means_tumbnail_aawokp" className="video-image" />
+                <img src='assets/play.svg'
+                  className='play' />
               </div>
             </div>
           </div>

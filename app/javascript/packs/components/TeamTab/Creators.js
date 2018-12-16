@@ -1,5 +1,6 @@
 import React from 'react'
 import teamData from './teamData'
+import { Image } from 'cloudinary-react'
 
 
 const Creators = ({start, end}) => {
@@ -14,21 +15,24 @@ const Creators = ({start, end}) => {
                 return (
                     <div key={person.id} className='profile-inner animated fadeIn'>
                         <div className='team-member'>
-                            <h1>Person Image</h1>
+                            <Image publicId={person.backgroundPic}
+                                className='team-member-background' />
                             <div className='mobile-profile'>
                                 <div className='mobile-profile-pic'>
-                                    <img src='https://via.placeholder.com/46' alt='' />
+                                    <Image publicId='' />
                                 </div>
                                 <p>{person.name}</p>
                             </div>
                             <div className='team-lower'>
                                 <ul>
-                                    <li className='profile-pic'><img src='https://via.placeholder.com/46' alt='' /></li>
+                                    <li className='profile-pic'>
+                                        <Image publicId={person.profilePic} />
+                                    </li>
                                     <li>{person.name}</li>
                                     <li>{person.project}</li>
                                     <li><i className="fab fa-facebook-square"></i>{`${person.followers} Followers`}</li>
                                 </ul>
-                                <div className='contact'>WORK WITH ME</div>
+                                <div className='contact'><a href={person.link} target='_blank'>WORK WITH ME</a></div>
                             </div>
                         </div>
                     </div>
