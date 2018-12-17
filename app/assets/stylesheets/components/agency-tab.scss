@@ -10,11 +10,11 @@
   }
 
   .agency-upper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // text-align: center;
 
     .image-text-box {
       position: absolute;
@@ -80,12 +80,17 @@
       background: transparent;
       border: 1.6px solid $yellow-color;
       border-radius: 22px;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 
   .background-upper-img {
     margin-top: -200px;
     width: 100vw;
+    height: 1225px;
   }
 
   .one-minute-outer {
@@ -503,7 +508,12 @@
   }
 }
 
- .agency-upper:before {
+.hero-children {
+  position: relative;
+  z-index: 10;
+}
+
+ .hero-container:before {
    content: "";
    position: absolute;
    top: 0;
@@ -511,8 +521,8 @@
    left: 0;
    bottom: 0;
    z-index: 1;
-   background: rgba(31, 31, 31, 0.2);
-   background: linear-gradient(rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2));
+   background: rgba(44, 44, 44, 0.25);
+   background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
  }
 
 

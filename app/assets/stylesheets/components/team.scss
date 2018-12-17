@@ -367,15 +367,4 @@
     z-index: 0;
 }
 
-.hero-image:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    background: rgba(31, 31, 31, 0.2);
-    background: linear-gradient(rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2));
-}
 

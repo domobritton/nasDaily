@@ -67,7 +67,6 @@ export default class AgencyTab extends Component {
       return (
         <div className='nd-agency'>
         <Header />
-          <HeroBanner min={'-20%'} max={'40%'}>
           <div className='agency-upper'>
               <div className='image-text-box'>
               <div className='title'>
@@ -82,6 +81,7 @@ export default class AgencyTab extends Component {
               </button>
               </div>
           </div>
+          <HeroBanner min={'-20%'} max={'40%'}>
           <div className='one-minute-outer'>
             <div className='one-minute'>
             { this.blink }
