@@ -5,8 +5,8 @@ import { Line } from 'rc-progress'
 export const ShopUpper = ({ form, percent}) => (
       <div className="nd-upper">
         <div className="upper-info">
-          <h1><span>T</span> SHOP</h1>
-          <p>Try our calculator below to <br />see how much of your life has passed!</p>
+          <h1 className='animated fadeInup'><span>T</span> SHOP</h1>
+          <p className='animated fadeInup delay-2s'>Try our calculator below to <br />see how much of your life has passed!</p>
           <div className="arrow-box">
             <div className="arrow-tail">
               <hr />

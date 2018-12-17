@@ -165,10 +165,10 @@ export default class ShopTabForm extends React.PureComponent {
       showErrorMessage,
       shouldShake
     } = this.state;
-    console.log(gender)
+   
     return (
       <form
-        className='form'
+        className='form animated fadeIn'
         onSubmit={this.onSubmit}
       >
         <label><span className='white-color'>Age</span></label>

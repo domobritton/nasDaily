@@ -3,13 +3,18 @@
   font-family: 'Raleway',
   sans-serif;
   color: white;
+  position: relative;
 
   span {
     color: $yellow-color;
   }
 
   .agency-upper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 
     .image-text-box {
       position: absolute;

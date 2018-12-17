@@ -19,6 +19,7 @@ import Modal from './Modal';
 import { Image } from 'cloudinary-react'
 import Header from '../App/Header'
 import { animateScroll as scroll } from 'react-scroll'
+import { Parallax } from 'react-scroll-parallax'
 export default class AgencyTab extends Component {
     constructor() {
       super()
@@ -63,24 +64,20 @@ export default class AgencyTab extends Component {
   }
 
     render() {
-      console.log(window.pageYOffset)
       return (
-        
         <div className='nd-agency'>
         <Header />
+          <HeroBanner min={'-20%'} max={'40%'}>
           <div className='agency-upper'>
-            <Image 
-              publicId='Nas_Daily_Team_desk_f9foar'
-              className='background-upper-img'/>
               <div className='image-text-box'>
               <div className='title'>
                 <hr />
                 <h1>NAS DAILY COMPANY</h1>
                 <hr />
               </div>
-              <h2>WE MAKE <span>VIDEOS</span></h2>
-              <p>We make videos about <span>People first.</span> Products second.</p>
-              <button className='button-outer'>
+              <h2 className='animated fadeInUp'>WE MAKE <span>VIDEOS</span></h2>
+              <p className='animated fadeInUp delay-3s'>We make videos about <span>People first.</span> Products second.</p>
+              <button className='button-outer animated fadeInup delay-5s'>
                 <a href='mailto:nas@nasdaily.com'>Work With Us</a>
               </button>
               </div>
@@ -304,6 +301,7 @@ export default class AgencyTab extends Component {
               </div>
             </div>
           </div>
+          </HeroBanner>
         </div>
       )
     }
@@ -318,6 +316,17 @@ const ScrollButton = ({scrollToTop}) => (
           <div className='up-arrow'>&#8593;</div>
           BACK TO TOP
       </button>
+    </div>
+)
+
+const HeroBanner = ({ min, max, children }) => (
+    <div className="hero-container">
+        <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
+            <Image 
+              publicId='Nas_Daily_Team_desk_f9foar'
+              className='background-upper-img'/>
+        </Parallax>
+        <div className="hero-children">{children}</div>
     </div>
 )
 

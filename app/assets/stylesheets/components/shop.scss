@@ -35,7 +35,6 @@
       line-height: 26px;
       margin-bottom: 25px;
     }
-
     
   .arrow-box {
     position: relative;
@@ -431,18 +430,10 @@
     border: 1px solid black;
   }
 
-  // .form {
-  //   justify-content: flex-start;
-  //   align-items: left;
-  //   display: flex;
-  //   color: white;
-  //   flex-direction: column;
-  //   text-align: center;
-  //   padding-bottom: 36px;
-  // }
-
   .form {
     width: 80%;
+    animation-duration: 1s;
+    animation-delay: 750ms;
   }
 
   .error-message {
