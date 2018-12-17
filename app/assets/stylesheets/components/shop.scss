@@ -239,20 +239,31 @@
         bottom: 0;
         width: 50px;
         height: 50px;
+        opacity: 0;
+        -moz-transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
-
+      
+      .play:hover {
+        opacity: 1;
+      }
       .video-image {
         width: 100%;
-
         -moz-transition: all 0.3s ease-in-out;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
       }
 
       .video-image:hover {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -moz-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+
+        + .play {
+          opacity: 1;
+        }
+
       }
     }
   }
@@ -490,7 +501,7 @@
       right: 0;
       /*Adjust for position however you want*/
 
-      top: 7px;
+      top: 3px;
       padding: 0;
 
       position: absolute;

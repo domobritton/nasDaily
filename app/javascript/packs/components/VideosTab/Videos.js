@@ -8,7 +8,7 @@ import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
 import { isMobile, isTablet } from '../../util/viewportSize';
 import ScrollAnimation from 'react-animate-on-scroll';
-import ScrollButton from './ScrollButton';
+import { animateScroll as scroll } from 'react-scroll'
 
 export default class Videos extends React.Component {
   constructor() {
@@ -20,6 +20,7 @@ export default class Videos extends React.Component {
       loading: false,
     }
 
+    this.scrollToTop = this.scrollToTop.bind(this);
     this.loadMore = this.loadMore.bind(this);
   }
 
@@ -67,6 +68,10 @@ export default class Videos extends React.Component {
     } else if (height < 2000) {
       $('.outer-scroll').removeClass('show');
     }
+  }
+
+  scrollToTop() {
+    scroll.scrollToTop();
   }
 
   showVideo = (src) => {
@@ -134,7 +139,7 @@ export default class Videos extends React.Component {
             </ScrollAnimation>
           </Preload>))
         }
-        <ScrollButton scrollStepInPx='50' delayInMs='16.66' />
+        <ScrollButton scrollToTop={this.scrollToTop} />
       </div>
     );
   }
@@ -171,7 +176,6 @@ export default class Videos extends React.Component {
   render() {
     const { videoId } = this.state;
     const { videos } = this.props;
-
     return (
       <div>
         <div className='videos-rows'>
@@ -187,3 +191,15 @@ export default class Videos extends React.Component {
     );
   }
 }
+
+const ScrollButton = ({scrollToTop}) => (
+    <div className='outer-scroll'>
+      <button 
+        title='Back to top' 
+        className='scroll' 
+        onClick={ () => { scrollToTop() }}>
+          <div className='up-arrow'>&#8593;</div>
+          BACK TO TOP
+      </button>
+    </div>
+)

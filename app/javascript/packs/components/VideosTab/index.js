@@ -1,7 +1,6 @@
 import React from 'react';
 import Fuse from 'fuse.js';
 import $ from 'jquery';
-import ScrollButton from './ScrollButton';
 import { debounce } from 'lodash';
 import Videos from './Videos';
 import classnames from 'classnames';

@@ -18,15 +18,16 @@ import facebookAppId from '../../util/facebookAppId';
 import Modal from './Modal';
 import { Image } from 'cloudinary-react'
 import Header from '../App/Header'
-import ScrollButton from '../VideosTab/ScrollButton'
-
+import { animateScroll as scroll } from 'react-scroll'
 export default class AgencyTab extends Component {
     constructor() {
       super()
       this.state = {
         oneSecond: false,
       }
+      this.scrollToTop = this.scrollToTop.bind(this);
     }
+
   componentDidMount() {
     this.intervalID = setInterval(
       () => this.tick(),
@@ -36,6 +37,10 @@ export default class AgencyTab extends Component {
 
   componentWillUnmount() {
     clearInterval(this.intervalID);
+  }
+
+  scrollToTop() {
+    scroll.scrollToTop();
   }
 
   tick() {
@@ -58,6 +63,7 @@ export default class AgencyTab extends Component {
   }
 
     render() {
+      console.log(window.pageYOffset)
       return (
         
         <div className='nd-agency'>
@@ -75,7 +81,7 @@ export default class AgencyTab extends Component {
               <h2>WE MAKE <span>VIDEOS</span></h2>
               <p>We make videos about <span>People first.</span> Products second.</p>
               <button className='button-outer'>
-                <a href=''>Work With Us</a>
+                <a href='mailto:nas@nasdaily.com'>Work With Us</a>
               </button>
               </div>
           </div>
@@ -284,7 +290,7 @@ export default class AgencyTab extends Component {
             <div className='work-together'>
               <h3>LET'S WORK <span>TOGETHER</span></h3>
               <p>WE ARE IN EVERY COUNTRY</p>
-              <a href=''>nas<span>@nasdaily.com</span></a>
+              <a href='mailto:nas@nasdaily.com'>nas<span>@nasdaily.com</span></a>
             </div>
             <div className='one-minute-lower'>
               <Image 
@@ -294,15 +300,26 @@ export default class AgencyTab extends Component {
                 <i className="fas fa-quote-left left"></i>
                 <p>That's <span>1 minute</span>, see you <span>tomorrow</span></p>
                 <i className="fas fa-quote-left right"></i>
-                <ScrollButton scrollStepInPx='50' delayInMs='16.66' />
+                <ScrollButton scrollToTop={this.scrollToTop} />
               </div>
             </div>
           </div>
         </div>
       )
     }
-
 }
+
+const ScrollButton = ({scrollToTop}) => (
+    <div className='outer-scroll'>
+      <button 
+        title='Back to top' 
+        className='scroll' 
+        onClick={ () => { scrollToTop() }}>
+          <div className='up-arrow'>&#8593;</div>
+          BACK TO TOP
+      </button>
+    </div>
+)
 
 // export default class AgencyTab extends React.Component {
 //   constructor() {

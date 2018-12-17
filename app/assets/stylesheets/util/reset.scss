@@ -29,9 +29,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-html:not(.videos), body:not(.videos) {
+html:not(.videos) {
 	overflow-x: hidden;
-	overflow-y: auto;
+	height: 100%;
 }
 body {
 	line-height: 1;

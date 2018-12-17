@@ -81,6 +81,7 @@ export default class ShopTab extends Component {
 
     render () {
       const { percent } = this.state 
+      
       return (
         <div className="nd-shop">
           <Header />
