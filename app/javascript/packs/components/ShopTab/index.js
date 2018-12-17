@@ -35,6 +35,7 @@ export default class ShopTab extends Component {
 
     navigateToSaltyGuys() {
       const { percent } = this.state;
+      debugger;
       if (!percent) { return }
 
       window.location.href=`http://shop.nasdaily.com/?percentage=${percent}`;
@@ -68,22 +69,22 @@ export default class ShopTab extends Component {
     }
 
 
-    // get tshirtTab() {
-    //   const { showForm, showTshirtOnMobile } = this.state;
+    get tshirtTab() {
+      const { showForm, showTshirtOnMobile } = this.state;
 
-    //   if (showTshirtOnMobile) {
-    //     return this.tshirtWithProgressBar;
-    //   } else {
-    //     return this.form;
-    //   }
-    // }
+      if (showTshirtOnMobile) {
+        return this.tshirtWithProgressBar;
+      } else {
+        return this.form;
+      }
+    }
 
     render () {
       const { percent } = this.state 
       return (
         <div className="nd-shop">
           <Header />
-          <ShopUpper form={this.form} percent={percent} />
+          <ShopUpper form={this.form} percent={percent} navigate={this.navigateToSaltyGuys}/>
           <ShopLower />
         </div>
       )

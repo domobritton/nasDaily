@@ -10,7 +10,8 @@ import {
   birthMonthOptions,
   birthYearOptions,
   selectStyles,
-  smallSelectStyles
+  smallSelectStyles,
+  longSelectStyles,
 } from './constants';
 
 export default class ShopTabForm extends React.PureComponent {
@@ -21,13 +22,14 @@ export default class ShopTabForm extends React.PureComponent {
       birthDay: '',
       birthMonth: '',
       birthYear: '',
-      gender: '',
+      gender: 'male',
       country: '',
       showErrorMessage: false,
       shouldShake: false
     }
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.setGender = this.setGender.bind(this);
   }
 
   validate() {
@@ -118,6 +120,10 @@ export default class ShopTabForm extends React.PureComponent {
     return !date.isValid();
   }
 
+  setGender(e) {
+    this.setState({ gender: e.target.value, showErrorMessage: false })
+  }
+
   componentDidUpdate(_, prevState) {
     const {
       country,
@@ -149,6 +155,7 @@ export default class ShopTabForm extends React.PureComponent {
   }
 
   render() {
+   
     const {
       country,
       gender,
@@ -158,7 +165,7 @@ export default class ShopTabForm extends React.PureComponent {
       showErrorMessage,
       shouldShake
     } = this.state;
-
+    console.log(gender)
     return (
       <form
         className='form'
@@ -174,7 +181,7 @@ export default class ShopTabForm extends React.PureComponent {
                 onChange={({target: { value }}) => {
                   this.setState({ birthDay: value, showErrorMessage: false })
                 }}
-                style={smallSelectStyles}
+                style={selectStyles}
               >
                 { this.birthDayOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
@@ -186,7 +193,7 @@ export default class ShopTabForm extends React.PureComponent {
                 onChange={({target: { value }}) => {
                   this.setState({ birthMonth: value, showErrorMessage: false })
                 }}
-                style={smallSelectStyles}
+                style={selectStyles}
               >
                 { birthMonthOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
@@ -198,7 +205,7 @@ export default class ShopTabForm extends React.PureComponent {
                 onChange={({target: { value }}) => {
                   this.setState({ birthYear: value, showErrorMessage: false })
                 }}
-                style={smallSelectStyles}
+                style={selectStyles}
               >
                 { birthYearOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
@@ -213,14 +220,14 @@ export default class ShopTabForm extends React.PureComponent {
 
         <label><span className='white-color'>Country</span></label>
         <div className='input-group'>
-          <div className='select-wrapper'>
+          <div className='select-wrapper-country'>
             <select
               name="country"
               value={ country }
               onChange={({target: { value }}) => {
                 this.setState({ country: value, showErrorMessage: false })
               }}
-              style={selectStyles}
+              style={longSelectStyles}
             >
               { countryOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
             </select>
@@ -233,32 +240,33 @@ export default class ShopTabForm extends React.PureComponent {
         </div>
 
         <label><span className='white-color'>Gender</span></label>
-        <div className='input-group'>
-          <div className='select-wrapper'>
-            <select
-              name="gender"
-              value={ gender }
-              onChange={({target: { value }}) => {
-                this.setState({ gender: value, showErrorMessage: false })
-              }}
-              style={selectStyles}
-            >
-              { genderOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
-            </select>
-          </div>
-          <Collapse isOpened={showErrorMessage && !gender}>
-            <div className='error-message'>
-              This field is required
-            </div>
-          </Collapse>
-        </div>
-        <button
-          type='submit'
-          className={classnames('submit-button show-on-small-only', { shake: shouldShake })}
-        >
-          Calculate
-        </button>
+          <RadioComponent value={gender} setGender={this.setGender}/>
       </form>
     );
   }
 }
+
+const RadioComponent = ({ value, setGender }) => ( 
+  <div className='radio-wrapper'>
+    <div className='radio'>
+      <input 
+        id='radio-1' 
+        type="radio" 
+        value="male" 
+        name="gender" 
+        checked={value === "male"}
+        onChange={setGender} />
+      <label htmlFor='radio-1' className="radio-label">Male</label>
+    </div>
+    <div className='radio'>
+      <input 
+        id='radio-2' 
+        type="radio" 
+        value="female" 
+        name="gender" 
+        checked={value === "female"}
+        onChange={setGender} />
+      <label htmlFor="radio-2" className="radio-label">Female</label>
+    </div>
+  </div>
+);

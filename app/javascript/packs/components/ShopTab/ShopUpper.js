@@ -35,7 +35,7 @@ const ImageText = ({percent}) => (
       </div>
       {percent ? <p>{percent}% LIFE</p> : <p>0% LIFE</p>}
       <div className="browse-button">
-        <a className='browse' href='https://nasdaily.com' target='_blank'>
+        <a className='browse' href={`http://shop.nasdaily.com/?percentage=${percent}`} target='_blank'>
         <img src='/assets/shopping_cart_icon.svg' />
           Browse Shop
         </a>
