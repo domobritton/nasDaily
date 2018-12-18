@@ -42,7 +42,7 @@ export default class App extends React.Component {
     return (
       <div>
         <div className='content'>
-          <div className='background-filler'>
+          {/* <div className='background-filler'>
             <div className='background-filler__left'/>
             <div className='background-filler__right'>
               <Image
@@ -50,7 +50,7 @@ export default class App extends React.Component {
                 className='background-filler__hand'
               />
             </div>
-          </div>
+          </div> */}
           {/* <Header /> */}
           <Switch>
             <Route path='/team' render={() => <TeamTab videos={videos} />} />

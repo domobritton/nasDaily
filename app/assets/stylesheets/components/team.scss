@@ -1,144 +1,78 @@
-.nd-creators {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 67%;
+
+.nd-team {
+    width: 100vw;
     font-family: 'Raleway',
-    sans-serif;
+        sans-serif;
     color: white;
-    
-    h1 {
-        font-size: 50px;
-        font-weight: bold;
-        letter-spacing: 9.26px;
-        line-height: 52px;
-    }
+    position: relative;
 
     span {
         color: $yellow-color;
     }
 
-    .description {
-        margin-top: 40px;
-        width: 90%;
+    .team-upper {
 
-        p {
-            font-size: 17px;
-            font-weight: 500;
-            letter-spacing: 0.88px;
-            line-height: 36px;
+        .image-text-box {
+            position: absolute;
+            top: 220px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 67%;
+            text-align: left;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            letter-spacing: 9.26px;
+            line-height: 52px;
         }
 
         span {
             color: $yellow-color;
         }
 
-    }
-
-    @media #{$medium-only} {
-        .creators-top {
+        .description {
+            margin-top: 40px;
             width: 90%;
-        }
-        h1 {
-            font-size: 45px;
-        }
-    }
 
-    @media #{$small-only} {
-        padding: 77px 24px;
-        .creators-top {
-            width: 100%;
-        }
-       
-    }
-
-    @media #{$xs-small} {
-        padding: 77px 24px;
-        .creators-top {
-            width: 100%;
-        }
-        h1 {
-            font-size: 30px;
-            letter-spacing: 2px;
-            line-height: 48px;
-        
-            span {
-                font-size: 40px;
-                letter-spacing: 9px;
+            p {
+                font-size: 17px;
+                font-weight: 500;
+                letter-spacing: 0.88px;
+                line-height: 36px;
             }
-        }
 
+            span {
+                color: $yellow-color;
+            }
+
+        }
     }
 
+    .background-creators-img {
+        width: 110%;
+        margin-left: -5%;
+    }
+
+    .hero-children {
+        position: relative;
+        z-index: 10;
+    }
 }
 
 .profile-outer {
     width: 100vw;
-    height: 100%;
-    margin-top: 1100px;
+    margin-top: -900px;
     padding-top: 140px;
     background: #2c2c2ce1;
-    @include linearGradient(rgba(44, 44, 44, 0.85), rgba(44, 44, 44, 1));
+    @include linearGradient(rgba(44, 44, 44, 0.95), rgba(44, 44, 44, 1));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-
-.show-more {
-    margin-top: 100px;
-    .show-more-inner {
-        font-family: 'Raleway',
-            sans-serif;
-        color: white;
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 0.78px;
-        line-height: 27px;
-        cursor: pointer;
-    }
-
-    .loader {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    @keyframes blink {
-        50% {
-            color: transparent
-        }
-    }
-
-    .loader__dot {
-        color: $yellow-color;
-        animation: 2s blink infinite
-    }
-
-    .loader__dot:nth-child(2) {
-        animation-delay: 500ms
-    }
-
-    .loader__dot:nth-child(3) {
-        animation-delay: 750ms
-    }
-
-    span {
-        font-size: 4px;
-        margin-right: 8px;
-    }
-}
-
-
-.profile-more {
-    width: 100vw;
-    padding-top: 140px;
-    background: #2c2c2ce1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
 }
     
 .creators-mid {
@@ -299,7 +233,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: 600px;
+    height: 525px;
     width: 100vw;
     background: #2C2C2C;
     color: white;
@@ -324,47 +258,6 @@
     }
 }
 
-.team-page {
-    height: 100%;
-    width: 100vw;
-    position: relative;
-}
 
-.team {
-    position: relative;
-    min-height: 480vh;
-
-    .hero-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .hero-image {
-        width: 100vw;
-        height: 70%;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .hero-children {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding-top: 225px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-}
-
-.hero-image {
-    position: relative;
-    z-index: 0;
-}
 
 

@@ -8,9 +8,11 @@ export const BoxCarousel = () => {
 
     return (
         <div className='nd-carousel'>
-        <div className='inner-car'>
-            <TextCycle className='text' items={items} duration={duration} />
-        </div>
+            <div className='inner-car'>
+                <div className='car-lines'>
+                    <TextCycle className='text' items={items} duration={duration} />
+                </div>
+            </div>
         </div>
     )
 

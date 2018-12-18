@@ -1,74 +1,74 @@
-.email-form {
-  display: flex;
-  flex-direction: column;
-  min-height: 84px;
-  width: 100%;
-  margin-bottom: 12px;
+// .email-form {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 84px;
+//   width: 100%;
+//   margin-bottom: 12px;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
 
-  .form-wrapper {
-    width: 100%;
-    position: relative;
-  }
+//   .form-wrapper {
+//     width: 100%;
+//     position: relative;
+//   }
 
-  .submit-arrow {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 24px;
-    background-position: center;
-    right: 10px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501466052/arrow_email_hdo9hj.svg);
-  }
+//   .submit-arrow {
+//     position: absolute;
+//     right: 0;
+//     height: 100%;
+//     width: 24px;
+//     background-position: center;
+//     right: 10px;
+//     background-repeat: no-repeat;
+//     cursor: pointer;
+//     background-image: url(http://res.cloudinary.com/nasdaily/image/upload/v1501466052/arrow_email_hdo9hj.svg);
+//   }
 
-  input {
-    height: 54px;
-    width: 100%;
-    color: white;
-    border: none;
-    border-radius: 7px;
-    font-size: $email-input-font-size;
-    padding-left: 8px;
-    padding-right: 8px;
-    font-family: $main-font;
-    padding-top: 6px;
-    padding-bottom: 0;
-    background-color: #313131;
-    box-shadow: 0px 10px 30px rgb(20,20,20);
-    outline: none;
-    transition: background-color 100ms linear, color 100ms linear;
+//   input {
+//     height: 54px;
+//     width: 100%;
+//     color: white;
+//     border: none;
+//     border-radius: 7px;
+//     font-size: $email-input-font-size;
+//     padding-left: 8px;
+//     padding-right: 8px;
+//     font-family: $main-font;
+//     padding-top: 6px;
+//     padding-bottom: 0;
+//     background-color: #313131;
+//     box-shadow: 0px 10px 30px rgb(20,20,20);
+//     outline: none;
+//     transition: background-color 100ms linear, color 100ms linear;
 
-    &.active {
-      background-color: white;
-      color: black;
-    }
-  }
+//     &.active {
+//       background-color: white;
+//       color: black;
+//     }
+//   }
 
-  .success-message {
-    font-size: $email-input-font-size;
-    color: white;
-  }
+//   .success-message {
+//     font-size: $email-input-font-size;
+//     color: white;
+//   }
 
-  .error-message {
-    padding-top: 12px;
-    color: $yellow-color;
-    font-size: 18px;
-  }
-}
+//   .error-message {
+//     padding-top: 12px;
+//     color: $yellow-color;
+//     font-size: 18px;
+//   }
+// }
 
-.app-tab-form-overlay {
-  .form-wrapper {
-    width: 90%;
-  }
+// .app-tab-form-overlay {
+//   .form-wrapper {
+//     width: 90%;
+//   }
 
-  form {
-    align-items: center;
-  }
-}
+//   form {
+//     align-items: center;
+//   }
+// }

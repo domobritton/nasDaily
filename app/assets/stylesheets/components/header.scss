@@ -38,7 +38,7 @@
     margin-right: 34px;
  
     hr {
-      height: .13rem;
+      height: 2px;
       width: 14%;
       padding-top: 0;
       margin-top: -10px;
@@ -73,7 +73,6 @@
     font-weight: 500;
     letter-spacing: 1.3px;
     line-height: 43px;
-    // color: $font-color-light;
     color: #c9c9c9;
     text-transform: uppercase;
     margin-left: 23px;
@@ -143,8 +142,6 @@
   }
 
   @media #{$large-up} {
-    // position: relative;
-    // background-color: transparent;
     align-items: center;
 
     .header-filler {
@@ -152,7 +149,7 @@
     }
 
     .logo-link {
-      margin-left: 30px;
+      margin-left: 60px;
     }
 
     .logo-image {
@@ -161,6 +158,7 @@
 
     .nd-navigation {
       display: block;
+      margin-right: 60px;
     }
 
     button {
@@ -168,28 +166,6 @@
     }
   }
 }
-
-// body.shop {
-//   .nd-navigation-item {
-//     color: white;
-//   }
-
-//   .nd-header {
-//     background-color: white;
-//   }
-
-//   .nd-navigation-item {
-//     color: #c9c9c9;
-
-//     &:hover, &:active, &:focus {
-//       color: #1f1f1f;
-//     }
-
-//     &.active {
-//       color: #1f1f1f;
-//     }
-//   }
-// }
 
 body.videos,
 body.agency {
@@ -221,6 +197,27 @@ body.app {
     }
   }
 }
+// body.shop {
+//   .nd-navigation-item {
+//     color: white;
+//   }
+
+//   .nd-header {
+//     background-color: white;
+//   }
+
+//   .nd-navigation-item {
+//     color: #c9c9c9;
+
+//     &:hover, &:active, &:focus {
+//       color: #1f1f1f;
+//     }
+
+//     &.active {
+//       color: #1f1f1f;
+//     }
+//   }
+// }
 
 // .header-filler {
 //   height: $header-height;

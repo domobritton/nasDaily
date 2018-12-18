@@ -29,7 +29,7 @@ const ImageText = ({percent}) => (
   <div className="show-percent">
       <div className="percent-bar">
         <Line percent={percent}
-          strokeWidth="10"
+          strokeWidth="7"
           trailWidth='0'
           strokeLinecap='square' strokeColor="#87B04E" />
       </div>

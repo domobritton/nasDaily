@@ -170,7 +170,9 @@
 
       .percent-bar {
         width: 242px;
-        height: 22.8px;
+        height: 18.8px;
+        padding-top: 1.5px;
+        padding-left: 2px;
         z-index: 10;
         border: 2px solid #FFFFFF;
         border-radius: 4px;
@@ -267,57 +269,6 @@
     }
   }
 
-
-  // .nd-lower {
-  //   height: 373px;
-  //   background-color: #242424;
-  // }
-  // .arrow-back {
-  //   display: none;
-  // }
-
-  // .landing--left,
-  // .landing--right {
-  //   display: flex;
-  //   justify-content: center;
-  //   position: relative;
-  //   flex: 1;
-  //   transition: opacity 250ms linear;
-  // }
-
-  // .story-header,
-  // .tshirt-header {
-  //   padding-top: 230px;
-  // }
-
-  // .done-with-life {
-  //   z-index: 3;
-  //   text-align: center;
-  //   font-size: 34px;
-  // }
-
-  // .form-footnote {
-  //   font-size: 20px;
-  //   text-align: center;
-  //   margin-top: -20px;
-  // }
-
-  // .tshirt-images-container {
-  //   position: relative;
-  //   width: 100%;
-  //   height: 100%;
-  //   margin-bottom: -150px;
-  //   max-width: 512px;
-  //   max-height: 516px;
-  //   margin-top: -50px;
-  // }
-
-  // .tshirt-image {
-  //   width: 100%;
-  //   height: auto;
-  //   top: 0;
-  //   left: 0;
-  // }
 // PERCENT BAR MACBOOK
   .percentage-bar-image {
     position: absolute;
@@ -520,6 +471,57 @@
       -ms-word-break: normal;
       word-break: normal;
     }
+
+    // .nd-lower {
+    //   height: 373px;
+    //   background-color: #242424;
+    // }
+    // .arrow-back {
+    //   display: none;
+    // }
+
+    // .landing--left,
+    // .landing--right {
+    //   display: flex;
+    //   justify-content: center;
+    //   position: relative;
+    //   flex: 1;
+    //   transition: opacity 250ms linear;
+    // }
+
+    // .story-header,
+    // .tshirt-header {
+    //   padding-top: 230px;
+    // }
+
+    // .done-with-life {
+    //   z-index: 3;
+    //   text-align: center;
+    //   font-size: 34px;
+    // }
+
+    // .form-footnote {
+    //   font-size: 20px;
+    //   text-align: center;
+    //   margin-top: -20px;
+    // }
+
+    // .tshirt-images-container {
+    //   position: relative;
+    //   width: 100%;
+    //   height: 100%;
+    //   margin-bottom: -150px;
+    //   max-width: 512px;
+    //   max-height: 516px;
+    //   margin-top: -50px;
+    // }
+
+    // .tshirt-image {
+    //   width: 100%;
+    //   height: auto;
+    //   top: 0;
+    //   left: 0;
+    // }
 
   // .form-input {
   //   width: 200px;
@@ -942,7 +944,6 @@
   right: 0;
   left: 0;
   bottom: 0;
-  height: 870px;
   z-index: 1;
   background: rgba(44, 44, 44, 0.25);
   background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));

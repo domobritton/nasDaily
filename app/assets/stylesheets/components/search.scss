@@ -19,6 +19,8 @@
     bottom: 10px;
     left: 37%;  
     opacity: 1;
+    animation-duration: 500ms;
+    animation-delay: 500ms;
   }
 
   .search-icon.active {
@@ -33,11 +35,11 @@
     font-family: 'Raleway',
     sans-serif;
     margin-left: 20px;
-    // color: lighten($font-color-light, 20%);
     color: #AEAEAE;
-    // margin-bottom: 12px;
     letter-spacing: 0.82px;
     line-height: 43px;
+    animation-duration: 500ms;
+    animation-delay: 500ms;
   }
 
   .vid-count {
@@ -78,10 +80,6 @@
     }
   }
 
-  //  input[type='text'] {
-  //    font-weight: 400;
-  //  }
-
   input {
     height: 60px;
     width: 100%;
@@ -98,11 +96,10 @@
     font-size: $search-input-font-size;
     caret-color: $yellow-color;
     border: none;
-    border-bottom: 2px solid #888888;
+    border-bottom: 1.5px solid #888888;
     font-family: $main-font;
 
     &::placeholder {
-      // color: $font-color-dark;
       color: white;
       font-weight: 500;
       letter-spacing: 1.17px;
@@ -131,11 +128,6 @@
       font-size: $search-input-font-size-mobile;
       font-weight: 500;
     }
-
-    // .videos-header {
-    //   text-align: center;
-    //   display: block;
-    // }
 
     .input-highlight {
       font-size: $search-input-font-size-mobile;
@@ -168,7 +160,6 @@
     }
 
     input {
-      // text-align: center;
       padding-left: 0;
     }
   }

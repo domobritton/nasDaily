@@ -5,7 +5,7 @@ import { debounce } from 'lodash';
 import Videos from './Videos';
 import classnames from 'classnames';
 import Header from '../App/Header'
-
+import CountTo from 'react-count-to';
 export default class VideosTab extends React.Component {
   constructor(props) {
     super(props);
@@ -14,10 +14,16 @@ export default class VideosTab extends React.Component {
       videoId: null,
       videos: props.videos,
       resetMaxVideos: true,
-      inputValue: ''
+      inputValue: '',
     };
-
+    
     this.asyncOnChange = debounce(this.asyncOnChange, 200);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      $('#search').attr('placeholder', 'SEARCH VIDEOS');
+    }, 650);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,14 +37,20 @@ export default class VideosTab extends React.Component {
     const { inputValue, videos } = this.state;
     const length = videos.length
     return (
-      <div className='nd-search animated slideInUp'>
+      <div className='nd-search'>
         <div className='input-wrapper'>
-        <div className='search-icon'><img src='/assets/search_icon.svg' /></div>
-        <div className='videos-header'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div>
+        <div className='search-icon animated fadeIn'><img src='/assets/search_icon.svg' /></div>
+        <div className='videos-header animated fadeIn'>
+          <CountTo className='vid-count' delay={500} to={length} speed={2500} />
+         Videos
+        </div>
+        {/* <div className='videos-header animated fadeIn'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div> */}
           <input
+            id='search'
+            className='animated slideInUp'
             onChange={(e) => { e.persist(); this.onInputChange(e.target.value); }}
             onKeyPress={(e) => { e.key === 'Enter' && this.searchInput.blur()}}
-            placeholder='SEARCH VIDEOS'
+            placeholder=''
             tabIndex='1'
             ref={(ref) => (this.searchInput = ref)}
             value={inputValue}

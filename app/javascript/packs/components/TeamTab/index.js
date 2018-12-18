@@ -44,43 +44,29 @@ export default class TeamTab extends Component {
     }
 
     render() {
-        const { more } = this.state
          return (
-             <div className='team-page'>
+             <div className='nd-team'>
              <Header />
-                <div className='team'>
-                    <HeroBanner
-                        min={'-20%'}
-                        max={'40%'}
-                        image='https://res.cloudinary.com/nasdaily/image/upload/v1543976585/Creators_bg_kjmggt.jpg'>
-                    <div className='nd-creators'>
-                        <div className='creators-top'>
+                    <div className='team-upper'>
+                        <div className='image-text-box'>
                             <h1 className='animated fadeInUp'>NAS DAILY<span> CREATORS</span></h1>
                             <div className='description animated fadeInup delay-2s'>
                                 <p>Nas Daily Creators are creative, authentic and real. From thousands of potential people, we assembled the best team of Facebook creators. We make videos about different topics, but our mission is the same.<span> Come work with us.</span></p>
                             </div>
                         </div>
                     </div>
-                        <div className='profile-outer'>
-                            <div className='creators-mid'>
-                                <Creators start={0} end={4}></Creators>
-                            </div>
-                            <div className='creators-lower'>
-                                <p>We're building the world's best Facebook Creator Team.<br />
-                                    Wanna join? Drop us a note!</p>
-                                <a href='mailto:creators@nasdaily.com'>creators<span>@nasdaily.com</span></a>
-                            </div>
-                                {/* { this.loadMoreButton } */}
-                        </div>
-                    </HeroBanner>   
-                </div>
-                {/* { more ? 
-                    <div className='profile-more'>
+                <HeroBanner min={'-15%'} max={'40%'}>
+                    <div className='profile-outer'>
                         <div className='creators-mid'>
-                            <Creators start={5} end={8}></Creators>
+                            <Creators start={0} end={4}></Creators>
                         </div>
-                    </div> : ''    
-                } */}
+                        <div className='creators-lower'>
+                            <p>We're building the world's best Facebook Creator Team.<br />
+                                Wanna join? Drop us a note!</p>
+                            <a href='mailto:creators@nasdaily.com'>creators<span>@nasdaily.com</span></a>
+                        </div>
+                    </div>
+                </HeroBanner>  
             </div>
         )
     }

@@ -6,16 +6,6 @@
   align-items: center;
   color: $font-color-light;
   height: $footer-height;
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  
-
-  // .logo {
-  //   margin: 50px;
-  //   height: 25px;
-  // }
 
   .navigation {
     padding-top: 40px;
@@ -51,12 +41,10 @@
 
   .navigation-link {
     &:hover, &:active, &:focus {
-      // color: $yellow-color;
       color: white;
     }
 
     &.active {
-      // color: $yellow-color;
       color: white;
       cursor: default;
     }
@@ -72,18 +60,6 @@
     display: flex;
     align-items: center;
     padding-top: 30px;
-
-    // li {
-    //   background-color: white;
-    //   border-radius: 50%;
-    //   width: 56px;
-    //   height: 56px;
-    //   display: block;
-
-    //   &:hover, &:active, &:focus {
-    //     background-color: $yellow-color;
-    //   }
-    // }
   }
 
   .social-icon-wrapper {
@@ -94,7 +70,6 @@
   }
 
   .social-icon {
-    // height: 50%;
     width: 106px;
   }
 

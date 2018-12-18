@@ -69,16 +69,16 @@ export default class AgencyTab extends Component {
         <Header />
           <div className='agency-upper'>
               <div className='image-text-box'>
-              <div className='title'>
-                <hr />
-                <h1>NAS DAILY COMPANY</h1>
-                <hr />
-              </div>
-              <h2 className='animated fadeInUp'>WE MAKE <span>VIDEOS</span></h2>
-              <p className='animated fadeInUp delay-3s'>We make videos about <span>People first.</span> Products second.</p>
-              <button className='button-outer animated fadeInup delay-5s'>
-                <a href='mailto:nas@nasdaily.com'>Work With Us</a>
-              </button>
+                <div className='title'>
+                  <hr />
+                  <h1>NAS DAILY COMPANY</h1>
+                  <hr />
+                </div>
+                <h2 className='animated fadeInUp'>WE MAKE <span>VIDEOS</span></h2>
+                <p className='animated fadeInUp delay-3s'>We make videos about <span>People first.</span> Products second.</p>
+                <button className='button-outer animated fadeInup delay-5s'>
+                  <a href='mailto:nas@nasdaily.com'>Work With Us</a>
+                </button>
               </div>
           </div>
           <HeroBanner min={'-20%'} max={'40%'}>

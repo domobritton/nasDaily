@@ -1,13 +1,13 @@
 import React from 'react'
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax'
+import { Image } from 'cloudinary-react'
 
-const HeroBanner = ({ image, min, max, children }) => (
+const HeroBanner = ({ min, max, children }) => (
     <div className="hero-container">
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
-            <div
-                className="hero-image"
-                style={{ backgroundImage: `url(${image})` }}
-            />
+            <Image 
+                publicId='Creators_bg_kjmggt'
+                className='background-creators-img' /> 
         </Parallax>
         <div className="hero-children">{children}</div>
     </div>
