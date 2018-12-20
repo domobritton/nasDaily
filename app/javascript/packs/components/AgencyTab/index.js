@@ -86,7 +86,7 @@ export default class AgencyTab extends Component {
             <div className='one-minute'>
             { this.blink }
               <div className='time'>
-                <img src='assets/100.svg' />
+                <img src='/assets/100.svg' />
               </div>
             <div className='one-minute-box'>
               <h2>"THAT'S ONE MINUTE"</h2>
@@ -97,8 +97,7 @@ export default class AgencyTab extends Component {
               </div>
               <div className='boxes-outer'>
                 <div className='box'>
-                  <Image 
-                    publicId='Money_icons_lruyku' 
+                  <img src='/assets/Cheaper_icon.svg' 
                     className='money-icon'/>
                   <div className='description'>
                     <h3>100% CHEAPER</h3>
@@ -106,8 +105,7 @@ export default class AgencyTab extends Component {
                   </div>
                 </div>
                 <div className='box'>
-                  <Image 
-                    publicId='Faster_icon_lbz437'
+                  <img src='/assets/Faster_icon.svg'
                     className='faster-icon' />
                   <div className='description'>
                     <h3>100% FASTER</h3>
@@ -115,8 +113,7 @@ export default class AgencyTab extends Component {
                   </div>
                 </div>
                 <div className='box'>
-                  <Image 
-                    publicId='Stronger_icon_egf9rt'
+                  <img src='/assets/Stronger_icon.svg'
                     className='stronger-icon' />
                   <div className='description'>
                     <h3>100% STRONGER</h3>
@@ -124,8 +121,7 @@ export default class AgencyTab extends Component {
                   </div>
                 </div>
                 <div className='box'>
-                  <Image
-                    publicId='Human_bmt5to' 
+                  <img src='/assets/Human_icon.svg' 
                     className='human-icon'/>
                   <div className='description'>
                     <h3>100% HUMAN</h3>
@@ -155,11 +151,12 @@ export default class AgencyTab extends Component {
                   className='play' />
                 </div>
                 <div className='video-text'>
-                  <Image 
+                  <div className='dotted-gradient'>
+                    <Image 
                     publicId='Uber_logo4x_jbxvbc'
                     alt='uber logo'
                     className='uber-logo' />
-                    <hr />
+                  </div>
                       <div className='text-desc'>
                       <i className="fas fa-bolt"></i>
                       <p>Production Time: <span>1d</span></p>
@@ -178,11 +175,12 @@ export default class AgencyTab extends Component {
                   className='play' />
                 </div>
                 <div className='video-text'>
-                <Image 
-                    publicId='WU-Logo_long4x_i9lb1y'
-                    alt='western union logo'
-                    className='wu-logo' />
-                    <hr />
+                  <div className='dotted-gradient tall'>
+                    <Image 
+                      publicId='WU-Logo_long4x_i9lb1y'
+                      alt='western union logo'
+                      className='wu-logo' />
+                  </div>
                       <div className='text-desc'>
                       <i className="fas fa-bolt"></i>
                       <p>Production Time: <span>1d</span></p>
@@ -201,11 +199,12 @@ export default class AgencyTab extends Component {
                   className='play' />
                 </div>
                 <div className='video-text'>
-                  <Image 
+                  <div className='dotted-gradient taller'>
+                    <Image 
                       publicId='GaltonVoysey_logo4x_zuf4ur'
                       alt='galton voysey logo'
                       className='gv-logo' />
-                      <hr />
+                  </div>
                       <div className='text-desc'>
                       <i className="fas fa-bolt"></i>
                       <p>Production Time: <span>1d</span></p>
@@ -229,11 +228,12 @@ export default class AgencyTab extends Component {
                   className='play' />
                 </div>
                 <div className='video-text'>
-                  <Image 
-                    publicId='NTUC_Income4x_vkzgvl'
-                    alt='ntuc logo'
-                    className='ntuc-logo' />
-                    <hr />
+                  <div className='dotted-gradient small'>
+                    <Image 
+                      publicId='NTUC_Income4x_vkzgvl'
+                      alt='ntuc logo'
+                      className='ntuc-logo' />
+                  </div>
                     <div className='text-desc'>
                       <i className="fas fa-bolt"></i>
                       <p>Production Time: <span>1d</span></p>
@@ -252,11 +252,12 @@ export default class AgencyTab extends Component {
                   className='play' />
                 </div>
                 <div className='video-text'>
-                  <Image 
-                    publicId='Broome_International4x_kqixea'
-                    alt='broome international logo'
-                    className='broome-logo' />
-                    <hr />
+                  <div className='dotted-gradient tall'>
+                    <Image 
+                      publicId='Broome_International4x_kqixea'
+                      alt='broome international logo'
+                      className='broome-logo' />
+                  </div>
                       <div className='text-desc'>
                       <i className="fas fa-bolt"></i>
                       <p>Production Time: <span>1d</span></p>
@@ -273,8 +274,9 @@ export default class AgencyTab extends Component {
                     className='can-be-you-inner' />
                 </div>
                 <div className='video-text'>
-                  <p className='title'>THAT CAN BE <span>YOU</span></p>
-                  <hr />
+                  <div className='dotted-gradient'>
+                    <p className='title'>THAT CAN BE <span>YOU</span></p>
+                  </div>
                       <div className='text-desc'>
                       <p className='you-desc'>We make videos about people first,<br /> 
                         products second. <span>We're an email away.</span></p>

@@ -138,7 +138,7 @@
       
       p {
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 0.64px;
         line-height: 36px;
         margin: 0 80px;
@@ -243,7 +243,7 @@
 
     p {
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 0.88px;
       line-height: 36px;
     }
@@ -339,7 +339,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-      .uber-logo, .ntuc-logo {
+      .uber-logo {
         height: 19px;
         margin-left: 15px;
       }
@@ -354,6 +354,11 @@
         margin-left: 15px;
       }
 
+      .ntuc-logo {
+        height: 14px;
+        margin-left: 15px;
+      }
+
       .broome-logo {
         height: 35px;
         margin-left: 15px;
@@ -363,6 +368,27 @@
         border: 0.5px dashed #979797;
         margin-top: 18px;
       }
+
+      .dotted-gradient {
+        background-image: linear-gradient(to right, #979797 40%, rgba(255, 255, 255, 0) 20%);
+        background-position: bottom;
+        background-size: 5px 1px;
+        background-repeat: repeat-x;
+        height: 40px;
+        width: 100%;
+
+        &.small {
+          height: 34px;
+        }
+
+        &.tall {
+          height: 47px;
+        }
+        &.taller {
+          height: 52px;
+        }
+      }
+      
 
         .title {
           font-size: 19px;
@@ -396,6 +422,7 @@
           }
 
           .you-desc {
+            font-family: 'Raleway', sans-serif;
             font-size: 15px;
             letter-spacing: 0.73px;
             line-height: 30px;
@@ -416,7 +443,7 @@
     .work-together {
       position: absolute;
       top: 280px;
-      height: 200px;
+      height: 175px;
       left: 0;
       right: 0;
       margin: auto;
@@ -432,7 +459,7 @@
       p {
         font-size: 19px;
         font-weight: bold;
-        letter-spacing: 8px;
+        letter-spacing: 4.5px;
         line-height: 50px;
       }
 
@@ -450,25 +477,24 @@
     }
 
     .one-minute-lower {
-      height: 1000px;
-      margin-top: 200px;
-      background: rgba(44, 44, 44, 0.247);
+      height: 1313px;
+      margin-bottom: 130px;
+      background: rgba(44, 44, 44, 0.123);
       position: relative;
-      // overflow: hidden;
 
       .lower-hero {
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
+        top: 140px;
+        left: -5%;
+        height: 1313px;
         width: 108%;
         z-index: -1;
       }
 
       .one-minute-text {
         position: absolute;
-        top: 440px;
-        width: 405px;
+        top: 715px;
+        width: 420px;
         left: 0;
         right: 0;
         margin: auto;
@@ -478,12 +504,13 @@
           font-weight: bold;
           letter-spacing: 1.04px;
           line-height: 36px;
-          font-family: 'Lora';
+          font-family: 'Lora', serif;
         }
 
         .left {
           float: left;
           font-size: 10px;
+          margin-left: 2px;
         }
 
         .right {
@@ -506,6 +533,7 @@
 
 .hero-children {
   position: relative;
+  margin-top: 200px;
   z-index: 10;
 }
 

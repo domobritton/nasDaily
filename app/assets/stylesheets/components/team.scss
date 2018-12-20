@@ -1,4 +1,3 @@
-
 .nd-team {
     width: 100vw;
     font-family: 'Raleway',
@@ -55,6 +54,7 @@
     .background-creators-img {
         width: 110%;
         margin-left: -5%;
+        height: 2125px;
     }
 
     .hero-children {
@@ -65,7 +65,7 @@
 
 .profile-outer {
     width: 100vw;
-    margin-top: -900px;
+    margin-top: -1000px;
     padding-top: 140px;
     background: #2c2c2ce1;
     @include linearGradient(rgba(44, 44, 44, 0.95), rgba(44, 44, 44, 1));
