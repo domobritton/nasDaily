@@ -1,5 +1,6 @@
 .nd-agency {
   width: 100vw;
+  min-height: 95%;
   font-family: 'Raleway',
   sans-serif;
   color: white;
@@ -35,7 +36,7 @@
       }
       hr {
         height: 1px;
-        width: 270px;
+        width: 32%;
         background: #979797;
         border: none;
       }
@@ -381,6 +382,10 @@
           height: 34px;
         }
 
+        &.smaller {
+          height: 36px;
+        }
+
         &.tall {
           height: 47px;
         }
@@ -391,6 +396,7 @@
       
 
         .title {
+          font-family: 'Poppins', sans-serif;
           font-size: 19px;
           font-weight: 600;
           letter-spacing: 0.97px;
@@ -478,7 +484,6 @@
 
     .one-minute-lower {
       height: 1313px;
-      margin-bottom: 130px;
       background: rgba(44, 44, 44, 0.123);
       position: relative;
 
@@ -500,22 +505,22 @@
         margin: auto;
 
         p {
-          font-size: 22px;
-          font-weight: bold;
+          font-size: 21px;
+          font-weight: 700;
           letter-spacing: 1.04px;
-          line-height: 36px;
+          line-height: 29px;
           font-family: 'Lora', serif;
         }
 
         .left {
           float: left;
-          font-size: 10px;
+          font-size: 14px;
           margin-left: 2px;
         }
 
         .right {
           float: right;
-          font-size: 10px;
+          font-size: 14px;
           margin-top: -10px;
         }
       }
@@ -526,6 +531,10 @@
         opacity: 1;
         visibility: visible;
         margin-top: 60px;
+        
+        .scroll {
+          background: transparent;     
+        }
       }
     }
   }

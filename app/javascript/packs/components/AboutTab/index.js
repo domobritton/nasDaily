@@ -29,8 +29,16 @@ export default class AboutTab extends Component {
                     height='100%' />
                     <div className='social-box'>
                         <p>I'M ONLY ON:</p>
-                        <div className='insta-icon'><img src='/assets/instagram_icon.svg' /></div>
-                        <div className='fb-icon'><img src='/assets/facebook_icon.svg' /></div>
+                        <div className='insta-icon'>
+                            <a href='https://www.instagram.com/nasdaily/' target='_blank'>
+                                <img src='/assets/instagram_icon.svg' />
+                            </a>
+                        </div>
+                        <div className='fb-icon'>
+                            <a href='https://www.facebook.com/nasdaily/' target='_blank'>
+                                <img src='/assets/facebook_icon.svg' />
+                            </a>
+                        </div>
                     </div>
                 </div>
                     <AboutBox />

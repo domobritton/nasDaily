@@ -4,5 +4,5 @@ export default () => {
   if (isMobile()) { return 6 };
   if (isTablet()) { return 6 };
 
-  return 2;
+  return 4;
 }

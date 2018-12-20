@@ -1,3 +1,14 @@
+
+
+.agency .nd-footer {
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+}
+.shop .nd-footer {
+  background: $light-gray-color;
+}
+
 .nd-footer {
   display: none;
   background-color: $dark-gray-color;

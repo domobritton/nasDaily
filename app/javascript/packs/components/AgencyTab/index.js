@@ -274,7 +274,7 @@ export default class AgencyTab extends Component {
                     className='can-be-you-inner' />
                 </div>
                 <div className='video-text'>
-                  <div className='dotted-gradient'>
+                  <div className='dotted-gradient smaller'>
                     <p className='title'>THAT CAN BE <span>YOU</span></p>
                   </div>
                       <div className='text-desc'>

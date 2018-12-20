@@ -53,7 +53,7 @@ export default class Videos extends React.Component {
         const { loading } = this.state;
         if (loading) { return }
 
-        this.setState({loading: true});
+        this.setState({ loading: true });
         this.loadMore({ animate: true });
       }
       this.scrollButton(height);
