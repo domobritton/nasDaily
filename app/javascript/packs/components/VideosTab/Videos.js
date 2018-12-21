@@ -108,7 +108,7 @@ export default class Videos extends React.Component {
             key={rowIdx}
             onSuccess={() => this.setState({loading: false})}
           >
-          <ScrollAnimation animateIn='fadeIn'>
+          <ScrollAnimation animateIn='fadeIn' offset='110' animateOnce={true}>
             <div className="row">
               <div className="row__inner">
                 { row.map((v, itemIdx) => (

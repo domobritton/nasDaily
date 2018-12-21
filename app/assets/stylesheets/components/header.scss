@@ -13,24 +13,41 @@
   width: 100vw;
   z-index: 100;
 
+  @media screen and (max-width: 1200px) {
+    height: 60px;
+  }
+
   &.open-menu {
     height: 100%;
   }
 
   .logo-link {
     margin-left: 20px;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 30px;
+    }
   }
 
   .logo-image {
     height: 18px;
     margin-top: 24px;
+
+    @media screen and (max-width: 1200px) {
+      margin-top: 30px;
+    }
   }
 
   button {
     background-color: inherit;
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    right: 30px;
     border: none;
-    margin-right: 20px;
-    height: $header-height;
+    outline: none;
+    height: 40px;
+    width: 40px;
   }
 
   .nd-navigation {
@@ -83,20 +100,25 @@
   }
 
   .nd-menu {
-    width: 100%;
+    width: 100vw;
     flex-basis: 100%;
-    height: 100%;
-    align-items: center;
+    height: 100vh;
+    align-items: left;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
-    margin-top: -$header-height;
+    padding-top: 67px;
+    padding-left: 48px;
+    // margin-top: -$header-height;
+    background: $dark-gray-color;
+    position: absolute;
   }
 
   .nd-menu-item {
     font-size: 35px;
-    color: $font-color-light;
-    margin: 10px;
+    color: #fff;
+    margin: 15px;
+    width: 180px;
 
     &.active, &:hover, &:active, &:focus {
       color: $yellow-color;

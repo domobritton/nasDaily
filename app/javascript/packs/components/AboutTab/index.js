@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactPlayer from 'react-player'
 import Header from '../App/Header'
 import { AboutBox }from './AboutBox'
+import { isSmallMobile, isMobile, isTablet } from '../../util/viewportSize';
 
 export default class AboutTab extends Component {
     constructor (props) {
@@ -9,12 +10,32 @@ export default class AboutTab extends Component {
 
         this.state = {
             videoURL: 'https://res.cloudinary.com/nasdaily/video/upload/v1544171368/About_page_bg_i3pr8t.mp4',
-            bool: true
+            bool: true,
+            width: '100%',
+            height: '100%',
         }
+        this.mobileVideo = this.mobileVideo.bind(this)
     }
 
+    componentDidMount() {
+        this.mobileVideo()
+    }
+
+    mobileVideo() {
+        const height = window.innerHeight
+        const width = window.innerWidth
+        console.log(width, height)
+        if (isSmallMobile()) {
+            this.setState({ width: '300%', height: '300%'})
+        } else if (isMobile()) {
+            this.setState({ width: '200%', height: '250%'})
+        } else if (isTablet()) {
+            this.setState({ width: '100%', height: '100%'})
+        }
+    }
+    
     render () {
-        const { videoURL, bool } = this.state
+        const { videoURL, bool, width, height } = this.state
         return (
             <div className='nd-about'>
                 <Header />
@@ -25,21 +46,8 @@ export default class AboutTab extends Component {
                     playing={bool}
                     muted={bool}
                     loop={bool}
-                    width='100%'
-                    height='100%' />
-                    <div className='social-box'>
-                        <p>I'M ONLY ON:</p>
-                        <div className='insta-icon'>
-                            <a href='https://www.instagram.com/nasdaily/' target='_blank'>
-                                <img src='/assets/instagram_icon.svg' />
-                            </a>
-                        </div>
-                        <div className='fb-icon'>
-                            <a href='https://www.facebook.com/nasdaily/' target='_blank'>
-                                <img src='/assets/facebook_icon.svg' />
-                            </a>
-                        </div>
-                    </div>
+                    width={width}
+                    height={height} />
                 </div>
                     <AboutBox />
             </div>

@@ -3,7 +3,7 @@ import {Collapse} from 'react-collapse';
 import classnames from 'classnames';
 import { find } from 'lodash';
 import moment from 'moment';
-import { isMobile } from '../../util/viewportSize';
+import { isMobile, isTablet } from '../../util/viewportSize';
 import {
   genderOptions,
   countryOptions,
@@ -25,11 +25,18 @@ export default class ShopTabForm extends React.PureComponent {
       gender: 'male',
       country: '',
       showErrorMessage: false,
-      shouldShake: false
+      shouldShake: false,
+      inputSize: selectStyles,
     }
 
     this.onSubmit = this.onSubmit.bind(this);
     this.setGender = this.setGender.bind(this);
+  }
+
+  componentDidMount() {
+    if (isTablet()) {
+      this.setState({ inputSize: smallSelectStyles})
+    }
   }
 
   validate() {
@@ -163,7 +170,8 @@ export default class ShopTabForm extends React.PureComponent {
       birthMonth,
       birthYear,
       showErrorMessage,
-      shouldShake
+      shouldShake, 
+      inputSize
     } = this.state;
    
     return (
@@ -181,7 +189,7 @@ export default class ShopTabForm extends React.PureComponent {
                 onChange={({target: { value }}) => {
                   this.setState({ birthDay: value, showErrorMessage: false })
                 }}
-                style={selectStyles}
+                style={inputSize}
               >
                 { this.birthDayOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
@@ -193,7 +201,7 @@ export default class ShopTabForm extends React.PureComponent {
                 onChange={({target: { value }}) => {
                   this.setState({ birthMonth: value, showErrorMessage: false })
                 }}
-                style={selectStyles}
+                style={inputSize}
               >
                 { birthMonthOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>
@@ -205,7 +213,7 @@ export default class ShopTabForm extends React.PureComponent {
                 onChange={({target: { value }}) => {
                   this.setState({ birthYear: value, showErrorMessage: false })
                 }}
-                style={selectStyles}
+                style={inputSize}
               >
                 { birthYearOptions.map((o, idx) => <option disabled={!o['value']} key={idx} value={o['value']}>{o['label']}</option>) }
               </select>

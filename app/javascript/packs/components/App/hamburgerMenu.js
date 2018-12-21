@@ -17,38 +17,38 @@ export default class HamburgerMenu extends Component {
                 onClick={() => { this.props.menuOpen; window.scrollTo(0,0);}}
                 className={ classnames('nd-menu-item', {active: pathname === '/'}) }
                 >
-                About
+                ABOUT
             </Link>
             <Link
                 to='/team'
                 onClick={() => { this.props.menuOpen; window.scrollTo(0,0);}}
                 className={ classnames('nd-menu-item', {active: pathname === '/team'}) }
                 >
-                Team
+                TEAM
             </Link>
             <Link
                 to='/videos'
                 onClick={() => { this.props.menuOpen; window.scrollTo(0,0);}}
                 className={ classnames('nd-menu-item', {active: pathname === '/videos'}) }
                 >
-                Videos
+                VIDEOS
             </Link>
             <Link
                 to='/shop'
                 onClick={() => { this.props.menuOpen; window.scrollTo(0,0);}}
                 className={ classnames('nd-menu-item', {active: pathname === '/shop'}) }
                 >
-                Store
+                STORE
             </Link>
             <Link
                 to='/agency'
                 onClick={() => { this.props.menuOpen; window.scrollTo(0,0);}}
                 className={ classnames('nd-menu-item', {active: pathname === '/agency'}) }
                 >
-                Agency
+                AGENCY
             </Link>
 
-            <div className='nd-menu-footer'>
+            {/* <div className='nd-menu-footer'>
                 <Link
                     className='privacy-and-terms-link'
                     to='/privacy'
@@ -73,7 +73,7 @@ export default class HamburgerMenu extends Component {
                 >
                     Terms and Conditions
                 </Link>
-            </div>
+            </div> */}
         </div>
         )
     }

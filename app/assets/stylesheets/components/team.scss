@@ -55,6 +55,11 @@
         width: 110%;
         margin-left: -5%;
         height: 2125px;
+
+        @media #{$medium-only} {
+            width: 117%;
+            margin-left: -8%;
+        }
     }
 
     .hero-children {

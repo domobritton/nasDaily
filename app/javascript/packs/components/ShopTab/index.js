@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Line } from 'rc-progress'
+
 import FacebookPlayer from 'react-facebook-player'
 import ReactModal from 'react-modal'
 import $ from 'jquery'
@@ -8,12 +8,15 @@ import { isNull } from 'lodash'
 import { modalStyles } from '../VideosTab/constants'
 import facebookAppId from '../../util/facebookAppId'
 import ShopTabForm from './Form'
-import { isMobile } from '../../util/viewportSize'
+import { isSmallMobile, isMobile } from '../../util/viewportSize'
 import { Image } from 'cloudinary-react'
 
 import Header from '../App/Header'
 import { ShopUpper } from './ShopUpper'
 import { ShopLower } from './ShopLower'
+import { Parallax } from 'react-scroll-parallax'
+import { Line } from 'rc-progress'
+import { animateScroll as scroll } from 'react-scroll'
 
 export default class ShopTab extends Component {
     constructor() {
@@ -24,13 +27,27 @@ export default class ShopTab extends Component {
         showForm: false,
         showTshirtOnMobile: false,
         percent: null,
-        tabOnMobile: 'video'
+        tabOnMobile: 'video',
+        width: window.innerWidth,
       }
 
       this.navigateToSaltyGuys = this.navigateToSaltyGuys.bind(this)
       this.onBuyButtonClick = this.onBuyButtonClick.bind(this)
-      this.setPercent = this.setPercent.bind(this);
+      this.setPercent = this.setPercent.bind(this)
+      this.scrollToTop = this.scrollToTop.bind(this)
       // this.shareOnFacebook = this.shareOnFacebook.bind(this);
+    }
+
+    componentWillMount() {
+      window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    handleWindowSizeChange = () => {
+      this.setState({width: window.innerWidth});
     }
 
     navigateToSaltyGuys() {
@@ -39,6 +56,10 @@ export default class ShopTab extends Component {
       if (!percent) { return }
 
       window.location.href=`http://shop.nasdaily.com/?percentage=${percent}`;
+    }
+
+    scrollToTop() {
+      scroll.scrollToTop();
     }
 
     setPercent(p) {
@@ -80,17 +101,103 @@ export default class ShopTab extends Component {
     }
 
     render () {
-      const { percent } = this.state 
-      
-      return (
-        <div className="nd-shop">
-          <Header />
-          <ShopUpper form={this.form} percent={percent} navigate={this.navigateToSaltyGuys}/>
-          <ShopLower />
-        </div>
-      )
+      const { percent, width } = this.state 
+      const isMobile = width <= 600
+        return (
+          <div className="nd-shop">
+            <Header />
+          {isMobile ? 
+            <MobileShop form={this.form} percent={percent} scrollToTop={this.scrollToTop} /> :
+            <div className='nd-shop'>
+              <ShopUpper form={this.form} percent={percent} navigate={this.navigateToSaltyGuys}/>
+              <ShopLower />
+            </div>
+          }
+          </div>
+        )
     }
 }
+
+const MobileShop = ({ form, percent, scrollToTop }) => (
+    <div className='mobile-upper'>
+      <div className='mobile-upper-info'>
+        <h1 className='animated fadeInup'><span>T</span> SHOP</h1>
+        <p className='animated fadeInup delay-2s'>Try our calculator below to <br />see how much of your life has passed!</p>
+        {form}
+      </div>
+         <HeroBanner min={'0%'} max={'40%'} percent={percent}>
+          <div className="mobile-lower">
+            <div className="lower">
+              <h2>WHAT THIS MEANS:</h2>
+              <div className="description">
+                <p>
+                  Nas Daily wears the same t-shirt every day. The
+                  t-shirt shows how much of his life is over based on
+                  his current age. It helps him realize that life is
+                  finite and we should use time wisely.
+                </p>
+              </div>
+            </div>
+            <div className="mobile-video">
+              {/* Video Section */}
+              <Image publicId="What_means_tumbnail_aawokp" className="mobile-video-image" />
+              <img src='assets/play.svg'
+                className='play' />
+            </div>
+            <ScrollButton scrollToTop={scrollToTop}/>
+        </div>
+      </HeroBanner>
+    </div>
+)
+
+const HeroBanner = ({ min, max, children, percent}) => (
+    <div className="mobile-hero-container">
+        <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
+          <div className='mobile-image-wrapper'>
+            <Image 
+              publicId='Nas_Daily_Tshirt_qljlzo'
+              className='mobile-shop-upper-img'/>
+            <div className="mobile-image-text">
+              <MobileImageText percent={percent} />
+            </div>
+          </div>
+        </Parallax>
+        <div className="mobile-hero-children">{children}</div>
+    </div>
+)
+
+const MobileImageText = ({percent}) => (
+  <div className="mobile-show-percent">
+      <div className="mobile-percent-bar">
+        <Line percent={percent}
+          strokeWidth="7"
+          trailWidth='0'
+          strokeLinecap='square' strokeColor="#87B04E" />
+      </div>
+      {percent ? <p>{percent}% LIFE</p> : <p>0% LIFE</p>}
+      <div className="browse-button">
+        <a className='browse' href={`http://shop.nasdaily.com/?percentage=${percent}`} target='_blank'>
+        <img src='/assets/shopping_cart_icon.svg' />
+          Browse Shop
+        </a>
+      </div>
+  </div>
+)
+
+
+const ScrollButton = ({scrollToTop}) => (
+    <div className='outer-scroll'>
+      <button 
+        title='Back to top' 
+        className='scroll' 
+        onClick={ () => { scrollToTop() }}>
+          <div className='up-arrow'>&#8593;</div>
+          BACK TO TOP
+      </button>
+    </div>
+)
+
+
 
 
 // export default class ShopTab extends React.Component {

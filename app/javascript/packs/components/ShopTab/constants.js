@@ -142,7 +142,7 @@ export const selectStyles = {
   fontSize: '14px',
   fontWeight: '500',
   letterSpacing: '0.72px',
-  paddingLeft: '5px'
+  paddingLeft: '5px',
 };
 
 export const longSelectStyles = {
@@ -152,7 +152,7 @@ export const longSelectStyles = {
 
 export const smallSelectStyles = {
   ...selectStyles,
-
+  width: '90px',
 };
 
 export const countryOptions = [

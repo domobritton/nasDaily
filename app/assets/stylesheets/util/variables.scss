@@ -26,11 +26,11 @@ $main-font: 'Open Sans', sans-serif;
 }
 
 $screen: "only screen";
-$xs-small-range: (0px, 500px);
-$small-range: (501px, 768px);
-$medium-range: (769px, 1024px);
-$large-range: (1025px, 1228px);
-$xlarge-range: (1228px, 5000px);
+$xs-small-range: (0px, 599px);
+$small-range: (600px, 899px);
+$medium-range: (900px, 1199px);
+$large-range: (1200px, 1799px);
+$xlarge-range: (1800px, 5000px);
 
 $xs-small: "#{$screen} and (max-width: #{upper-bound($xs-small-range)})";
 $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";

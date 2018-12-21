@@ -14,7 +14,21 @@ export default class Footer extends React.Component {
 
     return (
       <div className='nd-footer'>
-        {/* <Image publicId="NASDAILY._white_w6czgq.svg" className='logo'/> */}
+      {pathname === '/' ?
+          <div className='social-box'>
+            <p>I'M ONLY ON:</p>
+            <div className='insta-icon'>
+                <a href='https://www.instagram.com/nasdaily/' target='_blank'>
+                    <img src='/assets/instagram_icon.svg' />
+                </a>
+            </div>
+            <div className='fb-icon'>
+                <a href='https://www.facebook.com/nasdaily/' target='_blank'>
+                    <img src='/assets/facebook_icon.svg' />
+                </a>
+            </div>
+        </div> : ''
+      }
         <ul className='navigation'>
           <li>
             <Link
