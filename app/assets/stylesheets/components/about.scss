@@ -52,6 +52,17 @@
     color: #ffffff;
     padding: 20px 30px 50px 55px;
 
+    @media #{$small-only} {
+        width: 500px;
+        height: 114.78px;
+    }
+
+    @media #{$xs-small} {
+        width: 260px;
+        padding: 20px 25px 50px 25px;
+    }
+    // 4.356
+
     .topleft, .topright, .bottomleft, .bottomright {
         position: absolute;
         display: inline-block;
@@ -93,14 +104,36 @@
         letter-spacing: 1.66px;
         line-height: 46px;
         margin-bottom: 15px;
+
+        @media #{$small-only} {
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+
+        @media #{$xs-small} {
+            font-size: 17px;
+            margin-bottom: 0px;
+        }
        
     }
-
+// 1.23
     h2 {
         font-size: 80px;
         font-weight: bold;
         letter-spacing: 4.8px;
         line-height: 56px;
+
+        @media #{$small-only} {
+            font-size: 60px;
+        }
+
+        @media #{$xs-small} {
+            font-size: 48px;
+
+            span {
+                font-size: 65px;
+            }
+        }
         
         span {
             color: $yellow-color;
@@ -111,6 +144,15 @@
         position: relative;
         width: 653.4px;
         height: 50px;
+
+        @media #{$small-only} {
+            width: 500px;
+            height: 32px;
+        }
+
+        @media #{$xs-small} {
+            width: 260px;
+        }
     }
 
     .inner-car {
@@ -120,6 +162,16 @@
         height: 30px;
         width: 377.6px;
 
+        @media #{$small-only} {
+            width: 288px;
+            right: 5.2%;
+        }
+
+        @media #{$xs-small} {
+            width: 260px;
+            right: 6.2%;
+        }
+
         .car-lines {
             position: absolute;
             right: 0;
@@ -128,6 +180,20 @@
             height: 23.2px;
             border-right: 5px solid $yellow-color;
             border-left: 5px solid $yellow-color;
+
+            @media #{$small-only} {
+                width: 288px;
+                height: 21.4px;
+                border-right: 4px solid $yellow-color;
+                border-left: 4px solid $yellow-color;
+            }
+
+            @media #{$xs-small} {
+                width: 220px;
+                height: 20.2px;
+                border-right: 2px solid $yellow-color;
+                border-left: 2px solid $yellow-color;
+            }
         }
 
         .text {
@@ -136,6 +202,15 @@
             letter-spacing: 2.98px;
             line-height: 27px;
             height: 30px;
+
+            @media #{$small-only} {
+                font-size: 21.6px;
+            }
+
+            @media #{$xs-small} {
+                font-size: 12.8px;
+                font-weight: bold;
+            }
         }
     }
 }

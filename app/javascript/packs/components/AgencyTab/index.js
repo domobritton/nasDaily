@@ -325,7 +325,7 @@ const HeroBanner = ({ min, max, children }) => (
     <div className="hero-container">
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
             <Image 
-              publicId='Nas_Daily_Team_desk_f9foar'
+              publicId='Nas_Daily_Team_desk2_ubrlv4'
               className='background-upper-img'/>
         </Parallax>
         <div className="hero-children">{children}</div>
