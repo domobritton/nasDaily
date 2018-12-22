@@ -33,20 +33,6 @@ export default class AboutTab extends Component {
         }
         
     }
- 
-
-    // mobileVideo() {
-    //     const height = window.innerHeight
-    //     const width = window.innerWidth
-    //     console.log(width, height)
-    //     if (isSmallMobile()) {
-    //         this.setState({ width: '300%', height: '300%'})
-    //     } else if (isMobile()) {
-    //         this.setState({ width: '200%', height: '250%'})
-    //     } else if (isTablet()) {
-    //         this.setState({ width: '100%', height: '100%'})
-    //     }
-    // }
     
     render () {
         const { videoURL, bool, width, height } = this.state
@@ -70,8 +56,6 @@ export default class AboutTab extends Component {
     }
 }
 
-// 1920 and auto at 1920
-// 1612 and auto at 1612
 
 
 

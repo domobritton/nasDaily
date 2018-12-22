@@ -3,7 +3,7 @@ import teamData from './teamData'
 import { Image } from 'cloudinary-react'
 
 
-const Creators = ({start, end}) => {
+export const Creators = ({start, end, width}) => {
     let chunks = []
     for (let i = start; i < end; i++) {
         chunks.push(teamData[i])
@@ -19,7 +19,7 @@ const Creators = ({start, end}) => {
                                 className='team-member-background' />
                             <div className='mobile-profile'>
                                 <div className='mobile-profile-pic'>
-                                    <Image publicId='' />
+                                    <Image publicId={person.profilePic} />
                                 </div>
                                 <p>{person.name}</p>
                             </div>
@@ -41,5 +41,3 @@ const Creators = ({start, end}) => {
         </div>
     )
 }
-
-export default Creators
