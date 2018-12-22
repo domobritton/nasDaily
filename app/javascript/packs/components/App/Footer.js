@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
 
     return (
       <div className='nd-footer'>
-      {pathname === '/' ?
+      {/* {pathname === '/' ?
           <div className='social-box'>
             <p>I'M ONLY ON:</p>
             <div className='insta-icon'>
@@ -27,8 +27,21 @@ export default class Footer extends React.Component {
                     <img src='/assets/facebook_icon.svg' />
                 </a>
             </div>
-        </div> : ''
-      }
+        </div> : <div className='social-box'></div>
+      } */}
+        <div className='social-box'>
+            <p>I'M ONLY ON:</p>
+            <div className='insta-icon'>
+                <a href='https://www.instagram.com/nasdaily/' target='_blank'>
+                    <img src='/assets/instagram_icon.svg' />
+                </a>
+            </div>
+            <div className='fb-icon'>
+                <a href='https://www.facebook.com/nasdaily/' target='_blank'>
+                    <img src='/assets/facebook_icon.svg' />
+                </a>
+            </div>
+        </div>
         <ul className='navigation'>
           <li>
             <Link
@@ -79,16 +92,10 @@ export default class Footer extends React.Component {
         <div className='social-list-header'></div>
         <ul className='social-list'>
           <li>
-            {/* <a
-              target='_blank'
-              href='https://www.facebook.com/nasdaily/'
-              className='social-icon-wrapper'
-            >
-            </a> */}
-              <img className='logo-image' src='/assets/nasdaily_logo.svg' alt='nas daily logo'/>
+            <img className='logo-image' src='/assets/nasdaily_logo.svg' alt='nas daily logo'/>
           </li>
         </ul>
-        <div className='subfooter'>
+        {/* <div className='subfooter'>
           Made around the world. All content copyright @ 2017 NasDaily, Inc
           <div className='privacy-and-terms'>
             <div>
@@ -110,7 +117,7 @@ export default class Footer extends React.Component {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

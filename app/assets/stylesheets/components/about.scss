@@ -15,30 +15,6 @@
         left: 0;
     }
 }
-    
-.social-box {
-    position: relative;
-    margin-top: -40px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    text-align: center;
-    font-size: 11.2px;
-    font-weight: 600;
-    letter-spacing: 0.7px;
-    line-height: 28px;
-
-    p, .insta-icon {
-        margin-right: 11.4px;
-    }
-
-    .insta-icon, .fb-icon {
-        margin-top: 2px;
-        cursor: pointer;
-    }
-}
-
 
 .react-player {
     position: absolute;
