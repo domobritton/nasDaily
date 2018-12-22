@@ -55,7 +55,7 @@ export default class TeamTab extends Component {
                             </div>
                         </div>
                     </div>
-                <HeroBanner min={'-15%'} max={'40%'}>
+                <HeroBanner min={'-20%'} max={'40%'}>
                     <div className='profile-outer'>
                         <div className='creators-mid'>
                             <Creators start={0} end={4}></Creators>

@@ -9,6 +9,11 @@
         color: $yellow-color;
     }
 
+    .image-wrapper {
+        height: 2112px;
+        overflow: hidden;
+    }
+
     .team-upper {
 
         .image-text-box {
@@ -20,6 +25,12 @@
             width: 67%;
             text-align: left;
             z-index: 2;
+
+            @media #{$xlarge-up} {
+                width: 880px;
+                margin: 0px;
+                left: 24%;
+            }
         }
 
         h1 {
@@ -49,7 +60,9 @@
             }
 
         }
+
     }
+        
 
     .background-creators-img {
         width: 110%;
@@ -59,6 +72,13 @@
         @media #{$medium-only} {
             width: 117%;
             margin-left: -8%;
+        }
+
+        @media #{$xlarge-up} {
+            width: 100%;
+            margin-left: 0;
+            height: 3000px;
+            margin-top: -100px;
         }
     }
 
@@ -78,10 +98,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media #{$xlarge-up} {
+        margin-top: -700px;
+    }
 }
+
     
 .creators-mid {
     width: 67%;
+
+    @media #{$xlarge-up} {
+        width: 50%;
+    }
 
     .profile-inner {
         position: relative;
@@ -242,6 +271,10 @@
     width: 100vw;
     background: #2C2C2C;
     color: white;
+
+    @media #{$xlarge-up} {
+        height: 80vh;
+    }
     
     a {
         font-family: 'Raleway',

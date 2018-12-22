@@ -1,19 +1,24 @@
 .nd-about {
-    height: 100%;
-
-    @media #{$medium-only} {
-        height: auto;
-    }
+    background-attachment: fixed;
+    background-size: cover;
 }
+
 .player-wrapper {
     position: relative;
     padding-top: 56.25%;
+    z-index: -1;
         /* Player ratio: 100 / (1280 / 720) */
+
+    .react-player {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 }
     
 .social-box {
-    position: absolute;
-    bottom: 20px;
+    position: relative;
+    margin-top: -40px;
     color: white;
     display: flex;
     justify-content: center;

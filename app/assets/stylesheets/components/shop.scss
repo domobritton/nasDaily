@@ -5,10 +5,15 @@
   font-family: 'Raleway', sans-serif;
 
   .nd-upper {
-    padding-top: 220px;
+    // padding-top: 220px;
     width: 100vw;
-    height: 630px;
+    height: 792px;
     position: relative;
+    overflow: hidden;
+
+    @media #{$xlarge-up} {
+      height: 850px;
+    }
 
     @media screen and (max-width: 1140px) {
       height: 537px;
@@ -34,8 +39,11 @@
     }
 
     .upper-left {
+      padding-top: 220px;
       width: 50vw;
-      position: relative;
+      position: absolute;
+      left: 0;
+      top: 0;
 
       @media screen and (max-width: 768px) {
         width: 55vw;
@@ -55,6 +63,19 @@
         z-index: 2;
       }
     }
+// new
+    .upper-right {
+      width: 50vw;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-top: 120px;
+
+      @media #{$xlarge-up} {
+        width: 56vw;
+      }
+    }
+
 
     .upper-info {
       width: 355px;
@@ -216,18 +237,13 @@
   
   .image-wrapper {
     position: absolute;
-    right: 30px;
+    // right: 30px;
     top: 60px;
     height: 792px;
     width: 718px;
     overflow: hidden;
-    z-index: -1;
+  
 // 1.103 634.5
-    .image-text {
-      position: relative;
-      width: 50%;
-      float: right;
-    }
 
     @media screen and (max-width: 1140px) {
       height: 700px;
@@ -368,6 +384,10 @@
     .lower-left {
       order: 1;
       padding-left: 15%;
+
+      @media #{$xlarge-up} {
+        padding-left: 24%;
+      }
 
       @media #{$medium-only} {
         padding-left: 10%;

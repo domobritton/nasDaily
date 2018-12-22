@@ -11,28 +11,42 @@ export default class AboutTab extends Component {
         this.state = {
             videoURL: 'https://res.cloudinary.com/nasdaily/video/upload/v1544171368/About_page_bg_i3pr8t.mp4',
             bool: true,
-            width: '100%',
-            height: '100%',
+            width: `100%`,
+            height: `100%`,
         }
-        this.mobileVideo = this.mobileVideo.bind(this)
+        
+        this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this)
     }
 
     componentDidMount() {
-        this.mobileVideo()
+        window.addEventListener('resize', this.handleWindowSizeChange);
     }
 
-    mobileVideo() {
-        const height = window.innerHeight
-        const width = window.innerWidth
-        console.log(width, height)
-        if (isSmallMobile()) {
-            this.setState({ width: '300%', height: '300%'})
-        } else if (isMobile()) {
-            this.setState({ width: '200%', height: '250%'})
-        } else if (isTablet()) {
-            this.setState({ width: '100%', height: '100%'})
-        }
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
     }
+
+    handleWindowSizeChange = () => {
+        const width = window.innerWidth;
+        if (width < 1650) {
+            this.setState({ width: '130%', height: '115%'})
+        }
+        
+    }
+ 
+
+    // mobileVideo() {
+    //     const height = window.innerHeight
+    //     const width = window.innerWidth
+    //     console.log(width, height)
+    //     if (isSmallMobile()) {
+    //         this.setState({ width: '300%', height: '300%'})
+    //     } else if (isMobile()) {
+    //         this.setState({ width: '200%', height: '250%'})
+    //     } else if (isTablet()) {
+    //         this.setState({ width: '100%', height: '100%'})
+    //     }
+    // }
     
     render () {
         const { videoURL, bool, width, height } = this.state
@@ -46,13 +60,18 @@ export default class AboutTab extends Component {
                     playing={bool}
                     muted={bool}
                     loop={bool}
-                    width={width}
-                    height={height} />
+                    width='auto'
+                    height='auto'
+                    style={{ minWidth: '100%', minHeight: '100%' }} />
                 </div>
                     <AboutBox />
             </div>
         )
     }
 }
+
+// 1920 and auto at 1920
+// 1612 and auto at 1612
+
 
 

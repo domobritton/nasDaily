@@ -9,6 +9,10 @@
   animation-duration: 1s;
   animation-delay: 1s;
   
+  @media #{$xlarge-up} {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 
   .videos-rows {
     display: flex;
@@ -17,6 +21,7 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 12px;
+
   }
 
   // .load-more-button {

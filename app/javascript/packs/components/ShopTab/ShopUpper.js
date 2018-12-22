@@ -17,11 +17,12 @@ export const ShopUpper = ({ form, percent}) => (
             {form}
           </div>
         </div>
-        <div className="image-wrapper">
-          <div className="image-text">
-            <ImageText percent={percent} />
+        <div className='upper-right'>
+          <div className="image-wrapper">
+              <ImageText percent={percent} />
+          
+            <Image publicId="Nas_Daily_Tshirt_qljlzo" className="nas-tshirt" />
           </div>
-          <Image publicId="Nas_Daily_Tshirt_qljlzo" className="nas-tshirt" />
         </div>
       </div>
 

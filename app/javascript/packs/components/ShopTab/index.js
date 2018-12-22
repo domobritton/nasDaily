@@ -38,7 +38,7 @@ export default class ShopTab extends Component {
       // this.shareOnFacebook = this.shareOnFacebook.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
       window.addEventListener('resize', this.handleWindowSizeChange);
     }
 

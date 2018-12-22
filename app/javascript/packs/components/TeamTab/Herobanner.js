@@ -5,9 +5,11 @@ import { Image } from 'cloudinary-react'
 const HeroBanner = ({ min, max, children }) => (
     <div className="hero-container">
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
-            <Image 
-                publicId='Creators_bg_kjmggt'
-                className='background-creators-img' /> 
+            <div className='image-wrapper'>
+                <Image 
+                    publicId='Creators_bg_kjmggt'
+                    className='background-creators-img' /> 
+            </div>
         </Parallax>
         <div className="hero-children">{children}</div>
     </div>
