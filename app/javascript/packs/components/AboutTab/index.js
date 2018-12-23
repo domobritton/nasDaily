@@ -11,31 +11,11 @@ export default class AboutTab extends Component {
         this.state = {
             videoURL: 'https://res.cloudinary.com/nasdaily/video/upload/vc_auto/v1545547942/About_page_bg_flhwak.mp4',
             bool: true,
-            width: `100%`,
-            height: `100%`,
         }
-        
-        this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this)
-    }
-
-    componentDidMount() {
-        window.addEventListener('resize', this.handleWindowSizeChange);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowSizeChange);
-    }
-
-    handleWindowSizeChange = () => {
-        const width = window.innerWidth;
-        if (width < 1650) {
-            this.setState({ width: '130%', height: '115%'})
-        }
-        
     }
     
     render () {
-        const { videoURL, bool, width, height } = this.state
+        const { videoURL, bool } = this.state
         return (
             <div className='nd-about'>
                 <Header />

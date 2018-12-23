@@ -9,6 +9,9 @@
   animation-duration: 1s;
   animation-delay: 1s;
   
+  @media #{$xs-small} {
+    padding: 0;
+  }
   @media #{$xlarge-up} {
     padding-left: 15%;
     padding-right: 15%;

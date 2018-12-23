@@ -16,17 +16,17 @@
       z-index: -1;
     }
 
-    .image-wrapper:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      z-index: 0;
-      background: rgba(44, 44, 44, 0.25);
-      background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
-    }
+    // .image-wrapper:before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   left: 0;
+    //   bottom: 0;
+    //   z-index: 0;
+    //   background: rgba(44, 44, 44, 0.25);
+    //   background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
+    // }
 
 
   .agency-upper {
@@ -61,12 +61,21 @@
         font-weight: 600;
         letter-spacing: 3px;
         line-height: 30px;
+
+        @media #{$medium-only} {
+          font-size: 13px;
+        }
+
+        @media screen and (max-width: 780px) {
+          font-size: 14px;
+        }
       }
       hr {
         height: 1px;
         width: 32%;
         background: #979797;
         border: none;
+        margin: 0 20px;
       }
     }
 
@@ -78,7 +87,20 @@
       margin-top: 31px;
       margin-bottom: 47px;
 
-  
+      @media #{$medium-only} {
+        font-size: 70px;
+        margin-bottom: 35px;
+      }
+
+      @media #{$small-only} {
+        font-size: 60px;
+        margin-bottom: 25px;
+      }
+
+      @media screen and (max-width: 790px) {
+        font-size: 50px;
+        margin-bottom: 18px;
+      }
     }
 
     p {
@@ -86,6 +108,10 @@
       font-size: 22px;
       letter-spacing: 1.14px;
       font-weight: 500;
+
+      @media #{$small-only} {
+        font-size: 18px;
+      }
 
       span {
         font-weight: bold;
@@ -112,18 +138,37 @@
     }
   }
 
-  .background-upper-img {
-    position: absolute;
-    z-index: -1;
-    margin-top: -200px;
-    width: 100vw;
-    height: 1225px;
+    .background-upper-img {
+      width: auto;
+      height: 1250px;
+      background-size: contain;
+      opacity: 0.8;
+      margin-top: -180px;
+      background-image: url('https://res.cloudinary.com/nasdaily/image/upload/v1545454672/Nas_Daily_Team_desk2_ubrlv4.jpg');
+      background-repeat: no-repeat;
 
-    @media #{$xlarge-up} {
-      margin-top: -465px;
-      height: 1730px;
+      @media #{$medium-only} {
+        margin-top: -80px;
+      }
+
+      @media #{$small-only} {
+        margin-top: 0px;
+      }
+
     }
-  }
+
+  // .background-upper-img {
+  //   position: absolute;
+  //   z-index: -1;
+  //   margin-top: -200px;
+  //   width: 100vw;
+  //   height: 1225px;
+
+  //   @media #{$xlarge-up} {
+  //     margin-top: -465px;
+  //     height: 1730px;
+  //   }
+  // }
 
   .one-minute-outer {
     position: relative;
@@ -603,6 +648,18 @@
   position: relative;
   margin-top: 200px;
   z-index: 10;
+
+  @media #{$medium-only} {
+    margin-top: 0px;
+  }
+
+  @media #{$small-only} {
+    margin-top: -80px;
+  }
+
+  @media screen and (max-width: 780px) {
+    margin-top: -160px;
+  }
 }
 
 
