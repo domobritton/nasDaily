@@ -10,13 +10,17 @@ export default class TeamTab extends Component {
         super()
         this.state = {
             width: window.innerWidth,
-            more: false
+            more: false,
+            start: '-20%',
         }
         this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this)
         this.scrollToTop = this.scrollToTop.bind(this)
     }
 
     componentDidMount() {
+        if (window.innerWidth < 600) {
+            this.setState({ start: '-30%' })
+        }
         window.addEventListener('resize', this.handleWindowSizeChange);
     }
 
@@ -33,7 +37,7 @@ export default class TeamTab extends Component {
     }
 
     render() {
-        const { width } = this.state 
+        const { width, start } = this.state 
          return (
              <div className='nd-team'>
              <Header />
@@ -46,7 +50,7 @@ export default class TeamTab extends Component {
                             </div> : '' }
                         </div>
                     </div>
-                <HeroBanner min={'-20%'} max={'40%'}>
+                <HeroBanner min={ start } max={'40%'}>
                     <div className='profile-outer'>
                     { width < 600 ? 
                     <div className='description animated fadeInup delay-2s'>

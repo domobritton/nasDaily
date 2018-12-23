@@ -34,9 +34,6 @@
 
     .team-upper {
 
-        @media #{$xs-small} {
-            height: 173px;
-        }
 
         .image-text-box {
             position: absolute;
@@ -148,7 +145,7 @@
         @media #{$xs-small} {
             width: 100%;
             margin-left: 0;
-            height: 740px;
+            height: 712px;
         }
     }
 
