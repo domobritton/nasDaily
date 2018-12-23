@@ -1,6 +1,6 @@
 export const modalStyles = {
   overlay: {
-    zIndex: 3,
+    zIndex: 99,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

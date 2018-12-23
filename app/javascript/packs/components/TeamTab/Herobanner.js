@@ -7,7 +7,7 @@ const HeroBanner = ({ min, max, children }) => (
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
             <div className='image-wrapper'>
                 <Image 
-                    publicId='Creators_bg_desktop_vdakzq'
+                    publicId='team_background_ohet4p'
                     className='background-creators-img' /> 
             </div>
         </Parallax>

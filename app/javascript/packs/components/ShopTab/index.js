@@ -13,7 +13,7 @@ import { Image } from 'cloudinary-react'
 
 import Header from '../App/Header'
 import { ShopUpper } from './ShopUpper'
-import { ShopLower } from './ShopLower'
+import ShopLower from './ShopLower'
 import { Parallax } from 'react-scroll-parallax'
 import { Line } from 'rc-progress'
 import { animateScroll as scroll } from 'react-scroll'
@@ -23,7 +23,6 @@ export default class ShopTab extends Component {
       super()
 
       this.state = {
-        openedModal: false,
         showForm: false,
         showTshirtOnMobile: false,
         percent: null,
@@ -52,7 +51,6 @@ export default class ShopTab extends Component {
 
     navigateToSaltyGuys() {
       const { percent } = this.state;
-      debugger;
       if (!percent) { return }
 
       window.location.href=`http://shop.nasdaily.com/?percentage=${percent}`;
@@ -200,6 +198,7 @@ const ScrollButton = ({scrollToTop}) => (
 
 
 
+
 // export default class ShopTab extends React.Component {
 //   constructor() {
 //     super();
@@ -226,28 +225,10 @@ const ScrollButton = ({scrollToTop}) => (
 //     window.location.href = `http://shop.nasdaily.com/?percentage=${percent}`;
 //   }
 
-//   get videoModal() {
-//     const {
-//       openedModal,
-//     } = this.state;
 
-//     return (
-//       <ReactModal
-//         isOpen={openedModal}
-//         contentLabel="Modal"
-//         onRequestClose={() => { this.setState({openedModal: false}); scrollTo(0,0);}}
-//         style={modalStyles}
-//         className='react-modal'
-//       >
-//         <FacebookPlayer
-//           appId={ facebookAppId() }
-//           videoId={ '877310772421076' }
-//           id={ 'video-id-877310772421076' }
-//           onReady={(_id, player) => { player.unmute(); player.play() }}
-//         />
-//       </ReactModal>
-//     );
-//   }
+
+
+
 
 //   get storyLandingSection() {
 //     const { videos } = this.props;

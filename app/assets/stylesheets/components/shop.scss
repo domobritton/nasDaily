@@ -5,7 +5,6 @@
   font-family: 'Raleway', sans-serif;
 
   .nd-upper {
-    // padding-top: 220px;
     width: 100vw;
     height: 850px;
     position: relative;
@@ -16,21 +15,15 @@
     }
 
     @media screen and (max-width: 1140px) {
-      height: 537px;
-      padding-top: 18%;
+      height: 755px;
     } 
 
     @media screen and (max-width: 1040px) {
-      height: 447px;
+      height: 655px;
     }
 
     @media screen and (max-width: 900px) {
-      height: 435px;
-      padding-top: 14%;
-    }
-
-    @media screen and (max-width: 768px) {
-      height: 447px;
+      height: 655px;
     }
 
     @media screen and (max-width: 600px) {
@@ -44,6 +37,10 @@
       position: absolute;
       left: 0;
       top: 0;
+
+      @media screen and (max-width: 1040px) {
+        padding-top: 160px;
+      }
 
       @media screen and (max-width: 768px) {
         width: 55vw;
@@ -74,6 +71,10 @@
       @media #{$xlarge-up} {
         width: 56vw;
       }
+
+      @media screen and (max-width: 1040px) {
+        width: 56vw;
+      }
     }
 
 
@@ -81,7 +82,7 @@
       width: 355px;
       position: absolute;
       right: 12.5%;
-      z-index: 2;
+      z-index: 1;
 
       @media #{$xlarge-up} {
         right: 14.5%;
@@ -110,6 +111,10 @@
         color: $yellow-color;
       }
 
+      @media #{$small-down} {
+        margin-bottom: 10px;
+      }
+
       @media screen and (max-width: 768px) {
         font-size: 40px;
         letter-spacing: 6px;
@@ -131,6 +136,10 @@
 
     @media screen and (max-width: 1040px) {
       width: 95%;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 75%;
     }
 
     @media screen and (max-width: 600px) {
@@ -183,6 +192,7 @@
     padding-top: 100px;
     padding-bottom: 70px;
     background: #242424;
+    height: 215px;
     
 
     h2 {
@@ -190,15 +200,27 @@
       font-weight: 600;
       letter-spacing: 1.37px;
       line-height: 58px;
+
+      @media screen and (max-width: 1040px) {
+        font-size: 28px;
+      }
     }
 
     .description {
-       width: 500px;
        font-size: 15.2px;
        font-weight: 500;
        letter-spacing: 0.78px;
        line-height: 34px;
        margin-top: 15px;
+
+       p {
+         word-wrap: break-word;
+       }
+
+       @media screen and (max-width: 1040px) {
+         font-size: 14.2px;
+         margin-top: 0px;
+       }
     }
 
     .nd-inner {
@@ -220,7 +242,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index: 10;
+        z-index: 3;
       }
 
       p {
@@ -259,22 +281,22 @@
       width: 544px;
     }
 
-    @media screen and (max-width: 900px) {
-      height: 500px;
-      width: 453px;
-      right: 20px;
-    }
+    // @media screen and (max-width: 900px) {
+    //   height: 500px;
+    //   width: 453px;
+    //   right: 20px;
+    // }
 
     @media screen and (max-width: 768px) {
-      right: -50px;
+      right: -90px;
     }
 
     @media screen and (max-width: 670px) {
-      right: -70px;
+      right: -100px;
     }
 
     @media screen and (max-width: 640px) {
-      right: -80px;
+      right: -150px;
     }
 
     @media screen and (max-width: 600px) {
@@ -291,7 +313,7 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        z-index: 2; 
+        z-index: 1; 
         
         @media screen and (max-width: 1140px) {
           top: 403px;
@@ -303,10 +325,10 @@
           right: 187px;
         }
 
-        @media screen and (max-width: 900px) {
-          top: 292px;
-          right: 140px;
-        }
+        // @media screen and (max-width: 900px) {
+        //   top: 292px;
+        //   right: 140px;
+        // }
     }
 
       .percent-bar {
@@ -314,7 +336,7 @@
         height: 18.8px;
         padding-top: 1.5px;
         padding-left: 2px;
-        z-index: 10;
+        z-index: 1;
         border: 2px solid #FFFFFF;
         border-radius: 4px;
         margin-bottom: 23px;
@@ -329,9 +351,9 @@
           height: 12.8px;
         }
 
-        @media screen and (max-width: 900px) {
-          width: 156px;
-        }
+        // @media screen and (max-width: 900px) {
+        //   width: 156px;
+        // }
       }
 
       p {
@@ -386,36 +408,76 @@
     flex-direction: row;
 
     .lower-left {
-      order: 1;
-      padding-left: 15%;
-
+      position: relative;
+      width: 50%;
+      float: left;
+      
       @media #{$xlarge-up} {
+        order: 1;
         padding-left: 24%;
       }
 
-      @media #{$medium-only} {
-        padding-left: 10%;
+      .left-wrapper {
+        position: absolute;
+        left: 32%;
+
+        @media #{$large-only} {
+          left: 32%;
+          width: 75%;
+        }
+
+        @media #{$medium-only} {
+          left: 18%;
+          width: 82%;
+        }
+
+        @media #{$small-only} {
+          left: 6%;
+          width: 94%;
+        }
       }
 
-      @media screen and (max-width: 1150px) {
-        padding-left: 5%;
-      }
+      // @media #{$large-only} {
+      //   padding-left: 14%;
+      //   flex-basis: 40%;
+      // }
+
+      // @media #{$medium-only} {
+      //   padding-left: 8%;
+      // }
+
+      // @media #{$small-only} {
+      //   padding-left: 6%;
+      // }
+
     }
     // 1033
     @media screen and (max-width: 600px) {
       position: relative;
     }
+
     .lower-right {
       position: relative;
-      order: 2;
+      width: 50%;
+    }
+    .video-wrapper {
+      position: absolute;
+      right: 32%;
       width: 340px;
       height: 200px;
-      margin-left: 4.5%;
+      // margin-left: 4.5%;
       overflow: hidden;
       cursor: pointer;
 
+      @media #{$large-only} {
+        right: 32%;
+      }
+
       @media #{$medium-only} {
-        margin-left: 8%;
+        right: 18%;
+      }
+      @media #{$small-only} {
+        right: 6%;
       }
 
       .play {
@@ -465,67 +527,67 @@
     left: 71px;
   }
 
-   .buy-button {
-     position: absolute;
-     width: 200px;
-     height: 50px;
-     text-transform: uppercase;
-     color: white;
-     font-size: 24px;
-   }
+  //  .buy-button {
+  //    position: absolute;
+  //    width: 200px;
+  //    height: 50px;
+  //    text-transform: uppercase;
+  //    color: white;
+  //    font-size: 24px;
+  //  }
 
-  .tshirt-cta-buttons {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    z-index: 2;
-  }
+  // .tshirt-cta-buttons {
+  //   display: flex;
+  //   width: 100%;
+  //   justify-content: space-around;
+  //   z-index: 2;
+  // }
 
-  .landing--left-content,
-  .landing--right-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: start;
-    z-index: 2;
-    max-width: 100%;
-  }
+  // .landing--left-content,
+  // .landing--right-content {
+  //   display: flex;
+  //   align-items: center;
+  //   flex-direction: column;
+  //   justify-content: start;
+  //   z-index: 2;
+  //   max-width: 100%;
+  // }
 
-  .landing--right-content {
-    position: relative;
-  }
+  // .landing--right-content {
+  //   position: relative;
+  // }
 
-  .landing--left-background,
-  .landing--right-background {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: background-color 250ms linear;
-  }
+  // .landing--left-background,
+  // .landing--right-background {
+  //   position: absolute;
+  //   z-index: -1;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   transition: background-color 250ms linear;
+  // }
 
-  .landing--left-background {
-    background-position: 0 40%;
-  }
+  // .landing--left-background {
+  //   background-position: 0 40%;
+  // }
 
-  .landing--right-background {
-    background-position: 100% 40%;
-  }
+  // .landing--right-background {
+  //   background-position: 100% 40%;
+  // }
 
-  .shop-cta,
-  .facebook-share-button,
-  .buy-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-    text-transform: uppercase;
-    color: white;
-    font-size: 24px;
-  }
+  // .shop-cta,
+  // .facebook-share-button,
+  // .buy-button {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 200px;
+  //   height: 50px;
+  //   text-transform: uppercase;
+  //   color: white;
+  //   font-size: 24px;
+  // }
 
   .form-wrapper {
     padding-top: 20px;
@@ -536,7 +598,7 @@
     }
 
     @media screen and (max-width: 900px) {
-      padding-top: 5px;
+      padding-top: 0;
     }
   }
 
@@ -729,14 +791,14 @@
     }
   }
 
-.nd-upper:before {
+.image-wrapper:before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
   background: rgba(44, 44, 44, 0.25);
   background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
 }

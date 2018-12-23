@@ -9,7 +9,7 @@ export default class AboutTab extends Component {
         super(props);
 
         this.state = {
-            videoURL: 'https://res.cloudinary.com/nasdaily/video/upload/v1544171368/About_page_bg_i3pr8t.mp4',
+            videoURL: 'https://res.cloudinary.com/nasdaily/video/upload/vc_auto/v1545547942/About_page_bg_flhwak.mp4',
             bool: true,
             width: `100%`,
             height: `100%`,

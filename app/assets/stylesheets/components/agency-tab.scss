@@ -1,14 +1,33 @@
 .nd-agency {
   width: 100vw;
-  min-height: 95%;
   font-family: 'Raleway',
   sans-serif;
   color: white;
   position: relative;
 
-  span {
-    color: $yellow-color;
-  }
+    span {
+      color: $yellow-color;
+    }
+
+    .image-wrapper {
+      height: 1000px;
+      overflow: hidden;
+      position: relative;
+      z-index: -1;
+    }
+
+    .image-wrapper:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+      background: rgba(44, 44, 44, 0.25);
+      background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
+    }
+
 
   .agency-upper {
 
@@ -20,7 +39,12 @@
       margin: auto;
       width: 70%;
       text-align: center;
-      z-index: 2;
+      z-index: 1;
+
+      @media screen and (min-width: 600px) and (max-width: 1040px) {
+        top: 160px;
+        width: 80%;
+      }
 
       @media #{$xlarge-up} {
         width: 50%;
@@ -89,6 +113,8 @@
   }
 
   .background-upper-img {
+    position: absolute;
+    z-index: -1;
     margin-top: -200px;
     width: 100vw;
     height: 1225px;
@@ -579,17 +605,7 @@
   z-index: 10;
 }
 
- .hero-container:before {
-   content: "";
-   position: absolute;
-   top: 0;
-   right: 0;
-   left: 0;
-   bottom: 0;
-   z-index: 1;
-   background: rgba(44, 44, 44, 0.25);
-   background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
- }
+
 
 
 

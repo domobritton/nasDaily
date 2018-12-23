@@ -12,11 +12,25 @@
     .image-wrapper {
         height: 2112px;
         overflow: hidden;
+        position: relative;
+        z-index: -1;
 
         @media #{$xs-small} {
             height: 1370px;
         }
     }
+
+     .image-wrapper:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: 0;
+         left: 0;
+         bottom: 0;
+         z-index: 0;
+         background: rgba(44, 44, 44, 0.25);
+         background: linear-gradient(rgba(44, 44, 44, 0.25), rgba(44, 44, 44, 0.25));
+     }
 
     .team-upper {
 
@@ -32,7 +46,12 @@
             margin: auto;
             width: 67%;
             text-align: left;
-            z-index: 2;
+            z-index: 1;
+
+            @media screen and (min-width: 600px) and (max-width: 1040px) {
+                top: 160px;
+                width: 80%;
+            }
 
             @media #{$xlarge-up} {
                 width: 880px;
@@ -50,6 +69,14 @@
             font-weight: bold;
             letter-spacing: 9.26px;
             line-height: 52px;
+
+            @media #{$small-only} {
+                font-size: 40px;
+            }
+
+            @media screen and (min-width: 600px) and (max-width: 768px) {
+                font-size: 35px;
+            }
 
             @media #{$xs-small} {
                 font-size: 30px;
@@ -70,6 +97,10 @@
             margin-top: 40px;
             width: 90%;
 
+            @media #{$small-only} {
+                margin-top: 25px;
+            }
+
             p {
                 font-size: 17px;
                 font-weight: 500;
@@ -87,13 +118,25 @@
         
 
     .background-creators-img {
+        position: absolute;
+        z-index: -1;
         width: 110%;
         margin-left: -5%;
         height: 2125px;
 
         @media #{$medium-only} {
-            width: 117%;
-            margin-left: -8%;
+            width: 120%;
+            margin-left: -10%;
+        }
+
+        @media #{$small-only} {
+            width: 135%;
+            margin-left: -16%;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 140%;
+            margin-left: -18%;
         }
 
         @media #{$xlarge-up} {
@@ -363,6 +406,22 @@
 
         @media #{$small-down} {
             margin: 0 24px;
+        }
+    }
+
+    .outer-scroll {
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 60px;
+
+        @media #{$small-down} {
+            display: block;
+        }
+
+        .scroll {
+            background: transparent;
         }
     }
 }

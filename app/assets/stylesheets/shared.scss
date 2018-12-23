@@ -90,12 +90,12 @@ input {
   display: block;
 }
 
-@media #{$small-only} {
-  body {
-    background-size: 75%;
-  }
+// @media #{$small-only} {
+//   body {
+//     background-size: 75%;
+//   }
 
-  .content {
-    height: 100%;
-  }
-}
+//   .content {
+//     height: 100%;
+//   }
+// }

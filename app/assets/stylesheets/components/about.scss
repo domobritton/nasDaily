@@ -6,7 +6,7 @@
 
 .player-wrapper {
     position: relative;
-    padding-top: 56.25%;
+    // padding-top: 56.25%;
     z-index: -1;
         /* Player ratio: 100 / (1280 / 720) */
 
@@ -36,8 +36,10 @@
     left: 0;
     bottom: 0;
     z-index: 1;
-    background: rgba(31, 31, 31, 0.8);
-    background: linear-gradient(rgba(31, 31, 31, 0.4),rgba(31, 31, 31, 0.4));
+    opacity: 0.15;
+    background-color: rgba(44, 44, 44, 0.4);
+    // background: linear-gradient(rgba(44, 44, 44, 0.4),rgba(44, 44, 44, 0.4));
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJElEQVQYV2NkwAT/GdHE/jMwMDAiC4IFQIpggnABmCCKAEgQAABOBQUaykC8AAAAAElFTkSuQmCC) repeat;
 }
 
 .nd-box {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import HeroBanner from './Herobanner'
 import { Creators } from './Creators'
-import $ from 'jquery'
 import Header from '../App/Header'
+import { animateScroll as scroll } from 'react-scroll'
 
 
 export default class TeamTab extends Component {
@@ -13,7 +13,7 @@ export default class TeamTab extends Component {
             more: false
         }
         this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this)
-        // this.loadMore = this.loadMore.bind(this)
+        this.scrollToTop = this.scrollToTop.bind(this)
     }
 
     componentDidMount() {
@@ -28,33 +28,9 @@ export default class TeamTab extends Component {
        this.setState({ width: window.innerWidth })
     }
 
-    // get loadMoreButton() {
-    //     const { more } = this.state 
-
-    //     return (
-    //         <div
-    //             id='show-more-button' 
-    //             className='show-more'>
-    //            { !more ? 
-    //                 <div
-    //                     className='show-more-inner'
-    //                     onClick={this.loadMore}>
-    //                     SHOW MORE CREATORS
-    //                 <div className="loader">
-    //                         <span className="loader__dot"><i className="fas fa-circle"></i></span>
-    //                         <span className="loader__dot"><i className="fas fa-circle"></i></span>
-    //                         <span className="loader__dot"><i className="fas fa-circle"></i></span>
-    //                     </div>
-    //                 </div> : ''
-    //             } 
-    //         </div>
-    //     )
-    // }
-
-    // loadMore() {
-    //     $('html, body').animate( { scrollTop: $('#show-more-button').position().top - 170}, 750, 'swing')
-    //     this.setState({ more: true })
-    // }
+    scrollToTop() {
+        scroll.scrollToTop();
+    }
 
     render() {
         const { width } = this.state 
@@ -83,6 +59,7 @@ export default class TeamTab extends Component {
                             <p>We're building the world's best Facebook Creator Team.<br />
                                 Wanna join? Drop us a note!</p>
                             <a href='mailto:creators@nasdaily.com'>creators<span>@nasdaily.com</span></a>
+                            <ScrollButton scrollToTop={this.scrollToTop}/>
                         </div>
                     </div>
                 </HeroBanner>  
@@ -90,4 +67,18 @@ export default class TeamTab extends Component {
         )
     }
 }
+// 857.59 * 166
+// 5.166
+
+const ScrollButton = ({scrollToTop}) => (
+    <div className='outer-scroll'>
+      <button 
+        title='Back to top' 
+        className='scroll' 
+        onClick={ () => { scrollToTop() }}>
+          <div className='up-arrow'>&#8593;</div>
+          BACK TO TOP
+      </button>
+    </div>
+)
 

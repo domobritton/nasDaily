@@ -4,7 +4,7 @@ const teamData = [{
         project: 'Women Issues',
         followers: '1,000,000',
         profilePic: 'dear_alyne_profile_uzyp9l',
-        backgroundPic: '',
+        backgroundPic: 'alyne_background_v8k5fw',
         link: 'https://www.facebook.com/dearalyne/'
     },
     {
@@ -13,7 +13,7 @@ const teamData = [{
         project: 'Inspirational Content',
         followers: '605,000',
         profilePic: 'project_nightfall_profile_mvwehg',
-        backgroundPic: '',
+        backgroundPic: 'project_nightfall_background_ea11vx',
         link: 'https://www.facebook.com/projectnightfall/'
     },
     {
@@ -22,7 +22,7 @@ const teamData = [{
         project: 'The Energetic Italian',
         followers: '62,200',
         profilePic: 'franco_dubini_profile_gnh6tv',
-        backgroundPic: 'franco_dubini_background_jsqqhs',
+        backgroundPic: 'franco_dubini_background_otemyu',
         link: 'https://www.facebook.com/francodubi/'
     },
     {
