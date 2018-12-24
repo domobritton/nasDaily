@@ -1,23 +1,20 @@
-import React from 'react';
-import $ from 'jquery';
-import { Image } from 'cloudinary-react';
-import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import React, { Component } from 'react'  
+import $ from 'jquery'  
+import { Route, Switch, Redirect } from 'react-router-dom'  
 import AboutTab from '../AboutTab'
 import TeamTab from '../TeamTab'
-import VideosTab from '../VideosTab';
-import AppTab from '../AppTab';
-import ShopTab from '../ShopTab';
-import PrivacyTab from '../PrivacyTab';
-import AgencyTab from '../AgencyTab';
-import TermsTab from '../TermsTab';
-import initialVideos from './initialVideos';
-import Footer from './Footer';
-import Header from './Header';
-import classnames from 'classnames';
+import VideosTab from '../VideosTab'  
+import ShopTab from '../ShopTab'  
+import PrivacyTab from '../PrivacyTab'  
+import AgencyTab from '../AgencyTab'  
+import TermsTab from '../TermsTab'  
+import initialVideos from './initialVideos'  
+import Footer from './Footer'  
 
-export default class App extends React.Component {
+
+export default class App extends Component {
   constructor() {
-    super();
+    super()  
 
     this.state = {
       videos: initialVideos()
@@ -29,29 +26,19 @@ export default class App extends React.Component {
     $.ajax({
       url: '/api/videos',
       success: (data) => {
-        this.setState({ videos: data });
+        this.setState({ videos: data })  
       }
-    });
+    })  
   }
 
   render() {
-    const { children, videos } = this.state;
-    const { pathname } = window.location;
-    $('body').removeClass().addClass(pathname.replace('/', ''));
+    const { children, videos } = this.state  
+    const { pathname } = window.location  
+    $('body').removeClass().addClass(pathname.replace('/', ''))  
  
     return (
       <div>
         <div className='content'>
-          {/* <div className='background-filler'>
-            <div className='background-filler__left'/>
-            <div className='background-filler__right'>
-              <Image
-                publicId="hand_phone_image_oerq6s.png"
-                className='background-filler__hand'
-              />
-            </div>
-          </div> */}
-          {/* <Header /> */}
           <Switch>
             <Route path='/team' render={() => <TeamTab videos={videos} />} />
             <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
@@ -65,6 +52,6 @@ export default class App extends React.Component {
         </div>
         <Footer />
       </div>
-    );
+    )  
   }
 }

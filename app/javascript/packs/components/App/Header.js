@@ -1,38 +1,38 @@
-import React from 'react';
-import { Image } from 'cloudinary-react';
-import classnames from 'classnames';
-import $ from 'jquery';
+import React, { Component } from 'react'
+
+import classnames from 'classnames'
+import $ from 'jquery' 
 
 import { NavigationMenu } from './navigationMenu'
 import HamburgerMenu from './hamburgerMenu'
 
-export default class Header extends React.Component {
+export default class Header extends Component {
   constructor() {
-    super();
+    super() 
 
     this.state = {
       menuOpen: false
     }
 
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this) 
   }
 
   toggleMenu() {
-    const { menuOpen } = this.state;
+    const { menuOpen } = this.state 
 
     if (menuOpen) {
-      $('body').removeClass('with-overlay');
+      $('body').removeClass('with-overlay') 
     } else {
-      $('body').addClass('with-overlay');
+      $('body').addClass('with-overlay') 
     }
 
     this.setState({
       menuOpen: !menuOpen
-    });
+    }) 
   }
 
   render() {
-    const { menuOpen } = this.state;
+    const { menuOpen } = this.state 
 
     return (
       <div>
@@ -58,6 +58,6 @@ export default class Header extends React.Component {
         </div>
         <div className='header-filler'/>
       </div>
-    );
+    ) 
   }
 }

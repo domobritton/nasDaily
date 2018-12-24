@@ -220,6 +220,7 @@
        @media screen and (max-width: 1040px) {
          font-size: 14.2px;
          margin-top: 0px;
+         line-height: 30px;
        }
     }
 
@@ -447,6 +448,8 @@
         right: 18%;
       }
       @media #{$small-only} {
+        width: 285px;
+        height: 167px;
         right: 6%;
       }
 
@@ -729,9 +732,9 @@
   }
 
     p {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 400;
-      letter-spacing: 0.88px;
+      letter-spacing: 0.83px;
       line-height: 26px;
       margin: 0 24px 25px;
     }
@@ -748,14 +751,14 @@
 
 .mobile-image-wrapper {
   width: 100vw;
-  height: 638px;
+  height: 850px;
   overflow: hidden;
   position: relative;
   z-index: -1;
 
   .mobile-shop-upper-img {
       width: auto;
-      height: 638px;
+      height: 800px;
       background-size: auto 100%;
       background-position: center;
       opacity: 0.8;
@@ -765,9 +768,10 @@
 
   .mobile-show-percent {
       position: absolute;
-      top: 380px;
+      top: 160px;
       left: 0;
       right: 0;
+      bottom: 0;
       margin: auto;
       display: flex;
       justify-content: center;
@@ -776,8 +780,8 @@
       z-index: 1;
 
       .mobile-percent-bar {
-          width: 198px;
-          height: 14.8px;
+          width: 242px;
+          height: 20px;
           padding-top: 1.5px;
           padding-left: 2px;
           z-index: 1;
@@ -789,14 +793,59 @@
 
       p {
         font-family: 'Dekko', cursive;
-        font-size: 20px;
+        height: 25px;
         font-weight: bold;
         letter-spacing: 4.63px;
         line-height: 23px;
       }
 
+      .share {
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 15.2px;
+        font-weight: 500;
+        letter-spacing: 0.78px;
+        line-height: 34px;
+        cursor: pointer;
+
+        img {
+          margin-right: 10px;
+          height: 24px;
+          width: 24px;
+        }
+      }
+
+      .done-with-life {
+        position: absolute;
+        bottom: 230px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 58px;
+        width: 220px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+        letter-spacing: 3.15px;
+        line-height: 29px;
+        text-align: center;
+        margin-top: 50px;
+
+        span {
+          color: $yellow-color;
+        }
+      }
+
       .browse-button {
-          margin-top: 72px;
+          position: absolute;
+          bottom: 160px;
+          left: 0;
+          right: 0;
+          margin: auto;
           height: 44px;
           width: 187.1px;
           border: 1.6px solid $yellow-color;
@@ -834,7 +883,7 @@
     position: relative;
     margin-top: 108px;
     background: $dark-gray-color;
-    height: 800px;
+    height: 840px;
     padding-top: 40px;
     display: flex;
     justify-content: center;
@@ -842,8 +891,10 @@
     align-items: center;
 
     h2 {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      line-height: 58px;
       margin-left: 24px;
     }
 
@@ -851,8 +902,10 @@
       margin: 40px 24px;
 
       p {
-        font-size: 17px;
-        line-height: 2.1;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.82px;
+        line-height: 33px;
       }
     }
 

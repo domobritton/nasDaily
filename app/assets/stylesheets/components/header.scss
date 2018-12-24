@@ -107,8 +107,9 @@
     display: flex;
     justify-content: left;
     flex-direction: column;
-    padding-top: 67px;
+    padding-top: 49px;
     padding-left: 48px;
+    font-family: 'Raleway', sans-serif;
     // margin-top: -$header-height;
     background: $dark-gray-color;
     position: absolute;
@@ -120,6 +121,14 @@
     color: #fff;
     margin: 15px;
     width: 180px;
+
+    @media #{$xs-small} {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      line-height: 50px;
+      margin: 0;
+    }
 
     &.active, &:hover, &:active, &:focus {
       color: $yellow-color;

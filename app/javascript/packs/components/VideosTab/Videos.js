@@ -1,16 +1,13 @@
-import React from 'react';
-import { take } from 'lodash';
+import React, { Component } from 'react';
 import $ from 'jquery';
-import { debounce } from 'lodash';
 import { Preload } from 'react-preload';
 import Modal from './Modal';
 import numVideosInRow from './numVideosInRow';
 import initialNumRows from './initialNumRows';
-import { isMobile, isTablet } from '../../util/viewportSize';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { animateScroll as scroll } from 'react-scroll'
 
-export default class Videos extends React.Component {
+export default class Videos extends Component {
   constructor() {
     super();
 
