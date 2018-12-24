@@ -27,19 +27,23 @@ export default class AgencyTab extends Component {
       super()
       this.state = {
         oneSecond: false,
+        width: window.innerWidth,
       }
       this.scrollToTop = this.scrollToTop.bind(this);
     }
 
   componentDidMount() {
-    this.intervalID = setInterval(
-      () => this.tick(),
-      1000
-    );
+    this.intervalID = setInterval(() => this.tick(),1000)
+    window.addEventListener('resize', this.handleWindowSizeChange)
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalID);
+    clearInterval(this.intervalID)
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth})
   }
 
   scrollToTop() {
@@ -66,6 +70,8 @@ export default class AgencyTab extends Component {
   }
 
     render() {
+      const { width } = this.state
+      const isMobile = width <= 600
       return (
         <div className='nd-agency'>
         <Header />
@@ -78,19 +84,31 @@ export default class AgencyTab extends Component {
                 </div>
                 <h2 className='animated fadeInUp'>WE MAKE <span>VIDEOS</span></h2>
                 <p className='animated fadeInUp delay-3s'>We make videos about <span>People first.</span> Products second.</p>
-                <button className='button-outer animated fadeInup delay-5s'>
-                  <a href='mailto:nas@nasdaily.com'>Work With Us</a>
-                </button>
+                { !isMobile ? 
+                  <button className='button-outer animated fadeInup delay-5s'>
+                    <a href='mailto:nas@nasdaily.com'>Work With Us</a>
+                  </button>  
+                  : ''}
               </div>
           </div>
-          <HeroBanner min={'-30%'} max={'40%'}>
+          <HeroBanner min={'-30%'} max={'40%'} isMobile={isMobile}>
           <div className='one-minute-outer'>
             <div className='one-minute'>
-            { this.blink }
-              <div className='time'>
-                <img src='/assets/100.svg' />
+              <div className='time-box'>
+                { this.blink }
+                <div className='time'>
+                  <img src='/assets/100.svg' />
+                </div>
               </div>
             <div className='one-minute-box'>
+            { isMobile ? 
+                    <div>
+                    <button className='button-outer animated fadeInup delay-5s'>
+                      <a href='mailto:nas@nasdaily.com'>Work With Us</a>
+                    </button> 
+                      <span className='arrow-down'></span>
+                    </div> 
+                    : ''}
               <h2>"THAT'S ONE MINUTE"</h2>
               <p>After creating <span>1,000</span> videos in 1,000 days and amassing <span>12m followers</span> on Facebook,<br /> 
                   Nas and his team have opened up the door to working with <span>brands.</span> We specialize in<br />
@@ -136,8 +154,14 @@ export default class AgencyTab extends Component {
           <div className='agency-lower'>
             <div className='work'>
               <h2>OUR <span>WORK</span></h2>
+              {isMobile ? 
+              <p>We can work with anyone, anywhere. We have a team of creators from around
+                the world ready for any kind of project. Here are some of our favorites.<br /><span>Here is some of our work</span></p>              
+              :
               <p>We can work with anyone, anywhere. We have a team of creators from around<br />
                 the world ready for any kind of project. Here are some of our favorites. Here is some of our work</p>
+              
+              }
             </div>
           </div>
           <Clients />
@@ -148,9 +172,14 @@ export default class AgencyTab extends Component {
               <a href='mailto:nas@nasdaily.com'>nas<span>@nasdaily.com</span></a>
             </div>
             <div className='one-minute-lower'>
-              <Image 
+              {/* <Image 
                 publicId='Agency_bg_bottom-short_ngherr'
-                className='lower-hero' />
+                className='lower-hero' /> */}
+                {isMobile ? 
+                  <div className='mobile-lower-hero' />
+                  :
+                  <div className='lower-hero' />
+                }
               <div className='one-minute-text'>
                 <i className="fas fa-quote-left left"></i>
                 <p>That's <span>1 minute</span>, see you <span>tomorrow</span></p>
@@ -177,14 +206,13 @@ const ScrollButton = ({scrollToTop}) => (
     </div>
 )
 
-const HeroBanner = ({ min, max, children }) => (
+const HeroBanner = ({ min, max, children, isMobile}) => (
     <div className="hero-container">
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
           <div className='image-wrapper'>
-            {/* <Image 
-              publicId='Nas_Daily_Team_desk2_ubrlv4'
-              className='background-upper-img'/> */}
+            { isMobile ? <div className='mobile-background-img' /> : 
               <div className='background-upper-img' />
+            }
           </div>
         </Parallax>
         <div className="hero-children">{children}</div>

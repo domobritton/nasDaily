@@ -43,7 +43,14 @@
 
       @media screen and (min-width: 600px) and (max-width: 1040px) {
         top: 160px;
-        width: 80%;
+        width: 100%;
+      }
+
+      @media #{$xs-small} {
+        text-align: left;
+        top: 120px;
+        width: 90%;
+        margin: 0 24px;
       }
 
       @media #{$xlarge-up} {
@@ -56,6 +63,11 @@
       justify-content: center;
       align-items: center;
 
+      @media #{$xs-small} {
+        justify-content: flex-start;
+        align-items: left;
+      }
+
       h1 {
         font-size: 16px;
         font-weight: 600;
@@ -66,8 +78,15 @@
           font-size: 13px;
         }
 
-        @media screen and (max-width: 780px) {
+        @media #{$small-down} {
+          font-size: 12px;
+        }
+
+        @media #{$xs-small} {
           font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 2.63px;
+          line-height: 30px;
         }
       }
       hr {
@@ -76,6 +95,18 @@
         background: #979797;
         border: none;
         margin: 0 20px;
+
+        @media #{$medium-only} {
+          width: 28%;
+        }
+
+        @media #{$small-only} {
+          width: 25%;
+        }
+
+        @media #{$xs-small} {
+          display: none;
+        }
       }
     }
 
@@ -97,10 +128,23 @@
         margin-bottom: 25px;
       }
 
-      @media screen and (max-width: 790px) {
-        font-size: 50px;
-        margin-bottom: 18px;
+      @media #{$xs-small} {
+        font-size: 30px;
+        letter-spacing: 2px;
+        line-height: 46px;
+        margin-top: 10px;
+        margin-bottom: 29px;
+        width: 183px;
+        
+        span {
+          font-size: 49px;
+        }
       }
+
+      // @media screen and (max-width: 790px) {
+      //   font-size: 50px;
+      //   margin-bottom: 18px;
+      // }
     }
 
     p {
@@ -119,6 +163,7 @@
       }
     }
 
+  }
     .button-outer {
       margin-top: 57px;
       height: 44px;
@@ -132,11 +177,15 @@
       border: 1.6px solid $yellow-color;
       border-radius: 22px;
 
+      @media #{$xs-small} {
+        margin-top: 59px;
+        margin-bottom: 59px;
+      }
+
       &:hover {
         background: rgba(255, 255, 255, 0.1);
       }
     }
-  }
 
     .background-upper-img {
       width: auto;
@@ -157,6 +206,16 @@
 
     }
 
+    .mobile-background-img {
+      width: auto;
+      height: 1250px;
+      background-size: contain;
+      opacity: 0.8;
+      margin-top: 0;
+      background-image: url('https://res.cloudinary.com/nasdaily/image/upload/v1543976498/Nas_Daily_Team_mobile_oohuhj.png');
+      background-repeat: no-repeat;
+    }
+
   // .background-upper-img {
   //   position: absolute;
   //   z-index: -1;
@@ -174,6 +233,14 @@
     position: relative;
     height: 613px;
     width: 100vw;
+
+    @media screen and (min-width: 600px) and (max-width: 1000px) {
+      height: 650px;
+    }
+
+    @media #{$xs-small} {
+      height: 1250px;
+    }
   }
 
   .one-minute {
@@ -186,27 +253,54 @@
     text-align: center;
     z-index: 2;
 
+    .time-box {
+      width: 480px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      @media #{$xs-small} {
+        width: 288px;
+        top: 216px;
+      }
+    }
+
     .blink {
       position: absolute;
       width: 20px;
       top: -15px;
-      left: 38%;
+      left: 17%;
       z-index: 0;
 
-      @media #{$xlarge-up} {
-        left: 42%;
+      @media #{$xs-small} {
+        top: 61px;
+        img {
+          width: 16.8px;
+          height: 66.6px;
+        }
       }
     }
 
     .time {
       position: absolute;
       top: -100px;
-      left: 31%;
+      left: 0;
+      right: 0;
       z-index: 0;
+
+      @media #{$xs-small} {
+        top: 0;
+
+        img {
+          width: 288px;
+          height: 134px;
+        }
+      }
 
       @media #{$xlarge-up} {
         top: -108px;
-        left: 38%;
+        // left: 38%;
       }
     }
 
@@ -220,8 +314,32 @@
       width: 70%;
       z-index: 1;
 
+      @media #{$xs-small} {
+        position: relative;
+        padding: 0;
+        width: 100%;
+      }
+
+      .arrow-down {
+          position: absolute;
+          top: 125px;
+          left: 50%;
+          width: 20px;
+          height: 20px;
+          margin-left: -12px;
+          border-left: 2px solid #fff;
+          border-bottom: 2px solid #fff;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          box-sizing: border-box;
+      }
+
       @media #{$xlarge-up} {
         width: 50%;
+      }
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        width: 100%;
       }
 
       h2 {
@@ -229,6 +347,13 @@
         font-weight: bold;
         letter-spacing: 4.81px;
         line-height: 58px;
+
+        @media #{$xs-small} {
+          font-size: 16.2px;
+          letter-spacing: 3px;
+          line-height: 34px;
+          margin-top: 134px;
+        }
       }
       
       p {
@@ -237,6 +362,29 @@
         letter-spacing: 0.64px;
         line-height: 36px;
         margin: 0 80px;
+
+        @media #{$medium-only} {
+          margin: 0 50px;
+        }
+
+        @media #{$small-only} {
+          margin: 0 24px;
+          font-size: 14px;
+        }
+
+        @media screen and (max-width: 650px) {
+          font-size: 12px;
+        }
+
+        @media #{$xs-small} {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.64px;
+          line-height: 26px;
+          margin: 0 29px 0 24px;
+          text-align: left;
+        }
+        
       }
     }
 
@@ -249,10 +397,26 @@
     justify-content: space-around;
     align-items: center;
     padding: 0 100px;
+    flex-wrap: wrap;
 
     @media #{$xlarge-up} {
-      padding-left: 20%;
-      padding-right: 20%;
+      padding: 0 20%;
+    }
+
+    @media #{$medium-only} {
+      padding: 0;
+    }
+
+    @media #{$small-down} {
+      padding: 0 24px;
+    }
+
+    @media #{$xs-small} {
+      position: relative;
+      display: block;
+      height: 425px;
+      margin: 0 41px;
+      padding: 80px 0;
     }
 
     .box {
@@ -263,6 +427,13 @@
       align-content: center;
       flex-direction: column;
       position: relative;
+
+      @media #{$xs-small} {
+        display: block;
+        width: 100%;
+        height: 120px;
+        text-align: left;
+      }
       
       .money-icon {
         position: absolute;
@@ -271,6 +442,14 @@
         right: 0;
         width: 50px;
         margin: 0 auto;
+
+        @media #{$xs-small} {
+          float: left;
+          position: static;
+          margin-top: 35px;
+          margin-left: 15px;
+          width: 37.2px;
+        }
       }
 
       .faster-icon {
@@ -281,6 +460,15 @@
         width: 85px;
         margin: 0 auto;
         margin-bottom: 30px;
+
+          @media #{$xs-small} {
+            float: left;
+            position: static;
+            margin-top: 35px;
+            margin-bottom: 0;
+            width: 66px;
+            margin-left: -15px;
+          }
       }
 
       .stronger-icon {
@@ -291,6 +479,14 @@
         width: 50px;
         margin: 0 auto;
         margin-bottom: 25px;
+
+          @media #{$xs-small} {
+            float: left;
+            position: static;
+            margin-top: 35px;
+            margin-left: 15px;
+            width: 37.2px;
+          }
       }
 
       .human-icon {
@@ -301,6 +497,14 @@
         width: 54px;
         margin: 0 auto;
         margin-bottom: 25px;
+
+          @media #{$xs-small} {
+            float: left;
+            position: static;
+            margin-top: 35px;
+            margin-left: 15px;
+            width: 43.09px;
+          }
       }
 
       .description {
@@ -316,6 +520,15 @@
         font-weight: bold;
         letter-spacing: 2.5px;
         line-height: 37px;
+
+        @media #{$medium-only} {
+          font-size: 16px;
+        }
+
+        @media #{$xs-small} {
+          letter-spacing: 2.22px;
+          margin-left: 90px;
+        }
       }
 
       p {
@@ -324,6 +537,17 @@
         font-size: 16px;
         letter-spacing: 1.1px;
         line-height: 26px;
+
+        @media #{$medium-only} {
+          font-size: 14px;
+        }
+
+        @media #{$xs-small} {
+          margin-left: 90px;
+          font-size: 12px;
+          letter-spacing: 0.86px;
+          line-height: 20px;
+        }
       }
     }
   }
@@ -333,12 +557,27 @@
     padding-top: 20px;
     padding-bottom: 100px;
 
+    @media #{$xs-small} {
+      text-align: left;
+    }
+
+    @media #{$small-down} {
+      padding-top: 100px;
+    }
+
     h2 {
       font-size: 50px;
       font-weight: bold;
       letter-spacing: 7px;
       line-height: 58px;
       margin-bottom: 28px;
+
+      @media #{$xs-small} {
+        font-size: 40px;
+        letter-spacing: 6.4px;
+        line-height: 50px;
+        margin-left: 24px;
+      }
     }
 
     p {
@@ -346,11 +585,37 @@
       font-weight: 500;
       letter-spacing: 0.88px;
       line-height: 36px;
+
+      @media #{$small-down} {
+        font-size: 14px;
+        margin: 0 24px;
+      }
+
+      @media screen and (max-width: 650px) {
+        font-size: 12px;
+      }
+
+      @media #{$xs-small} {
+        font-size: 16px;
+        letter-spacing: 0.64px;
+        line-height: 33px;
+        margin-left: 24px;
+        margin-right: 39px;
+
+        span {
+          font-weight: bold;
+          color: #fff;
+        }
+      }
     }
   }
 
   .agency-clients-outer {
     padding: 0 11%;
+
+    @media #{$small-down} {
+      padding: 0 7%;
+    }
 
     @media #{$xlarge-up} {
       padding-left: 20%;
@@ -364,10 +629,11 @@
     .agency-clients-row {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
+      flex-wrap: wrap;
       
       .client-outer {
-        width: 32.5%;
+        width: 325px;
         height: 380px;
         display: flex;
         flex-direction: column;
@@ -375,7 +641,7 @@
       }
 
       .client-outer-last {
-        width: 32.5%;
+        width: 325px;
         height: 390px;
         display: flex;
         flex-direction: column;
@@ -415,6 +681,10 @@
           -moz-transition: all 0.3s ease-in-out;
           -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
+
+          @media #{$xs-small} {
+            opacity: 1;
+          }
         }
 
         .play:hover {
@@ -559,11 +829,19 @@
       margin: auto;
       z-index: 1;
 
+      @media #{$xs-small} {
+        height: 215px;
+      }
+
       h3 {
-        font-size: 30px;
+        font-size: 40px;
         font-weight: bold;
         letter-spacing: 7px;
         line-height: 58px;
+
+        @media #{$xs-small} {
+          font-size: 38px;
+        }
       }
 
       p {
@@ -571,6 +849,12 @@
         font-weight: bold;
         letter-spacing: 4.5px;
         line-height: 50px;
+
+        @media #{$xs-small} {
+          font-size: 11px;
+          letter-spacing: 5px;
+          line-height: 46px;
+        }
       }
 
       a {
@@ -583,21 +867,51 @@
         left: 0;
         right: 0;
         margin: auto;
+
+        @media #{$xs-small} {
+          font-size: 24px;
+          letter-spacing: 1.3px;
+          line-height: 36px;
+        }
       }
     }
 
     .one-minute-lower {
-      height: 1313px;
-      background: rgba(44, 44, 44, 0.123);
+      height: 934px;
+      // background: rgba(44, 44, 44, 0.123);
       position: relative;
+      overflow: hidden;
+      padding-top: 250px;
 
+      @media #{$xs-small} {
+        padding-top: 136px;
+      }
+
+      // .lower-hero {
+      //   position: absolute;
+      //   top: 140px;
+      //   left: -5%;
+      //   height: 1313px;
+      //   width: 108%;
+      //   z-index: -1;
+      // }
       .lower-hero {
-        position: absolute;
-        top: 140px;
-        left: -5%;
-        height: 1313px;
-        width: 108%;
-        z-index: -1;
+          width: auto;
+          height: 1313px;
+          background-size: contain;
+          opacity: 0.8;
+          background-image: url('https://res.cloudinary.com/nasdaily/image/upload/v1543876214/Agency_bg_bottom-short_ngherr.png');
+          background-repeat: no-repeat;
+      }
+
+      .mobile-lower-hero {
+          width: auto;
+          height: 1313px;
+          background-size: contain;
+          opacity: 0.8;
+          margin-top: 277px;
+          background-image: url('https://res.cloudinary.com/nasdaily/image/upload/v1543876214/Agency_bg_bottom-long_ielzk9.png');
+          background-repeat: no-repeat;
       }
 
       .one-minute-text {
@@ -608,24 +922,43 @@
         right: 0;
         margin: auto;
 
+        @media #{$xs-small} {
+          width: 277px;
+        }
+
         p {
           font-size: 21px;
           font-weight: 700;
           letter-spacing: 1.04px;
           line-height: 29px;
           font-family: 'Lora', serif;
+
+          @media #{$xs-small} {
+            font-size: 12px;
+            letter-spacing: 1.04px;
+            line-height: 36px;
+            font-weight: bold;
+          }
         }
 
         .left {
           float: left;
           font-size: 14px;
           margin-left: 2px;
+
+          @media #{$xs-small} {
+            font-size: 12px;
+          }
         }
 
         .right {
           float: right;
           font-size: 14px;
           margin-top: -10px;
+
+          @media #{$xs-small} {
+            font-size: 12px;
+          }
         }
       }
 
@@ -658,7 +991,11 @@
   }
 
   @media screen and (max-width: 780px) {
-    margin-top: -160px;
+    margin-top: -220px;
+  }
+
+  @media screen and (max-width: 680px) {
+    margin-top: -300px;
   }
 }
 

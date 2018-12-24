@@ -19,15 +19,15 @@ export default class ShopTab extends Component {
     }
 
     componentDidMount() {
-      window.addEventListener('resize', this.handleWindowSizeChange);
+      window.addEventListener('resize', this.handleWindowSizeChange)
     }
 
     componentWillUnmount() {
-      window.removeEventListener('resize', this.handleWindowSizeChange);
+      window.removeEventListener('resize', this.handleWindowSizeChange)
     }
 
     handleWindowSizeChange = () => {
-      this.setState({width: window.innerWidth});
+      this.setState({width: window.innerWidth})
     }
 
     setPercent(p) {

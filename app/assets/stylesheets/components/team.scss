@@ -16,7 +16,7 @@
         z-index: -1;
 
         @media #{$xs-small} {
-            height: 1370px;
+            height: 1586px;
         }
     }
 
@@ -169,7 +169,7 @@
 
   .hero-children {
       position: relative;
-      z-index: 10;
+      z-index: 1;
   }
 
 .profile-outer {
