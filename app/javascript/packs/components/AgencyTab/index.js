@@ -172,9 +172,6 @@ export default class AgencyTab extends Component {
               <a href='mailto:nas@nasdaily.com'>nas<span>@nasdaily.com</span></a>
             </div>
             <div className='one-minute-lower'>
-              {/* <Image 
-                publicId='Agency_bg_bottom-short_ngherr'
-                className='lower-hero' /> */}
                 {isMobile ? 
                   <div className='mobile-lower-hero' />
                   :

@@ -242,7 +242,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index: 3;
+        z-index: 1;
       }
 
       p {
@@ -281,12 +281,6 @@
       width: 544px;
     }
 
-    // @media screen and (max-width: 900px) {
-    //   height: 500px;
-    //   width: 453px;
-    //   right: 20px;
-    // }
-
     @media screen and (max-width: 768px) {
       right: -90px;
     }
@@ -324,11 +318,6 @@
           top: 348px;
           right: 193px;
         }
-
-        // @media screen and (max-width: 900px) {
-        //   top: 292px;
-        //   right: 140px;
-        // }
     }
 
       .percent-bar {
@@ -350,10 +339,6 @@
           width: 182px;
           height: 12.8px;
         }
-
-        // @media screen and (max-width: 900px) {
-        //   width: 156px;
-        // }
       }
 
       p {
@@ -436,20 +421,6 @@
           width: 94%;
         }
       }
-
-      // @media #{$large-only} {
-      //   padding-left: 14%;
-      //   flex-basis: 40%;
-      // }
-
-      // @media #{$medium-only} {
-      //   padding-left: 8%;
-      // }
-
-      // @media #{$small-only} {
-      //   padding-left: 6%;
-      // }
-
     }
     // 1033
     @media screen and (max-width: 600px) {
@@ -525,68 +496,6 @@
     top: 307px;
     left: 71px;
   }
-
-  //  .buy-button {
-  //    position: absolute;
-  //    width: 200px;
-  //    height: 50px;
-  //    text-transform: uppercase;
-  //    color: white;
-  //    font-size: 24px;
-  //  }
-
-  // .tshirt-cta-buttons {
-  //   display: flex;
-  //   width: 100%;
-  //   justify-content: space-around;
-  //   z-index: 2;
-  // }
-
-  // .landing--left-content,
-  // .landing--right-content {
-  //   display: flex;
-  //   align-items: center;
-  //   flex-direction: column;
-  //   justify-content: start;
-  //   z-index: 2;
-  //   max-width: 100%;
-  // }
-
-  // .landing--right-content {
-  //   position: relative;
-  // }
-
-  // .landing--left-background,
-  // .landing--right-background {
-  //   position: absolute;
-  //   z-index: -1;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   transition: background-color 250ms linear;
-  // }
-
-  // .landing--left-background {
-  //   background-position: 0 40%;
-  // }
-
-  // .landing--right-background {
-  //   background-position: 100% 40%;
-  // }
-
-  // .shop-cta,
-  // .facebook-share-button,
-  // .buy-button {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   width: 200px;
-  //   height: 50px;
-  //   text-transform: uppercase;
-  //   color: white;
-  //   font-size: 24px;
-  // }
 
   .form-wrapper {
     padding-top: 20px;
@@ -685,7 +594,7 @@
       -ms-transform: rotate(90deg);
       transform: rotate(90deg);
       right: 0;
-      /*Adjust for position however you want*/
+      /*Adjust for position*/
 
       top: 3px;
       padding: 0;
@@ -840,17 +749,18 @@
 .mobile-image-wrapper {
   width: 100vw;
   height: 638px;
+  overflow: hidden;
   position: relative;
   z-index: -1;
-  overflow: hidden;
 
   .mobile-shop-upper-img {
-    margin-left: -22%;
-    padding-top: 30px;
-    width: 150vw;
-    height: 600px;
-    position: absolute;
-    z-index: -1;
+      width: auto;
+      height: 638px;
+      background-size: auto 100%;
+      background-position: center;
+      opacity: 0.8;
+      background-image: url('https://res.cloudinary.com/nasdaily/image/upload/v1545555431/Nas_Daily_Tshirt_omzgsg.png');
+      background-repeat: no-repeat;
   }
 
   .mobile-show-percent {
@@ -874,6 +784,7 @@
           border: 2px solid #FFFFFF;
           border-radius: 4px;
           margin-bottom: 23px;
+          margin-left: -13px;
       }
 
       p {
@@ -977,408 +888,3 @@
       }
     }
 }
-
-
-
-    // .nd-lower {
-    //   height: 373px;
-    //   background-color: #242424;
-    // }
-    // .arrow-back {
-    //   display: none;
-    // }
-
-    // .landing--left,
-    // .landing--right {
-    //   display: flex;
-    //   justify-content: center;
-    //   position: relative;
-    //   flex: 1;
-    //   transition: opacity 250ms linear;
-    // }
-
-    // .story-header,
-    // .tshirt-header {
-    //   padding-top: 230px;
-    // }
-
-    // .done-with-life {
-    //   z-index: 3;
-    //   text-align: center;
-    //   font-size: 34px;
-    // }
-
-    // .form-footnote {
-    //   font-size: 20px;
-    //   text-align: center;
-    //   margin-top: -20px;
-    // }
-
-    // .tshirt-images-container {
-    //   position: relative;
-    //   width: 100%;
-    //   height: 100%;
-    //   margin-bottom: -150px;
-    //   max-width: 512px;
-    //   max-height: 516px;
-    //   margin-top: -50px;
-    // }
-
-    // .tshirt-image {
-    //   width: 100%;
-    //   height: auto;
-    //   top: 0;
-    //   left: 0;
-    // }
-
-  // .form-input {
-  //   width: 200px;
-  //   height: $shop-form-input-height;
-  //   font-family: 'Teko', Arial, sans-serif;
-  //   font-size: 25px;
-  //   padding-left: 12px;
-  //   padding-right: 12px;
-  //   padding-top: 4px;
-  //   padding-bottom: 0;
-  //   border: none;
-  //   border-radius: 0;
-  //   text-align: center;
-  //   text-transform: uppercase;
-  //   background-color: #717171;
-
-  //   &:focus {
-  //     background-color: white;
-  //   }
-
-  //   &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  //     color: black;
-  //   }
-  //   &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  //     color: black;
-  //     opacity:  1;
-  //   }
-  //   &::-moz-placeholder { /* Mozilla Firefox 19+ */
-  //     color: black;
-  //     opacity:  1;
-  //   }
-  //   &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  //     color: black;
-  //   }
-  //   &::-ms-input-placeholder { /* Microsoft Edge */
-  //     color: black;
-  //   }
-  // }
-
-  /* react-select overrides */
-  // .Select-input > input {
-  //   max-height: 27px;
-  //   max-width: 140px;
-  // }
-
-  // .Select-value,
-  // .Select-placeholder,
-  // .Select-value-label {
-  //   color: black !important;
-  // }
-
-  // .Select-value,
-  // .Select-placeholder {
-  //   padding-top: 6px;
-  // }
-
-  // .Select-option {
-  //   height: $shop-form-input-height;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   font-size: 25px;
-
-  //   &.is-selected,
-  //   &.is-focused {
-  //     background-color: #f0f0f0;
-  //   }
-  // }
-
-  // .Select.is-open .Select-control {
-  //   background-color: white !important;
-  // }
-
-  // .Select-menu, .Select-menu-outer {
-  //   border-radius: 0 !important;
-  // }
-
-  // .Select-arrow {
-  //   border-color: black transparent transparent;
-
-  //   &:hover {
-  //     border-color: white transparent transparent;
-  //   }
-  // }
-
-  // .is-open .Select-arrow,
-  // .Select-arrow-zone:hover > .Select-arrow {
-  //   border-top-color: white;
-  // }
-
-  // .is-open > .Select-control .Select-arrow {
-  //   border-color: transparent transparent black;
-  // }
-
-  // .Select-clear-zone {
-  //   color: black;
-
-  //   &:hover {
-  //     color: #D0021B;
-  //   }
-  // }
-
-  // .submit-button {
-  //   background-color: $yellow-color;
-  //   border: 1px solid black;
-  //   width: 200px;
-  //   height: $shop-form-input-height;
-  //   font-family: 'Teko', Arial, sans-serif;
-  //   font-size: 25px;
-  //   text-transform: uppercase;
-  //   padding-top: 5px;
-  // }
-
-  // .tabs-container {
-  //   position: fixed;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   height: 75px;
-  //   background-color: #141417;
-  //   display: flex;
-  //   flex-direction: row;
-  //   align-items: center;
-  //   z-index: 3;
-  // }
-
-  // .tab {
-  //   color: #626264;
-  //   width: 50%;
-  //   display: flex;
-  //   justify-content: center;
-  //   font-size: 30px;
-  //   height: 100%;
-  //   align-items: center;
-  //   cursor: pointer;
-  //   text-transform: uppercase;
-
-  //   &.active {
-  //     color: white;
-  //     border-top: 3px solid $yellow-color;
-  //   }
-  // }
-
-  // .tile {
-  //   position: relative;
-  //   display: inline-block;
-  //   font-size: 20px;
-  //   cursor: pointer;
-  // }
-
-  // .tile__img {
-  //   object-fit: cover;
-  //   border-radius: 5px;
-  //   max-width: 100%;
-  // }
-
-  // .tile__title {
-  //   position: absolute;
-  //   bottom: 0;
-  //   padding: 10px;
-  // }
-
-  
-
-
-  /* THIS IS ARROW, BUT IT GETS OVERIDEN BY DEFAULT BROWSER BEHAVIOR ON MOBILE: */
-  /* .tile__details { */
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* right: 0; */
-    /* top: 0; */
-    /* color: white; */
-    /* font-size: 10px; */
-
-    /* &:after, */
-    /* &:before { */
-      /* content: ''; */
-      /* position: absolute; */
-      /* top: 50%; */
-      /* left: 50%; */
-      /* display: black; */
-    /* } */
-
-    /* $iconSize: 50px; */
-
-    /* &:after { */
-      /* margin-top: (-($iconSize / 2)); */
-      /* margin-left: (-($iconSize / 2)); */
-      /* width: $iconSize; */
-      /* height: $iconSize; */
-      /* border: 3px solid #ecf0f1; */
-      /* line-height: $iconSize; */
-      /* text-align: center; */
-      /* border-radius: 100%; */
-      /* background: rgba(0,0,0,0.5); */
-      /* z-index: 1; */
-    /* } */
-
-    /* &:before { */
-      /* content: '▶'; */
-      /* left: 0; */
-      /* width: 100%; */
-      /* font-size: 30px; */
-      /* margin-left: 7px; */
-      /* margin-top: -7px; */
-      /* text-align: center; */
-      /* z-index: 2; */
-    /* } */
-  /* } */
-
-
-  // @media #{$small-only} {
-  //   min-height: 725px;
-
-  //   .landing {
-  //     flex-direction: column;
-  //     height: 100%;
-  //     padding-left: 12px;
-  //     padding-right: 12px;
-  //   }
-
-  //   .form-footnote {
-  //     margin-top: -40px;
-  //   }
-
-    // .input-group {
-    //   margin-bottom: 25px !important;
-    // }
-
-    // .submit-button {
-    //   margin-bottom: 75px;
-    // }
-
-    // .landing--right-content {
-    //   padding-top: 50px;
-    // }
-
-    // .landing--left-background {
-    //   position: fixed;
-    // }
-
-    // .landing--right-background {
-    //   display: none;
-    // }
-
-    // .arrow-back {
-    //   display: block;
-    //   position: absolute;
-    //   top: 60px;
-    //   left: 10px;
-    //   z-index: 10;
-    // }
-
-    // .arrow-back-img {
-    //   width: 35px;
-    // }
-
-    // .tshirt-cta-buttons {
-    //   margin-bottom: 100px;
-    // }
-
-    // .form-wrapper {
-    //   padding-top: 20px;
-    // }
-
-    // .tshirt-display-wrapper {
-    //   padding-top: 0;
-    // }
-
-    // .story-header {
-    //   padding-top: 50px;
-    // }
-
-    // .tshirt-header {
-    //   padding-top: 0;
-    // }
-
-    // .multi-select-wrapper {
-    //   justify-content: space-around;
-
-    //   .Select-control {
-    //     width: 110px !important;
-    //   }
-    // }
-
-    // .input-group {
-    //   margin-bottom: 32px;
-
-    //   &.multi {
-    //     width: 100%;
-    //   }
-    // }
-
-    // .multi-select-wrapper {
-    //   select {
-    //     width: auto !important;
-    //     max-width: 100px !important;
-    //   }  
-    // }
-
-
-
-//     .tshirt-images-container {
-//       margin-bottom: -100px;
-//       height: auto;
-//       align-self: center;
-//     }
-//   }
-
-//   @media #{$medium-up} {
-//     min-height: 700px; // for firefox
-//   }
-
-//   @media #{$large-up} {
-//     padding-left: 0;
-//     padding-right: 0;
-
-//     .multi-select-wrapper {
-//       justify-content: space-between;
-//       flex-direction: row;
-//       width: 275px;
-//     }
-
-//     .landing {
-//       &:not(.show-form) {
-//         &:hover {
-//           .landing--left,
-//           .landing--right {
-//             opacity: 0.5;
-//           }
-//         }
-//       }
-//     }
-
-//     .landing--left,
-//     .landing--right {
-//       &:hover {
-//         opacity: 1 !important;
-
-//         .landing--right-background,
-//         .landing--left-background {
-//           background-color: rgba(12, 12, 12, 0.9);
-//         }
-//       }
-//     }
-//   }
-// }
-
-
-
-

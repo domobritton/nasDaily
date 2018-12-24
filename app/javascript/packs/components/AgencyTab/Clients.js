@@ -48,7 +48,7 @@ export default class Clients extends Component {
     return (
         <div>
         <div className='agency-clients-outer'>
-            <div className='agency-clients-row'>
+         
               <div className='client-outer'>
                 <div
                     onClick={(e) => this.openModal(0, e)}
@@ -75,6 +75,7 @@ export default class Clients extends Component {
                     </div>
                 </div>
               </div>
+
               <div className='client-outer'>
                 <div 
                     onClick={(e) => this.openModal(1, e)}
@@ -101,6 +102,7 @@ export default class Clients extends Component {
                     </div>
                 </div>
               </div>
+
               <div className='client-outer'>
                 <div
                     onClick={(e) => this.openModal(2, e)} 
@@ -127,11 +129,8 @@ export default class Clients extends Component {
                     </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className='agency-clients-outer'>
-            <div className='agency-clients-row'>
+           
+     
               <div className='client-outer'>
                 <div 
                     onClick={(e) => this.openModal(3, e)}
@@ -201,8 +200,8 @@ export default class Clients extends Component {
                     </div>
                 </div>
               </div>
-            </div>
           </div>
+  
           {this.videoModal}
         </div>
     )

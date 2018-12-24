@@ -233,6 +233,7 @@
     position: relative;
     height: 613px;
     width: 100vw;
+    background: $gray-color;
 
     @media screen and (min-width: 600px) and (max-width: 1000px) {
       height: 650px;
@@ -393,23 +394,38 @@
 
   .boxes-outer {
     margin-top: 280px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 100px;
-    flex-wrap: wrap;
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+    // padding: 0 100px;
+    // flex-wrap: wrap;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
 
     @media #{$xlarge-up} {
       padding: 0 20%;
     }
 
-    @media #{$medium-only} {
+    @media screen and (min-width: 1001px) and (max-width: 1040px) {
       padding: 0;
     }
-
-    @media #{$small-down} {
-      padding: 0 24px;
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+      padding: 0 12%;
     }
+    // @media screen and (min-width: 1200px) and (max-width: 1240px) {
+    //   padding: 0 50px;
+    // }
+
+    // @media #{$medium-only} {
+    //   padding: 0;
+    // }
+
+    // @media #{$small-down} {
+    //   padding: 0 24px;
+    // }
 
     @media #{$xs-small} {
       position: relative;
@@ -611,7 +627,11 @@
   }
 
   .agency-clients-outer {
-    padding: 0 11%;
+    padding: 0 7%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 
     @media #{$small-down} {
       padding: 0 7%;
@@ -626,15 +646,17 @@
       margin-top: -12px;
     }
     
-    .agency-clients-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      flex-wrap: wrap;
+    // .agency-clients-row {
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-around;
+      // flex-wrap: wrap;
       
       .client-outer {
         width: 325px;
         height: 380px;
+        margin: 2.5px;
+        // flex: 1 0 21%;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -643,6 +665,7 @@
       .client-outer-last {
         width: 325px;
         height: 390px;
+        margin: 2.5px;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -808,7 +831,7 @@
             line-height: 30px;
           }
         }
-      }
+      // }
     }
   }
 
@@ -887,14 +910,20 @@
         padding-top: 136px;
       }
 
-      // .lower-hero {
-      //   position: absolute;
-      //   top: 140px;
-      //   left: -5%;
-      //   height: 1313px;
-      //   width: 108%;
-      //   z-index: -1;
-      // }
+      @media #{$medium-only} {
+        height: 790px;
+        padding-top: 375px;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 900px) {
+        height: 673px;
+        padding-top: 415px;
+      }
+
+      @media screen and (min-width: 601px) and (max-width: 767px) {
+        height: 530px;
+        padding-top: 500px;
+      }
       .lower-hero {
           width: auto;
           height: 1313px;

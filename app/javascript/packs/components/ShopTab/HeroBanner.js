@@ -7,9 +7,10 @@ export const HeroBanner = ({ min, max, children, percent}) => (
     <div className="mobile-hero-container">
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
           <div className='mobile-image-wrapper'>
-            <Image 
+            {/* <Image 
               publicId='Nas_Daily_Tshirt_qljlzo'
-              className='mobile-shop-upper-img'/>
+              className='mobile-shop-upper-img'/> */}
+              <div className='mobile-shop-upper-img' />
             <div className="mobile-image-text">
               <MobileImageText percent={percent} />
             </div>
