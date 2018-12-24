@@ -4,6 +4,11 @@
     z-index: 10;
   }
 
+  .vsc-initialized .nd-footer {
+    position: relative;
+    z-index: 1;
+  }
+
   .shop .nd-footer {
     background: $light-gray-color;
   }

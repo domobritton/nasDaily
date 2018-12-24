@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'cloudinary-react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 

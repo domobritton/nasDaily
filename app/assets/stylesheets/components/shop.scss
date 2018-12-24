@@ -502,7 +502,6 @@
 
   .form-wrapper {
     padding-top: 20px;
-    width: 100%;
 
     @media screen and (max-width: 1040px) {
       padding-top: 10px;
@@ -535,7 +534,6 @@
   }
 
   .form {
-    width: 100%;
     animation-duration: 1s;
     animation-delay: 750ms;
   }
@@ -604,6 +602,10 @@
 
       position: absolute;
       pointer-events: none;
+
+      @media #{$xs-small} {
+        font-size: 20px;
+      }
     }
 
     .select-wrapper select, .select-wrapper-country select {
@@ -742,6 +744,7 @@
     .form-wrapper {
       padding-top: 20px;
       margin-left: 32px;
+      margin-right: 16px;
     }
 
     .input-group {

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import ReactPlayer from 'react-player'
 import Header from '../App/Header'
 import { AboutBox }from './AboutBox'
-
 export default class AboutTab extends Component {
     constructor (props) {
         super(props);
