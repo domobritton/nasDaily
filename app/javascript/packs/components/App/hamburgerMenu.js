@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Image } from 'cloudinary-react'
 import classnames from 'classnames'
 
 export default class HamburgerMenu extends Component {
@@ -62,7 +61,7 @@ export default class HamburgerMenu extends Component {
                     className='social-icon-wrapper'
                 >
                     <Image
-                    publicId="facebook_icon_v02_wk1t1d.svg"
+                    publicId='facebook_icon_v02_wk1t1d.svg'
                     className='social-icon'
                     />
                 </a>

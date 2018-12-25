@@ -21,6 +21,10 @@ export default class VideosTab extends React.Component {
   }
 
   componentDidMount() {
+    $('.footer').hide();
+    setTimeout(function () {
+      $('.footer').show();
+    }, 5000);
     setTimeout(() => {
       $('#search').attr('placeholder', 'SEARCH VIDEOS');
     }, 650);
@@ -44,7 +48,7 @@ export default class VideosTab extends React.Component {
           <CountTo className='vid-count' delay={500} to={length} speed={2500} />
          Videos
         </div>
-        {/* <div className='videos-header animated fadeIn'>{ videos ? <div className="vid-count">{length}</div> : '0'} Videos</div> */}
+        {/* <div className='videos-header animated fadeIn'>{ videos ? <div className='vid-count'>{length}</div> : '0'} Videos</div> */}
           <input
             id='search'
             className='animated slideInUp'
@@ -57,7 +61,7 @@ export default class VideosTab extends React.Component {
             spellCheck={false}
           />
           <span className='input-highlight'>
-            { inputValue.replace(/ /g, "\u00a0") }
+            { inputValue.replace(/ /g, '\u00a0') }
           </span>
           <span
             className={classnames('cancel-input', { active: inputValue.length > 0})}

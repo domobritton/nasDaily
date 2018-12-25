@@ -25,7 +25,7 @@ export default class VideoModal extends Component {
     return (
     <ReactModal
         isOpen={modalIsOpen}
-        contentLabel="Modal"
+        contentLabel='Modal'
         onRequestClose={() => { this.setState({modalIsOpen: false}); scrollTo(0,0);}}
         style={modalStyles}
         className='react-modal'
@@ -42,13 +42,13 @@ export default class VideoModal extends Component {
 
   render() {
       return (
-        <div className="lower-right">
+        <div className='lower-right'>
             <div 
               onClick={() => this.openModal()}
               className='video-wrapper'>
               <Image 
-                publicId="What_means_tumbnail_aawokp" 
-                className="video-image" />
+                publicId='What_means_tumbnail_aawokp' 
+                className='video-image' />
               <img src='assets/play.svg'
                 className='play' />
             </div>

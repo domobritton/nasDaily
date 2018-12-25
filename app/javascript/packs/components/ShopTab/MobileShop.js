@@ -26,10 +26,10 @@ export default class MobileShop extends Component {
                     {form}
                 </div>
                     <HeroBanner min={'0%'} max={'40%'} percent={percent}>
-                    <div className="mobile-lower">
-                        <div className="lower">
+                    <div className='mobile-lower'>
+                        <div className='lower'>
                         <h2>WHAT THIS MEANS:</h2>
-                            <div className="description">
+                            <div className='description'>
                                 <p>
                                 Nas Daily wears the same t-shirt every day. The
                                 t-shirt shows how much of his life is over based on

@@ -30,7 +30,7 @@ export const Creators = ({start, end, width}) => {
                                     </li>
                                     <li>{person.name}</li>
                                     <li>{person.project}</li>
-                                    <li><i className="fab fa-facebook-square"></i>{`${person.followers} Followers`}</li>
+                                    <li><i className='fab fa-facebook-square'></i>{`${person.followers} Followers`}</li>
                                 </ul>
                                 <div className='contact'><a href={person.link} target='_blank'>WORK WITH ME</a></div>
                             </div>

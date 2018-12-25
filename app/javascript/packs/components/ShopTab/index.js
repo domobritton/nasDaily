@@ -53,7 +53,7 @@ export default class ShopTab extends Component {
       const { percent, width } = this.state 
       const isMobile = width <= 600
         return (
-          <div className="nd-shop">
+          <div className='nd-shop'>
             <Header />
           {isMobile ? 
             <MobileShop form={this.form} percent={percent} /> :
@@ -123,18 +123,18 @@ export default class ShopTab extends Component {
 //           Watch now
 //         </a>
 //         <div
-//           className="tile show-on-small-only"
+//           className='tile show-on-small-only'
 //           onClick={() => this.setState({openedModal: true})}
 //         >
-//           <div className="tile__media">
+//           <div className='tile__media'>
 //             <img
-//               className="tile__img"
+//               className='tile__img'
 //               src={ tshirtVideo.full_picture }
-//               alt="HOW OLD ARE YOU?"
+//               alt='HOW OLD ARE YOU?'
 //             />
 //           </div>
-//           <div className="tile__details">
-//             <div className="tile__title"/>
+//           <div className='tile__details'>
+//             <div className='tile__title'/>
 //           </div>
 //         </div>
 //       </div>
@@ -237,7 +237,7 @@ export default class ShopTab extends Component {
 //             className='arrow-back'
 //           >
 //             <Image
-//               publicId="arrow_back_ekioqi.svg"
+//               publicId='arrow_back_ekioqi.svg'
 //               className='arrow-back-img'
 //             />
 //           </a>
@@ -251,7 +251,7 @@ export default class ShopTab extends Component {
 //           >
 //             <img
 //               src='/assets/tshirt_life.png'
-//               className="tshirt-image"
+//               className='tshirt-image'
 //             />
 //             { !isNull(percent)
 //               ? (

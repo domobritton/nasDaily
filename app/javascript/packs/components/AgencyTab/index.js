@@ -91,10 +91,18 @@ export default class AgencyTab extends Component {
                     </div> 
                     : ''}
               <h2>"THAT'S ONE MINUTE"</h2>
+              { isMobile ? 
+              <p>After creating <span>1,000</span> videos in 1,000 days and amassing <span>12m followers</span> on Facebook, 
+                  Nas and his team have opened up the door to working with <span>brands.</span> We specialize in
+                  making authentic videos that communicate a message really fast and really well. 
+                  If we can make it work on <span>Facebook,</span> we can make it work anywhere!</p>
+              :
               <p>After creating <span>1,000</span> videos in 1,000 days and amassing <span>12m followers</span> on Facebook,<br /> 
                   Nas and his team have opened up the door to working with <span>brands.</span> We specialize in<br />
                   making authentic videos that communicate a message really fast and really well.<br /> 
                   If we can make it work on <span>Facebook,</span> we can make it work anywhere!</p>
+
+              }
               </div>
               <div className='boxes-outer'>
                 <div className='box'>
@@ -159,9 +167,9 @@ export default class AgencyTab extends Component {
                   <div className='lower-hero' />
                 }
               <div className='one-minute-text'>
-                <i className="fas fa-quote-left left"></i>
+                <i className='fas fa-quote-left left'></i>
                 <p>That's <span>1 minute</span>, see you <span>tomorrow</span></p>
-                <i className="fas fa-quote-left right"></i>
+                <i className='fas fa-quote-left right'></i>
                 <ScrollButton scrollToTop={this.scrollToTop} />
               </div>
             </div>
@@ -185,7 +193,7 @@ const ScrollButton = ({scrollToTop}) => (
 )
 
 const HeroBanner = ({ min, max, children, isMobile}) => (
-    <div className="hero-container">
+    <div className='hero-container'>
         <Parallax offsetYMin={min} offsetYMax={max} slowerScrollRate>
           <div className='image-wrapper'>
             { isMobile ? <div className='mobile-background-img' /> : 
@@ -193,6 +201,6 @@ const HeroBanner = ({ min, max, children, isMobile}) => (
             }
           </div>
         </Parallax>
-        <div className="hero-children">{children}</div>
+        <div className='hero-children'>{children}</div>
     </div>
 )

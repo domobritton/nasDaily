@@ -34,18 +34,21 @@ export default class App extends Component {
   render() {
     const { children, videos } = this.state  
     const { pathname } = window.location  
-    $('body').removeClass().addClass(pathname.replace('/', ''))  
+    $('body').removeClass().addClass(pathname.replace('/', ''));
+    if (pathname === '/') {
+      $('body').addClass('about')
+    } 
  
     return (
       <div>
         <div className='content'>
           <Switch>
             <Route path='/team' render={() => <TeamTab videos={videos} />} />
-            <Route path="/videos" render={() => <VideosTab videos={videos} />}/>
-            <Route path="/shop" render={() => <ShopTab videos={videos} /> }/>
-            <Route path="/privacy" component={PrivacyTab}/>
-            <Route path="/terms" component={TermsTab}/>
-            <Route path="/agency" render={() => <AgencyTab videos={videos} />}/>
+            <Route path='/videos' render={() => <VideosTab videos={videos} />}/>
+            <Route path='/shop' render={() => <ShopTab videos={videos} /> }/>
+            <Route path='/privacy' component={PrivacyTab}/>
+            <Route path='/terms' component={TermsTab}/>
+            <Route path='/agency' render={() => <AgencyTab videos={videos} />}/>
             <Route path='/' render={() => <AboutTab videos={videos} />} />
             <Redirect to={{pathname: '/videos'}}/>
           </Switch>

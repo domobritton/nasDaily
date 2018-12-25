@@ -184,7 +184,7 @@ export default class ShopTabForm extends React.PureComponent {
           <div className='multi-select-wrapper'>
             <div className='select-wrapper'>
               <select
-                name="birthDay"
+                name='birthDay'
                 value={birthDay}
                 onChange={({target: { value }}) => {
                   this.setState({ birthDay: value, showErrorMessage: false })
@@ -196,7 +196,7 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
             <div className='select-wrapper'>
               <select
-                name="birthMonth"
+                name='birthMonth'
                 value={birthMonth}
                 onChange={({target: { value }}) => {
                   this.setState({ birthMonth: value, showErrorMessage: false })
@@ -208,7 +208,7 @@ export default class ShopTabForm extends React.PureComponent {
             </div>
             <div className='select-wrapper'>
               <select
-                name="birthYear"
+                name='birthYear'
                 value={birthYear}
                 onChange={({target: { value }}) => {
                   this.setState({ birthYear: value, showErrorMessage: false })
@@ -230,7 +230,7 @@ export default class ShopTabForm extends React.PureComponent {
         <div className='input-group'>
           <div className='select-wrapper-country'>
             <select
-              name="country"
+              name='country'
               value={ country }
               onChange={({target: { value }}) => {
                 this.setState({ country: value, showErrorMessage: false })
@@ -259,22 +259,22 @@ const RadioComponent = ({ value, setGender }) => (
     <div className='radio'>
       <input 
         id='radio-1' 
-        type="radio" 
-        value="male" 
-        name="gender" 
-        checked={value === "male"}
+        type='radio' 
+        value='male' 
+        name='gender' 
+        checked={value === 'male'}
         onChange={setGender} />
-      <label htmlFor='radio-1' className="radio-label">Male</label>
+      <label htmlFor='radio-1' className='radio-label'>Male</label>
     </div>
     <div className='radio'>
       <input 
         id='radio-2' 
-        type="radio" 
-        value="female" 
-        name="gender" 
-        checked={value === "female"}
+        type='radio' 
+        value='female' 
+        name='gender' 
+        checked={value === 'female'}
         onChange={setGender} />
-      <label htmlFor="radio-2" className="radio-label">Female</label>
+      <label htmlFor='radio-2' className='radio-label'>Female</label>
     </div>
   </div>
 );

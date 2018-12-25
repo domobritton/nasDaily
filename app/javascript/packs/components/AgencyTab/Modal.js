@@ -36,7 +36,7 @@ export default class Modal extends React.PureComponent {
     return (
       <ReactModal
         isOpen={!!videoId}
-        contentLabel="Modal"
+        contentLabel='Modal'
         onRequestClose={onClose}
         style={modalStyles}
         className='react-modal'

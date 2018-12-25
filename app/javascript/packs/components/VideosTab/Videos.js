@@ -106,28 +106,28 @@ export default class Videos extends Component {
             onSuccess={() => this.setState({loading: false})}
           >
           <ScrollAnimation animateIn='fadeIn'>
-            <div className="row">
-              <div className="row__inner">
+            <div className='row'>
+              <div className='row__inner'>
                 { row.map((v, itemIdx) => (
                   <div
-                    className="tile"
+                    className='tile'
                     key={itemIdx}
                     onClick={() => this.showVideo(v.facebook_id)}
                     onKeyPress={(e) => { e.key === 'Enter' && this.showVideo(v.facebook_id) }}
                   >
-                    <div className="tile__media">
+                    <div className='tile__media'>
                       <img
-                        className="tile__img"
+                        className='tile__img'
                         data-id={v.facebook_id}
                         src={v.full_picture}
                         alt={v.title}
                       />
                     </div>
                     <div
-                      className="tile__details"
+                      className='tile__details'
                       tabIndex='0'
                     >
-                      <div className="tile__title" />
+                      <div className='tile__title' />
                     </div>
                   </div>))
                 }

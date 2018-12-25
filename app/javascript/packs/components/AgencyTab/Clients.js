@@ -29,7 +29,7 @@ export default class Clients extends Component {
         return (
         <ReactModal
           isOpen={modalIsOpen}
-          contentLabel="Modal"
+          contentLabel='Modal'
           onRequestClose={() => { this.setState({modalIsOpen: false})}}
           style={modalStyles}
           className='react-modal'
@@ -68,10 +68,10 @@ export default class Clients extends Component {
                     className='uber-logo' />
                   </div>
                       <div className='text-desc'>
-                      <i className="fas fa-bolt"></i>
+                      <i className='fas fa-bolt'></i>
                       <p>Production Time: <span>1d</span></p>
-                      <i className="fas fa-star"></i>
-                      <p>Product: <span>Restaurants</span></p>
+                      <i className='fas fa-star'></i>
+                      <p>Product: <span>Transportation</span></p>
                     </div>
                 </div>
               </div>
@@ -95,10 +95,10 @@ export default class Clients extends Component {
                       className='wu-logo' />
                   </div>
                       <div className='text-desc'>
-                      <i className="fas fa-bolt"></i>
+                      <i className='fas fa-bolt'></i>
                       <p>Production Time: <span>1d</span></p>
-                      <i className="fas fa-star"></i>
-                      <p>Product: <span>Restaurants</span></p>
+                      <i className='fas fa-star'></i>
+                      <p>Product: <span>Financial Services</span></p>
                     </div>
                 </div>
               </div>
@@ -122,10 +122,10 @@ export default class Clients extends Component {
                       className='gv-logo' />
                   </div>
                       <div className='text-desc'>
-                      <i className="fas fa-bolt"></i>
+                      <i className='fas fa-bolt'></i>
                       <p>Production Time: <span>1d</span></p>
-                      <i className="fas fa-star"></i>
-                      <p>Product: <span>Restaurants</span></p>
+                      <i className='fas fa-star'></i>
+                      <p>Product: <span>Brand Development</span></p>
                     </div>
                 </div>
               </div>
@@ -150,10 +150,10 @@ export default class Clients extends Component {
                       className='ntuc-logo' />
                   </div>
                     <div className='text-desc'>
-                      <i className="fas fa-bolt"></i>
+                      <i className='fas fa-bolt'></i>
                       <p>Production Time: <span>1d</span></p>
-                      <i className="fas fa-star"></i>
-                      <p>Product: <span>Restaurants</span></p>
+                      <i className='fas fa-star'></i>
+                      <p>Product: <span>Trade</span></p>
                     </div>
                 </div>
               </div>
@@ -176,10 +176,10 @@ export default class Clients extends Component {
                       className='broome-logo' />
                   </div>
                       <div className='text-desc'>
-                      <i className="fas fa-bolt"></i>
+                      <i className='fas fa-bolt'></i>
                       <p>Production Time: <span>1d</span></p>
-                      <i className="fas fa-star"></i>
-                      <p>Product: <span>Restaurants</span></p>
+                      <i className='fas fa-star'></i>
+                      <p>Product: <span>Travel</span></p>
                     </div>
                 </div>
               </div>
